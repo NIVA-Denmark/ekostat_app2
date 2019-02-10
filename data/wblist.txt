@@ -1,0 +1,654 @@
+EU_CD Vatten	Namn Vatten	Län	Kommun(er)	Distrikt	Typindelning
+SE633000-195000	Örefjärden	Västerbotten - 24	Nordmaling - 2401, Umeå - 2480	SE1	20. Norra Kvarkens inre kustvatten.
+SE633710-200500	Mjölefjärden	Västerbotten - 24	Umeå - 2480	SE1	20. Norra Kvarkens inre kustvatten.
+SE635040-204196	Ostnäsfjärden	Västerbotten - 24	Umeå - 2480	SE1	20. Norra Kvarkens inre kustvatten.
+SE634640-203710	Ytterbodafjärden	Västerbotten - 24	Umeå - 2480	SE1	20. Norra Kvarkens inre kustvatten.
+SE634200-202033	Österfjärden	Västerbotten - 24	Umeå - 2480	SE1	20. Norra Kvarkens inre kustvatten.
+SE634230-201605	Västerfjärden	Västerbotten - 24	Umeå - 2480	SE1	20. Norra Kvarkens inre kustvatten.
+SE634740-203020	Täftefjärden	Västerbotten - 24	Umeå - 2480	SE1	20. Norra Kvarkens inre kustvatten.
+SE634950-202940	Lillfjärden	Västerbotten - 24	Umeå - 2480	SE1	20. Norra Kvarkens inre kustvatten.
+SE637640-204160	Tavlefjärden	Västerbotten - 24	Umeå - 2480	SE1	20. Norra Kvarkens inre kustvatten.
+SE637070-204260	Raggavaviken	Västerbotten - 24	Umeå - 2480	SE1	20. Norra Kvarkens inre kustvatten.
+SE637310-204860	Yttre Täftefjärden	Västerbotten - 24	Umeå - 2480	SE1	20. Norra Kvarkens inre kustvatten.
+SE636570-203590	Fjärdgrundsområdet sek namn	Västerbotten - 24	Umeå - 2480	SE1	20. Norra Kvarkens inre kustvatten.
+SE636910-204040	Österlångslädan	Västerbotten - 24	Umeå - 2480	SE1	20. Norra Kvarkens inre kustvatten.
+SE636150-199220	Megrundsområdet	Västerbotten - 24	Umeå - 2480	SE1	20. Norra Kvarkens inre kustvatten.
+SE635660-199490	Hörnefors området sek namn	Västerbotten - 24	Umeå - 2480	SE1	20. Norra Kvarkens inre kustvatten.
+SE633550-200700	S n Kvarkens kustvatten	Västerbotten - 24	Nordmaling - 2401, Umeå - 2480	SE1	21. Norra Kvarkens yttre kustvatten.
+SE635300-205251	N n Kvarkens kustvatten	Västerbotten - 24	Robertsfors - 2409, Umeå - 2480	SE1	21. Norra Kvarkens yttre kustvatten.
+SE641250-210560	Gumbodafjärden	Västerbotten - 24	Robertsfors - 2409	SE1	22. Bottenviken, inre kustvatten.
+SE641000-210500	Vändskärsfjärden	Västerbotten - 24	Robertsfors - 2409	SE1	22. Bottenviken, inre kustvatten.
+SE640900-205935	Sikeåfjärden	Västerbotten - 24	Robertsfors - 2409	SE1	22. Bottenviken, inre kustvatten.
+SE640400-205770	Ricklefjärden	Västerbotten - 24	Robertsfors - 2409	SE1	22. Bottenviken, inre kustvatten.
+SE640240-205500	Bygdefjärden	Västerbotten - 24	Robertsfors - 2409	SE1	22. Bottenviken, inre kustvatten.
+SE650280-213110	Kinnbäcksfjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE645950-212650	Åbyfjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE645500-212000	Byskefjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE645340-211330	Rösnäsfjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE645130-211040	Bredviksfjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE644730-210650	Boviksfjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE644070-211650	Skelleftehamnsfjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE643700-211940	Burefjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE643550-211920	Storsladan	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE643160-212730	Bäckfjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE642950-213400	Bjuröfjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE642035-212600	Blackefjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE641875-212250	Kallviken	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE641745-211570	Lövselefjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE655260-224280	Törefjärden	Norrbotten - 25	Kalix - 2514	SE1	22. Bottenviken, inre kustvatten.
+SE654640-233190	Bodöfjärden	Norrbotten - 25	Kalix - 2514	SE1	22. Bottenviken, inre kustvatten.
+SE654990-224540	Siknäsfjärden	Norrbotten - 25	Kalix - 2514	SE1	22. Bottenviken, inre kustvatten.
+SE654500-232000	Repskärsfjärden	Norrbotten - 25	Kalix - 2514	SE1	22. Bottenviken, inre kustvatten.
+SE654570-225230	Rånöfjärden	Norrbotten - 25	Kalix - 2514	SE1	22. Bottenviken, inre kustvatten.
+SE654416-230000	Storöfjärden	Norrbotten - 25	Kalix - 2514	SE1	22. Bottenviken, inre kustvatten.
+SE654291-224000	Bergöfjärden	Norrbotten - 25	Kalix - 2514, Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE654110-224850	Båtöfjärden	Norrbotten - 25	Kalix - 2514, Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE654820-222660	Rånefjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE654470-222700	Gussöfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE654330-222200	N. Sigfridsöfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE654200-222920	Tistersöfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE654000-222430	S. Sigfridsöfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE653900-223280	Fjuksöfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE653740-222800	Hamnöfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE653303-222900	Hindersöfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE653140-224000	Degeröfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE653116-224623	Saxskärsfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE653176-222000	Sandöfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE652686-221500	Germandöfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE652855-224000	Bastaskärsfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE652830-222116	Västantillfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE652450-222116	Sandgrönnfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE652475-215750	Holfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE652400-220070	Mannöfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE652465-214080	Bastafjärden	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE652500-213500	Harrbäcksfjärden	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE652385-214180	Brändöfjärden	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE652066-214400	Storfjärden	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE652250-213430	Håkansöfjärden	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE652250-213000	Bärtnäsfjärden	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE652075-213500	Davids stenar	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE652150-213000	Rävahavet	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE652000-214000	Mjoöfjärden sek namn	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE651800-214740	Baggholmsdraget	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE652000-213210	Nördfjärden	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE651940-213930	Haraholmsfjärden	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE651475-214300	Vargödraget	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE651500-213108	Yttrefjärden	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE651075-213700	Bondöfjärden	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE650750-213500	Jävrefjärden	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE650460-213400	Bursfjärden	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE654360-235780	Skomakarfjärden	Norrbotten - 25	Haparanda - 2583	SE1	22. Bottenviken, inre kustvatten.
+SE654575-234250	Seskaröfjärden	Norrbotten - 25	Haparanda - 2583, Kalix - 2514	SE1	22. Bottenviken, inre kustvatten.
+SE728806-179329	Yttre Lulefjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE729159-179002	Inre Lulefjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE729849-180191	Björköfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE643920-211500	Simpan	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE644030-218500	Ytterviksfjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE644040-211260	Sörfjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE644150-211000	Ursviksfjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE645000-212100	Inre Kågefjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE645000-213500	Kågefjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE645830-212300	Tåmfjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE652920-222650	Sörbrändöfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE653415-221340	Hertsöfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE652020-211930	Svensbyfjärden	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE651818-212790	Inrefjärden	Norrbotten - 25	Piteå - 2581	SE1	22. Bottenviken, inre kustvatten.
+SE656620-222480	Granöfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE656840-222800	Bergnäsfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE654490-220870	Börstskärsfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE655120-220380	Måttsundsfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE647260-212660	Hålfjärden	Västerbotten - 24	Skellefteå - 2482	SE1	22. Bottenviken, inre kustvatten.
+SE656300-222750	Mulöviken	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE654860-219880	Ersnäsfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE655180-218660	Möröfjärden	Norrbotten - 25	Luleå - 2580	SE1	22. Bottenviken, inre kustvatten.
+SE641250-211751	S Bottenvikens kustvatten	Västerbotten - 24	Robertsfors - 2409, Skellefteå - 2482	SE1	23. Bottenviken, yttre kustvatten.
+SE652400-223501	Norrbottens skärgårds kustvatten	Norrbotten - 25, Västerbotten - 24	Haparanda - 2583, Kalix - 2514, Luleå - 2580, Piteå - 2581, Skellefteå - 2482	SE1	23. Bottenviken, yttre kustvatten.
+SE653870-235570	Enskärsfjärden	Norrbotten - 25	Haparanda - 2583	SE1	23. Bottenviken, yttre kustvatten.
+SE654150-240380	Hamnskärsfjärden	Norrbotten - 25	Haparanda - 2583	SE1	23. Bottenviken, yttre kustvatten.
+SE654100-234100	S. Seskaröfjärden sek namn	Norrbotten - 25	Haparanda - 2583, Kalix - 2514	SE1	23. Bottenviken, yttre kustvatten.
+SE648760-213140	N m Bottenvikens kustvatten	Västerbotten - 24	Skellefteå - 2482	SE1	23. Bottenviken, yttre kustvatten.
+SE645670-214290	Sandvikssundet	Västerbotten - 24	Skellefteå - 2482	SE1	23. Bottenviken, yttre kustvatten.
+SE646360-213700	Skelleftebukten	Västerbotten - 24	Skellefteå - 2482	SE1	23. Bottenviken, yttre kustvatten.
+SE654560-246250	Haparandafjärden sek namn	Norrbotten - 25	Haparanda - 2583	SE1TO	22. Bottenviken, inre kustvatten.
+SE653840-247900	Knivskärsfjärden	Norrbotten - 25	Haparanda - 2583	SE1TO	23. Bottenviken, yttre kustvatten.
+SE654130-249500	Katajafjärden	Norrbotten - 25	Haparanda - 2583	SE1TO	23. Bottenviken, yttre kustvatten.
+SE604250-173000	Skutskärsfjärden sek namn	Gävleborg - 21, Uppsala - 03	Gävle - 2180, Älvkarleby - 0319	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE610100-171245	Axmarfjärden	Gävleborg - 21	Gävle - 2180	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE604200-171765	Yttre Fjärden	Gävleborg - 21	Gävle - 2180	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE610500-171586	Kusöfjärden sek namn	Gävleborg - 21	Gävle - 2180, Söderhamn - 2182	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE611766-171305	Midsommarfjärden	Gävleborg - 21	Söderhamn - 2182	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE611676-171000	Söderhamnsfjärden	Gävleborg - 21	Söderhamn - 2182	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE611600-171500	Sandarnesfjärden sek namn	Gävleborg - 21	Söderhamn - 2182	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE611000-171500	Vallviksfjärden sek namn	Gävleborg - 21	Söderhamn - 2182	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE611213-171063	Ljusnefjärden	Gävleborg - 21	Söderhamn - 2182	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE612303-171075	Skärsåfjärden sek namn	Gävleborg - 21	Hudiksvall - 2184, Söderhamn - 2182	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE614165-171500	Hudiksvallsfjärden	Gävleborg - 21	Hudiksvall - 2184	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE613500-172500	Agöfjärden sek namn	Gävleborg - 21	Hudiksvall - 2184	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE613760-171000	Gårdsfjärden	Gävleborg - 21	Hudiksvall - 2184	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE613591-171000	Njutångersfjärden	Gävleborg - 21	Hudiksvall - 2184	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE613500-171000	Siviksfjärden	Gävleborg - 21	Hudiksvall - 2184	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE613380-171450	Hålsängesfjärden	Gävleborg - 21	Hudiksvall - 2184	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE613240-171000	Enångersfjärden	Gävleborg - 21	Hudiksvall - 2184	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE612791-171130	Långvindsfjärden	Gävleborg - 21	Hudiksvall - 2184	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE604055-171248	Inre Fjärden	Gävleborg - 21	Gävle - 2180	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE604116-171037	Avan	Gävleborg - 21	Gävle - 2180	SE2	16. Södra Bottenhavet, inre kustvatten.
+SE604200-174400	Gävlebuktens utsjövatten	Gävleborg - 21, Uppsala - 03	Gävle - 2180, Tierp - 0360, Älvkarleby - 0319	SE2	17. Södra Bottenhavet, yttre kustvatten.
+SE612520-172080	N S M Bottenhavets kustvatten	Gävleborg - 21	Hudiksvall - 2184, Söderhamn - 2182	SE2	17. Södra Bottenhavet, yttre kustvatten.
+SE604675-172125	Harkskärsfjärden	Gävleborg - 21	Gävle - 2180	SE2	17. Södra Bottenhavet, yttre kustvatten.
+SE605630-179220	Fårholmen	Gävleborg - 21	Gävle - 2180	SE2	17. Södra Bottenhavet, yttre kustvatten.
+SE605760-171000	Norrsundet	Gävleborg - 21	Gävle - 2180	SE2	17. Södra Bottenhavet, yttre kustvatten.
+SE605390-171558	Hamnskär	Gävleborg - 21	Gävle - 2180	SE2	17. Södra Bottenhavet, yttre kustvatten.
+SE604900-171700	Hilleviksfjärden	Gävleborg - 21	Gävle - 2180	SE2	17. Södra Bottenhavet, yttre kustvatten.
+SE605140-171674	Iggösundet	Gävleborg - 21	Gävle - 2180	SE2	17. Södra Bottenhavet, yttre kustvatten.
+SE605660-172380	S S M Bottenhavets kustvatten	Gävleborg - 21	Gävle - 2180, Söderhamn - 2182	SE2	17. Södra Bottenhavet, yttre kustvatten.
+SE622795-174565	Åvikebukten	Västernorrland - 22	Härnösand - 2280, Timrå - 2262	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE622860-173000	Klingerfjärden	Västernorrland - 22	Sundsvall - 2281, Timrå - 2262	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE622500-172430	Alnösundet	Västernorrland - 22	Sundsvall - 2281, Timrå - 2262	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE624335-180000	Hemsösundet sek namn	Västernorrland - 22	Härnösand - 2280	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE623980-175600	Älandsfjärden	Västernorrland - 22	Härnösand - 2280	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE623810-180350	Norra sundet	Västernorrland - 22	Härnösand - 2280	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE623340-175556	Södra Sundet	Västernorrland - 22	Härnösand - 2280	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE624870-175500	Ramöfjärden sek namn	Västernorrland - 22	Härnösand - 2280, Kramfors - 2282	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE624615-180500	Storfjärden	Västernorrland - 22	Härnösand - 2280, Kramfors - 2282	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE622126-172430	Draget	Västernorrland - 22	Sundsvall - 2281	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE622339-172190	Sundsvallsfjärden	Västernorrland - 22	Sundsvall - 2281	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE622000-172300	Svartviksfjärden	Västernorrland - 22	Sundsvall - 2281	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE630203-182615	Norrfjärden	Västernorrland - 22	Kramfors - 2282	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE630180-182080	Dockstafjärden	Västernorrland - 22	Kramfors - 2282	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE625500-175153	Kramforsfjärden sek namn	Västernorrland - 22	Kramfors - 2282	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE625900-174360	Bollstafjärden	Västernorrland - 22	Kramfors - 2282	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE625710-183000	Omnefjärden	Västernorrland - 22	Kramfors - 2282	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE625416-182696	Edsätterfjärden	Västernorrland - 22	Kramfors - 2282	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE625180-181655	Gaviksfjärden	Västernorrland - 22	Kramfors - 2282	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE625000-180075	Norafjärden	Västernorrland - 22	Kramfors - 2282	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE624800-181030	Grönsviksfjärden	Västernorrland - 22	Kramfors - 2282	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE630383-183500	Mjältöfjärden sek namn	Västernorrland - 22	Kramfors - 2282, Örnsköldsvik - 2284	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE630000-183500	Ullångersfjärden	Västernorrland - 22	Kramfors - 2282, Örnsköldsvik - 2284	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE631840-191130	Husumbukten	Västernorrland - 22	Örnsköldsvik - 2284	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE631646-185280	Idbyfjärden	Västernorrland - 22	Örnsköldsvik - 2284	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE631610-184500	Örnsköldsviksfjärden	Västernorrland - 22	Örnsköldsvik - 2284	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE631450-185200	Nötbolandsfjärden	Västernorrland - 22	Örnsköldsvik - 2284	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE631500-190270	Risöfjärden	Västernorrland - 22	Örnsköldsvik - 2284	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE631460-185000	Dekarsöfjärden	Västernorrland - 22	Örnsköldsvik - 2284	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE631406-185500	Havsfjärden sek namn	Västernorrland - 22	Örnsköldsvik - 2284	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE631346-184241	Bäckfjärden	Västernorrland - 22	Örnsköldsvik - 2284	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE630685-184305	Nätrafjärden	Västernorrland - 22	Örnsköldsvik - 2284	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE630760-183315	Näskefjärden	Västernorrland - 22	Örnsköldsvik - 2284	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE633043-193300	Nordmalingsfjärden	Västerbotten - 24	Nordmaling - 2401	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE632690-193500	Yttre Nordmalingfjärden	Västerbotten - 24	Nordmaling - 2401	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE632030-187600	Åvikfjärden	Västernorrland - 22	Örnsköldsvik - 2284	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE631710-188130	Gullviksfjärden sek namn	Västernorrland - 22	Örnsköldsvik - 2284	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE624380-176450	Inre Tynderösundet	Västernorrland - 22	Timrå - 2262	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE622900-174790	Juniskär-Bergsfjärden	Västernorrland - 22	Sundsvall - 2281	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE634040-193330	Degerfjärden	Västerbotten - 24, Västernorrland - 22	Nordmaling - 2401, Örnsköldsvik - 2284	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE634850-193570	Avafjärden	Västerbotten - 24	Nordmaling - 2401	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE630210-187470	N Höga kustens kustvatten	Västernorrland - 22	Härnösand - 2280, Kramfors - 2282, Örnsköldsvik - 2284	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE623300-176210	Sundsvallsbukten	Västernorrland - 22	Sundsvall - 2281, Timrå - 2262	SE2	18. Norra Bottenhavet, Höga kustens inre kustvatten.
+SE621265-173125	Björköfjärden	Västernorrland - 22	Sundsvall - 2281	SE2	19. Norra Bottenhavet, Höga kustens yttre kustvatten.
+SE633400-195000	N Bottenhavets kustvatten	Västerbotten - 24, Västernorrland - 22	Nordmaling - 2401, Örnsköldsvik - 2284	SE2	19. Norra Bottenhavet, Höga kustens yttre kustvatten.
+SE623890-178030	S Höga kustens kustvatten	Västernorrland - 22	Härnösand - 2280, Sundsvall - 2281, Timrå - 2262	SE2	19. Norra Bottenhavet, Höga kustens yttre kustvatten.
+SE621920-175280	Yttre Björköfjärden	Västernorrland - 22	Sundsvall - 2281	SE2	19. Norra Bottenhavet, Höga kustens yttre kustvatten.
+SE621720-175130	Lubban	Västernorrland - 22	Sundsvall - 2281	SE2	19. Norra Bottenhavet, Höga kustens yttre kustvatten.
+SE632090-190370	Ällöviken	Västernorrland - 22	Örnsköldsvik - 2284	SE2	19. Norra Bottenhavet, Höga kustens yttre kustvatten.
+SE632090-189470	Tennviken	Västernorrland - 22	Örnsköldsvik - 2284	SE2	19. Norra Bottenhavet, Höga kustens yttre kustvatten.
+SE632670-190860	Ultråfjärden	Västernorrland - 22	Örnsköldsvik - 2284	SE2	19. Norra Bottenhavet, Höga kustens yttre kustvatten.
+SE632760-191300	Sannafjärden	Västernorrland - 22	Örnsköldsvik - 2284	SE2	19. Norra Bottenhavet, Höga kustens yttre kustvatten.
+SE628750-183300	Sörleviken	Västernorrland - 22	Kramfors - 2282	SE2	19. Norra Bottenhavet, Höga kustens yttre kustvatten.
+SE628480-183070	Yttre Gaviksfjärden	Västernorrland - 22	Kramfors - 2282	SE2	19. Norra Bottenhavet, Höga kustens yttre kustvatten.
+SE622080-176120	Salen	Västernorrland - 22	Sundsvall - 2281	SE2	19. Norra Bottenhavet, Höga kustens yttre kustvatten.
+SE619690-175690	N M Bottenhavets kustvatten	Gävleborg - 21, Västernorrland - 22	Hudiksvall - 2184, Nordanstig - 2132, Sundsvall - 2281	SE2	19. Norra Bottenhavet, Höga kustens yttre kustvatten.
+SE593300-183600	Norrfjärden sek namn	Stockholm - 01	Österåker - 0117	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE593080-184500	Gälnan	Stockholm - 01	Österåker - 0117	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE592790-183000	Östra Saxarfjärden	Stockholm - 01	Värmdö - 0120, Österåker - 0117	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE592650-182815	Västra Saxarfjärden	Stockholm - 01	Värmdö - 0120, Österåker - 0117	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE592640-184500	Träsköfjärden	Stockholm - 01	Värmdö - 0120, Österåker - 0117	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE592500-185000	Möja västerfjärd	Stockholm - 01	Värmdö - 0120, Österåker - 0117	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE592280-183550	Sandöfjärden	Stockholm - 01	Värmdö - 0120, Österåker - 0117	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE593500-190000	Svartlögafjärden	Stockholm - 01	Norrtälje - 0188, Värmdö - 0120, Österåker - 0117	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE593750-184900	Yxlaområdet	Stockholm - 01	Norrtälje - 0188, Österåker - 0117	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE593460-184890	Skatfjärden	Stockholm - 01	Norrtälje - 0188, Österåker - 0117	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE592000-184700	Kanholmsfjärden	Stockholm - 01	Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE592547-182720	Lindalssundet	Stockholm - 01	Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE592400-184400	Skagsfjärden	Stockholm - 01	Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE592090-185125	Möja söderfjärd	Stockholm - 01	Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE592245-184400	Sollenkrokafjärden	Stockholm - 01	Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE591905-185275	Eknösundet	Stockholm - 01	Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE592040-184000	Älgöfjärden	Stockholm - 01	Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE591755-183895	Breviken	Stockholm - 01	Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE591815-182670	Grisslingen	Stockholm - 01	Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE591655-183200	Tranaröfjärden	Stockholm - 01	Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE591755-182800	Lagnöström	Stockholm - 01	Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE591745-182250	Kolström	Stockholm - 01	Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE591655-183530	Våmfjärden	Stockholm - 01	Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE591330-184225	Kalkkobbsfjärden	Stockholm - 01	Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE591400-183200	Björnöfjärden	Stockholm - 01	Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE591760-181955	Baggensfjärden	Stockholm - 01	Nacka - 0182, Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE593000-190500	Kallskärsfjärden	Stockholm - 01	Norrtälje - 0188, Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE590635-182120	Sandemars fjärd sek namn	Stockholm - 01	Haninge - 0136	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE590500-182000	Fåglaröfjärden sek namn	Stockholm - 01	Haninge - 0136	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE591200-183600	Nämdöfjärden	Stockholm - 01	Haninge - 0136, Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE590730-183763	Norrfjärden	Stockholm - 01	Haninge - 0136, Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE590835-183000	Jungfrufjärden	Stockholm - 01	Haninge - 0136, Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE590000-183000	Hanstensfjärden	Stockholm - 01	Haninge - 0136, Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE590385-180890	Horsfjärden	Stockholm - 01	Haninge - 0136, Nynäshamn - 0192	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE591280-182070	Kalvfjärden	Stockholm - 01	Tyresö - 0138	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE591160-182400	Ällmorafjärden	Stockholm - 01	Tyresö - 0138	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE591090-182300	Vissvassfjärden	Stockholm - 01	Tyresö - 0138	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE591050-182320	Åvaviken	Stockholm - 01	Tyresö - 0138	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE591050-182740	Gränöfjärden	Stockholm - 01	Haninge - 0136, Tyresö - 0138	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE591300-182800	Ingaröfjärden	Stockholm - 01	Haninge - 0136, Nacka - 0182, Tyresö - 0138, Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE591400-182320	Erstaviken	Stockholm - 01	Nacka - 0182, Tyresö - 0138	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE590200-173765	Stavbofjärden	Stockholm - 01	Södertälje - 0181	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE590400-174090	Näslandsfjärden	Stockholm - 01	Botkyrka - 0127, Södertälje - 0181	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE585400-173870	Gälöfjärden	Stockholm - 01, Södermanland - 04	Södertälje - 0181, Trosa - 0488	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE592605-182310	Trälhavet	Stockholm - 01	Vaxholm - 0187, Värmdö - 0120, Österåker - 0117	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE594800-190220	Björköfjärden	Stockholm - 01	Norrtälje - 0188	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE594800-190655	N Lidöfjärden sek namn	Stockholm - 01	Norrtälje - 0188	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE595000-185600	Vätösundet	Stockholm - 01	Norrtälje - 0188	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE594670-185500	Norrtäljeviken	Stockholm - 01	Norrtälje - 0188	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE594590-190600	Tjocköfjärden	Stockholm - 01	Norrtälje - 0188	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE594384-185542	Åkeröfjärden	Stockholm - 01	Norrtälje - 0188	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE594260-185580	Långfjärden	Stockholm - 01	Norrtälje - 0188	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE594100-185690	Ålandsfjärden sek namn	Stockholm - 01	Norrtälje - 0188	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE594000-190500	Gräsköfjärden	Stockholm - 01	Norrtälje - 0188	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE593820-185500	Blidösund	Stockholm - 01	Norrtälje - 0188	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE593750-183962	Bergshamraviken	Stockholm - 01	Norrtälje - 0188	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE585345-174950	Fållnäsviken	Stockholm - 01	Nynäshamn - 0192	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE585170-175445	Nynäsviken	Stockholm - 01	Nynäshamn - 0192	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584960-175280	Dragfjärden sek namn	Stockholm - 01	Nynäshamn - 0192	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE585145-175690	Gårdsfjärden	Stockholm - 01	Nynäshamn - 0192	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584840-175400	Konabbsfjärden	Stockholm - 01	Nynäshamn - 0192	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584695-175315	S Konabbsfjärden sek namn	Stockholm - 01	Nynäshamn - 0192	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE590550-174540	Kaggfjärden	Stockholm - 01	Botkyrka - 0127, Nynäshamn - 0192	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE585000-174600	Svärdsfjärden	Stockholm - 01	Nynäshamn - 0192, Södertälje - 0181	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE590000-174400	Himmerfjärden	Stockholm - 01	Botkyrka - 0127, Nynäshamn - 0192, Södertälje - 0181	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE585200-174000	Fifångsdjupet	Stockholm - 01, Södermanland - 04	Nynäshamn - 0192, Södertälje - 0181, Trosa - 0488	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584870-174310	Asköfjärden	Stockholm - 01, Södermanland - 04	Nynäshamn - 0192, Södertälje - 0181, Trosa - 0488	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584430-170665	Sjösafjärden	Södermanland - 04	Nyköping - 0480	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584400-172270	Dragsviksfjärden	Södermanland - 04	Nyköping - 0480	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584420-172515	Ringsöfjärden sek namn	Södermanland - 04	Nyköping - 0480	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584390-172085	Kråkfjärden	Södermanland - 04	Nyköping - 0480	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584227-171600	Risöområdet sek namn	Södermanland - 04	Nyköping - 0480	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584435-170450	Mellanfjärden	Södermanland - 04	Nyköping - 0480	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584333-172895	Bergöområdet	Södermanland - 04	Nyköping - 0480	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584520-172495	Tvären	Södermanland - 04	Nyköping - 0480, Trosa - 0488	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584600-173200	Gupafjärden	Södermanland - 04	Nyköping - 0480, Trosa - 0488	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584215-170800	Aspafjärden	Södermanland - 04	Nyköping - 0480, Oxelösund - 0481	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584820-172920	Gunnarbofjärden	Södermanland - 04	Trosa - 0488	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE585200-173430	Trosafjärden	Södermanland - 04	Trosa - 0488	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE585200-173600	Fågelöfjärden	Södermanland - 04	Trosa - 0488	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE585075-173130	Hållsviken	Södermanland - 04	Trosa - 0488	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584905-172980	Skettnefjärden	Södermanland - 04	Trosa - 0488	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE585040-173535	Gillsviken	Södermanland - 04	Trosa - 0488	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE662116-166449	Edsviken	Stockholm - 01	Norrtälje - 0188	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE657412-164249	Vårgärdssjön	Stockholm - 01	Nacka - 0182	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE657608-164193	Neglingeviken	Stockholm - 01	Nacka - 0182	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE658180-166649	Prästmaren	Stockholm - 01	Värmdö - 0120	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE583896-170790	Ljungskärsflagen	Södermanland - 04	Oxelösund - 0481	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE583906-170998	Hasselöområdet	Södermanland - 04	Oxelösund - 0481	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE583960-170700	Oxelösunds hamnområde	Södermanland - 04	Oxelösund - 0481	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584045-170882	Inre Ålöfjärden	Södermanland - 04	Oxelösund - 0481	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584067-171125	Ålöfjärden	Södermanland - 04	Oxelösund - 0481	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE585797-181090	Mysingen	Stockholm - 01	Haninge - 0136, Nynäshamn - 0192	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE585450-175800	Nynäshamn	Stockholm - 01	Nynäshamn - 0192	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE594250-191040	Granhamnsfjärden	Stockholm - 01	Norrtälje - 0188	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE594340-190448	Kapellskärs hamnområde	Stockholm - 01	Norrtälje - 0188	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE594350-190530	Kapellskärsområdet	Stockholm - 01	Norrtälje - 0188	SE3	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE584434-170260	Stadsfjärden	Södermanland - 04	Nyköping - 0480	SE3	13. Östergötlands inre skärgård
+SE585350-182001	Stockholms skärgårds s kustvatten	Stockholm - 01	Haninge - 0136, Nynäshamn - 0192	SE3	14. Östergötlands, yttre kustvatten
+SE584340-174401	Krabbfjärden	Södermanland - 04, Stockholm - 01	Nyköping - 0480, Nynäshamn - 0192, Trosa - 0488	SE3	14. Östergötlands, yttre kustvatten
+SE584085-171600	Örsbaken	Södermanland - 04	Nyköping - 0480, Oxelösund - 0481	SE3	14. Östergötlands, yttre kustvatten
+SE583720-172571	Kränkfjärden sek namn	Södermanland - 04	Nyköping - 0480, Oxelösund - 0481	SE3	14. Östergötlands, yttre kustvatten
+SE592000-190500	Björkskärsfjärden	Stockholm - 01	Värmdö - 0120	SE3	15. Stockholms skärgård, yttre kustvatten
+SE591910-185600	Rödkobbsfjärden	Stockholm - 01	Värmdö - 0120	SE3	15. Stockholms skärgård, yttre kustvatten
+SE591790-185500	Getholmsfjärden sek namn	Stockholm - 01	Värmdö - 0120	SE3	15. Stockholms skärgård, yttre kustvatten
+SE591500-185300	Brandfjärden	Stockholm - 01	Värmdö - 0120	SE3	15. Stockholms skärgård, yttre kustvatten
+SE591175-185000	Bulleröfjärden	Stockholm - 01	Värmdö - 0120	SE3	15. Stockholms skärgård, yttre kustvatten
+SE590665-184210	Biskopsfjärden	Stockholm - 01	Värmdö - 0120	SE3	15. Stockholms skärgård, yttre kustvatten
+SE593000-193000	Högfjärden	Stockholm - 01	Norrtälje - 0188, Värmdö - 0120	SE3	15. Stockholms skärgård, yttre kustvatten
+SE593000-192000	Ormskärsfjärden sek namn	Stockholm - 01	Norrtälje - 0188, Värmdö - 0120	SE3	15. Stockholms skärgård, yttre kustvatten
+SE592500-191750	Gillögafjärden	Stockholm - 01	Norrtälje - 0188, Värmdö - 0120	SE3	15. Stockholms skärgård, yttre kustvatten
+SE590148-183625	Norstensfjärden	Stockholm - 01	Haninge - 0136, Värmdö - 0120	SE3	15. Stockholms skärgård, yttre kustvatten
+SE592100-192001	Stockholms skärgårds m kustvatten	Stockholm - 01	Haninge - 0136, Norrtälje - 0188, Värmdö - 0120	SE3	15. Stockholms skärgård, yttre kustvatten
+SE595000-191501	Stockholms skärgårds n n	Stockholm - 01	Norrtälje - 0188	SE3	15. Stockholms skärgård, yttre kustvatten
+SE594845-191240	Havssvalget	Stockholm - 01	Norrtälje - 0188	SE3	15. Stockholms skärgård, yttre kustvatten
+SE594200-192000	Söderarms skärgård	Stockholm - 01	Norrtälje - 0188	SE3	15. Stockholms skärgård, yttre kustvatten
+SE594000-193501	Stockholms skärgårds s n	Stockholm - 01	Norrtälje - 0188	SE3	15. Stockholms skärgård, yttre kustvatten
+SE593760-192625	Uddjupet	Stockholm - 01	Norrtälje - 0188	SE3	15. Stockholms skärgård, yttre kustvatten
+SE593920-191440	Vidingefjärden	Stockholm - 01	Norrtälje - 0188	SE3	15. Stockholms skärgård, yttre kustvatten
+SE593860-192000	Nåtfjärden	Stockholm - 01	Norrtälje - 0188	SE3	15. Stockholms skärgård, yttre kustvatten
+SE593500-193255	Stenfjärden	Stockholm - 01	Norrtälje - 0188	SE3	15. Stockholms skärgård, yttre kustvatten
+SE593500-191660	Nö Kobbfjärden sek namn	Stockholm - 01	Norrtälje - 0188	SE3	15. Stockholms skärgård, yttre kustvatten
+SE593330-192540	Lökharfjärden	Stockholm - 01	Norrtälje - 0188	SE3	15. Stockholms skärgård, yttre kustvatten
+SE593180-191280	Kobbfjärden	Stockholm - 01	Norrtälje - 0188	SE3	15. Stockholms skärgård, yttre kustvatten
+SE600740-183460	Edeboviken	Stockholm - 01	Norrtälje - 0188	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE600565-184600	Ortalaviken	Stockholm - 01	Norrtälje - 0188	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE601440-184000	Kasfjärden sek namn	Stockholm - 01, Uppsala - 03	Norrtälje - 0188, Östhammar - 0382	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE601300-184180	Norrfjärden	Stockholm - 01, Uppsala - 03	Norrtälje - 0188, Östhammar - 0382	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE601000-183510	Galtfjärden	Stockholm - 01, Uppsala - 03	Norrtälje - 0188, Östhammar - 0382	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE601000-184030	Singöfjärden	Stockholm - 01, Uppsala - 03	Norrtälje - 0188, Östhammar - 0382	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE603190-174000	Karlholmsfjärden	Uppsala - 03	Tierp - 0360	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE603650-174500	Lövstabukten	Uppsala - 03	Tierp - 0360, Älvkarleby - 0319	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE602400-183190	Gällfjärden	Uppsala - 03	Östhammar - 0382	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE602120-181610	Kallriga Fjärden	Uppsala - 03	Östhammar - 0382	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE601660-183550	Ängsfjärden sek namn	Uppsala - 03	Östhammar - 0382	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE601300-182880	Östhammarfjärden sek namn	Uppsala - 03	Östhammar - 0382	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE601310-183700	Raggaröfjärden	Uppsala - 03	Östhammar - 0382	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE603000-181500	Öregrundsgrepen	Uppsala - 03	Tierp - 0360, Östhammar - 0382	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE600920-183090	Järsjöviken	Stockholm - 01, Uppsala - 03	Norrtälje - 0188, Östhammar - 0382	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE601070-182870	Hargsviken	Uppsala - 03	Östhammar - 0382	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE601204-182670	Mjölkfjärden	Uppsala - 03	Östhammar - 0382	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE601190-182870	Norra Hargsviken	Uppsala - 03	Östhammar - 0382	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE601250-182570	Dragsfjärden	Uppsala - 03	Östhammar - 0382	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE601360-182510	Sandikafjärden	Uppsala - 03	Östhammar - 0382	SE3	16. Södra Bottenhavet, inre kustvatten.
+SE603870-181301	Öregrunds kustvatten	Stockholm - 01, Uppsala - 03	Norrtälje - 0188, Tierp - 0360, Östhammar - 0382	SE3	17. Södra Bottenhavet, yttre kustvatten.
+SE595730-185850	Väddö kustvatten	Stockholm - 01	Norrtälje - 0188	SE3	17. Södra Bottenhavet, yttre kustvatten.
+SE600590-184933	Grisslehamn	Stockholm - 01	Norrtälje - 0188	SE3	17. Södra Bottenhavet, yttre kustvatten.
+SE601020-185050	Östhammars kustvatten	Stockholm - 01, Uppsala - 03	Norrtälje - 0188, Östhammar - 0382	SE3	17. Södra Bottenhavet, yttre kustvatten.
+SE591800-181360	Skurusundet	Stockholm - 01	Nacka - 0182	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE591920-180800	Strömmen	Stockholm - 01	Nacka - 0182, Stockholm - 0180	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE592400-180800	Stora Värtan	Stockholm - 01	Danderyd - 0162, Lidingö - 0186, Täby - 0160, Vaxholm - 0187, Österåker - 0117	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE592290-181600	Askrikefjärden	Stockholm - 01	Lidingö - 0186, Nacka - 0182, Vaxholm - 0187, Värmdö - 0120	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE592515-182020	Kodjupet	Stockholm - 01	Vaxholm - 0187	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE592400-181860	Tallaröfjärden	Stockholm - 01	Vaxholm - 0187	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE592468-182000	Norra Vaxholmsfjärden	Stockholm - 01	Vaxholm - 0187	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE592435-182400	Rindösundet	Stockholm - 01	Vaxholm - 0187	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE592420-182210	Södra Vaxholmsfjärden	Stockholm - 01	Vaxholm - 0187	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE592600-181135	Kyrkfjärden	Stockholm - 01	Vaxholm - 0187, Österåker - 0117	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE592575-181770	Överbyfjärden	Stockholm - 01	Vaxholm - 0187, Österåker - 0117	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE592600-181600	Säbyvik	Stockholm - 01	Vaxholm - 0187, Österåker - 0117	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE592315-182620	Solöfjärden	Stockholm - 01	Vaxholm - 0187, Värmdö - 0120	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE592135-182700	Torsbyfjärden	Stockholm - 01	Vaxholm - 0187, Värmdö - 0120	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE658352-163189	Lilla Värtan	Stockholm - 01	Danderyd - 0162, Lidingö - 0186, Nacka - 0182, Solna - 0184, Stockholm - 0180	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE658507-162696	Brunnsviken	Stockholm - 01	Solna - 0184, Stockholm - 0180	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE659024-162417	Edsviken	Stockholm - 01	Danderyd - 0162, Sollentuna - 0163, Solna - 0184	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE590990-174015	Igelstaviken	Stockholm - 01	Södertälje - 0181	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE590740-174135	Hallsfjärden	Stockholm - 01	Botkyrka - 0127, Södertälje - 0181	SE3	24. Stockholms inre skärgård och Hallsfjärden
+SE562410-164001	S Ölands kustvatten	Kalmar - 08	Borgholm - 0885, Mörbylånga - 0840	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE570000-170351	N Ölands kustvatten	Kalmar - 08	Borgholm - 0885	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE572110-170620	Grankullaviken	Kalmar - 08	Borgholm - 0885	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE582200-191201	Gotskasandöns v kustvatten	Gotland - 09	Gotland - 0980	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE582350-191651	Gotskasandöns n kustvatten	Gotland - 09	Gotland - 0980	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE582150-191901	Gotskasandöns s kustvatten	Gotland - 09	Gotland - 0980	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE575920-191650	Ajkesvik	Gotland - 09	Gotland - 0980	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE575300-191801	Fårö sö kustvatten	Gotland - 09	Gotland - 0980	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE575620-191550	Sudersandsviken	Gotland - 09	Gotland - 0980	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE575480-191200	Kyrkviken	Gotland - 09	Gotland - 0980	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE575150-190400	Fårösund	Gotland - 09	Gotland - 0980	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE574170-190001	Ö Gotlands n kustvatten	Gotland - 09	Gotland - 0980	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE573200-185701	Ö Gotlands m kustvatten	Gotland - 09	Gotland - 0980	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE571000-184001	Ö Gotlands s kustvatten	Gotland - 09	Gotland - 0980	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE572350-180930	Klintehamnsviken sek namn	Gotland - 09	Gotland - 0980	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE571800-184300	Lausvik	Gotland - 09	Gotland - 0980	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE570450-180651	V Gotlands s kustvatten	Gotland - 09	Gotland - 0980	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE570850-182920	Gansviken	Gotland - 09	Gotland - 0980	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE570200-182500	Slesviken	Gotland - 09	Gotland - 0980	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE570270-181160	Burgsviken	Gotland - 09	Gotland - 0980	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE640066-167754	Bogevik	Gotland - 09	Gotland - 0980	SE4	10. Östra Ölands, sydöstra Gotlands kustvatten samt Gotska Sandön.
+SE580150-191251	Fårö n kustvatten	Gotland - 09	Gotland - 0980	SE4	11. Gotlands västra och norra kustvatten.
+SE575675-185101	Gotlands n kustvatten	Gotland - 09	Gotland - 0980	SE4	11. Gotlands västra och norra kustvatten.
+SE574520-182151	Gotlands nv kustvatten	Gotland - 09	Gotland - 0980	SE4	11. Gotlands västra och norra kustvatten.
+SE575480-184830	Kappelshamnsviken	Gotland - 09	Gotland - 0980	SE4	11. Gotlands västra och norra kustvatten.
+SE575170-183550	Irevik	Gotland - 09	Gotland - 0980	SE4	11. Gotlands västra och norra kustvatten.
+SE572000-180001	V Gotlands m kustvatten	Gotland - 09	Gotland - 0980	SE4	11. Gotlands västra och norra kustvatten.
+SE583875-170270	Sillöfjärden	Södermanland - 04	Nyköping - 0480	SE4	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE583970-170280	Marsviken	Södermanland - 04	Nyköping - 0480, Oxelösund - 0481	SE4	12n: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör N Eg. Östersjön.
+SE581660-165710	Håsköfjärden sek namn	Östergötland - 05	Valdemarsvik - 0563	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE581280-170070	Ytteröområdet	Östergötland - 05	Valdemarsvik - 0563	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE581240-165220	Hesselöfjärden	Östergötland - 05	Valdemarsvik - 0563	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE580890-165500	Flisdjupet	Östergötland - 05	Valdemarsvik - 0563	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE580585-164720	Yttre Valdemarsviken	Östergötland - 05	Valdemarsvik - 0563	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE580735-165296	Halsöfjärden	Östergötland - 05	Valdemarsvik - 0563	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE580375-164500	Licknevarpefjärden	Östergötland - 05	Valdemarsvik - 0563	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE581820-165500	Finnfjärden	Östergötland - 05	Söderköping - 0582, Valdemarsvik - 0563	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE581800-170000	Kullskärsdjupet	Östergötland - 05	Söderköping - 0582, Valdemarsvik - 0563	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE581740-170260	Turmulefjärden	Östergötland - 05	Söderköping - 0582, Valdemarsvik - 0563	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE581520-165000	Orren	Östergötland - 05	Söderköping - 0582, Valdemarsvik - 0563	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE580205-165162	Kvädöfjärden	Östergötland - 05, Kalmar - 08	Valdemarsvik - 0563, Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE580000-164060	Kaggebofjärden	Östergötland - 05, Kalmar - 08	Valdemarsvik - 0563, Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE580000-164500	Lindödjupet	Östergötland - 05, Kalmar - 08	Valdemarsvik - 0563, Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE583825-163500	Mellersta Bråviken	Östergötland - 05	Norrköping - 0581	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE583755-163200	Ållonöfjärden	Östergötland - 05	Norrköping - 0581	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE583370-165290	Bosöfjärden sek namn	Östergötland - 05	Norrköping - 0581	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE583000-165600	Arkösund	Östergötland - 05	Norrköping - 0581	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE581960-164890	Korsfjärden	Östergötland - 05	Söderköping - 0582	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE582600-165680	Aspöfjärden	Östergötland - 05	Söderköping - 0582	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE582050-165820	Kärrfjärden	Östergötland - 05	Söderköping - 0582	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE582070-164820	Lagnöströmmen	Östergötland - 05	Söderköping - 0582	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE582055-165230	Hålfjärden	Östergötland - 05	Söderköping - 0582	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE581975-164500	Lindensfjärden	Östergötland - 05	Söderköping - 0582	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE581815-164320	Sandfjärden	Östergötland - 05	Söderköping - 0582	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE582820-165920	Arköfjärden sek namn	Östergötland - 05	Norrköping - 0581, Söderköping - 0582	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE582630-165210	Lönshuvudfjärden	Östergötland - 05	Norrköping - 0581, Söderköping - 0582	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE582600-163810	Merumsfjärden	Östergötland - 05	Norrköping - 0581, Söderköping - 0582	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE582590-165000	Rimmöfjärden sek namn	Östergötland - 05	Norrköping - 0581, Söderköping - 0582	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE582460-164500	Trännöfjärden	Östergötland - 05	Norrköping - 0581, Söderköping - 0582	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE572810-164500	Ärnöområdet sek namn	Kalmar - 08	Oskarshamn - 0882	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE572650-164000	Granholmsfjärden	Kalmar - 08	Oskarshamn - 0882	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE572565-164000	Borholmsfjärden	Kalmar - 08	Oskarshamn - 0882	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE573860-164725	Stora Hökhallen	Kalmar - 08	Oskarshamn - 0882, Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE573500-164660	Misterhults skärgårds inre kustvatten	Kalmar - 08	Oskarshamn - 0882, Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE573500-163500	Gåsfjärden	Kalmar - 08	Oskarshamn - 0882, Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE573500-163900	Skälöfjärden	Kalmar - 08	Oskarshamn - 0882, Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE575782-165143	Erskärområdet sek namn	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE575670-163500	Syrsan	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE575880-164000	Gisslöfjärden sek namn	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE575335-165000	Kåröområdet	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE575430-163640	Bergholmsfjärden	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE575000-163620	Gudingen	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE575370-164220	Vivassen	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE575150-162700	Inre Gamlebyviken	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE575095-164630	Rågödjupet	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE575060-164170	Smågöfjärden	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE574820-163550	Yttre Gamlebyviken	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE574750-164500	Torröfjärden sek namn	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE574500-164500	Asken	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE574560-163950	Skeppsbrofjärden sek namn	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE574440-164160	Lusärnafjärden	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE574160-163610	Verkebäcksviken	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE574205-164500	Idöfjärden	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE574100-164700	Björkskärsdjupet	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE573865-164160	Vistingsdjupet	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE573940-163560	Västrumsfjärden	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE574083-164115	Uvöfjärden	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE573972-164250	Lökholmsdjupet	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE573885-163740	Grönvållsfjärden	Kalmar - 08	Västervik - 0883	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE583730-164501	Yttre Bråviken	Östergötland - 05, Södermanland - 04	Norrköping - 0581, Nyköping - 0480	SE4	12s: Östergötlands och Stockholms skärgård, mellankustvatten, som tillhör V Eg. Östersjön
+SE581000-164020	Inre Valdemarsviken	Östergötland - 05	Valdemarsvik - 0563	SE4	13. Östergötlands inre skärgård
+SE580250-164000	Edsviken	Östergötland - 05	Valdemarsvik - 0563	SE4	13. Östergötlands inre skärgård
+SE583730-162500	Svensksundsviken	Östergötland - 05	Norrköping - 0581	SE4	13. Östergötlands inre skärgård
+SE582000-164145	Gropviken	Östergötland - 05	Söderköping - 0582	SE4	13. Östergötlands inre skärgård
+SE582705-163350	Inre Slätbaken	Östergötland - 05	Norrköping - 0581, Söderköping - 0582	SE4	13. Östergötlands inre skärgård
+SE583718-161687	Pampusfjärden	Östergötland - 05	Norrköping - 0581	SE4	13. Östergötlands inre skärgård
+SE583721-161110	Loddbyviken	Östergötland - 05	Norrköping - 0581	SE4	13. Östergötlands inre skärgård
+SE583926-161744	Inre Bråviken	Östergötland - 05	Norrköping - 0581	SE4	13. Östergötlands inre skärgård
+SE580950-170601	Gryts skärgårds kustvatten	Östergötland - 05	Söderköping - 0582, Valdemarsvik - 0563	SE4	14. Östergötlands, yttre kustvatten
+SE581900-171101	St Anna skärgårds kustvatten	Östergötland - 05	Norrköping - 0581, Söderköping - 0582, Valdemarsvik - 0563	SE4	14. Östergötlands, yttre kustvatten
+SE580380-170001	Valdemarsviks kustvatten	Östergötland - 05, Kalmar - 08	Valdemarsvik - 0563, Västervik - 0883	SE4	14. Östergötlands, yttre kustvatten
+SE573150-165001	Misterhults skärgårds kustvatten	Kalmar - 08	Oskarshamn - 0882, Västervik - 0883	SE4	14. Östergötlands, yttre kustvatten
+SE574450-165451	Västerviks kustvatten	Kalmar - 08	Västervik - 0883	SE4	14. Östergötlands, yttre kustvatten
+SE583121-171401	Bråvikens kustvatten	Östergötland - 05, Södermanland - 04	Norrköping - 0581, Nyköping - 0480, Oxelösund - 0481	SE4	14. Östergötlands, yttre kustvatten
+SE561030-122821	N Öresunds kustvatten	Skåne - 12	Helsingborg - 1283, Höganäs - 1284	SE4	5. Södra Hallands och norra Öresunds  kustvatten.
+SE554500-125001	S m Öresunds kustvatten	Skåne - 12	Kävlinge - 1261, Landskrona - 1282, Malmö - 1280	SE4	6. Öresunds kustvatten.
+SE554810-125240	Lundåkrabukten	Skåne - 12	Kävlinge - 1261, Landskrona - 1282	SE4	6. Öresunds kustvatten.
+SE553757-130820	Malmö hamnområde	Skåne - 12	Burlöv - 1231, Lomma - 1262, Malmö - 1280	SE4	6. Öresunds kustvatten.
+SE554040-125750	Lommabukten	Skåne - 12	Burlöv - 1231, Kävlinge - 1261, Lomma - 1262, Malmö - 1280	SE4	6. Öresunds kustvatten.
+SE555545-124332	N m Öresunds kustvatten	Skåne - 12	Helsingborg - 1283, Landskrona - 1282	SE4	6. Öresunds kustvatten.
+SE562290-124131	Helsingborgsområdet	Skåne - 12	Helsingborg - 1283	SE4	6. Öresunds kustvatten.
+SE560205-143545	Sölvesborgsviken	Blekinge - 10	Sölvesborg - 1083	SE4	7. Skånes kustvatten
+SE560200-143175	Valjeviken	Skåne - 12, Blekinge - 10	Bromölla - 1272, Sölvesborg - 1083	SE4	7. Skånes kustvatten
+SE554800-142001	V Hanöbuktens kustvatten	Skåne - 12, Blekinge - 10	Bromölla - 1272, Kristianstad - 1290, Simrishamn - 1291, Sölvesborg - 1083	SE4	7. Skånes kustvatten
+SE552500-124461	S Öresunds kustvatten	Skåne - 12	Malmö - 1280, Vellinge - 1233	SE4	7. Skånes kustvatten
+SE552800-125430	Höllviken	Skåne - 12	Malmö - 1280, Vellinge - 1233	SE4	7. Skånes kustvatten
+SE555950-142740	Tostebergabukten	Skåne - 12	Bromölla - 1272, Kristianstad - 1290	SE4	7. Skånes kustvatten
+SE552670-142281	Sandhammaren-Simrishamn	Skåne - 12	Simrishamn - 1291, Ystad - 1286	SE4	7. Skånes kustvatten
+SE555685-142290	Landöbukten sek namn	Skåne - 12	Kristianstad - 1290	SE4	7. Skånes kustvatten
+SE552170-130626	Ö sydkustens kustvatten	Skåne - 12	Skurup - 1264, Trelleborg - 1287, Ystad - 1286	SE4	7. Skånes kustvatten
+SE552220-130920	Ystads hamnområde	Skåne - 12	Ystad - 1286	SE4	7. Skånes kustvatten
+SE552219-130919	Trelleborgs hamnområde	Skåne - 12	Trelleborg - 1287	SE4	7. Skånes kustvatten
+SE553730-128890	V sydkustens kustvatten	Skåne - 12	Trelleborg - 1287, Vellinge - 1233	SE4	7. Skånes kustvatten
+SE564250-162500	S n Kalmarsund	Kalmar - 08	Borgholm - 0885, Kalmar - 0880, Mörbylånga - 0840	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE565800-163000	Lövöområdet sek namn	Kalmar - 08	Mönsterås - 0861	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE570730-163715	Taktöområdet sek namn	Kalmar - 08	Mönsterås - 0861	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE570340-163710	Ödänglaområdet sek namn	Kalmar - 08	Mönsterås - 0861	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE570080-163430	Mönsteråsområdet sek namn	Kalmar - 08	Mönsterås - 0861	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE570500-163750	Emområdet sek namn	Kalmar - 08	Mönsterås - 0861, Oskarshamn - 0882	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE563825-161810	Västra sjön	Kalmar - 08	Kalmar - 0880	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE563770-161670	Hossmoviken	Kalmar - 08	Kalmar - 0880	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE565460-163000	Pataholmsviken	Kalmar - 08	Kalmar - 0880, Mönsterås - 0861	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE565000-162825	Bockskärs skärgård	Kalmar - 08	Kalmar - 0880, Mönsterås - 0861	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE572500-164500	Simpevarpsområdet	Kalmar - 08	Oskarshamn - 0882	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE572000-163835	Figeholmsområdets kustvatten	Kalmar - 08	Oskarshamn - 0882	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE572205-163500	Fågelöfjärden	Kalmar - 08	Oskarshamn - 0882	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE561000-153320	Danmarksfjärden	Blekinge - 10	Karlskrona - 1080	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE561080-153835	Lyckebyfjärden	Blekinge - 10	Karlskrona - 1080	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560810-153980	Östra fjärden	Blekinge - 10	Karlskrona - 1080	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560780-153500	Yttre redden	Blekinge - 10	Karlskrona - 1080	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560795-154730	Hallarumsviken	Blekinge - 10	Karlskrona - 1080	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560500-154435	Gåsefjärden	Blekinge - 10	Karlskrona - 1080	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560500-154880	Torhamnsfjärden	Blekinge - 10	Karlskrona - 1080	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560385-154500	Kållafjärden	Blekinge - 10	Karlskrona - 1080	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560290-154710	Djupfjärden sek namn	Blekinge - 10	Karlskrona - 1080	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560940-151740	Ronnebyfjärden	Blekinge - 10	Ronneby - 1081	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE561000-152500	Kålfjärden	Blekinge - 10	Ronneby - 1081	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560900-151260	Spjälköområdet	Blekinge - 10	Ronneby - 1081	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560775-153055	Västra fjärden	Blekinge - 10	Karlskrona - 1080, Ronneby - 1081	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560750-152500	Arpöfjärden sek namn	Blekinge - 10	Karlskrona - 1080, Ronneby - 1081	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560740-152650	Hästholmsfjärden	Blekinge - 10	Karlskrona - 1080, Ronneby - 1081	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE561005-150250	Tjäröfjärden	Blekinge - 10	Karlshamn - 1082	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560895-145975	Boköfjärden	Blekinge - 10	Karlshamn - 1082	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560950-145810	Matviksfjärden	Blekinge - 10	Karlshamn - 1082	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560900-145280	Karlshamnsfjärden	Blekinge - 10	Karlshamn - 1082	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560895-145500	Sandviksfjärden	Blekinge - 10	Karlshamn - 1082	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560790-145850	Tärnöfjärden sek namn	Blekinge - 10	Karlshamn - 1082	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE561000-150390	Järnavikafjärden sek namn	Blekinge - 10	Karlshamn - 1082, Ronneby - 1081	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560825-144215	Inre Pukaviksbukten	Blekinge - 10	Karlshamn - 1082, Sölvesborg - 1083	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE560740-144375	Mellersta Pukaviksbukten	Blekinge - 10	Karlshamn - 1082, Sölvesborg - 1083	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE622384-147046	Bredasund	Blekinge - 10	Ronneby - 1081	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE571450-163320	Oskarshamnsområdet	Kalmar - 08	Oskarshamn - 0882	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE571552-162848	Inre Oskarshamnsområdet	Kalmar - 08	Oskarshamn - 0882	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE561480-148220	Stärnö Sandvik	Blekinge - 10	Karlshamn - 1082	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE561150-147620	Yttre Pukaviksbukten	Blekinge - 10	Karlshamn - 1082, Sölvesborg - 1083	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE633846-154163	Påskallavikområdet	Kalmar - 08	Oskarshamn - 0882	SE4	8. Blekinge skärgårds och Kalmarsunds inre kustvatten.
+SE563100-161500	N v s Kalmarsunds kustvatten	Kalmar - 08	Kalmar - 0880, Mörbylånga - 0840, Torsås - 0834	SE4	9. Blekinge skärgård, och Kalmarsunds yttre kustvatten.
+SE561400-161201	S Kalmarsunds utsjövatten	Kalmar - 08, Blekinge - 10	Kalmar - 0880, Karlskrona - 1080, Mörbylånga - 0840, Torsås - 0834	SE4	9. Blekinge skärgård, och Kalmarsunds yttre kustvatten.
+SE562050-160820	M v s Kalmarsunds kustvatten	Blekinge - 10, Kalmar - 08	Karlskrona - 1080, Torsås - 0834	SE4	9. Blekinge skärgård, och Kalmarsunds yttre kustvatten.
+SE562000-162271	Ö s Kalmarsunds kustvatten	Kalmar - 08	Kalmar - 0880, Mörbylånga - 0840	SE4	9. Blekinge skärgård, och Kalmarsunds yttre kustvatten.
+SE565400-163600	M n Kalmarsunds utsjövatten	Kalmar - 08	Borgholm - 0885, Kalmar - 0880, Mönsterås - 0861, Mörbylånga - 0840	SE4	9. Blekinge skärgård, och Kalmarsunds yttre kustvatten.
+SE570900-164501	N n Kalmarsunds utsjövatten	Kalmar - 08	Borgholm - 0885, Mönsterås - 0861, Oskarshamn - 0882	SE4	9. Blekinge skärgård, och Kalmarsunds yttre kustvatten.
+SE560700-155801	S v s Kalmarsunds kustvatten	Blekinge - 10	Karlskrona - 1080	SE4	9. Blekinge skärgård, och Kalmarsunds yttre kustvatten.
+SE560930-150810	Vierydfjorden	Blekinge - 10	Ronneby - 1081	SE4	9. Blekinge skärgård, och Kalmarsunds yttre kustvatten.
+SE560850-150580	Östre fjorden	Blekinge - 10	Ronneby - 1081	SE4	9. Blekinge skärgård, och Kalmarsunds yttre kustvatten.
+SE621688-144133	Västra Blekinge skärgårds kustvatten	Blekinge - 10	Karlshamn - 1082, Sölvesborg - 1083	SE4	9. Blekinge skärgård, och Kalmarsunds yttre kustvatten.
+SE622011-146303	Mellersta Blekinge skärgårds kustvatten	Blekinge - 10	Karlshamn - 1082, Karlskrona - 1080, Ronneby - 1081	SE4	9. Blekinge skärgård, och Kalmarsunds yttre kustvatten.
+SE621157-148904	Östra Blekinge skärgårds kustvatten	Blekinge - 10	Karlskrona - 1080	SE4	9. Blekinge skärgård, och Kalmarsunds yttre kustvatten.
+SE580025-113168	Skärhamnområdet	Västra Götaland - 14	Tjörn - 1419	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE575747-113237	Klädesholmenområdet	Västra Götaland - 14	Tjörn - 1419	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE580325-113500	Stigfjorden	Västra Götaland - 14	Orust - 1421, Tjörn - 1419	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE580610-113615	Kalvöfjorden	Västra Götaland - 14	Orust - 1421	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE580650-113000	Boxvike kile	Västra Götaland - 14	Orust - 1421	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE580500-112970	Lyresund	Västra Götaland - 14	Orust - 1421	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE582665-111706	Hunnebostrand skärgård	Västra Götaland - 14	Sotenäs - 1427	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE582850-111760	Bottnefjorden	Västra Götaland - 14	Sotenäs - 1427, Tanum - 1435	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE584750-111185	Stridsfjorden	Västra Götaland - 14	Tanum - 1435	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE584450-111445	Sannäsfjorden sek namn	Västra Götaland - 14	Tanum - 1435	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE584725-111050	Lindöfjorden sek namn	Västra Götaland - 14	Tanum - 1435	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE584670-111300	Tanumskilen	Västra Götaland - 14	Tanum - 1435	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE584030-111400	Grebbestad inre skärgård	Västra Götaland - 14	Tanum - 1435	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE583710-111535	Fjällbacka inre skärgård	Västra Götaland - 14	Tanum - 1435	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE583625-111300	Fjällbacka yttre skärgård	Västra Götaland - 14	Tanum - 1435	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE584890-110950	Råssö-Resöfjorden sek namn	Västra Götaland - 14	Strömstad - 1486, Tanum - 1435	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE582040-112157	Slaholmen området	Västra Götaland - 14	Lysekil - 1484	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE581853-112736	Trälebergskile	Västra Götaland - 14	Lysekil - 1484	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE581338-112332	Grundsundsområdet	Västra Götaland - 14	Lysekil - 1484	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE582230-112255	Åbyfjorden	Västra Götaland - 14	Lysekil - 1484, Sotenäs - 1427	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE585990-111125	Dynekilen	Västra Götaland - 14	Strömstad - 1486	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE585930-110800	Yttre Dynekilen	Västra Götaland - 14	Strömstad - 1486	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE585600-110880	Strömstadsfjorden	Västra Götaland - 14	Strömstad - 1486	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE585200-111140	Inre Tjärnöarkipelagen	Västra Götaland - 14	Strömstad - 1486	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE585290-110830	N Yttre Tjärnöarkipelage	Västra Götaland - 14	Strömstad - 1486	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE585160-110880	Flo	Västra Götaland - 14	Strömstad - 1486	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE582210-111880	Hovenäset området	Västra Götaland - 14	Lysekil - 1484, Sotenäs - 1427	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE580338-112901	Kråke fjord	Västra Götaland - 14	Orust - 1421, Tjörn - 1419	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE581748-112411	Saltö fjord	Västra Götaland - 14	Lysekil - 1484	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE582000-112350	Yttre Brofjorden	Västra Götaland - 14	Lysekil - 1484	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE583050-110650	Heestrand området	Västra Götaland - 14	Tanum - 1435	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE583160-111551	Hamburgsundsområdet	Västra Götaland - 14	Tanum - 1435	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE584363-110971	s Långebyområdet	Västra Götaland - 14	Tanum - 1435	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE584400-116000	n Långebyområdet	Västra Götaland - 14	Tanum - 1435	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE582147-111771	Kungshamn s skärgård	Västra Götaland - 14	Sotenäs - 1427	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE582302-111451	Kungshamn n skärgård	Västra Götaland - 14	Sotenäs - 1427	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE582420-111370	Haby bukt	Västra Götaland - 14	Sotenäs - 1427	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE580530-112700	s Käringöfjorden inre skärgård	Västra Götaland - 14	Orust - 1421	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE580765-112501	n Käringöfjorden inre skärgård	Västra Götaland - 14	Orust - 1421	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE580860-114560	Tången området	Västra Götaland - 14	Orust - 1421	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE590900-112300	Inre Singlefjorden	Østfold - N1, Västra Götaland - 14	Halden - N101, Strömstad - 1486	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE0101010301-C	Singlefjorden	Østfold - N1, Västra Götaland - 14	Halden - N101, Hvaler - N111, Sarpsborg - N105, Strömstad - 1486	SE5	1n: Västkustens inre kustvatten som tillhör Skagerrak
+SE571240-121000	Klosterfjorden	Halland - 13	Varberg - 1383	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE570900-121060	Balgöarkipelagen	Halland - 13	Varberg - 1383	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE571720-120640	Vändelsöarkipelagen	Halland - 13	Kungsbacka - 1384, Varberg - 1383	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE573173-115587	Maleviken	Halland - 13	Kungsbacka - 1384	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE573044-115355	Risö-Säröarkipelagen	Halland - 13	Kungsbacka - 1384	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE573100-115580	Skörvallaviken	Halland - 13	Kungsbacka - 1384	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE572980-115576	Stallviken	Halland - 13	Kungsbacka - 1384	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE572838-115515	Låddholmsviken	Halland - 13	Kungsbacka - 1384	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE572472-120302	Inre Kungsbackafjorden	Halland - 13	Kungsbacka - 1384	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE572135-120141	Yttre Kungsbackafjorden	Halland - 13	Kungsbacka - 1384	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE572308-115550	Öckerösund	Halland - 13	Kungsbacka - 1384	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE572227-115662	Kyrkefjälls sund	Halland - 13	Kungsbacka - 1384	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE572072-115880	Varren	Halland - 13	Kungsbacka - 1384	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE573500-115150	Askims fjord	Västra Götaland - 14, Halland - 13	Göteborg - 1480, Kungsbacka - 1384	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE573322-115478	Kräklingeområdet	Västra Götaland - 14, Halland - 13	Göteborg - 1480, Kungsbacka - 1384	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE574630-113940	Källö fjord	Västra Götaland - 14	Öckerö - 1407	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE574330-114000	Stora Kalvsund	Västra Götaland - 14	Öckerö - 1407	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE574370-114250	Björköfjorden	Västra Götaland - 14	Göteborg - 1480, Öckerö - 1407	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE574000-114230	Dana fjord	Västra Götaland - 14	Göteborg - 1480, Öckerö - 1407	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE574870-113795	Sälö fjord	Västra Götaland - 14	Kungälv - 1482, Öckerö - 1407	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE573860-115000	Asperöfjorden sek namn	Västra Götaland - 14	Göteborg - 1480	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE573797-114618	Brännö- Styrsöområdet	Västra Götaland - 14	Göteborg - 1480	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE573547-114617	Styrsö- Vrångöområdet	Västra Götaland - 14	Göteborg - 1480	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE573657-114572	Halsviken	Västra Götaland - 14	Göteborg - 1480	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE575500-113750	Älgöfjorden	Västra Götaland - 14	Kungälv - 1482, Tjörn - 1419	SE5	1s: Västkustens inre kustvatten som tillhör Kattegatt
+SE581740-114820	Havstensfjorden	Västra Götaland - 14	Orust - 1421, Stenungsund - 1415, Uddevalla - 1485	SE5	2. Västkustens fjordar.
+SE580688-114860	Halsefjorden	Västra Götaland - 14	Orust - 1421, Stenungsund - 1415, Tjörn - 1419	SE5	2. Västkustens fjordar.
+SE580500-114725	Askeröfjorden	Västra Götaland - 14	Orust - 1421, Stenungsund - 1415, Tjörn - 1419	SE5	2. Västkustens fjordar.
+SE581200-112960	Malö Strömmar	Västra Götaland - 14	Orust - 1421	SE5	2. Västkustens fjordar.
+SE581120-112680	Ellösefjorden	Västra Götaland - 14	Lysekil - 1484, Orust - 1421	SE5	2. Västkustens fjordar.
+SE581520-113750	Borgilefjorden	Västra Götaland - 14	Orust - 1421, Uddevalla - 1485	SE5	2. Västkustens fjordar.
+SE581540-114000	Kalvöfjord	Västra Götaland - 14	Orust - 1421, Uddevalla - 1485	SE5	2. Västkustens fjordar.
+SE581260-113220	Koljö fjord	Västra Götaland - 14	Orust - 1421, Uddevalla - 1485	SE5	2. Västkustens fjordar.
+SE581450-113140	Nordströmmarna	Västra Götaland - 14	Orust - 1421, Uddevalla - 1485	SE5	2. Västkustens fjordar.
+SE581260-115280	Ljungs kile	Västra Götaland - 14	Orust - 1421, Uddevalla - 1485	SE5	2. Västkustens fjordar.
+SE581365-112910	Snäckedjupet	Västra Götaland - 14	Lysekil - 1484, Orust - 1421, Uddevalla - 1485	SE5	2. Västkustens fjordar.
+SE575700-114240	Hake fjord	Västra Götaland - 14	Kungälv - 1482, Stenungsund - 1415, Tjörn - 1419	SE5	2. Västkustens fjordar.
+SE582150-112530	Brofjorden	Västra Götaland - 14	Lysekil - 1484	SE5	2. Västkustens fjordar.
+SE582630-113515	Färlevfjorden	Västra Götaland - 14	Lysekil - 1484, Munkedal - 1430	SE5	2. Västkustens fjordar.
+SE582000-115270	Byfjorden	Västra Götaland - 14	Uddevalla - 1485	SE5	2. Västkustens fjordar.
+SE582500-113890	Saltkällefjorden	Västra Götaland - 14	Munkedal - 1430, Uddevalla - 1485	SE5	2. Västkustens fjordar.
+SE581570-113040	Getevikssund	Västra Götaland - 14	Lysekil - 1484, Uddevalla - 1485	SE5	2. Västkustens fjordar.
+SE581700-113000	Gullmarn centralbassäng	Västra Götaland - 14	Lysekil - 1484, Munkedal - 1430, Uddevalla - 1485	SE5	2. Västkustens fjordar.
+SE0101010201-C	Inre Idefjorden	Østfold - N1, Västra Götaland - 14	Halden - N101, Strömstad - 1486	SE5	2. Västkustens fjordar.
+SE590860-113810	Idefjorden	Østfold - N1, Västra Götaland - 14	Halden - N101, Strömstad - 1486	SE5	2. Västkustens fjordar.
+SE574650-114360	Nordre Älvs fjord	Västra Götaland - 14	Göteborg - 1480, Kungälv - 1482, Öckerö - 1407	SE5	25. Göta älvs- och Nordre Älvs estuarie
+SE574050-114780	Rivö fjord	Västra Götaland - 14	Göteborg - 1480	SE5	25. Göta älvs- och Nordre Älvs estuarie
+SE580240-112501	Mollöfjorden	Västra Götaland - 14	Orust - 1421, Tjörn - 1419	SE5	3. Skagerak, Västkustens yttre kustvatten.
+SE580550-112460	Käringöfjorden	Västra Götaland - 14	Orust - 1421	SE5	3. Skagerak, Västkustens yttre kustvatten.
+SE580500-111801	M Bohusläns skärgårds kustvatten	Västra Götaland - 14	Lysekil - 1484, Orust - 1421, Sotenäs - 1427	SE5	3. Skagerak, Västkustens yttre kustvatten.
+SE582700-110451	Sotefjorden	Västra Götaland - 14	Sotenäs - 1427, Tanum - 1435	SE5	3. Skagerak, Västkustens yttre kustvatten.
+SE583450-110750	Väderöfjorden	Västra Götaland - 14	Tanum - 1435	SE5	3. Skagerak, Västkustens yttre kustvatten.
+SE585100-110600	S Kosterfjorden	Västra Götaland - 14	Strömstad - 1486, Tanum - 1435	SE5	3. Skagerak, Västkustens yttre kustvatten.
+SE584200-105901	M n Bohusläns skärgårds kustvatten	Västra Götaland - 14	Strömstad - 1486, Tanum - 1435	SE5	3. Skagerak, Västkustens yttre kustvatten.
+SE575760-112671	Hjärteröfjorden	Västra Götaland - 14	Kungälv - 1482, Tjörn - 1419	SE5	3. Skagerak, Västkustens yttre kustvatten.
+SE575340-113000	Marstrandsfjorden	Västra Götaland - 14	Kungälv - 1482, Tjörn - 1419	SE5	3. Skagerak, Västkustens yttre kustvatten.
+SE585400-110400	N Kosterfjorden	Västra Götaland - 14	Strömstad - 1486	SE5	3. Skagerak, Västkustens yttre kustvatten.
+SE585750-105940	N n Bohusläns skärgårds	Østfold - N1, Västra Götaland - 14	Hvaler - N111, Strömstad - 1486	SE5	3. Skagerak, Västkustens yttre kustvatten.
+SE570000-120701	N m Hallands kustvatten	Halland - 13	Falkenberg - 1382, Kungsbacka - 1384, Varberg - 1383	SE5	4. Kattegatt, Västkustens yttre kustvatten.
+SE573300-113801	Göteborgs s skärgårds kustvatten	Västra Götaland - 14, Halland - 13	Göteborg - 1480, Kungsbacka - 1384, Öckerö - 1407	SE5	4. Kattegatt, Västkustens yttre kustvatten.
+SE572540-114801	Onsala kustvatten	Västra Götaland - 14, Halland - 13	Göteborg - 1480, Kungsbacka - 1384	SE5	4. Kattegatt, Västkustens yttre kustvatten.
+SE574160-113351	Göteborgs n skärgårds kustvatten	Västra Götaland - 14	Göteborg - 1480, Öckerö - 1407	SE5	4. Kattegatt, Västkustens yttre kustvatten.
+SE574931-113131	Göteborgs n n skärgårds kustvatten	Västra Götaland - 14	Kungälv - 1482, Tjörn - 1419, Öckerö - 1407	SE5	4. Kattegatt, Västkustens yttre kustvatten.
+SE563000-123351	Laholmsbuktens kustvatten	Skåne - 12, Halland - 13	Båstad - 1278, Halmstad - 1380	SE5	5. Södra Hallands och norra Öresunds  kustvatten.
+SE563330-124600	Laholmsbukten	Skåne - 12, Halland - 13	Båstad - 1278, Halmstad - 1380, Laholm - 1381	SE5	5. Södra Hallands och norra Öresunds  kustvatten.
+SE562000-123800	Skälderviken	Skåne - 12	Båstad - 1278, Helsingborg - 1283, Höganäs - 1284, Ängelholm - 1292	SE5	5. Södra Hallands och norra Öresunds  kustvatten.
+SE562450-122751	Skäldervikens kustvatten	Skåne - 12	Båstad - 1278, Höganäs - 1284	SE5	5. Södra Hallands och norra Öresunds  kustvatten.
+SE564500-122601	S m Hallands kustvatten	Halland - 13	Falkenberg - 1382, Halmstad - 1380	SE5	5. Södra Hallands och norra Öresunds  kustvatten.

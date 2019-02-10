@@ -1,0 +1,23 @@
+1	Stockholm 
+3	Uppsala 
+4	Södermanland 
+5	Östergötland 
+6	Jönköping 
+7	Kronoberg 
+8	Kalmar 
+9	Gotland 
+10	Blekinge 
+12	Skåne 
+13	Halland 
+14	Västra Götaland 
+18	Örebro 
+19	Västmanland 
+20	Dalarna 
+21	Gävleborg 
+22	Västernorrland 
+23	Jämtland 
+24	Västerbotten 
+25	Norrbotten 
+N16	Sør-Trøndelag 
+N17	Nord-Trøndelag 
+N18	Nordland 

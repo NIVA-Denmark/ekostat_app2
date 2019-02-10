@@ -1,0 +1,439 @@
+Water_type	Measurement	Unit	Transform	Region	Type	Typename	V_station	V_obspoint	V_year	V_yearmonth	V_monthhour	V_yearmonthhour	V_stationdate	V_stationyear	V_stationmonth	V_institution	V_replication	V_WB	V_WBperiod 	V_WBannual
+Coastal	Chlorophyll a	µg/l	log	Västerhavet	1n	Västkustens inre kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Västerhavet	1s	Västkustens inre kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Västerhavet	2	Västkustens fjordar	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Västerhavet	3	Skagerak, Västkustens yttre kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Västerhavet	25	Göta Älvs- och Nordre Älvs estuarie	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Västerhavet	4	Kattegat, Västkustens yttre kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Västerhavet	5	Södra Hallands och norra Öresunds kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Västerhavet	6	Öresunds kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Egentliga Östersjön	7	Skånes kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Egentliga Östersjön	8	Blekinge skärgårds och Kalmarsunds inre kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Egentliga Östersjön	9	Blekinge skärgård, och Kalmarsunds yttre kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Egentliga Östersjön	10	Östra Ölands, sydöstra Gotlands kustvatten samt Gotska sandön	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Egentliga Östersjön	11	Gotlands västra och norra kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Egentliga Östersjön	12n	Östergötlands samt Stockholms skärgård, mellankustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Egentliga Östersjön	12s	Östergötlands samt Stockholms skärgård, mellankustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Egentliga Östersjön	13	Östergötlands inre skärgård	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Egentliga Östersjön	14	Östergötlands, yttre kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Egentliga Östersjön	15	Stockholms skärgård, yttre kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Egentliga Östersjön	24	Stockholms inre skärgård og Hallsfjärden	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Bottenhavet	16	Södra Bottenhavet, inre kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Bottenhavet	17	Södra Bottenhavet, yttre kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Bottenhavet	18	Norra Bottenhavet, Höga kustens inre kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Bottenhavet	19	Norra Bottenhavet, Höga kustens yttre kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Bottenviken	20	Norra Kvarkens inre kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Bottenviken	21	Norra Kvarkens yttre kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Bottenviken	22	Bottenviken, inre kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Chlorophyll a	µg/l	log	Bottenviken	23	Bottenviken, yttre kustvatten	0.134030653	#N/A	0.015276979	0.121344842	#N/A	#N/A	0.12481219	0	0.007044164	0.165756865	#N/A		1.657568651	1.657568651
+Coastal	Phytoplankton biovolume	mm3/l	log	Västerhavet	1n	Västkustens inre kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	3.95E-01	0.3946358	0.3946358
+Coastal	Phytoplankton biovolume	mm3/l	log	Västerhavet	1s	Västkustens inre kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	3.95E-01	0.3946358	0.3946358
+Coastal	Phytoplankton biovolume	mm3/l	log	Västerhavet	2	Västkustens fjordar	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	3.47E-01	0.3469764	0.3469764
+Coastal	Phytoplankton biovolume	mm3/l	log	Västerhavet	3	Skagerak, Västkustens yttre kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	3.95E-01	0.3946358	0.3946358
+Coastal	Phytoplankton biovolume	mm3/l	log	Västerhavet	25	Göta Älvs- och Nordre Älvs estuarie	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	3.47E-01	0.3469764	0.3469764
+Coastal	Phytoplankton biovolume	mm3/l	log	Västerhavet	4	Kattegat, Västkustens yttre kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	3.47E-01	0.3469764	0.3469764
+Coastal	Phytoplankton biovolume	mm3/l	log	Västerhavet	5	Södra Hallands och norra Öresunds kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	3.47E-01	0.3469764	0.3469764
+Coastal	Phytoplankton biovolume	mm3/l	log	Västerhavet	6	Öresunds kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	3.47E-01	0.3469764	0.3469764
+Coastal	Phytoplankton biovolume	mm3/l	log	Egentliga Östersjön	7	Skånes kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	3.47E-01	0.3469764	0.3469764
+Coastal	Phytoplankton biovolume	mm3/l	log	Egentliga Östersjön	8	Blekinge skärgårds och Kalmarsunds inre kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	3.95E-01	0.3946358	0.3946358
+Coastal	Phytoplankton biovolume	mm3/l	log	Egentliga Östersjön	9	Blekinge skärgård, och Kalmarsunds yttre kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	3.47E-01	0.3469764	0.3469764
+Coastal	Phytoplankton biovolume	mm3/l	log	Egentliga Östersjön	10	Östra Ölands, sydöstra Gotlands kustvatten samt Gotska sandön	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	3.47E-01	0.3469764	0.3469764
+Coastal	Phytoplankton biovolume	mm3/l	log	Egentliga Östersjön	11	Gotlands västra och norra kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	3.47E-01	0.3469764	0.3469764
+Coastal	Phytoplankton biovolume	mm3/l	log	Egentliga Östersjön	12n	Östergötlands samt Stockholms skärgård, mellankustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	1.19E-01	0.1194042	0.1194042
+Coastal	Phytoplankton biovolume	mm3/l	log	Egentliga Östersjön	12s	Östergötlands samt Stockholms skärgård, mellankustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	1.19E-01	0.1194042	0.1194042
+Coastal	Phytoplankton biovolume	mm3/l	log	Egentliga Östersjön	13	Östergötlands inre skärgård	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	1.29E-01	0.1289483	0.1289483
+Coastal	Phytoplankton biovolume	mm3/l	log	Egentliga Östersjön	14	Östergötlands, yttre kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	1.19E-01	0.1194042	0.1194042
+Coastal	Phytoplankton biovolume	mm3/l	log	Egentliga Östersjön	15	Stockholms skärgård, yttre kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	1.19E-01	0.1194042	0.1194042
+Coastal	Phytoplankton biovolume	mm3/l	log	Egentliga Östersjön	24	Stockholms inre skärgård og Hallsfjärden	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	3.48E-01	0.3475723	0.3475723
+Coastal	Phytoplankton biovolume	mm3/l	log	Bottenhavet	16	Södra Bottenhavet, inre kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	5.12E-01	0.5118201	0.5118201
+Coastal	Phytoplankton biovolume	mm3/l	log	Bottenhavet	17	Södra Bottenhavet, yttre kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	1.19E-01	0.1194042	0.1194042
+Coastal	Phytoplankton biovolume	mm3/l	log	Bottenhavet	18	Norra Bottenhavet, Höga kustens inre kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	5.12E-01	0.5118201	0.5118201
+Coastal	Phytoplankton biovolume	mm3/l	log	Bottenhavet	19	Norra Bottenhavet, Höga kustens yttre kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	1.19E-01	0.1194042	0.1194042
+Coastal	Phytoplankton biovolume	mm3/l	log	Bottenviken	20	Norra Kvarkens inre kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	5.12E-01	0.5118201	0.5118201
+Coastal	Phytoplankton biovolume	mm3/l	log	Bottenviken	21	Norra Kvarkens yttre kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	1.19E-01	0.1194042	0.1194042
+Coastal	Phytoplankton biovolume	mm3/l	log	Bottenviken	22	Bottenviken, inre kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	2.58E-02	0.02577259	0.02577259
+Coastal	Phytoplankton biovolume	mm3/l	log	Bottenviken	23	Bottenviken, yttre kustvatten	0.0000	#N/A	0.02571859	0.287236914	#N/A	#N/A	0.355410705	0.0000	0.018875376	0.031905264	#N/A	1.19E-01	0.1194042	0.1194042
+Coastal	BQI	No unit	identity	Västerhavet	1n	Västkustens inre kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	2.334889205	2.334889205	2.334889205
+Coastal	BQI	No unit	identity	Västerhavet	1s	Västkustens inre kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	6.807883993	6.807883993	6.807883993
+Coastal	BQI	No unit	identity	Västerhavet	2	Västkustens fjordar	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	16.51200229	16.51200229	16.51200229
+Coastal	BQI	No unit	identity	Västerhavet	3	Skagerak, Västkustens yttre kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	3.720403717	3.720403717	3.720403717
+Coastal	BQI	No unit	identity	Västerhavet	25	Göta Älvs- och Nordre Älvs estuarie	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	16.51200229	16.51200229	16.51200229
+Coastal	BQI	No unit	identity	Västerhavet	4	Kattegat, Västkustens yttre kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	1.501669702	1.501669702	1.501669702
+Coastal	BQI	No unit	identity	Västerhavet	5	Södra Hallands och norra Öresunds kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	10.36622357	10.36622357	10.36622357
+Coastal	BQI	No unit	identity	Västerhavet	6	Öresunds kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	16.9755816	16.9755816	16.9755816
+Coastal	BQI	No unit	identity	Egentliga Östersjön	7	Skånes kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	3.579609445	3.579609445	3.579609445
+Coastal	BQI	No unit	identity	Egentliga Östersjön	8	Blekinge skärgårds och Kalmarsunds inre kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	0.720789357	0.720789357	0.720789357
+Coastal	BQI	No unit	identity	Egentliga Östersjön	9	Blekinge skärgård, och Kalmarsunds yttre kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	7.608335857	7.608335857	7.608335857
+Coastal	BQI	No unit	identity	Egentliga Östersjön	10	Östra Ölands, sydöstra Gotlands kustvatten samt Gotska sandön	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	0.521183828	0.521183828	0.521183828
+Coastal	BQI	No unit	identity	Egentliga Östersjön	11	Gotlands västra och norra kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	0.521183828	0.521183828	0.521183828
+Coastal	BQI	No unit	identity	Egentliga Östersjön	12n	Östergötlands samt Stockholms skärgård, mellankustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	6.991093088	6.991093088	6.991093088
+Coastal	BQI	No unit	identity	Egentliga Östersjön	12s	Östergötlands samt Stockholms skärgård, mellankustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	2.170976033	2.170976033	2.170976033
+Coastal	BQI	No unit	identity	Egentliga Östersjön	13	Östergötlands inre skärgård	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	4.076341742	4.076341742	4.076341742
+Coastal	BQI	No unit	identity	Egentliga Östersjön	14	Östergötlands, yttre kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	0.743706206	0.743706206	0.743706206
+Coastal	BQI	No unit	identity	Egentliga Östersjön	15	Stockholms skärgård, yttre kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	3.846945953	3.846945953	3.846945953
+Coastal	BQI	No unit	identity	Egentliga Östersjön	24	Stockholms inre skärgård og Hallsfjärden	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	1.713164275	1.713164275	1.713164275
+Coastal	BQI	No unit	identity	Bottenhavet	16	Södra Bottenhavet, inre kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	2.138994447	2.138994447	2.138994447
+Coastal	BQI	No unit	identity	Bottenhavet	17	Södra Bottenhavet, yttre kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	5.194409807	5.194409807	5.194409807
+Coastal	BQI	No unit	identity	Bottenhavet	18	Norra Bottenhavet, Höga kustens inre kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	3.970549466	3.970549466	3.970549466
+Coastal	BQI	No unit	identity	Bottenhavet	19	Norra Bottenhavet, Höga kustens yttre kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	1.877465392	1.877465392	1.877465392
+Coastal	BQI	No unit	identity	Bottenviken	20	Norra Kvarkens inre kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	0.175265088	0.175265088	0.175265088
+Coastal	BQI	No unit	identity	Bottenviken	21	Norra Kvarkens yttre kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	1.962893154	1.962893154	1.962893154
+Coastal	BQI	No unit	identity	Bottenviken	22	Bottenviken, inre kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	0.416363863	0.416363863	0.416363863
+Coastal	BQI	No unit	identity	Bottenviken	23	Bottenviken, yttre kustvatten	1.430781653	0.806127169	0.37344155	#N/A	#N/A	#N/A	#N/A	0.50556768	#N/A	0.733133478	#N/A	1.235782852	1.235782852	1.235782852
+Coastal	MSMDI	No unit	logit_w_replace	Västerhavet	1n	Västkustens inre kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.013100818	0.013100818	0.013100818
+Coastal	MSMDI	No unit	logit_w_replace	Västerhavet	1s	Västkustens inre kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.013100818	0.013100818	0.013100818
+Coastal	MSMDI	No unit	logit_w_replace	Västerhavet	2	Västkustens fjordar	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.013100818	0.013100818	0.013100818
+Coastal	MSMDI	No unit	logit_w_replace	Västerhavet	3	Skagerak, Västkustens yttre kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.005036538	0.005036538	0.005036538
+Coastal	MSMDI	No unit	logit_w_replace	Västerhavet	25	Göta Älvs- och Nordre Älvs estuarie	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.013100818	0.013100818	0.013100818
+Coastal	MSMDI	No unit	logit_w_replace	Västerhavet	4	Kattegat, Västkustens yttre kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.005036538	0.005036538	0.005036538
+Coastal	MSMDI	No unit	logit_w_replace	Västerhavet	5	Södra Hallands och norra Öresunds kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.000850917	0.000850917	0.000850917
+Coastal	MSMDI	No unit	logit_w_replace	Västerhavet	6	Öresunds kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.017957451	0.017957451	0.017957451
+Coastal	MSMDI	No unit	logit_w_replace	Egentliga Östersjön	7	Skånes kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.017957451	0.017957451	0.017957451
+Coastal	MSMDI	No unit	logit_w_replace	Egentliga Östersjön	8	Blekinge skärgårds och Kalmarsunds inre kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.007011164	0.007011164	0.007011164
+Coastal	MSMDI	No unit	logit_w_replace	Egentliga Östersjön	9	Blekinge skärgård, och Kalmarsunds yttre kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.000372676	0.000372676	0.000372676
+Coastal	MSMDI	No unit	logit_w_replace	Egentliga Östersjön	10	Östra Ölands, sydöstra Gotlands kustvatten samt Gotska sandön	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.00991916	0.00991916	0.00991916
+Coastal	MSMDI	No unit	logit_w_replace	Egentliga Östersjön	11	Gotlands västra och norra kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.00991916	0.00991916	0.00991916
+Coastal	MSMDI	No unit	logit_w_replace	Egentliga Östersjön	12n	Östergötlands samt Stockholms skärgård, mellankustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.006968109	0.006968109	0.006968109
+Coastal	MSMDI	No unit	logit_w_replace	Egentliga Östersjön	12s	Östergötlands samt Stockholms skärgård, mellankustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.003401894	0.003401894	0.003401894
+Coastal	MSMDI	No unit	logit_w_replace	Egentliga Östersjön	13	Östergötlands inre skärgård	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.003401894	0.003401894	0.003401894
+Coastal	MSMDI	No unit	logit_w_replace	Egentliga Östersjön	14	Östergötlands, yttre kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.001300538	0.001300538	0.001300538
+Coastal	MSMDI	No unit	logit_w_replace	Egentliga Östersjön	15	Stockholms skärgård, yttre kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.004094873	0.004094873	0.004094873
+Coastal	MSMDI	No unit	logit_w_replace	Egentliga Östersjön	24	Stockholms inre skärgård og Hallsfjärden	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.001300538	0.001300538	0.001300538
+Coastal	MSMDI	No unit	logit_w_replace	Bottenhavet	16	Södra Bottenhavet, inre kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.012046617	0.012046617	0.012046617
+Coastal	MSMDI	No unit	logit_w_replace	Bottenhavet	17	Södra Bottenhavet, yttre kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.011334985	0.011334985	0.011334985
+Coastal	MSMDI	No unit	logit_w_replace	Bottenhavet	18	Norra Bottenhavet, Höga kustens inre kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.004602924	0.004602924	0.004602924
+Coastal	MSMDI	No unit	logit_w_replace	Bottenhavet	19	Norra Bottenhavet, Höga kustens yttre kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.011334985	0.011334985	0.011334985
+Coastal	MSMDI	No unit	logit_w_replace	Bottenviken	20	Norra Kvarkens inre kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.004602924	0.004602924	0.004602924
+Coastal	MSMDI	No unit	logit_w_replace	Bottenviken	21	Norra Kvarkens yttre kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.011334985	0.011334985	0.011334985
+Coastal	MSMDI	No unit	logit_w_replace	Bottenviken	22	Bottenviken, inre kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.004602924	0.004602924	0.004602924
+Coastal	MSMDI	No unit	logit_w_replace	Bottenviken	23	Bottenviken, yttre kustvatten	0.666109203	#N/A	0.004840127	#N/A	#N/A	#N/A	0.765558538	0	#N/A	#N/A	#N/A	0.011334985	0.011334985	0.011334985
+Coastal	Secchi depth	m	log	Västerhavet	1n	Västkustens inre kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	1.928790324	1.928790324	1.928790324
+Coastal	Secchi depth	m	log	Västerhavet	1s	Västkustens inre kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	1.928790324	1.928790324	1.928790324
+Coastal	Secchi depth	m	log	Västerhavet	2	Västkustens fjordar	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	1.275841342	1.275841342	1.275841342
+Coastal	Secchi depth	m	log	Västerhavet	3	Skagerak, Västkustens yttre kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	0.580825334	0.580825334	0.580825334
+Coastal	Secchi depth	m	log	Västerhavet	25	Göta Älvs- och Nordre Älvs estuarie	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	1.275841342	1.275841342	1.275841342
+Coastal	Secchi depth	m	log	Västerhavet	4	Kattegat, Västkustens yttre kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	0.580825334	0.580825334	0.580825334
+Coastal	Secchi depth	m	log	Västerhavet	5	Södra Hallands och norra Öresunds kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	0.520231564	0.520231564	0.520231564
+Coastal	Secchi depth	m	log	Västerhavet	6	Öresunds kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	2.16621258	2.16621258	2.16621258
+Coastal	Secchi depth	m	log	Egentliga Östersjön	7	Skånes kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	2.945550736	2.945550736	2.945550736
+Coastal	Secchi depth	m	log	Egentliga Östersjön	8	Blekinge skärgårds och Kalmarsunds inre kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	3.056960093	3.056960093	3.056960093
+Coastal	Secchi depth	m	log	Egentliga Östersjön	9	Blekinge skärgård, och Kalmarsunds yttre kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	2.689885657	2.689885657	2.689885657
+Coastal	Secchi depth	m	log	Egentliga Östersjön	10	Östra Ölands, sydöstra Gotlands kustvatten samt Gotska sandön	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	2.689885657	2.689885657	2.689885657
+Coastal	Secchi depth	m	log	Egentliga Östersjön	11	Gotlands västra och norra kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	2.689885657	2.689885657	2.689885657
+Coastal	Secchi depth	m	log	Egentliga Östersjön	12n	Östergötlands samt Stockholms skärgård, mellankustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	2.053421386	2.053421386	2.053421386
+Coastal	Secchi depth	m	log	Egentliga Östersjön	12s	Östergötlands samt Stockholms skärgård, mellankustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	1.880230233	1.880230233	1.880230233
+Coastal	Secchi depth	m	log	Egentliga Östersjön	13	Östergötlands inre skärgård	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	0.84475671	0.84475671	0.84475671
+Coastal	Secchi depth	m	log	Egentliga Östersjön	14	Östergötlands, yttre kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	2.689885657	2.689885657	2.689885657
+Coastal	Secchi depth	m	log	Egentliga Östersjön	15	Stockholms skärgård, yttre kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	2.689885657	2.689885657	2.689885657
+Coastal	Secchi depth	m	log	Egentliga Östersjön	24	Stockholms inre skärgård og Hallsfjärden	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	0.364571348	0.364571348	0.364571348
+Coastal	Secchi depth	m	log	Bottenhavet	16	Södra Bottenhavet, inre kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	1.643640101	1.643640101	1.643640101
+Coastal	Secchi depth	m	log	Bottenhavet	17	Södra Bottenhavet, yttre kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	3.027926986	3.027926986	3.027926986
+Coastal	Secchi depth	m	log	Bottenhavet	18	Norra Bottenhavet, Höga kustens inre kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	1.668820903	1.668820903	1.668820903
+Coastal	Secchi depth	m	log	Bottenhavet	19	Norra Bottenhavet, Höga kustens yttre kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	3.027926986	3.027926986	3.027926986
+Coastal	Secchi depth	m	log	Bottenviken	20	Norra Kvarkens inre kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	2.908001644	2.908001644	2.908001644
+Coastal	Secchi depth	m	log	Bottenviken	21	Norra Kvarkens yttre kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	3.027926986	3.027926986	3.027926986
+Coastal	Secchi depth	m	log	Bottenviken	22	Bottenviken, inre kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	1.881613646	1.881613646	1.881613646
+Coastal	Secchi depth	m	log	Bottenviken	23	Bottenviken, yttre kustvatten	0.070284796	#N/A	0.014517385	0.023432463	#N/A	#N/A	0.049800559	0	0.00656177	0.009706824	#N/A	3.027926986	3.027926986	3.027926986
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Västerhavet	1n	Västkustens inre kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	37.70179173	37.70179173	37.70179173
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Västerhavet	1s	Västkustens inre kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	37.70179173	37.70179173	37.70179173
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Västerhavet	2	Västkustens fjordar	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	35.09744211	35.09744211	35.09744211
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Västerhavet	3	Skagerak, Västkustens yttre kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	12.04257495	12.04257495	12.04257495
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Västerhavet	25	Göta Älvs- och Nordre Älvs estuarie	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	5.903185651	5.903185651	5.903185651
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Västerhavet	4	Kattegat, Västkustens yttre kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	12.04257495	12.04257495	12.04257495
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Västerhavet	5	Södra Hallands och norra Öresunds kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	9.728582231	9.728582231	9.728582231
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Västerhavet	6	Öresunds kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	11.66729077	11.66729077	11.66729077
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Egentliga Östersjön	7	Skånes kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	3.126013677	3.126013677	3.126013677
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Egentliga Östersjön	8	Blekinge skärgårds och Kalmarsunds inre kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	50.66322242	50.66322242	50.66322242
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Egentliga Östersjön	9	Blekinge skärgård, och Kalmarsunds yttre kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	0.629176869	0.629176869	0.629176869
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Egentliga Östersjön	10	Östra Ölands, sydöstra Gotlands kustvatten samt Gotska sandön	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	0.629176869	0.629176869	0.629176869
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Egentliga Östersjön	11	Gotlands västra och norra kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	0.629176869	0.629176869	0.629176869
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Egentliga Östersjön	12n	Östergötlands samt Stockholms skärgård, mellankustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	71.3368565	71.3368565	71.3368565
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Egentliga Östersjön	12s	Östergötlands samt Stockholms skärgård, mellankustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	19.89010706	19.89010706	19.89010706
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Egentliga Östersjön	13	Östergötlands inre skärgård	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	134.445995	134.445995	134.445995
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Egentliga Östersjön	14	Östergötlands, yttre kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	0.629176869	0.629176869	0.629176869
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Egentliga Östersjön	15	Stockholms skärgård, yttre kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	0.629176869	0.629176869	0.629176869
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Egentliga Östersjön	24	Stockholms inre skärgård og Hallsfjärden	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	11.62735349	11.62735349	11.62735349
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Bottenhavet	16	Södra Bottenhavet, inre kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	25.85290827	25.85290827	25.85290827
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Bottenhavet	17	Södra Bottenhavet, yttre kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	3.910288266	3.910288266	3.910288266
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Bottenhavet	18	Norra Bottenhavet, Höga kustens inre kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	13.80843055	13.80843055	13.80843055
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Bottenhavet	19	Norra Bottenhavet, Höga kustens yttre kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	3.910288266	3.910288266	3.910288266
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Bottenviken	20	Norra Kvarkens inre kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	40.62356622	40.62356622	40.62356622
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Bottenviken	21	Norra Kvarkens yttre kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	3.910288266	3.910288266	3.910288266
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Bottenviken	22	Bottenviken, inre kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	109.469895	109.469895	109.469895
+Coastal	Dissolved Inorganic Nitrogen	µmol/l	log	Bottenviken	23	Bottenviken, yttre kustvatten	0.015036785	#N/A	0.003478531	0.035243476	#N/A	#N/A	0.303055109	0	0.090368026	0.030039557	#N/A	3.910288266	3.910288266	3.910288266
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Västerhavet	1n	Västkustens inre kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.033492424	0.033492424	0.033492424
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Västerhavet	1s	Västkustens inre kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.033492424	0.033492424	0.033492424
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Västerhavet	2	Västkustens fjordar	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.03559831	0.03559831	0.03559831
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Västerhavet	3	Skagerak, Västkustens yttre kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.020210358	0.020210358	0.020210358
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Västerhavet	25	Göta Älvs- och Nordre Älvs estuarie	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.008094831	0.008094831	0.008094831
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Västerhavet	4	Kattegat, Västkustens yttre kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.020210358	0.020210358	0.020210358
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Västerhavet	5	Södra Hallands och norra Öresunds kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.003489244	0.003489244	0.003489244
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Västerhavet	6	Öresunds kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.001312412	0.001312412	0.001312412
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Egentliga Östersjön	7	Skånes kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.004826173	0.004826173	0.004826173
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Egentliga Östersjön	8	Blekinge skärgårds och Kalmarsunds inre kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.033619627	0.033619627	0.033619627
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Egentliga Östersjön	9	Blekinge skärgård, och Kalmarsunds yttre kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.010996849	0.010996849	0.010996849
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Egentliga Östersjön	10	Östra Ölands, sydöstra Gotlands kustvatten samt Gotska sandön	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.010996849	0.010996849	0.010996849
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Egentliga Östersjön	11	Gotlands västra och norra kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.010996849	0.010996849	0.010996849
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Egentliga Östersjön	12n	Östergötlands samt Stockholms skärgård, mellankustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.025022233	0.025022233	0.025022233
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Egentliga Östersjön	12s	Östergötlands samt Stockholms skärgård, mellankustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.029817888	0.029817888	0.029817888
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Egentliga Östersjön	13	Östergötlands inre skärgård	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.286523747	0.286523747	0.286523747
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Egentliga Östersjön	14	Östergötlands, yttre kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.010996849	0.010996849	0.010996849
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Egentliga Östersjön	15	Stockholms skärgård, yttre kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.010996849	0.010996849	0.010996849
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Egentliga Östersjön	24	Stockholms inre skärgård og Hallsfjärden	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.006767987	0.006767987	0.006767987
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Bottenhavet	16	Södra Bottenhavet, inre kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.013954258	0.013954258	0.013954258
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Bottenhavet	17	Södra Bottenhavet, yttre kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.002638723	0.002638723	0.002638723
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Bottenhavet	18	Norra Bottenhavet, Höga kustens inre kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.014235186	0.014235186	0.014235186
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Bottenhavet	19	Norra Bottenhavet, Höga kustens yttre kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.002638723	0.002638723	0.002638723
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Bottenviken	20	Norra Kvarkens inre kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.046657403	0.046657403	0.046657403
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Bottenviken	21	Norra Kvarkens yttre kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.002638723	0.002638723	0.002638723
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Bottenviken	22	Bottenviken, inre kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.003490076	0.003490076	0.003490076
+Coastal	Dissolved Inorganic Phosphorus	µmol/l	log	Bottenviken	23	Bottenviken, yttre kustvatten	0	#N/A	0.00803134	0.021559782	#N/A	#N/A	0.11567329	0	0.017476236	0.06130309	#N/A	0.002638723	0.002638723	0.002638723
+Coastal	Total Nitrogen	µmol/l	log	Västerhavet	1n	Västkustens inre kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	23.91073625	23.91073625	23.91073625
+Coastal	Total Nitrogen	µmol/l	log	Västerhavet	1s	Västkustens inre kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	23.91073625	23.91073625	23.91073625
+Coastal	Total Nitrogen	µmol/l	log	Västerhavet	2	Västkustens fjordar	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	10.61749636	10.61749636	10.61749636
+Coastal	Total Nitrogen	µmol/l	log	Västerhavet	3	Skagerak, Västkustens yttre kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	2.655200184	2.655200184	2.655200184
+Coastal	Total Nitrogen	µmol/l	log	Västerhavet	25	Göta Älvs- och Nordre Älvs estuarie	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	0.734905965	0.734905965	0.734905965
+Coastal	Total Nitrogen	µmol/l	log	Västerhavet	4	Kattegat, Västkustens yttre kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	2.655200184	2.655200184	2.655200184
+Coastal	Total Nitrogen	µmol/l	log	Västerhavet	5	Södra Hallands och norra Öresunds kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	6.874725962	6.874725962	6.874725962
+Coastal	Total Nitrogen	µmol/l	log	Västerhavet	6	Öresunds kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	7.986652491	7.986652491	7.986652491
+Coastal	Total Nitrogen	µmol/l	log	Egentliga Östersjön	7	Skånes kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	4.212041622	4.212041622	4.212041622
+Coastal	Total Nitrogen	µmol/l	log	Egentliga Östersjön	8	Blekinge skärgårds och Kalmarsunds inre kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	38.30638009	38.30638009	38.30638009
+Coastal	Total Nitrogen	µmol/l	log	Egentliga Östersjön	9	Blekinge skärgård, och Kalmarsunds yttre kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	30.91260681	30.91260681	30.91260681
+Coastal	Total Nitrogen	µmol/l	log	Egentliga Östersjön	10	Östra Ölands, sydöstra Gotlands kustvatten samt Gotska sandön	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	30.91260681	30.91260681	30.91260681
+Coastal	Total Nitrogen	µmol/l	log	Egentliga Östersjön	11	Gotlands västra och norra kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	30.91260681	30.91260681	30.91260681
+Coastal	Total Nitrogen	µmol/l	log	Egentliga Östersjön	12n	Östergötlands samt Stockholms skärgård, mellankustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	68.25257857	68.25257857	68.25257857
+Coastal	Total Nitrogen	µmol/l	log	Egentliga Östersjön	12s	Östergötlands samt Stockholms skärgård, mellankustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	47.46709824	47.46709824	47.46709824
+Coastal	Total Nitrogen	µmol/l	log	Egentliga Östersjön	13	Östergötlands inre skärgård	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	87.40859634	87.40859634	87.40859634
+Coastal	Total Nitrogen	µmol/l	log	Egentliga Östersjön	14	Östergötlands, yttre kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	30.91260681	30.91260681	30.91260681
+Coastal	Total Nitrogen	µmol/l	log	Egentliga Östersjön	15	Stockholms skärgård, yttre kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	30.91260681	30.91260681	30.91260681
+Coastal	Total Nitrogen	µmol/l	log	Egentliga Östersjön	24	Stockholms inre skärgård og Hallsfjärden	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	24.4611811	24.4611811	24.4611811
+Coastal	Total Nitrogen	µmol/l	log	Bottenhavet	16	Södra Bottenhavet, inre kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	74.96575311	74.96575311	74.96575311
+Coastal	Total Nitrogen	µmol/l	log	Bottenhavet	17	Södra Bottenhavet, yttre kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	8.29164106	8.29164106	8.29164106
+Coastal	Total Nitrogen	µmol/l	log	Bottenhavet	18	Norra Bottenhavet, Höga kustens inre kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	25.68582988	25.68582988	25.68582988
+Coastal	Total Nitrogen	µmol/l	log	Bottenhavet	19	Norra Bottenhavet, Höga kustens yttre kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	8.29164106	8.29164106	8.29164106
+Coastal	Total Nitrogen	µmol/l	log	Bottenviken	20	Norra Kvarkens inre kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	64.40970973	64.40970973	64.40970973
+Coastal	Total Nitrogen	µmol/l	log	Bottenviken	21	Norra Kvarkens yttre kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	8.29164106	8.29164106	8.29164106
+Coastal	Total Nitrogen	µmol/l	log	Bottenviken	22	Bottenviken, inre kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	68.49503624	68.49503624	68.49503624
+Coastal	Total Nitrogen	µmol/l	log	Bottenviken	23	Bottenviken, yttre kustvatten	0.030324577	#N/A	0.003237458	0.012427465	#N/A	#N/A	0.034609428	0.0001176	0.00971409	0.007967181	#N/A	8.29164106	8.29164106	8.29164106
+Coastal	Total Phosphorus	µmol/l	log	Västerhavet	1n	Västkustens inre kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.012508797	0.012508797	0.012508797
+Coastal	Total Phosphorus	µmol/l	log	Västerhavet	1s	Västkustens inre kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.012508797	0.012508797	0.012508797
+Coastal	Total Phosphorus	µmol/l	log	Västerhavet	2	Västkustens fjordar	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.045684804	0.045684804	0.045684804
+Coastal	Total Phosphorus	µmol/l	log	Västerhavet	3	Skagerak, Västkustens yttre kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.002499003	0.002499003	0.002499003
+Coastal	Total Phosphorus	µmol/l	log	Västerhavet	25	Göta Älvs- och Nordre Älvs estuarie	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.000242152	0.000242152	0.000242152
+Coastal	Total Phosphorus	µmol/l	log	Västerhavet	4	Kattegat, Västkustens yttre kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.002499003	0.002499003	0.002499003
+Coastal	Total Phosphorus	µmol/l	log	Västerhavet	5	Södra Hallands och norra Öresunds kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.010726514	0.010726514	0.010726514
+Coastal	Total Phosphorus	µmol/l	log	Västerhavet	6	Öresunds kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.004399158	0.004399158	0.004399158
+Coastal	Total Phosphorus	µmol/l	log	Egentliga Östersjön	7	Skånes kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.074332105	0.074332105	0.074332105
+Coastal	Total Phosphorus	µmol/l	log	Egentliga Östersjön	8	Blekinge skärgårds och Kalmarsunds inre kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.036541646	0.036541646	0.036541646
+Coastal	Total Phosphorus	µmol/l	log	Egentliga Östersjön	9	Blekinge skärgård, och Kalmarsunds yttre kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.033645206	0.033645206	0.033645206
+Coastal	Total Phosphorus	µmol/l	log	Egentliga Östersjön	10	Östra Ölands, sydöstra Gotlands kustvatten samt Gotska sandön	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.033645206	0.033645206	0.033645206
+Coastal	Total Phosphorus	µmol/l	log	Egentliga Östersjön	11	Gotlands västra och norra kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.033645206	0.033645206	0.033645206
+Coastal	Total Phosphorus	µmol/l	log	Egentliga Östersjön	12n	Östergötlands samt Stockholms skärgård, mellankustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.037157951	0.037157951	0.037157951
+Coastal	Total Phosphorus	µmol/l	log	Egentliga Östersjön	12s	Östergötlands samt Stockholms skärgård, mellankustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.032859666	0.032859666	0.032859666
+Coastal	Total Phosphorus	µmol/l	log	Egentliga Östersjön	13	Östergötlands inre skärgård	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.185922678	0.185922678	0.185922678
+Coastal	Total Phosphorus	µmol/l	log	Egentliga Östersjön	14	Östergötlands, yttre kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.033645206	0.033645206	0.033645206
+Coastal	Total Phosphorus	µmol/l	log	Egentliga Östersjön	15	Stockholms skärgård, yttre kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.033645206	0.033645206	0.033645206
+Coastal	Total Phosphorus	µmol/l	log	Egentliga Östersjön	24	Stockholms inre skärgård og Hallsfjärden	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.033524803	0.033524803	0.033524803
+Coastal	Total Phosphorus	µmol/l	log	Bottenhavet	16	Södra Bottenhavet, inre kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.058344076	0.058344076	0.058344076
+Coastal	Total Phosphorus	µmol/l	log	Bottenhavet	17	Södra Bottenhavet, yttre kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.006157062	0.006157062	0.006157062
+Coastal	Total Phosphorus	µmol/l	log	Bottenhavet	18	Norra Bottenhavet, Höga kustens inre kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.013815495	0.013815495	0.013815495
+Coastal	Total Phosphorus	µmol/l	log	Bottenhavet	19	Norra Bottenhavet, Höga kustens yttre kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.006157062	0.006157062	0.006157062
+Coastal	Total Phosphorus	µmol/l	log	Bottenviken	20	Norra Kvarkens inre kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.05523276	0.05523276	0.05523276
+Coastal	Total Phosphorus	µmol/l	log	Bottenviken	21	Norra Kvarkens yttre kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.006157062	0.006157062	0.006157062
+Coastal	Total Phosphorus	µmol/l	log	Bottenviken	22	Bottenviken, inre kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.057150081	0.057150081	0.057150081
+Coastal	Total Phosphorus	µmol/l	log	Bottenviken	23	Bottenviken, yttre kustvatten	0.017644767	#N/A	0.015298556	0.017100849	#N/A	#N/A	0.041558852	0.001704376	0.003813954	0.019199809	#N/A	0.006157062	0.006157062	0.006157062
+Coastal	Oxygen	ml/l	identity	Västerhavet	1n	Västkustens inre kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Västerhavet	1s	Västkustens inre kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Västerhavet	2	Västkustens fjordar	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Västerhavet	3	Skagerak, Västkustens yttre kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Västerhavet	25	Göta Älvs- och Nordre Älvs estuarie	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Västerhavet	4	Kattegat, Västkustens yttre kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Västerhavet	5	Södra Hallands och norra Öresunds kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Västerhavet	6	Öresunds kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Egentliga Östersjön	7	Skånes kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Egentliga Östersjön	8	Blekinge skärgårds och Kalmarsunds inre kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Egentliga Östersjön	9	Blekinge skärgård, och Kalmarsunds yttre kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Egentliga Östersjön	10	Östra Ölands, sydöstra Gotlands kustvatten samt Gotska sandön	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Egentliga Östersjön	11	Gotlands västra och norra kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Egentliga Östersjön	12n	Östergötlands samt Stockholms skärgård, mellankustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Egentliga Östersjön	12s	Östergötlands samt Stockholms skärgård, mellankustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Egentliga Östersjön	13	Östergötlands inre skärgård	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Egentliga Östersjön	14	Östergötlands, yttre kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Egentliga Östersjön	15	Stockholms skärgård, yttre kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Egentliga Östersjön	24	Stockholms inre skärgård og Hallsfjärden	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Bottenhavet	16	Södra Bottenhavet, inre kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Bottenhavet	17	Södra Bottenhavet, yttre kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Bottenhavet	18	Norra Bottenhavet, Höga kustens inre kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Bottenhavet	19	Norra Bottenhavet, Höga kustens yttre kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Bottenviken	20	Norra Kvarkens inre kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Bottenviken	21	Norra Kvarkens yttre kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Bottenviken	22	Bottenviken, inre kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Coastal	Oxygen	ml/l	identity	Bottenviken	23	Bottenviken, yttre kustvatten	5.891741081	#N/A	1.792993392	0	#N/A	#N/A	6.742980005	0	2.313009843	0	#N/A		5.891741081	5.891741081
+Lakes	Phytoplankton biovolume	mm3/l	log	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Lakes	Phytoplankton biovolume	mm3/l	log	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Lakes	Phytoplankton biovolume	mm3/l	log	Norrlands kust	S3	Norrlands kust														
+Lakes	Phytoplankton biovolume	mm3/l	log	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Lakes	Phytoplankton biovolume	mm3/l	log	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Lakes	Phytoplankton biovolume	mm3/l	log	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Lakes	Phytoplankton biovolume	mm3/l	log	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Lakes	Proportion cyanobacteria	No unit	logit_w_replace	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Lakes	Proportion cyanobacteria	No unit	logit_w_replace	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Lakes	Proportion cyanobacteria	No unit	logit_w_replace	Norrlands kust	S3	Norrlands kust														
+Lakes	Proportion cyanobacteria	No unit	logit_w_replace	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Lakes	Proportion cyanobacteria	No unit	logit_w_replace	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Lakes	Proportion cyanobacteria	No unit	logit_w_replace	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Lakes	Proportion cyanobacteria	No unit	logit_w_replace	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Lakes	TPI	No unit	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Lakes	TPI	No unit	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Lakes	TPI	No unit	identity	Norrlands kust	S3	Norrlands kust														
+Lakes	TPI	No unit	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Lakes	TPI	No unit	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Lakes	TPI	No unit	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Lakes	TPI	No unit	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Lakes	Phytoplankton species richness	No unit	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Lakes	Phytoplankton species richness	No unit	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Lakes	Phytoplankton species richness	No unit	identity	Norrlands kust	S3	Norrlands kust														
+Lakes	Phytoplankton species richness	No unit	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Lakes	Phytoplankton species richness	No unit	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Lakes	Phytoplankton species richness	No unit	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Lakes	Phytoplankton species richness	No unit	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Lakes	Chlorophyll a	µg/l	log	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Lakes	Chlorophyll a	µg/l	log	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Lakes	Chlorophyll a	µg/l	log	Norrlands kust	S3	Norrlands kust														
+Lakes	Chlorophyll a	µg/l	log	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Lakes	Chlorophyll a	µg/l	log	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Lakes	Chlorophyll a	µg/l	log	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Lakes	Chlorophyll a	µg/l	log	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Lakes	TrophicMacrophyteIndex	No unit	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Lakes	TrophicMacrophyteIndex	No unit	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Lakes	TrophicMacrophyteIndex	No unit	identity	Norrlands kust	S3	Norrlands kust														
+Lakes	TrophicMacrophyteIndex	No unit	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Lakes	TrophicMacrophyteIndex	No unit	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Lakes	TrophicMacrophyteIndex	No unit	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Lakes	TrophicMacrophyteIndex	No unit	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Lakes	BenthicInvertebratesASPT	No unit	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Lakes	BenthicInvertebratesASPT	No unit	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Lakes	BenthicInvertebratesASPT	No unit	identity	Norrlands kust	S3	Norrlands kust														
+Lakes	BenthicInvertebratesASPT	No unit	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Lakes	BenthicInvertebratesASPT	No unit	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Lakes	BenthicInvertebratesASPT	No unit	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Lakes	BenthicInvertebratesASPT	No unit	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Lakes	BenthicInvertebratesBQI	No unit	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Lakes	BenthicInvertebratesBQI	No unit	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Lakes	BenthicInvertebratesBQI	No unit	identity	Norrlands kust	S3	Norrlands kust														
+Lakes	BenthicInvertebratesBQI	No unit	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Lakes	BenthicInvertebratesBQI	No unit	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Lakes	BenthicInvertebratesBQI	No unit	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Lakes	BenthicInvertebratesBQI	No unit	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Lakes	BenthicInvertebratesMILA	No unit	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Lakes	BenthicInvertebratesMILA	No unit	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Lakes	BenthicInvertebratesMILA	No unit	identity	Norrlands kust	S3	Norrlands kust														
+Lakes	BenthicInvertebratesMILA	No unit	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Lakes	BenthicInvertebratesMILA	No unit	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Lakes	BenthicInvertebratesMILA	No unit	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Lakes	BenthicInvertebratesMILA	No unit	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Lakes	EQR8	No unit	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Lakes	EQR8	No unit	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Lakes	EQR8	No unit	identity	Norrlands kust	S3	Norrlands kust														
+Lakes	EQR8	No unit	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Lakes	EQR8	No unit	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Lakes	EQR8	No unit	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Lakes	EQR8	No unit	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Lakes	AindexW5	No unit	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Lakes	AindexW5	No unit	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Lakes	AindexW5	No unit	identity	Norrlands kust	S3	Norrlands kust														
+Lakes	AindexW5	No unit	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Lakes	AindexW5	No unit	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Lakes	AindexW5	No unit	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Lakes	AindexW5	No unit	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Lakes	EindexW3	No unit	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Lakes	EindexW3	No unit	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Lakes	EindexW3	No unit	identity	Norrlands kust	S3	Norrlands kust														
+Lakes	EindexW3	No unit	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Lakes	EindexW3	No unit	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Lakes	EindexW3	No unit	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Lakes	EindexW3	No unit	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Lakes	Total Phosphorus	µg/l	log	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Lakes	Total Phosphorus	µg/l	log	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Lakes	Total Phosphorus	µg/l	log	Norrlands kust	S3	Norrlands kust														
+Lakes	Total Phosphorus	µg/l	log	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Lakes	Total Phosphorus	µg/l	log	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Lakes	Total Phosphorus	µg/l	log	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Lakes	Total Phosphorus	µg/l	log	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Lakes	Secchi depth	m	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Lakes	Secchi depth	m	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Lakes	Secchi depth	m	identity	Norrlands kust	S3	Norrlands kust														
+Lakes	Secchi depth	m	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Lakes	Secchi depth	m	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Lakes	Secchi depth	m	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Lakes	Secchi depth	m	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Lakes	Oxygen	mg/l	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Lakes	Oxygen	mg/l	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Lakes	Oxygen	mg/l	identity	Norrlands kust	S3	Norrlands kust														
+Lakes	Oxygen	mg/l	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Lakes	Oxygen	mg/l	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Lakes	Oxygen	mg/l	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Lakes	Oxygen	mg/l	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Lakes	pH	No unit	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Lakes	pH	No unit	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Lakes	pH	No unit	identity	Norrlands kust	S3	Norrlands kust														
+Lakes	pH	No unit	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Lakes	pH	No unit	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Lakes	pH	No unit	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Lakes	pH	No unit	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Rivers	BenthicDiatomsIPS	No unit	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Rivers	BenthicDiatomsIPS	No unit	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Rivers	BenthicDiatomsIPS	No unit	identity	Norrlands kust	S3	Norrlands kust														
+Rivers	BenthicDiatomsIPS	No unit	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Rivers	BenthicDiatomsIPS	No unit	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Rivers	BenthicDiatomsIPS	No unit	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Rivers	BenthicDiatomsIPS	No unit	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Rivers	BenthicDiatomsPctPT	No unit	logit_w_replace	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Rivers	BenthicDiatomsPctPT	No unit	logit_w_replace	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Rivers	BenthicDiatomsPctPT	No unit	logit_w_replace	Norrlands kust	S3	Norrlands kust														
+Rivers	BenthicDiatomsPctPT	No unit	logit_w_replace	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Rivers	BenthicDiatomsPctPT	No unit	logit_w_replace	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Rivers	BenthicDiatomsPctPT	No unit	logit_w_replace	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Rivers	BenthicDiatomsPctPT	No unit	logit_w_replace	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Rivers	BenthicDiatomsTDI	No unit	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Rivers	BenthicDiatomsTDI	No unit	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Rivers	BenthicDiatomsTDI	No unit	identity	Norrlands kust	S3	Norrlands kust														
+Rivers	BenthicDiatomsTDI	No unit	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Rivers	BenthicDiatomsTDI	No unit	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Rivers	BenthicDiatomsTDI	No unit	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Rivers	BenthicDiatomsTDI	No unit	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Rivers	BenthicDiatomsACID	No unit	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Rivers	BenthicDiatomsACID	No unit	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Rivers	BenthicDiatomsACID	No unit	identity	Norrlands kust	S3	Norrlands kust														
+Rivers	BenthicDiatomsACID	No unit	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Rivers	BenthicDiatomsACID	No unit	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Rivers	BenthicDiatomsACID	No unit	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Rivers	BenthicDiatomsACID	No unit	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Rivers	FishVIX	No unit	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Rivers	FishVIX	No unit	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Rivers	FishVIX	No unit	identity	Norrlands kust	S3	Norrlands kust														
+Rivers	FishVIX	No unit	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Rivers	FishVIX	No unit	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Rivers	FishVIX	No unit	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Rivers	FishVIX	No unit	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Rivers	FishVIXsm	No unit	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Rivers	FishVIXsm	No unit	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Rivers	FishVIXsm	No unit	identity	Norrlands kust	S3	Norrlands kust														
+Rivers	FishVIXsm	No unit	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Rivers	FishVIXsm	No unit	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Rivers	FishVIXsm	No unit	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Rivers	FishVIXsm	No unit	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Rivers	FishVIXh	No unit	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Rivers	FishVIXh	No unit	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Rivers	FishVIXh	No unit	identity	Norrlands kust	S3	Norrlands kust														
+Rivers	FishVIXh	No unit	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Rivers	FishVIXh	No unit	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Rivers	FishVIXh	No unit	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Rivers	FishVIXh	No unit	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
+Rivers	Total Phosphorus	No unit	identity	Fjällan ovan trädgränsen	S1	Fjällan ovan trädgränsen														
+Rivers	Total Phosphorus	No unit	identity	Norrlands inland, under trädgränsen	S2	Norrlands inland, under trädgränsen														
+Rivers	Total Phosphorus	No unit	identity	Norrlands kust	S3	Norrlands kust														
+Rivers	Total Phosphorus	No unit	identity	Sydöst, söder om norrlandsgränsen	S4	Sydöst, söder om norrlandsgränsen														
+Rivers	Total Phosphorus	No unit	identity	Södra Sverige, Skåne, Blekinges kust	S5	Södra Sverige, Skåne, Blekinges kust														
+Rivers	Total Phosphorus	No unit	identity	Sydvest, söder om norrlandsgränsen	S6	Sydvest, söder om norrlandsgränsen														
+Rivers	Total Phosphorus	No unit	identity	Sydsvenska höglandet	S7	Sydsvenska höglandet														
