@@ -69,11 +69,12 @@ shinyServer(function(input, output, session) {
   values$typeselected <- ""
   values$typeselectedname <- ""
   values$df_ind_status<-""
+  values$df_ind_extrap<-""
   values$periodselected <- ""
   values$resAvgType <- ""
   values$resMCType <-""
   values$IndSelection<-""
-  
+
   dfwb_lan <- readdb(dbpath, "SELECT * FROM WB_Lan") %>% # matching Län and WB_ID
     filter(!is.na(Lan)) %>%
     mutate(LanName=trimws(LanName,which="both"),Lan=trimws(Lan,which="both"))
@@ -119,12 +120,15 @@ shinyServer(function(input, output, session) {
     sidebarMenu(id="tabs",
                 menuItem("Waterbody", tabName = "waterbody", icon = icon("map-marker")),
                 menuItem("Indicators", tabName = "indicators", icon = icon("tasks")),
+                menuItem("Extrapolation", tabName = "extrapolation", icon = icon("chart-line")),
                 #menuItem("Data", tabName = "data", icon = icon("database"))
                 menuItem("Status", tabName = "status", icon = icon("bar-chart"))
                 #menuItem("Download", tabName = "download", icon = icon("file"))
                 #menuItem("Options", tabName = "options", icon = icon("cog"))#,
     )
   })
+  
+  # icon file-alt
   
 # ------ Output components for the Waterbody selection page -----------------------
   output$selectWaterType <- renderUI({
@@ -178,7 +182,7 @@ shinyServer(function(input, output, session) {
       "Select Period",
       choices = period_list(),
       selected= period_list()[length(period_list())],
-      multiple = T#,
+      multiple = F#,
       #width="180px"
     ))
   })
@@ -369,6 +373,16 @@ shinyServer(function(input, output, session) {
     titletext
   })
   
+  output$SelectedWB2<-renderText({
+    if(values$wbselected=="") {
+      titletext<-"No Waterbody Selected"
+    }else{
+      titletext<-paste0(values$wbselected," - ",values$wbselectedname)
+    }
+    titletext
+  })
+  
+  
   output$SelectedType<-renderText({
     if(values$typeselected==""){
       titletext<-""
@@ -392,6 +406,18 @@ shinyServer(function(input, output, session) {
     UpdateIndTable()
   }, ignoreInit = T)
   
+  output$buttonExtrap <- renderUI({
+    if(values$wbselected==""){
+      ""
+    }else{
+      if(countIndicators()==0){
+        ""
+      }else{
+        tagList(actionButton("extrapButton", "Extrapolation"))
+      }
+    }
+  })
+  
   output$goButton <- renderUI({
     if(values$wbselected==""){
       ""
@@ -404,7 +430,7 @@ shinyServer(function(input, output, session) {
     }
   })
   
-
+  
   
   # --------------- update indicator information / selection ----------------
   
@@ -432,16 +458,30 @@ shinyServer(function(input, output, session) {
       df<-df[c(num_col+1,seq(2,num_col-3,1),num_col+2)]
       df %>% rename(Indicator=Check)
     }
-  },server=FALSE, escape=FALSE,selection='single',rownames=F, 
+  },server=T, escape=FALSE,selection ="single",rownames=T, 
   options=list(dom = 't',pageLength = 99,autoWidth=TRUE,
                preDrawCallback = JS('function() { Shiny.unbindAll(this.api().table().node()); }'),
                drawCallback = JS('function() { Shiny.bindAll(this.api().table().node()); } ')))
-}
+
+  output$dtindextrap = DT::renderDataTable({
+    df<-values$df_ind_extrap %>%
+      select(Indicator=IndicatorDescription)
+  },server=FALSE, escape=FALSE,selection='single',rownames=T,
+  options=list(dom = 't',pageLength = 99,autoWidth=TRUE  ))
+  
+  }
   
    observeEvent(input$extrapAll, {
      cat(paste0("extrapAll:",input$extrapAll,"\n"))
    }, ignoreInit = T)
   
+   
+   
+   #observeEvent(input$dtind_row_last_clicked,{
+   #  cat(paste0("clicked:",input$dtind_row_last_clicked))
+   #             })
+   
+   
 
   UpdateIndTable<-function(){
     
@@ -533,6 +573,8 @@ shinyServer(function(input, output, session) {
         df<-dforder %>% left_join(df,by="Indicator") %>% mutate(Selected=TRUE)
         
         values$df_ind_status <- df
+        
+
         if(nrow(dftypeperiod)>0){
           dftypeperiod$Include<-T
           values$resAvgType <-dftypeperiod
@@ -553,6 +595,52 @@ shinyServer(function(input, output, session) {
       #browser()
       }
 
+  
+  
+  # ------------------------------------------------------------------- 
+  # -------------  extrapolate button  action -----------------------------
+  # ------------------------------------------------------------------- 
+  observeEvent(input$extrapButton, {
+    df<- listIndicators()
+    df <- df %>% filter(Select==T)
+    df <- df %>% filter(Extrapolate==T) # df now contains only indicators to be extrapolated
+    df <- df %>% 
+      left_join(dfind, by="Indicator") %>% 
+      select(Indicator,IndicatorDescription)
+    
+    values$df_ind_extrap<-df
+    updateTabItems(session, "tabs", "extrapolation")
+    
+  }) 
+  
+  output$NoticeExtrapolation<-renderText({
+    
+    df<-values$df_ind_extrap
+    save(df,file="test.Rda")
+    
+    if(is.null(df)){
+      titletext<-""
+    }else{
+      if(typeof(df)!="list"){
+        titletext<-"No indicators are using extrapolation!"
+      }else{
+        
+      if(nrow(df)<1){
+        titletext<-"No indicators are using extrapolation!"
+      }else{
+        titletext<-""
+      }
+      }
+    }
+    titletext
+  })
+
+  
+    
+    #selectInput(inputId, label, choices, selected = NULL, multiple = FALSE,
+    #            selectize = TRUE, width = NULL, size = NULL)     
+    
+  
   # ---------- DataTable with stations for extrapolation ---------------------
   output$dtextrap = DT::renderDataTable({
 
@@ -560,13 +648,15 @@ shinyServer(function(input, output, session) {
     if(typeof(df)!="list"){
       df<-data.frame()
     }else{
-        i<-input$dtind_rows_selected
+      #i<-input$dtind_rows_selected
+        i<-input$dtindextrap_rows_selected
         if(is.null(i)){
           df<-data.frame()
         }else{
-        dfind<-values$df_ind_status
-        indicator<-dfind$Indicator[i]
-        values$dtcurrentindicator<-indicator
+          dfindextrap<-values$df_ind_extrap
+          indicator<-dfindextrap$Indicator[i]
+          dfind<-values$df_ind_status
+        #values$dtcurrentindicator<-indicator
         df <- df %>% filter(Indicator==indicator)
       if(nrow(df)>0){
         #dfsave<-df
@@ -575,7 +665,7 @@ shinyServer(function(input, output, session) {
         df <- df %>% distinct(WB,WB_Name,Include)
 
         df$Use<-shinyInput(checkboxInput, nrow(df), 'usestn_', value = df$Include, labels="",width='30px')# labels=df[,"WB"])
-        df<-df %>% select(WB,WB_Name)#,Use
+        df<-df %>% select(WB,WB_Name,Use)#
         values$n_stn_extrap<-nrow(df)
         #output$btnExtrap <- renderUI({
         #  tagList(actionButton("btnExtrap", "Update"))
@@ -586,7 +676,7 @@ shinyServer(function(input, output, session) {
       }}
     }
     df
-  },server=FALSE, escape=FALSE,selection='single',rownames=F,
+  },server=FALSE, escape=FALSE,selection='single',rownames=T,
   options=list(dom = 't',pageLength = 99,autoWidth=TRUE,
                preDrawCallback = JS('function() { Shiny.unbindAll(this.api().table().node()); }'),
                drawCallback = JS('function() { Shiny.bindAll(this.api().table().node()); } ')))
@@ -660,6 +750,10 @@ shinyServer(function(input, output, session) {
   # })
    
 
+   
+   
+#   observeEvent(input$tableId_row_last_clicked,
+#                {})
    
 # ------------------------------------------------------------------- 
 # ------------- go calculate action -----------------------------

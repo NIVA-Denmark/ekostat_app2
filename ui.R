@@ -72,15 +72,15 @@ shinyUI(
                h3(textOutput("SelectedWB")),
                fluidRow(column(9,textOutput("SelectedType"))),
                fluidRow(column(4,uiOutput("selectPressure")),
-                        column(2,h1(" "),uiOutput("goButton")),
-                        column(4,h1(" "),checkboxInput("IgnoreErr", 
-                                             "Use all data. For for the selected waterbody, use indicators which have data for fewer than 3 out of 6 years.",
+                        column(2,h1(" "),uiOutput("buttonExtrap")),
+                        column(3,h1(" "),checkboxInput("IgnoreErr", 
+                                             "Use all indicators, incl. those not meeting strict requirements. E.g. data for 3 out of 6 years.",
                                               value = TRUE, width = '100%')#,
                                #p("Use all data for the selected waterbody, including indicators which have data for fewer than 3 out of 6 years.")#,
                         #column(1,h2(" "),uiOutput("btnExtrap"))
                         )),
-               fluidRow(column(7,h4("Indicator availability")),
-                        column(3,h4("WBs for extrapolation:"))
+               fluidRow(column(7,h4("Indicator availability"))#,
+                        #column(3,h4("WBs for extrapolation:"))
                ),
                #fluidRow(column(3, offset = 0,align="left",
                #                checkboxInput("indAll","Indicators - Select/Deselect All ",
@@ -92,10 +92,26 @@ shinyUI(
         
                fluidRow(column(7,DT::dataTableOutput("dtind")
                                ),
-                        column(3,DT::dataTableOutput("dtextrap"))
+                        column(3,"") 
+                        #column(3,DT::dataTableOutput("dtextrap")) 
                )
                ),
-   
+ 
+        # tab content
+        tabItem(tabName = "extrapolation",
+                h3(textOutput("SelectedWB2")),
+                fluidRow(column(4,""),
+                         column(2,h1(" "),uiOutput("goButton")),
+                         column(4,h1(" "))
+                         ),
+                fluidRow(column(3,h4(textOutput("NoticeExtrapolation"))),
+                         column(7,h4("WBs for extrapolation:"))
+                ),
+                fluidRow(column(3,DT::dataTableOutput("dtindextrap")),
+                column(7,DT::dataTableOutput("dtextrap"))
+                )                         
+        ),
+        
         # tab content
         tabItem(tabName = "status",
                 fluidRow(column(width=4,
