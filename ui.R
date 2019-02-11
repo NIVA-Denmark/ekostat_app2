@@ -27,7 +27,7 @@ shinyUI(
                        })")),
       
       tags$script(HTML('$(document).on("click", "input", function () {
-  var checkboxes = document.getElementsByName("row_selected");
+  var checkboxes = document.getElementsByName("ind_select");
                        var checkboxesChecked = [];
                        for (var i=0; i<checkboxes.length; i++) {
                        
@@ -36,6 +36,18 @@ shinyUI(
                        }
                        }
                        Shiny.onInputChange("checked_rows",checkboxesChecked);
+                       })')),
+      
+      tags$script(HTML('$(document).on("click", "input", function () {
+  var checkboxes = document.getElementsByName("extrap_select");
+                       var checkboxesChecked = [];
+                       for (var i=0; i<checkboxes.length; i++) {
+                       
+                       if (checkboxes[i].checked) {
+                       checkboxesChecked.push(checkboxes[i].value);
+                       }
+                       }
+                       Shiny.onInputChange("extrap_rows",checkboxesChecked);
                        })')),
       tabItems(
   # tab content
@@ -107,9 +119,12 @@ shinyUI(
         
                fluidRow(column(7,DT::dataTableOutput("dtind")
                                ),
-                        column(3,"") 
+                        column(3,"Indicators:",
+                               textOutput("txtCheckedRows"),
+                               "Extrap",
+                               textOutput("txtExtrapRows")))
                         #column(3,DT::dataTableOutput("dtextrap")) 
-               )
+               
                ),
  
         # tab content
