@@ -980,9 +980,7 @@ observeEvent(input$goButton, {
     dfextrap<- df %>% 
       left_join(dfextrap,by=c("WB","Indicator")) %>%
       filter(!is.na(WB))
-    #? filter where 
-    save(dfextrap,file="test.Rda")
-    
+
     dfmatch<-resAvg %>% 
       filter(Code %in% matchcode) %>% 
       select(Period,Indicator) %>%
