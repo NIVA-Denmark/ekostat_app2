@@ -441,12 +441,6 @@ shinyServer(function(input, output, session) {
     paste(input$extrap_rows,"\n")
   })
   
-  output$txtIndicatorSelect<-renderText({
-    paste(values$df_ind_status$Selected,"\n")
-  })
-  output$txtExtrapSelect<-renderText({
-    paste(values$df_ind_status$Extrap,"\n")
-  })
   
  
   output$toggleIndicators<- renderUI({
@@ -473,7 +467,17 @@ shinyServer(function(input, output, session) {
     }
   })
   
-  
+  output$toggleWBs<- renderUI({
+    if(values$wbselected==""){
+      ""
+    }else{
+      if(length(input$dtextrap_rows_selected)>0){
+        tagList(actionButton("allExtrapWBs", "Select/Deselect All"))
+      }else{
+        ""
+      }
+    }
+  })
   
   
   # --------------- update indicator information / selection ----------------
@@ -503,23 +507,45 @@ shinyServer(function(input, output, session) {
 
 
   output$dtindextrap = DT::renderDataTable({
+    dftype<-values$resAvgType %>%
+      distinct(Period,Indicator,WB)
+    dftype<-dftype %>% 
+      group_by(Period,Indicator) %>%
+      summarise(WB_count=n())
+    
+    if(length(input$dtind_rows_selected)==0){
+       df<-data.frame()
+    }else{
     df<-values$df_ind_status[input$dtind_rows_selected,]
     num_col<-ncol(df)
-    df<-df[c(num_col-1,seq(2,num_col-2,1))] 
-    df <- df %>% gather(key="Period","Status",c(seq(2,num_col-2,1)))
+    if(nrow(df)>0){
+      df$id <- 1:nrow(df)
+      
+    }
+    df<-df[,c(1,num_col-1,seq(2,num_col-2,1),num_col+1)] 
+    df <- df %>% gather(key="Period","Status",c(seq(3,num_col-1,1)))
+    df <- df %>% left_join(dftype,by=c("Period","Indicator"))
+    #df <- df %>% filter(!is.na(id))
     df <- df %>% filter(Status!="OK")
     if(input$IgnoreErr){
       df <- df %>% filter(Status=="-")
     }
-    df %>% select(-Status)
-  },server=T, escape=FALSE,selection='single',rownames=T,
+    df <- df %>% 
+      arrange(id) %>% 
+      select(-c(id,Status,Indicator)) %>% 
+      rename(Indicator=IndicatorDescription) 
+    }
+    
+    values$df_extrap<-df
+    df
+  },server=T, escape=FALSE,selection='multiple',rownames=T,
   options=list(dom = 't',pageLength = 99,autoWidth=TRUE  ))
   
   
   
-  updatedtind<-function(reset=0){
-    cat(paste0("updatedtind \n"))
-  }
+  #updatedtind<-function(reset=0){
+  #  #cat(paste0("updatedtind \n"))
+  #}
   
   observeEvent(input$extrapAll, {
     cat(paste0("extrapAll:",input$extrapAll,"\n"))
@@ -629,7 +655,7 @@ shinyServer(function(input, output, session) {
         
         df <- df2 %>% left_join(df,by=c("Indicator","Period")) %>%
           mutate(Code=ifelse(is.na(Code),-99,Code)) %>%
-          mutate(Data=ifelse(Code=='0',"OK",ifelse(Code=='-1',"<3yrs","-")),
+          mutate(Data=ifelse(Code=='0',"OK",ifelse(Code=='-1',"(OK)","-")),
                  Code=ifelse(Data=="OK",0,1))
 
           dfext <- df %>% 
@@ -649,8 +675,7 @@ shinyServer(function(input, output, session) {
         df<-dforder %>% left_join(df,by="Indicator") #%>% mutate(Selected=F)
         
         values$df_ind_status <- df
-        #save(df,file="test1.Rda")
-
+        
         if(nrow(dftypeperiod)>0){
           dftypeperiod$Include<-T
           values$resAvgType <-dftypeperiod
@@ -667,97 +692,86 @@ shinyServer(function(input, output, session) {
         values$resAvgType <-""
       }
 
-      updatedtind()
+      #updatedtind()
       #browser()
       }
 
-  
   
   # ------------------------------------------------------------------- 
   # -------------  extrapolate button  action -----------------------------
   # ------------------------------------------------------------------- 
   observeEvent(input$extrapButton, {
-    df<- listIndicators()
-    df <- df %>% filter(Select==T)
-    df <- df %>% filter(Extrapolate==T) # df now contains only indicators to be extrapolated
-    df <- df %>% 
-      left_join(dfind, by="Indicator") %>% 
-      select(Indicator,IndicatorDescription)
+ 
+     output$dtextrap=DT::renderDataTable({
+      if(length(input$dtindextrap_rows_selected)>0){
+        df<-values$df_extrap[input$dtindextrap_rows_selected,]
+        df<- df %>% select(Indicator,Period)
+        values$dtextrap<-df
+        }else{
+        df<-data.frame()
+      }
+      df
+      },server=T, escape=FALSE,selection='single',rownames=T,
+      options=list(dom = 't',pageLength = 99,autoWidth=TRUE  ))
     
-    values$df_ind_extrap<-df
+     dfextrap <- values$resAvgType %>%
+       left_join(select(dfind,Indicator,IndicatorDescription),by="Indicator")
+     
+     df<-values$df_extrap[input$dtindextrap_rows_selected,] %>% 
+       select(IndicatorDescription=Indicator,Period)
+     
+     df <- df %>% left_join(dfextrap,by=c("IndicatorDescription","Period"))
+     dfextrapWB <- df %>% 
+       distinct(Indicator,IndicatorDescription,WB) %>%
+       filter(!is.na(WB)) %>%
+       mutate(Select=T)
+    
+     values$dfextrapWB <- dfextrapWB
+     save(dfextrapWB,file="test.Rda")
+     
+    #    #rename(IndicatorDescription=Indicator) %>%
+   
     updateTabItems(session, "tabs", "extrapolation")
     
   }) 
   
-  output$NoticeExtrapolation<-renderText({
-    
-    df<-values$df_ind_extrap
-    #save(df,file="test.Rda")
-    
-    if(is.null(df)){
-      titletext<-""
-    }else{
-      if(typeof(df)!="list"){
-        titletext<-"No indicators are using extrapolation!"
-      }else{
-        
-      if(nrow(df)<1){
-        titletext<-"No indicators are using extrapolation!"
-      }else{
-        titletext<-""
-      }
-      }
-    }
-    titletext
-  })
-
-  
-    
-    #selectInput(inputId, label, choices, selected = NULL, multiple = FALSE,
-    #            selectize = TRUE, width = NULL, size = NULL)     
-    
-  
   # ---------- DataTable with stations for extrapolation ---------------------
-  output$dtextrap = DT::renderDataTable({
-
-    df<-values$resAvgType
-    if(typeof(df)!="list"){
-      df<-data.frame()
+  
+  output$dtextrapstn=DT::renderDataTable({
+    if(length(input$dtextrap_rows_selected)>0){
+      df<-values$dtextrap
+      indmatch<-df[input$dtextrap_rows_selected,"Indicator"]
+      
+      cat(paste0("indmatch",indmatch,"\n"))
+      df<-isolate(values$dfextrapWB) %>%
+        filter(IndicatorDescription==indmatch) %>%
+        select(WB,Select)
     }else{
-      #i<-input$dtind_rows_selected
-        i<-input$dtindextrap_rows_selected
-        if(is.null(i)){
-          df<-data.frame()
-        }else{
-          dfindextrap<-values$df_ind_extrap
-          indicator<-dfindextrap$Indicator[i]
-          dfind<-values$df_ind_status
-        #values$dtcurrentindicator<-indicator
-        df <- df %>% filter(Indicator==indicator)
-      if(nrow(df)>0){
-        #dfsave<-df
-        #save(dfsave,file="test.Rda")
-        
-        df <- df %>% distinct(WB,WB_Name,Include)
-
-        df$Use<-shinyInput(checkboxInput, nrow(df), 'usestn_', value = df$Include, labels="",width='30px')# labels=df[,"WB"])
-        df<-df %>% select(WB,WB_Name,Use)#
-        values$n_stn_extrap<-nrow(df)
-        #output$btnExtrap <- renderUI({
-        #  tagList(actionButton("btnExtrap", "Update"))
-        #})
-
-      }else{
-        df<-data.frame(WB=c("No data"))
-      }}
+      df<-data.frame()
     }
     df
-  },server=FALSE, escape=FALSE,selection='single',rownames=T,
-  options=list(dom = 't',pageLength = 99,autoWidth=TRUE,
-               preDrawCallback = JS('function() { Shiny.unbindAll(this.api().table().node()); }'),
-               drawCallback = JS('function() { Shiny.bindAll(this.api().table().node()); } ')))
-
+  },server=T, escape=FALSE,selection='multiple',rownames=T,
+  options=list(dom = 't',pageLength = 99,autoWidth=TRUE  ))
+  
+  observeEvent(input$dtextrap_rows_selected,{
+    if(!is.null(input$dtextrap_rows_selected)){
+      cat(paste0(input$dtextrap_rows_selected),"\n")
+    }
+  })
+  
+  
+  output$NoticeExtrapolation<-renderText({
    
+    df<-input$dtindextrap_rows_selected
+    if(is.integer(df)){
+      titletext<-"Indicators using extrapolation"
+    }else{
+      titletext<-"No indicators are using extrapolation!"
+    }
+     titletext
+  })
+  
+
    
    listIndicators <- function(){
      dfi<-values$df_ind_status

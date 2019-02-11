@@ -96,11 +96,11 @@ shinyUI(
                h3(textOutput("SelectedWB")),
                fluidRow(column(9,textOutput("SelectedType"))),
                fluidRow(column(4,uiOutput("selectPressure")),
-                        column(2,h1(" "),uiOutput("buttonExtrap")),
-                        column(3,h1(" ")
+                        column(3,h1(" ")),
+                        column(2,h1(" "),uiOutput("buttonExtrap")
                         )),
                fluidRow(column(5,h4("Indicator Availability & Selection")),
-                        column(4,h4("Select Indicators for Extrapolation"))
+                        column(4,h4("Extrapolation Available"))
                ),
                fluidRow(
                  column(5,uiOutput("toggleIndicators")),
@@ -132,11 +132,17 @@ shinyUI(
                          column(2,h1(" "),uiOutput("goButton")),
                          column(4,h1(" "))
                          ),
-                fluidRow(column(3,h4(textOutput("NoticeExtrapolation"))),
-                         column(7,h4("WBs for extrapolation:"))
+                fluidRow(column(4,h4(textOutput("NoticeExtrapolation"))),
+                         column(3,h4("WBs for extrapolation:")),
+                         column(2,uiOutput("toggleWBs"))
                 ),
-                fluidRow(column(3,""),
-                column(7,DT::dataTableOutput("dtextrap"))
+                fluidRow(
+                  column(4,""),
+                  column(5,"")
+                ),                         
+                fluidRow(
+                  column(4,DT::dataTableOutput("dtextrap")),
+                  column(5,DT::dataTableOutput("dtextrapstn"))
                 )                         
         ),
         
