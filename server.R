@@ -175,9 +175,7 @@ shinyServer(function(input, output, session) {
     ))
   })
   
-  
-  
-  
+
   output$selectPeriod <- renderUI({
     tagList(selectInput(
       "period",
@@ -360,6 +358,7 @@ shinyServer(function(input, output, session) {
     values$IndSelection<-""
     updateTabItems(session, "tabs", "indicators")
     
+      
     UpdateIndTable()
  
     }, ignoreInit = T)
@@ -412,7 +411,7 @@ shinyServer(function(input, output, session) {
     if(values$wbselected==""){
       ""
     }else{
-      if(countIndicators()==0){
+      if(countIndicators()<0){
         ""
       }else{
         tagList(actionButton("extrapButton", "Extrapolation"))
@@ -435,7 +434,11 @@ shinyServer(function(input, output, session) {
   output$txtCheckedRows<-renderText({
     paste(input$checked_rows,"\n")
   })
-
+  
+  output$txtExtrapRows<-renderText({
+    paste(input$extrap_rows,"\n")
+  })
+  
   
  
   output$toggleIndicators<- renderUI({
@@ -470,8 +473,8 @@ shinyServer(function(input, output, session) {
   # })"))
   
 # ---------------- Function updateind() --------------------------------
-  updatedtind<-function(reset=0){  #,var="",chkvalue=T
-    cat(paste0("updatedtind\n"))
+  updatedtind<-function(reset=0){
+    cat(paste0("updatedtind \n"))
   output$dtind = DT::renderDataTable({
     df<-values$df_ind_status
     if(typeof(df)!="list"){
@@ -480,10 +483,20 @@ shinyServer(function(input, output, session) {
       num_col<-ncol(df)
       
       df$row<-seq(1,nrow(df),1)
-      df$row<-NULL
+      
+      #df$Select <- FALSE #ifelse(df$Select==TRUE,"true","")
+      #df$Extrap <- FALSE #ifelse(df$Extrap==TRUE,"true","")
       #df$Check<-shinyInput(checkboxInput, nrow(df), 'ind_', value = df$Selected,labels=df[,"IndicatorDescription"])
-      df$Select<-paste0('<input type="checkbox" name="ind_select" value="ind_',1:nrow(df),'" checked="',df$Selected,'">')
-      df$Extrapolate<-paste0('<input type="checkbox" name="ind_select" value="extrap_',1:nrow(df),'" checked="',df$Extrap,'">')
+      df$Select<-ifelse(df$Select==T,
+                        paste0('<input type="checkbox" name="ind_select" value="ind_',df$row,'" checked=true>'),
+                        paste0('<input type="checkbox" name="ind_select" value="ind_',df$row,'">'))
+                        
+      #df$Extrapolate<-paste0('<input type="checkbox" name="extrap_select" value="extrap_',1:nrow(df),'" checked=',value,'>')
+      df$Extrapolate<-ifelse(df$Extrap==T,
+                             paste0('<input type="checkbox" name="extrap_select" value="extrap_',df$row,'" checked=true>'),
+                             paste0('<input type="checkbox" name="extrap_select" value="extrap_',df$row,'">'))
+      df$row<-NULL
+                             
       #df$Extrapolate<-shinyInput(checkboxInput, nrow(df), 'extrap_', value=df$Extrap,labels="",width = '30px')
       
       
@@ -492,10 +505,11 @@ shinyServer(function(input, output, session) {
       df %>% rename(Indicator=IndicatorDescription)
       #df
     }
-  },server=F, escape=FALSE,selection ="single",rownames=T, 
+  },server=F, escape=F,selection ="single",rownames=T, 
   options=list(dom = 't',pageLength = 99,autoWidth=TRUE,
                preDrawCallback = JS('function() { Shiny.unbindAll(this.api().table().node()); }'),
-               drawCallback = JS('function() { Shiny.bindAll(this.api().table().node()); } ')))
+               drawCallback = JS('function() { Shiny.bindAll(this.api().table().node()); } ')
+               ))
 
   output$dtindextrap = DT::renderDataTable({
     df<-values$df_ind_extrap
@@ -505,7 +519,7 @@ shinyServer(function(input, output, session) {
         df<-df %>%
       select(Indicator=IndicatorDescription)
         }
-  },server=FALSE, escape=FALSE,selection='single',rownames=T,
+  },server=T, escape=FALSE,selection='single',rownames=T,
   options=list(dom = 't',pageLength = 99,autoWidth=TRUE  ))
   
   }
@@ -532,26 +546,24 @@ shinyServer(function(input, output, session) {
      val<-Select[1]
      cat(paste0("Select[1]=",val,"\n"))
      if(val==T){val=F}else{val=T}
-     values$df_ind_status$Selected <- val
-     updatedtind() #var="Select",chkvalue=val) #)
+     df <- df %>% mutate(Selected=val)
+     values$df_ind_status <- df
+     updatedtind() #var="select",value=val)
+     #UpdateIndTable()
    })
    
    observeEvent(input$allExtrapolate,{
      IgnoreErr<-isolate(input$IgnoreErr)
      df<-values$df_ind_status 
      ni<-nrow(df)
-     #df2 <- listIndicators()
-     #save(df,file="test.Rda")
-     Extrap=shinyValue('extrap_',ni,input$checked_rows)
+     Extrap=shinyValue('extrap_',ni,input$extrap_rows)
      val<-Extrap[1]
      cat(paste0("Extrap[1]=",val,"\n"))
      if(val==T){val=F}else{val=T}
-     values$df_ind_status$Extrap <- val
-     save(df,file="test.Rda")
-     updatedtind()
-     
-     #df$Extrap<-val
-     #values$df_ind_status$Extrap<-val
+     df$Extrap<-val
+     values$df_ind_status$Extrap<-val
+     updatedtind() #var="extrap",value=val)
+     #UpdateIndTable()
      #updatedtind(var="Extrap",chkvalue=val)
    })
    
@@ -768,7 +780,7 @@ shinyServer(function(input, output, session) {
          df<-data.frame(
            Indicator=dfi$Indicator,
            Select=shinyValue('ind_',ni,input$checked_rows),
-           Extrapolate=shinyValue('extrap_',ni,input$checked_rows)
+           Extrapolate=shinyValue('extrap_',ni,input$extrap_rows)
          )
          
        }else{

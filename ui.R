@@ -49,6 +49,8 @@ shinyUI(
                        }
                        Shiny.onInputChange("extrap_rows",checkboxesChecked);
                        })')),
+      
+      
       tabItems(
   # tab content
         tabItem(tabName = "waterbody",
