@@ -36,19 +36,49 @@ shinyUI(
                        }
                        }
                        Shiny.onInputChange("checked_rows",checkboxesChecked);
+                       
+  var checkboxes2 = document.getElementsByName("ind_select");
+                       var checkboxesChecked2 = [];
+                       for (var i=0; i<checkboxes2.length; i++) {
+                       
+                       if (checkboxes2[i].checked) {
+                       checkboxesChecked2.push(checkboxes2[i].value);
+                       }
+                       }
+                       Shiny.onInputChange("extrap_rows",checkboxesChecked2);
+  
+
                        })')),
       
-      tags$script(HTML('$(document).on("click", "input", function () {
-  var checkboxes = document.getElementsByName("extrap_select");
+      tags$script(HTML('Shiny.addCustomMessageHandler("CheckAll", function(id,check) { 
+                       var checkboxes = document.getElementsByName(id);
                        var checkboxesChecked = [];
                        for (var i=0; i<checkboxes.length; i++) {
-                       
-                       if (checkboxes[i].checked) {
-                       checkboxesChecked.push(checkboxes[i].value);
+                        checkboxes[i].checked = check
                        }
-                       }
-                       Shiny.onInputChange("extrap_rows",checkboxesChecked);
                        })')),
+ 
+      tags$script(HTML('
+                       $(document).getElementById("allIndicators").onclick = function() {
+                       alert("hello");
+                       var checkboxes = document.getElementsByName("checked_rows");
+                       var checkboxesChecked = [];
+                       var check = checkboxes[0].checked
+                       if(check){
+                       check=false
+                       }else{
+                       check=true
+                       }
+                       for (var i=0; i<checkboxes.length; i++) {
+                       checkboxes[i].checked = check
+                       }                                              }
+                       );
+
+                       ')),
+     
+      
+      
+      
       
       
       tabItems(
@@ -123,9 +153,14 @@ shinyUI(
                                ),
                         column(3,"Indicators:",
                                textOutput("txtCheckedRows"),
+                               textOutput("txtIndicatorSelect"),
                                "Extrap",
-                               textOutput("txtExtrapRows")))
-                        #column(3,DT::dataTableOutput("dtextrap")) 
+                               textOutput("txtExtrapRows"),
+                               textOutput("txtExtrapSelect")
+                        ))
+               #column(3,DT::dataTableOutput("dtextrap")) 
+        #txtIndcicatorSelect
+        #txtExtrapSelect"
                
                ),
  
