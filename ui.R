@@ -49,37 +49,7 @@ shinyUI(
   
 
                        })')),
-      
-      tags$script(HTML('Shiny.addCustomMessageHandler("CheckAll", function(id,check) { 
-                       var checkboxes = document.getElementsByName(id);
-                       var checkboxesChecked = [];
-                       for (var i=0; i<checkboxes.length; i++) {
-                        checkboxes[i].checked = check
-                       }
-                       })')),
  
-      tags$script(HTML('
-                       $(document).getElementById("allIndicators").onclick = function() {
-                       alert("hello");
-                       var checkboxes = document.getElementsByName("checked_rows");
-                       var checkboxesChecked = [];
-                       var check = checkboxes[0].checked
-                       if(check){
-                       check=false
-                       }else{
-                       check=true
-                       }
-                       for (var i=0; i<checkboxes.length; i++) {
-                       checkboxes[i].checked = check
-                       }                                              }
-                       );
-
-                       ')),
-     
-      
-      
-      
-      
       
       tabItems(
   # tab content
@@ -127,34 +97,25 @@ shinyUI(
                fluidRow(column(9,textOutput("SelectedType"))),
                fluidRow(column(4,uiOutput("selectPressure")),
                         column(2,h1(" "),uiOutput("buttonExtrap")),
-                        column(3,h1(" "),checkboxInput("IgnoreErr", 
-                                             "Use all indicators, incl. those not meeting strict requirements. E.g. data for 3 out of 6 years.",
-                                              value = TRUE, width = '100%')#,
-                               #p("Use all data for the selected waterbody, including indicators which have data for fewer than 3 out of 6 years.")#,
-                        #column(1,h2(" "),uiOutput("btnExtrap"))
+                        column(3,h1(" ")
                         )),
-               fluidRow(column(7,h4("Indicator availability"))#,
-                        #column(3,h4("WBs for extrapolation:"))
+               fluidRow(column(5,h4("Indicator Availability & Selection")),
+                        column(4,h4("Select Indicators for Extrapolation"))
                ),
                fluidRow(
                  column(5,uiOutput("toggleIndicators")),
-                 column(3,uiOutput("toggleExtrapolate"))
+                 column(4,uiOutput("toggleExtrapolate"))
                ),
-               
-               #fluidRow(column(3, offset = 0,align="left",
-               #                checkboxInput("indAll","Indicators - Select/Deselect All ",
-               #                              value = TRUE, width = '100%')),
-               #         column(4, offset = 0,align="right",
-               #                checkboxInput("extrapAll","Extrapolation - Select/Deselect All ",
-               #                              value = TRUE, width = '100%'))
-               #),
-        
-               fluidRow(column(7,DT::dataTableOutput("dtind")
+              
+               fluidRow(column(5,
+                               DT::dataTableOutput("dtind"),
+                               checkboxInput("IgnoreErr", 
+                                             "Use indicators not meeting strict requirements. E.g. having data for <3 out of 6 years.",
+                                              value = TRUE, width = '100%'),
+                               textOutput("txtCheckedRows")
                                ),
-                        column(3,"Indicators:",
-                               textOutput("txtCheckedRows"),
-                               textOutput("txtIndicatorSelect"),
-                               "Extrap",
+                        column(4,
+                               DT::dataTableOutput("dtindextrap"),
                                textOutput("txtExtrapRows"),
                                textOutput("txtExtrapSelect")
                         ))
@@ -174,7 +135,7 @@ shinyUI(
                 fluidRow(column(3,h4(textOutput("NoticeExtrapolation"))),
                          column(7,h4("WBs for extrapolation:"))
                 ),
-                fluidRow(column(3,DT::dataTableOutput("dtindextrap")),
+                fluidRow(column(3,""),
                 column(7,DT::dataTableOutput("dtextrap"))
                 )                         
         ),
