@@ -26,7 +26,17 @@ shinyUI(
                        Shiny.unbindAll($('#'+id).find('table').DataTable().table().node());
                        })")),
       
-      
+      tags$script(HTML('$(document).on("click", "input", function () {
+  var checkboxes = document.getElementsByName("row_selected");
+                       var checkboxesChecked = [];
+                       for (var i=0; i<checkboxes.length; i++) {
+                       
+                       if (checkboxes[i].checked) {
+                       checkboxesChecked.push(checkboxes[i].value);
+                       }
+                       }
+                       Shiny.onInputChange("checked_rows",checkboxesChecked);
+                       })')),
       tabItems(
   # tab content
         tabItem(tabName = "waterbody",
@@ -82,6 +92,11 @@ shinyUI(
                fluidRow(column(7,h4("Indicator availability"))#,
                         #column(3,h4("WBs for extrapolation:"))
                ),
+               fluidRow(
+                 column(5,uiOutput("toggleIndicators")),
+                 column(3,uiOutput("toggleExtrapolate"))
+               ),
+               
                #fluidRow(column(3, offset = 0,align="left",
                #                checkboxInput("indAll","Indicators - Select/Deselect All ",
                #                              value = TRUE, width = '100%')),
