@@ -358,6 +358,7 @@ shinyServer(function(input, output, session) {
     values$IndSelection<-""
     values$toggleIndAll<-T
     values$toggleExtrapAll<-T
+    values$toggleExtrapWBs<-T
     updateTabItems(session, "tabs", "indicators")
     
       
@@ -479,6 +480,20 @@ shinyServer(function(input, output, session) {
     }
   })
   
+  output$applyWBs<- renderUI({
+    if(values$wbselected==""){
+      ""
+    }else{
+      if(length(input$dtextrap_rows_selected)>0){
+        tagList(actionButton("applyExtrapWBs", "Apply"))
+      }else{
+        ""
+      }
+    }
+  })
+  
+  
+  
   
   # --------------- update indicator information / selection ----------------
   
@@ -555,6 +570,7 @@ shinyServer(function(input, output, session) {
   
   dt_proxy <- DT::dataTableProxy("dtind")
   dt_proxy2 <- DT::dataTableProxy("dtindextrap")
+  dt_proxy3 <- DT::dataTableProxy("dtextrapstn")
   
    observeEvent(input$allIndicators,{
      val=values$toggleIndAll
@@ -573,6 +589,16 @@ shinyServer(function(input, output, session) {
        DT::selectRows(dt_proxy2, input$dtindextrap_rows_all)
      } else {
        DT::selectRows(dt_proxy2, NULL)
+     }
+   })
+   
+   observeEvent(input$allExtrapWBs,{
+     val=values$toggleExtrapWBs
+     values$toggleExtrapWBs<-!val
+     if(val){
+       DT::selectRows(dt_proxy3, input$dtextrapstn_rows_all)
+     } else {
+       DT::selectRows(dt_proxy3, NULL)
      }
    })
    
@@ -737,28 +763,59 @@ shinyServer(function(input, output, session) {
   
   # ---------- DataTable with stations for extrapolation ---------------------
   
-  output$dtextrapstn=DT::renderDataTable({
-    if(length(input$dtextrap_rows_selected)>0){
-      df<-values$dtextrap
-      indmatch<-df[input$dtextrap_rows_selected,"Indicator"]
-      
-      cat(paste0("indmatch",indmatch,"\n"))
-      df<-isolate(values$dfextrapWB) %>%
-        filter(IndicatorDescription==indmatch) %>%
-        select(WB,Select)
-    }else{
-      df<-data.frame()
-    }
-    df
-  },server=T, escape=FALSE,selection='multiple',rownames=T,
-  options=list(dom = 't',pageLength = 99,autoWidth=TRUE  ))
+  # output$dtextrapstn=DT::renderDataTable({
+  #   if(length(input$dtextrap_rows_selected)>0){
+  #     df<-values$dtextrap
+  #     indmatch<-df[input$dtextrap_rows_selected,"Indicator"]
+  #     
+  #     cat(paste0("indmatch",indmatch,"\n"))
+  #     df<-isolate(values$dfextrapWB) %>%
+  #       filter(IndicatorDescription==indmatch) %>%
+  #       select(WB,Select)
+  #   }else{
+  #     df<-data.frame()
+  #   }
+  #   df
+  # },server=T, escape=FALSE,selection='multiple',rownames=T,
+  # options=list(dom = 't',pageLength = 99,autoWidth=TRUE  ))
   
-  observeEvent(input$dtextrap_rows_selected,{
-    if(!is.null(input$dtextrap_rows_selected)){
-      cat(paste0(input$dtextrap_rows_selected),"\n")
-    }
+  
+  # output$x1 = renderDataTable(
+  #   datatable( data(),
+  #              selection = list(mode = 'multiple', selected = all_rows())), 
+  #   server = FALSE)
+  
+  observeEvent(input$applyExtrapWBs,{
+    cat("Apply!\n")
   })
   
+  observeEvent(input$dtextrap_rows_selected,{
+    if(is.null(input$dtextrap_rows_selected)){
+        df<-data.frame()
+        selected<-NULL
+      }else{
+       cat(paste0(input$dtextrap_rows_selected),"\n")
+        df<-values$dtextrap
+        indmatch<-df[input$dtextrap_rows_selected,"Indicator"]
+        cat(paste0("indmatch",indmatch,"\n"))
+        df<-isolate(values$dfextrapWB) 
+          df <- df%>% 
+            filter(IndicatorDescription==indmatch)
+          if(nrow(df)>0){
+            df$id<-1:nrow(df)
+           selected <- df[df$Select==T,"id"]
+          } else{
+            selected<-NULL
+          }
+        df <- df %>% select(WB)
+      }
+    output$dtextrapstn = renderDataTable(
+      datatable(df,options=list(dom = 't',pageLength = 99,autoWidth=TRUE),
+                 selection=list(mode='multiple',selected=selected)), 
+      server=FALSE)
+  })
+  
+  #list(selected = c(1, 3, 4, 6, 9)
   
   output$NoticeExtrapolation<-renderText({
    

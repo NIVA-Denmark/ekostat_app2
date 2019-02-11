@@ -133,8 +133,9 @@ shinyUI(
                          column(4,h1(" "))
                          ),
                 fluidRow(column(4,h4(textOutput("NoticeExtrapolation"))),
-                         column(3,h4("WBs for extrapolation:")),
-                         column(2,uiOutput("toggleWBs"))
+                         column(2,h4("WBs for extrapolation:")),
+                         column(2,uiOutput("toggleWBs")),
+                         column(1,uiOutput("applyWBs"))
                 ),
                 fluidRow(
                   column(4,""),
