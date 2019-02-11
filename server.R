@@ -513,8 +513,9 @@ shinyServer(function(input, output, session) {
       df$row<-NULL
             # reorder_columns
       df<-df[c(num_col-1,seq(2,num_col-2,1))]
-      df %>% rename(Indicator=IndicatorDescription)
-      #df
+      df<-df %>% rename(Indicator=IndicatorDescription)
+      values$df_ind_select<-df
+      df
     }
   },server=F, escape=F,selection ="multiple",rownames=T, 
   options=list(dom = 't',pageLength = 99,autoWidth=TRUE
@@ -522,12 +523,16 @@ shinyServer(function(input, output, session) {
 
 
   output$dtindextrap = DT::renderDataTable({
-    dftype<-values$resAvgType %>%
+    dftype<-values$resAvgType
+    if(typeof(dftype)!="list"){
+      dftype=""
+    }else{
+    dftype<-dftype %>%
       distinct(Period,Indicator,WB)
     dftype<-dftype %>% 
       group_by(Period,Indicator) %>%
       summarise(WB_count=n())
-    
+    }
     if(length(input$dtind_rows_selected)==0){
        df<-data.frame()
     }else{
@@ -563,7 +568,7 @@ shinyServer(function(input, output, session) {
   #}
   
   observeEvent(input$extrapAll, {
-    cat(paste0("extrapAll:",input$extrapAll,"\n"))
+    #cat(paste0("extrapAll:",input$extrapAll,"\n"))
   }, ignoreInit = T)
   
 
@@ -605,7 +610,7 @@ shinyServer(function(input, output, session) {
    
 
   UpdateIndTable<-function(){
-    cat(paste0("UpdateIndTable\n"))
+    #cat(paste0("UpdateIndTable\n"))
       # Get the info on the status for the indicators
       bOK<-TRUE
       
@@ -627,7 +632,7 @@ shinyServer(function(input, output, session) {
       if(bOK){
         df3 <- NULL
         for(i in 1:length(pname)){
-          cat(paste0(pname[i],"\n"))
+          #cat(paste0(pname[i],"\n"))
         pname[i]<-gsub(" ",".",pname[i])
         df2 <- dfind %>% filter(Water_type==values$watertypeselected)
         df2 <- df2[df2[,pname[i]]=="X",]
@@ -753,7 +758,7 @@ shinyServer(function(input, output, session) {
        mutate(Select=T)
     
      values$dfextrapWB <- dfextrapWB
-     save(dfextrapWB,file="test.Rda")
+     
      
     #    #rename(IndicatorDescription=Indicator) %>%
    
@@ -785,19 +790,14 @@ shinyServer(function(input, output, session) {
   #              selection = list(mode = 'multiple', selected = all_rows())), 
   #   server = FALSE)
   
-  observeEvent(input$applyExtrapWBs,{
-    cat("Apply!\n")
-  })
-  
   observeEvent(input$dtextrap_rows_selected,{
     if(is.null(input$dtextrap_rows_selected)){
         df<-data.frame()
         selected<-NULL
       }else{
-       cat(paste0(input$dtextrap_rows_selected),"\n")
+       #cat(paste0(input$dtextrap_rows_selected),"\n")
         df<-values$dtextrap
         indmatch<-df[input$dtextrap_rows_selected,"Indicator"]
-        cat(paste0("indmatch",indmatch,"\n"))
         df<-isolate(values$dfextrapWB) 
           df <- df%>% 
             filter(IndicatorDescription==indmatch)
@@ -808,6 +808,7 @@ shinyServer(function(input, output, session) {
             selected<-NULL
           }
         df <- df %>% select(WB)
+        values$current_extrap_WBs <- df
       }
     output$dtextrapstn = renderDataTable(
       datatable(df,options=list(dom = 't',pageLength = 99,autoWidth=TRUE),
@@ -815,8 +816,41 @@ shinyServer(function(input, output, session) {
       server=FALSE)
   })
   
-  #list(selected = c(1, 3, 4, 6, 9)
+  observeEvent(input$applyExtrapWBs,{
+    df<-values$current_extrap_WBs
+    if(nrow(df)>1){
+    df$SelectNew<-NA
+    df1 <- df[input$dtextrapstn_rows_selected,]
+    df<-df %>% 
+      select(WB) 
+    
+    if(nrow(df1)>0){
+      df1$SelectNew=T
+      df<-df %>% left_join(df1,by="WB")
+      dfapply<- df %>% mutate(SelectNew=ifelse(is.na(SelectNew),F,SelectNew))
+    }else{
+      dfapply<- df %>% mutate(SelectNew=F)
+    }
+
+
+    df<-values$dtextrap
+    indmatch<-df[input$dtextrap_rows_selected,"Indicator"]
+    dfapply <- dfapply %>% mutate(IndicatorDescription=indmatch)
+    
+    dfwb<-isolate(values$dfextrapWB)
+    
+    dfwb <- dfwb %>% 
+      left_join(dfapply,by=c("IndicatorDescription","WB"))
+    
+    dfwb <- dfwb %>% 
+      mutate(Select=ifelse(is.na(SelectNew),Select,SelectNew)) %>%
+      select(-SelectNew)
+
+    values$dfextrapWB<- dfwb
+    }
+  })
   
+
   output$NoticeExtrapolation<-renderText({
    
     df<-input$dtindextrap_rows_selected
@@ -875,14 +909,22 @@ observeEvent(input$goButton, {
   #df<-listIndicators()
   #browser()
   withProgress(message = 'Calculating...', value = 0, {
-    df<- listIndicators()
-    df <- df %>% filter(Select==T)
-    IndList <- df$Indicator
-    df <- df %>% filter(Extrapolate==T) # df now contains only indicators to be extrapolated
-    ExtrapList <- df$Indicator
     
+    df<-values$df_ind_select
+    df<-df[input$dtind_rows_selected,]
+    df<-df %>%
+      rename(IndicatorDescription=Indicator) %>%
+      left_join(select(dfind,Indicator,IndicatorDescription))
+    
+    #df<- listIndicators()
+    #df <- df %>% filter(Select==T)
+    IndList <- df$Indicator
     cat(paste0("Indicator list:", paste(paste0("'",IndList,"'"),collapse = ","),"\n"))
-    cat(paste0("Extrap list:", paste(paste0("'",ExtrapList,"'"),collapse = ","),"\n"))
+    
+    #df <- df %>% filter(Extrapolate==T) # df now contains only indicators to be extrapolated
+    #ExtrapList <- df$Indicator
+    
+    #cat(paste0("Extrap list:", paste(paste0("'",ExtrapList,"'"),collapse = ","),"\n"))
     
     nSimMC <- input$n
     
@@ -926,13 +968,20 @@ observeEvent(input$goButton, {
       matchcode<-c(0)
     }
 
+    df <- values$dfextrapWB
+    df <- df %>% 
+      filter(Select==T) %>%
+      select(WB,Indicator)
+    
     dfextrap<-values$resAvgType
+    
     if(is.null(dfextrap)){dfextrap<-""}
     if(dfextrap!=""){
     dfextrap<- df %>% 
-      left_join(dfextrap,by="Indicator") %>%
+      left_join(dfextrap,by=c("WB","Indicator")) %>%
       filter(!is.na(WB))
     #? filter where 
+    save(dfextrap,file="test.Rda")
     
     dfmatch<-resAvg %>% 
       filter(Code %in% matchcode) %>% 

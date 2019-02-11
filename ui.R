@@ -111,8 +111,8 @@ shinyUI(
                                DT::dataTableOutput("dtind"),
                                checkboxInput("IgnoreErr", 
                                              "Use indicators not meeting strict requirements. E.g. having data for <3 out of 6 years.",
-                                              value = TRUE, width = '100%'),
-                               textOutput("txtCheckedRows")
+                                              value = TRUE, width = '100%')#,
+                               #textOutput("txtCheckedRows")
                                ),
                         column(4,
                                DT::dataTableOutput("dtindextrap"),
