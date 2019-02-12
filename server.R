@@ -768,27 +768,8 @@ shinyServer(function(input, output, session) {
   
   # ---------- DataTable with stations for extrapolation ---------------------
   
-  # output$dtextrapstn=DT::renderDataTable({
-  #   if(length(input$dtextrap_rows_selected)>0){
-  #     df<-values$dtextrap
-  #     indmatch<-df[input$dtextrap_rows_selected,"Indicator"]
-  #     
-  #     cat(paste0("indmatch",indmatch,"\n"))
-  #     df<-isolate(values$dfextrapWB) %>%
-  #       filter(IndicatorDescription==indmatch) %>%
-  #       select(WB,Select)
-  #   }else{
-  #     df<-data.frame()
-  #   }
-  #   df
-  # },server=T, escape=FALSE,selection='multiple',rownames=T,
-  # options=list(dom = 't',pageLength = 99,autoWidth=TRUE  ))
   
-  
-  # output$x1 = renderDataTable(
-  #   datatable( data(),
-  #              selection = list(mode = 'multiple', selected = all_rows())), 
-  #   server = FALSE)
+ 
   
   observeEvent(input$dtextrap_rows_selected,{
     if(is.null(input$dtextrap_rows_selected)){
@@ -808,6 +789,8 @@ shinyServer(function(input, output, session) {
             selected<-NULL
           }
         df <- df %>% select(WB)
+        df <- df %>% left_join(select(dfwb_info,WB=WB_ID,Name=WB_Name),by="WB")
+        
         values$current_extrap_WBs <- df
       }
     output$dtextrapstn = renderDataTable(
