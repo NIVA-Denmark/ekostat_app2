@@ -1,34 +1,34 @@
 CleanSubTypes <- function(df){
   if(sum(names(df)=="Year")>0) {
-    oksubtypes <- df %>% distinct(WB,Indicator,IndSubtype,Period,Code,Year) %>% 
+    oksubtypes <- df %>% distinct(WB_ID,Indicator,IndSubtype,Period,Code,Year) %>% 
       filter(Code>-10,IndSubtype!="")
     
-    subtypes <- df %>% distinct(WB,Indicator,IndSubtype,Period,Year) %>%
+    subtypes <- df %>% distinct(WB_ID,Indicator,IndSubtype,Period,Year) %>%
       filter(IndSubtype!="")
     
     subtypes <- subtypes %>% 
-      left_join(oksubtypes,by=c("WB","Indicator","IndSubtype","Period","Year")) %>%
+      left_join(oksubtypes,by=c("WB_ID","Indicator","IndSubtype","Period","Year")) %>%
       filter(is.na(Code)) %>%
       select(-Code) %>%
       mutate(drop=1)
     
-    df <- df %>% left_join(subtypes,by=c("WB","Indicator","IndSubtype","Period","Year")) %>%
+    df <- df %>% left_join(subtypes,by=c("WB_ID","Indicator","IndSubtype","Period","Year")) %>%
       filter(is.na(drop)) %>%
       select(-drop)
   }else{
-    oksubtypes <- df %>% distinct(WB,Indicator,IndSubtype,Period,Code) %>% 
+    oksubtypes <- df %>% distinct(WB_ID,Indicator,IndSubtype,Period,Code) %>% 
       filter(Code>-10,IndSubtype!="")
     
-    subtypes <- df %>% distinct(WB,Indicator,IndSubtype,Period) %>%
+    subtypes <- df %>% distinct(WB_ID,Indicator,IndSubtype,Period) %>%
       filter(IndSubtype!="")
     
     subtypes <- subtypes %>% 
-      left_join(oksubtypes,by=c("WB","Indicator","IndSubtype","Period")) %>%
+      left_join(oksubtypes,by=c("WB_ID","Indicator","IndSubtype","Period")) %>%
       filter(is.na(Code)) %>%
       select(-Code) %>%
       mutate(drop=1)
     
-    df <- df %>% left_join(subtypes,by=c("WB","Indicator","IndSubtype","Period")) %>%
+    df <- df %>% left_join(subtypes,by=c("WB_ID","Indicator","IndSubtype","Period")) %>%
       filter(is.na(drop)) %>%
       select(-drop)
   }
