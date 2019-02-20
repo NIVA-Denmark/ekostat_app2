@@ -79,13 +79,7 @@ shinyServer(function(input, output, session) {
   } 
   
   # Read list of indicators
-  #dfperiod_C <- readdb(dbpath_C, "SELECT DISTINCT(Period) FROM resAvg")
-  #dfperiod_R <- readdb(dbpath_R, "SELECT DISTINCT(Period) FROM resAvg")
-  #dfperiod_L <- readdb(dbpath_L, "SELECT DISTINCT(Period) FROM resAvg")
-  #dfperiod<-readdb(dbselect(input$WaterType), "SELECT DISTINCT(Period) FROM resAvg")
-  
-  #dfperiod<-readdb(dbpath(), "SELECT DISTINCT(Period) FROM resAvg")
-  
+ 
   values <- reactiveValues(resMC = data.frame())
   values$wbselected <- ""
   values$wbselectedname <- ""
@@ -97,6 +91,7 @@ shinyServer(function(input, output, session) {
   values$resAvgType <- ""
   values$resMCType <-""
   values$IndSelection<-""
+  #values$ClickedWB <- FALSE
 
   dfwb_lan <- readdb(dbpath_info, "SELECT * FROM WB_Lan") %>% # matching Län and WB_ID
     filter(!is.na(Lan)) %>%
@@ -380,6 +375,25 @@ shinyServer(function(input, output, session) {
     values$toggleIndAll<-T
     values$toggleExtrapAll<-T
     values$toggleExtrapWBs<-T
+    
+    # ----------------------------------------
+    # reset the results tables
+    values$res1MC<-""
+    values$res2MC<-""
+    values$res3MC<-""
+    values$res4MC<-""
+    values$resInd<-""
+    values$resAvg<-data.frame()
+    values$resMC<-data.frame()
+    
+    # ----------------------------------------
+    # reset the extrapolation WB selection table
+    output$dtextrapstn = renderDataTable(
+      datatable(data.frame(),options=list(dom = 't',pageLength = 99,autoWidth=TRUE),
+                selection=list(mode='multiple')), 
+      server=FALSE)
+    #-----------------------------------------
+    
     updateTabItems(session, "tabs", "indicators")
     
       
@@ -525,6 +539,9 @@ shinyServer(function(input, output, session) {
 # ---------------- Function updateind() --------------------------------
     
     output$dtind = DT::renderDataTable({
+      
+      input$buttonWB
+      
     df<-values$df_ind_status
     if(typeof(df)!="list"){
       df<-data.frame() 
@@ -753,6 +770,7 @@ shinyServer(function(input, output, session) {
   observeEvent(input$extrapButton, {
  
      output$dtextrap=DT::renderDataTable({
+       input$buttonWB
       if(length(input$dtindextrap_rows_selected)>0){
         df<-values$df_extrap[input$dtindextrap_rows_selected,]
         df<- df %>% select(Indicator,Period)
@@ -1636,6 +1654,10 @@ observeEvent(input$goButton, {
   
   
   downloadResults2<-function(){
+    
+    #input$buttonWB
+    
+    cat("downloadResults2\n")
     resMC <- values$resMC
     grplist <- c(  "WB_ID","Type","Period","QEtype","QualityElement","QualitySubelement","Indicator","IndSubtype",
                    "Note","Unit","Months","Worst","PB","MP","GM","HG","Ref","Mean","StdErr","EQR","Class")
@@ -1648,6 +1670,7 @@ observeEvent(input$goButton, {
   
   
   downloadResults<-function(){
+    cat("downloadResults\n")
     withProgress(message = 'Preparing download...', value = 0, {
     resMC <- values$resMC
     resAvg <- values$resAvg
