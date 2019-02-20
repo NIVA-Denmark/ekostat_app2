@@ -24,22 +24,28 @@ extrapolation_single<-function(dfavg,dfyr,dfMC,dfbnds,nsim){
       yrto<-as.numeric(substr(period,6,9))
       type<-dfavg$Type[1]
 
-      dfvar<-dfbnds %>% filter(Indicator==indicator,Depth_stratum==subtype,Type==type) 
+      #dfvar<-dfbnds %>% filter(Indicator==indicator,Depth_stratum==subtype,Type==type) 
+      dfvar<-dfbnds %>% filter(Indicator==indicator,Type==type) 
+      if(is.na(subtype)){
+        dfvar<-dfvar %>% filter(is.na(Depth_stratum))
+      }else{
+         dfvar<-dfvar %>% filter(Depth_stratum==subtype)
+     }
       varper<-dfvar$V_WBperiod[1]
       varyr<-dfvar$V_WBannual[1]
       var_list<-list(V_WBperiod=varper,V_WBannual=varyr)
       
       ix<-0
-      wbs<-dfavg %>% distinct(WB)
+      wbs<-dfavg %>% distinct(WB_ID)
       ntype<-nrow(wbs)
       un<-NULL
-      for(wb in wbs$WB){
+      for(wb in wbs$WB_ID){
         ix<-ix+1
-        datperiod<-dfavg %>% filter(WB==wb) %>%
+        datperiod<-dfavg %>% filter(WB_ID==wb) %>%
           select(mean=Mean,stderr=StdErr) 
-        datannual<-dfyr %>% filter(WB==wb) %>%
+        datannual<-dfyr %>% filter(WB_ID==wb) %>%
           select(year=Year,mean=Mean,stderr=StdErr)
-        indicator_sim<-dfMC %>% filter(WB==wb) %>%
+        indicator_sim<-dfMC %>% filter(WB_ID==wb) %>%
           select(Value) %>% as.list()
         uni<-list(period=datperiod,annual=datannual,indicator_sim=indicator_sim$Value,result_code=0)
         if(ix==1){
@@ -69,10 +75,10 @@ extrapolation<-function(dfextrap,dfbnds,nsim,resYr,resAvg,resMC){
   # dfextrap contains distinct WB,Indicator,Period,Type to be used in extrapolation
   # WB here is the id of those used in extrapolation - NOT the one for the results
   
-  incProgress(0.1,message="doing extrapolation calculations")
-  dfperiod <- dfextrap %>% left_join(resAvg,by=c("WB","Indicator","Type","Period"))
-  dfyear <- dfextrap %>% left_join(resYr,by=c("WB","Indicator","Type","Period"))
-  dfMC <- dfextrap %>% left_join(resMC,by=c("WB","Indicator","Type","Period"))
+  #incProgress(0.1,message="doing extrapolation calculations")
+  dfperiod <- dfextrap %>% left_join(resAvg,by=c("WB_ID","Indicator","Type","Period"))
+  dfyear <- dfextrap %>% left_join(resYr,by=c("WB_ID","Indicator","Type","Period"))
+  dfMC <- dfextrap %>% left_join(resMC,by=c("WB_ID","Indicator","Type","Period"))
   
   listperiod<-dfperiod %>% split(list(.$Indicator,.$Period))
   listyr<-dfyear %>% split(list(.$Indicator,.$Period))

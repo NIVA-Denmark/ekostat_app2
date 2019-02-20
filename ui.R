@@ -111,18 +111,13 @@ shinyUI(
                                DT::dataTableOutput("dtind"),
                                checkboxInput("IgnoreErr", 
                                              "Use indicators not meeting strict requirements. E.g. having data for <3 out of 6 years.",
-                                              value = TRUE, width = '100%')#,
-                               #textOutput("txtCheckedRows")
+                                              value = TRUE, width = '100%')
                                ),
                         column(4,
                                DT::dataTableOutput("dtindextrap"),
                                textOutput("txtExtrapRows"),
                                textOutput("txtExtrapSelect")
                         ))
-               #column(3,DT::dataTableOutput("dtextrap")) 
-        #txtIndcicatorSelect
-        #txtExtrapSelect"
-               
                ),
  
         # tab content
@@ -180,7 +175,7 @@ shinyUI(
                 h3("Monte Carlo"),
                 numericInput("n",
                              label = "Number of simulations", min=1,
-                             value = 200),
+                             value = 100),
                  p("Options for Monte Carlo simulations.")#,
                 #h3("Indicator List"),
                 #checkboxInput("chkClassBnds","Show Class Boundaries", value=FALSE, width=NULL)

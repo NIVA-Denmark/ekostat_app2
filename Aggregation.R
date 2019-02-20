@@ -47,10 +47,17 @@ Aggregate<-function(df,level=1,Groups="",QE_use_mean=c("Supporting")){
     }else{
       #browser()
       df_res$EQR<-ifelse(is.nan(df_res$EQR),NA,df_res$EQR)
+      #df_min <- df_res %>%
+      #  group_by_(.dots=GroupsType) %>%
+      #  summarise(nInd=sum(nInd,na.rm=TRUE),nSubE=sum(nSubE,na.rm=TRUE),EQRmean=mean(EQR,na.rm=TRUE),EQR=min(EQR,na.rm=TRUE)) %>%
+      #  ungroup()
+
       df_min <- df_res %>%
-        group_by_(.dots=GroupsType) %>%
-        summarise(nInd=sum(nInd,na.rm=TRUE),nSubE=sum(nSubE,na.rm=TRUE),EQRmean=mean(EQR,na.rm=TRUE),EQR=min(EQR,na.rm=TRUE)) %>%
+        group_by_(.dots=GroupsType) 
+      df_min <- suppressWarnings(summarise(df_min,nInd=sum(nInd,na.rm=TRUE),nSubE=sum(nSubE,na.rm=TRUE),EQRmean=mean(EQR,na.rm=TRUE),EQR=min(EQR,na.rm=TRUE)))
+      df_min <- df_min %>%
         ungroup()
+      
       df_min$EQR<-ifelse(is.infinite(df_min$EQR),NA,df_min$EQR)
       
       #Join the dataframe with minimum EQR values back to the QE results to get the name of
