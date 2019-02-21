@@ -142,9 +142,9 @@ SelectObs<-function(df,indicator,sWB,sPeriod,df_indicators,df_var){
 }
 
 # GetIndicatorMonths
-GetIndicatorMonths<-function(indicator,df_bound){
+GetIndicatorMonths<-function(indicator,type,df_bound){
   df_bound <- df_bound %>% 
-    filter(Indicator==indicator) %>%
+    filter(Indicator==indicator,Type==type) %>%
     distinct(Months)
   if(nrow(df_bound)>1){
     cat(paste0("Indicator ",indicator," has more than one combination of months!\n"))

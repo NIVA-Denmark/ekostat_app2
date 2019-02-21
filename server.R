@@ -1642,9 +1642,9 @@ observeEvent(input$goButton, {
         df$station <- as.factor(df$station)
         indicator<-values$sIndicator
         if(indicator %in% listWBindicators){
-          months<-GetIndicatorMonths(indicator,df_bound_WB)
+          months<-GetIndicatorMonths(indicator,values$typeselected,df_bound_WB)
         }else{
-          months<-GetIndicatorMonths(indicator,df_bound)
+          months<-GetIndicatorMonths(indicator,values$typeselected,df_bound)
         }
         
         df <- df %>% 
@@ -1662,16 +1662,7 @@ observeEvent(input$goButton, {
     }, height = plotHeight, width = plotWidth)
   })  
   
-  # ShowHideDownload<-function(){
-  #   cat("ShowHideDownload\n")
-  # output$downloadButton <- renderUI({
-  #   if (nrow(values$resMC) > 0) {
-  #     ""
-  #   }else{
-  #       tagList(actionButton("downloadButton", "Download Results"))
-  #     }
-  # })
-  # }  
+
   
   output$download <- renderUI({
     if (nrow(values$resMC) > 0) {
