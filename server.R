@@ -33,7 +33,7 @@ shinyServer(function(input, output, session) {
   #  cat(paste0(id," "),s,"\n")
   #  s
   #}
-    
+  listWBindicators <- c("CoastHypoxicArea")
   
   
   # ------------------------ setup -----------------------------------------------
@@ -1640,9 +1640,22 @@ observeEvent(input$goButton, {
         
         df <- values$resObs
         df$station <- as.factor(df$station)
+        indicator<-values$sIndicator
+        if(indicator %in% listWBindicators){
+          months<-GetIndicatorMonths(indicator,df_bound_WB)
+        }else{
+          months<-GetIndicatorMonths(indicator,df_bound)
+        }
         
-        p <- ggplot(df, aes_string(x = "date", y = yvar, colour="station")) + geom_point(size=2) 
-        p <- p + theme_minimal(base_size = 16) + scale_x_date(date_labels= "%d-%m-%Y") + xlab("Date") 
+        df <- df %>% 
+          mutate(IndMonth=ifelse(month %in% months,T,F))
+
+        df1<- filter(df,IndMonth)
+        df2<- filter(df,!IndMonth)
+        
+        p<- ggplot() + geom_point(data=df1, aes_string(x = "date", y = yvar, colour="station"), size=2) +
+          geom_point(data=df2, aes_string(x = "date", y = yvar, colour="station"), size=2,alpha=0.3)
+        p <- p + theme_minimal(base_size = 16) + scale_x_date(date_labels= "%d-%m-%Y") + xlab("Date")
         
       }
       return(p)
