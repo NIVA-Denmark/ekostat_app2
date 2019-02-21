@@ -128,6 +128,7 @@ ClassObsTableDT<-function(df,roundlist=NULL,sDOM="t"){
 #
 #filter observation data based on the selected indicator, WB and period
 SelectObs<-function(df,indicator,sWB,sPeriod,df_indicators,df_var){
+
   varlist<-GetVarNames(indicator,df_indicators,df_var)
   obsvar<-varlist[length(varlist)]
 

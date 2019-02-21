@@ -958,9 +958,14 @@ observeEvent(input$goButton, {
   withProgress(message = 'Calculating...', value = 0, {
     df<-values$df_ind_select
     df<-df[input$dtind_rows_selected,]
+    
+    df2<-df_indicators %>% 
+      filter(Water_type==values$watertypeselected) %>% 
+      select(Indicator,IndicatorDescription) 
+    
     df<-df %>%
       rename(IndicatorDescription=Indicator) %>%
-      left_join(select(df_indicators,Indicator,IndicatorDescription))
+      left_join(df2,by="IndicatorDescription")
     
     #df<- listIndicators()
     #df <- df %>% filter(Select==T)
@@ -1070,7 +1075,14 @@ observeEvent(input$goButton, {
     # XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     incProgress(0.1) 
     dbDisconnect(db)
-
+    
+    
+    save(dfextrap,file="test1.Rda")
+    save(df_bound,file="test2.Rda")
+    save(resYrtype,file="test3.Rda")
+    save(resAvgtype,file="test4.Rda")
+    save(resMCtype,file="test5.Rda")
+    
     resExtrap<-extrapolation(dfextrap,df_bound,input$n,resYrtype,resAvgtype,resMCtype)
     resAvgExtrap<-resExtrap$dfAvg
     
