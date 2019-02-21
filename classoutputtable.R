@@ -127,8 +127,8 @@ ClassObsTableDT<-function(df,roundlist=NULL,sDOM="t"){
 #
 #
 #filter observation data based on the selected indicator, WB and period
-SelectObs<-function(df,indicator,sWB,sPeriod,df_indicators){
-  varlist<-GetVarNames(indicator,df_indicators)
+SelectObs<-function(df,indicator,sWB,sPeriod,df_indicators,df_var){
+  varlist<-GetVarNames(indicator,df_indicators,df_var)
   obsvar<-varlist[length(varlist)]
 
   varlist<-c("station","obspoint","date","year","month",varlist)
@@ -145,10 +145,13 @@ SelectObs<-function(df,indicator,sWB,sPeriod,df_indicators){
 #
 #
 
-GetVarNames<-function(indicator,df_indicators){
+GetVarNames<-function(indicator,df_indicators,df_var){
   if(indicator!=""){
     
-    df_indicators<-df_indicators %>% filter(Indicator==indicator)
+    df_indicators<-df_indicators %>% 
+      filter(Indicator==indicator) %>%
+      left_join(select(df_var,Indicator,Parameter=var),by="Indicator")
+    
     obsvar<-as.character(df_indicators[1,"Parameter"])
     if(substr(indicator,1,5)=="Coast"){
       if(indicator %in% c("CoastOxygen")){

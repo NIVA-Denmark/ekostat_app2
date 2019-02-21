@@ -995,7 +995,7 @@ observeEvent(input$goButton, {
                 ") AND Indicator IN (",IndList,") AND sim <= ",nSimMC)
     resMC <- dbGetQuery(db, sql) 
     resMC <- resMC %>% 
-      left_join(select(resAvg,Type,WB_ID,Period,Indicator,IndSubtype,Code,QEtype,QualityElement,QualitySubelement,Note,Unit,Months,
+      left_join(select(resAvg,Type,Typename,WB_ID,Period,Region,Indicator,IndSubtype,Code,QEtype,QualityElement,QualitySubelement,Note,Unit,Months,
                        Worst,PB,MP,GM,HG,Ref,Mean,StdErr,EQRavg=EQR,ClassAvg=Class),
                 by=c("WB_ID","Period","Indicator","IndSubtype"))
 
@@ -1139,7 +1139,7 @@ observeEvent(input$goButton, {
     
       resAvg<-resAvg %>% bind_rows(resAvgExtrap)
       resMC<-resMC %>% bind_rows(resMCExtrap)
-    
+      save(resMC,file="resMC.Rda")
     }#if(nrow(resAvgExtrap)>0)
   } #if no extraploation data
     
@@ -1469,7 +1469,8 @@ observeEvent(input$goButton, {
       indicator = values$sIndicator,
       sWB = values$sWB,
       sPeriod = values$sPeriod,
-      df_indicators
+      df_indicators,
+      df_var
     )
     if(nrow(df)>0){
       values$resObs <- df
@@ -1603,7 +1604,7 @@ observeEvent(input$goButton, {
   observeEvent(values$resObs, {
     #if (typeof(values$sIndicator)=="list") {
     if (!is.null(values$sIndicator)) {
-      vars = GetVarNames(values$sIndicator,df_indicators)
+      vars = GetVarNames(values$sIndicator,df_indicators,df_var)
     } else{
       vars <- ""
     }
