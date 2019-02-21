@@ -360,6 +360,9 @@ shinyServer(function(input, output, session) {
   
  # function to add leading zero to coastal types 
   TypeLeadingZero<-function(type){
+    if(is.numeric(type)){
+      type<-as.character(type)
+    }
     if(typeof(type)=="character"){
       n = nchar(type)
       ns = substr(type,n,n)
