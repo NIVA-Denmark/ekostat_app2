@@ -725,8 +725,9 @@ shinyServer(function(input, output, session) {
         dftypeperiod <- readdb(dbname, sql)
         #dbDisconnect(db)
         
+        
         if(nrow(dftypeperiod)>0){
-          
+          #------------------------------------
        dftypeperiod<-CleanSubTypes(dftypeperiod)
         
         dfwb_type <- dfwb_info %>% distinct(WB_ID,WB_Name)
@@ -737,17 +738,15 @@ shinyServer(function(input, output, session) {
           filter(Code==0) 
         dftypeperiod<- df2 %>% left_join(dftypeperiod,by=c("Indicator","Period")) %>%
           filter(!is.na(Mean))
-
+        } #******************
         
         df <- df2 %>% left_join(df,by=c("Indicator","Period")) %>%
           mutate(Code=ifelse(is.na(Code),-99,Code)) %>%
           mutate(Data=ifelse(Code=='0',"OK",ifelse(Code=='-1',"(OK)","-")),
                  Code=ifelse(Data=="OK",0,1))
-          
           #mutate(Data=ifelse(Code=='0',"OK",
           #                   ifelse(Code %in% c('-1','-2'),"few data","-"))) %>%
           #mutate(Code=ifelse(Data %in% matchcodename,0,1))
-        
         
           dfext <- df %>% 
             group_by(Indicator) %>% 
@@ -777,15 +776,16 @@ shinyServer(function(input, output, session) {
           values$df_ind_status <-""
           values$resAvgType <-""
          }
-        
-      }else{
-        values$df_ind_status <-""
-        values$resAvgType <-""
-      }
+        #----------------------------------
+      #}else{
+       # values$df_ind_status <-""
+      #  values$resAvgType <-""
+      #}
 
       #updatedtind()
       #browser()
-      }
+}
+
 
   
   # ------------------------------------------------------------------- 
