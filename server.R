@@ -93,13 +93,9 @@ shinyServer(function(input, output, session) {
   values$IndSelection<-""
   #values$ClickedWB <- FALSE
 
-  dfwb_lan <- readdb(dbpath_info, "SELECT * FROM WB_Lan") %>% # matching Län and WB_ID
-    filter(!is.na(Lan)) %>%
-    mutate(LanName=trimws(LanName,which="both"),Lan=trimws(Lan,which="both"))
-  
-  dfwb_mun <- readdb(dbpath_info, "SELECT * FROM WB_Mun") %>%  # matching Kommune and WB_ID
-    filter(!is.na(Mun)) %>%
-    mutate(MunName=trimws(MunName,which="both"),Mun=trimws(Mun,which="both"))
+  # dfwb_lan <- readdb(dbpath_info, "SELECT * FROM WB_Lan") %>% # matching Län and WB_ID
+  #   filter(!is.na(Lan)) %>%
+  #   mutate(LanName=trimws(LanName,which="both"),Lan=trimws(Lan,which="both"))
   
   dfwb_info <- readdb(dbpath_info, "SELECT * FROM WB_info") # type info WB_ID
   
@@ -251,7 +247,7 @@ shinyServer(function(input, output, session) {
     #browser()
     Lan <- c("ALL")
     all <- data.frame(Lan,row.names=F,stringsAsFactors=F)
-    df<-dfwb_lan  %>%
+    df<-df_WB_lan  %>%
       distinct(Lan,LanID,LanName) %>%
       arrange(LanName) %>%
       select(Lan)
@@ -262,7 +258,7 @@ shinyServer(function(input, output, session) {
   mun_list <- reactive({
     Mun <- c("ALL")
     all <- data.frame(Mun,row.names=F,stringsAsFactors=F)
-    df<-dfwb_mun  %>%
+    df<-df_WB_mun %>% 
       distinct(Mun,MunID,MunName) %>%
       arrange(MunName) %>%
       select(Mun)
@@ -283,14 +279,14 @@ shinyServer(function(input, output, session) {
     
       if (!is.null(input$lan)){
         if(input$lan!="ALL"){
-          dfselect<-dfwb_lan %>% 
+          dfselect<-df_WB_lan %>% 
             filter(Lan==input$lan) %>%
             select(WB_ID)
           df <- df %>% inner_join(dfselect,by="WB_ID")
         }}
     if (!is.null(input$mun)){
       if(input$mun!="ALL"){
-        dfselect<-dfwb_mun %>% 
+        dfselect<-df_WB_mun %>% 
           filter(Mun==input$mun) %>%
           select(WB_ID)
         df <- df %>% inner_join(dfselect,by="WB_ID")
@@ -321,7 +317,7 @@ shinyServer(function(input, output, session) {
     
     if (!is.null(input$mun)){
       if(input$mun!="ALL"){
-        dfselect<-dfwb_mun %>% 
+        dfselect<-df_WB_mun %>% 
           filter(Mun==input$mun) %>%
           select(WB_ID)
         df <- df %>% inner_join(dfselect,by="WB_ID")
@@ -329,7 +325,7 @@ shinyServer(function(input, output, session) {
         
     if (!is.null(input$lan)){
       if(input$lan!="ALL"){
-        dfselect<-dfwb_lan %>% 
+        dfselect<-df_WB_lan %>% 
           filter(Lan==input$lan) %>%
           select(WB_ID)
         df <- df %>% inner_join(dfselect,by="WB_ID")
@@ -1670,7 +1666,8 @@ observeEvent(input$goButton, {
         
         p<- ggplot() + geom_point(data=df1, aes_string(x = "date", y = yvar, colour="station"), size=2) +
           geom_point(data=df2, aes_string(x = "date", y = yvar, colour="station"), size=2,alpha=0.3)
-        p <- p + theme_minimal(base_size = 16) + scale_x_date(date_labels= "%d-%m-%Y") + xlab("Date")
+        p <- p + theme_minimal(base_size = 16) + scale_x_date(date_labels= "%d-%m-%Y") + xlab("Date") +
+         theme(legend.position="bottom")
         
       }
       return(p)
