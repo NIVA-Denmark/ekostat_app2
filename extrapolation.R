@@ -78,7 +78,7 @@ extrapolation<-function(dfextrap,dfbnds,nsim,resYr,resAvg,resMC){
   #incProgress(0.1,message="doing extrapolation calculations")
   dfperiod <- dfextrap %>% left_join(resAvg,by=c("WB_ID","Indicator","Type","Period"))
   dfyear <- dfextrap %>% left_join(resYr,by=c("WB_ID","Indicator","Type","Period"))
-  dfMC <- dfextrap %>% left_join(resMC,by=c("WB_ID","Indicator","Type","Period"))
+  dfMC <- dfextrap %>% left_join(resMC,by=c("WB_ID","Indicator","Period"))
   
   listperiod<-dfperiod %>% split(list(.$Indicator,.$Period))
   listyr<-dfyear %>% split(list(.$Indicator,.$Period))

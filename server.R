@@ -28,11 +28,11 @@ shinyServer(function(input, output, session) {
   
   # obtain the values of inputs
   
-  shinyValue = function(id, len,chklist){
-    s<-paste0(id,seq_len(len)) %in% chklist[chklist %like% id]
-    cat(paste0(id," "),s,"\n")
-    s
-  }
+  #shinyValue = function(id, len,chklist){
+  #  s<-paste0(id,seq_len(len)) %in% chklist[chklist %like% id]
+  #  cat(paste0(id," "),s,"\n")
+  #  s
+  #}
     
   
   
@@ -358,17 +358,38 @@ shinyServer(function(input, output, session) {
       } }
   })
   
+ # function to add leading zero to coastal types 
+  TypeLeadingZero<-function(type){
+    if(typeof(type)=="character"){
+      n = nchar(type)
+      ns = substr(type,n,n)
+      if(ns %in% c("s","n")){
+        value=as.numeric(substr(type,1,n-1))
+      }else{
+        value=as.numeric(type)
+        ns=""
+      }
+      if(value<10){
+        type=paste0("0",as.character(value),ns)
+      }
+    }
+    return(type)
+  }
+
   observeEvent(input$buttonWB, {
     values$wbselected<-wb_list()[input$dtwb_rows_selected,"WB_ID"]
     values$wbselectedname<-wb_list()[input$dtwb_rows_selected,"WB_Name"]
-    values$typeselected<-dfwb_info[dfwb_info$WB_ID==values$wbselected,"Type"]
+    typeselected<-dfwb_info[dfwb_info$WB_ID==values$wbselected,"Type"]
     values$periodselected<-input$period
     if(input$waterType=="Coast"){
       values$watertypeselected<-"Coastal"
+      values$typeselected<-TypeLeadingZero(typeselected)
     }else if(input$waterType=="Lake"){
       values$watertypeselected<-"Lakes"
+      values$typeselected<-typeselected
     }else if(input$waterType=="River"){
       values$watertypeselected<-"Rivers"
+      values$typeselected<-typeselected
     }
   
     values$IndSelection<-""
@@ -443,7 +464,7 @@ shinyServer(function(input, output, session) {
   observeEvent(input$pressure, {
     values$IndSelection<-""
     UpdateIndTable()
-  }, ignoreInit = T)
+  }, ignoreInit = T) 
   
   output$buttonExtrap <- renderUI({
     if(values$wbselected==""){
@@ -536,11 +557,10 @@ shinyServer(function(input, output, session) {
   #        Shiny.unbindAll($('#'+id).find('table').DataTable().table().node());
   # })"))
   
-# ---------------- Function updateind() --------------------------------
-    
+  # --------------- output$dtind ----------------------------------
     output$dtind = DT::renderDataTable({
       
-      input$buttonWB
+     input$buttonWB
       
     df<-values$df_ind_status
     if(typeof(df)!="list"){
@@ -559,6 +579,7 @@ shinyServer(function(input, output, session) {
   options=list(dom = 't',pageLength = 99,autoWidth=TRUE
                ))
 
+  # --------------- output$dtindextrap ----------------------------------
   # generate data on extrapolation for the selected indicator
   output$dtindextrap = DT::renderDataTable({
     dftype<-values$resAvgType
@@ -639,7 +660,7 @@ shinyServer(function(input, output, session) {
    
 
    
-   
+   # ---------------- Function updateind() --------------------------------
 
   UpdateIndTable<-function(){
     #cat(paste0("UpdateIndTable\n"))
@@ -663,7 +684,7 @@ shinyServer(function(input, output, session) {
       if(bOK){
         df3 <- NULL
         for(i in 1:length(pname)){
-          #cat(paste0(pname[i],"\n"))
+          
         pname[i]<-gsub(" ",".",pname[i])
         df2 <- df_indicators %>% filter(Water_type==values$watertypeselected)
         df2 <- df2[df2[,pname[i]]=="X",]
@@ -819,7 +840,7 @@ shinyServer(function(input, output, session) {
         df<-data.frame()
         selected<-NULL
       }else{
-       #cat(paste0(input$dtextrap_rows_selected),"\n")
+
         df<-values$dtextrap
         indmatch<-df[input$dtextrap_rows_selected,"Indicator"]
         df<-isolate(values$dfextrapWB) 
@@ -944,10 +965,7 @@ observeEvent(input$goButton, {
     #df<- listIndicators()
     #df <- df %>% filter(Select==T)
     IndList <- df$Indicator
-    cat(paste0("Indicator list:", paste(paste0("'",IndList,"'"),collapse = ","),"\n"))
-    
-    #df <- df %>% filter(Extrapolate==T) # df now contains only indicators to be extrapolated
-    #ExtrapList <- df$Indicator
+    #cat(paste0("Indicator list:", paste(paste0("'",IndList,"'"),collapse = ","),"\n"))
     
     nSimMC <- input$n
     
@@ -968,9 +986,21 @@ observeEvent(input$goButton, {
                 ") AND Indicator IN (",IndList,")")       
     resYr <- dbGetQuery(db, sql)
     incProgress(0.1)
-    sql<-paste0("SELECT * FROM resMC WHERE period IN (",periodlist,") AND WB_ID IN (",wblist,
-                ") AND Indicator IN (",IndList,") AND sim <= ",nSimMC)      
-    resMC <- dbGetQuery(db, sql)
+
+    #sql<-paste0("SELECT * FROM resMC WHERE period IN (",periodlist,") AND WB_ID IN (",wblist,
+    #             ") AND Indicator IN (",IndList,") AND sim <= ",nSimMC)      
+    #resMCX <- dbGetQuery(db, sql) 
+
+    sql<-paste0("SELECT WB_ID,Period,Indicator,IndSubtype,sim,Value,ClassID,Class,EQR FROM resMC WHERE period IN (",periodlist,") AND WB_ID IN (",wblist,
+                ") AND Indicator IN (",IndList,") AND sim <= ",nSimMC)
+    resMC <- dbGetQuery(db, sql) 
+    resMC <- resMC %>% 
+      left_join(select(resAvg,Type,WB_ID,Period,Indicator,IndSubtype,Code,QEtype,QualityElement,QualitySubelement,Note,Unit,Months,
+                       Worst,PB,MP,GM,HG,Ref,Mean,StdErr,EQRavg=EQR,ClassAvg=Class),
+                by=c("WB_ID","Period","Indicator","IndSubtype"))
+
+    
+    
     incProgress(0.1)
     sql<-paste0("SELECT * FROM resErr WHERE period IN (",periodlist,") AND WB_ID IN (",wblist,
                 ") AND Indicator IN (",IndList,")")         
@@ -1019,7 +1049,7 @@ observeEvent(input$goButton, {
 
     # Get results for the waterbodies used for extrapolation we are showing results for   
     wblisttype<-paste(paste0("'",dfextrap$WB_ID,"'"),collapse = ",")
-    cat(paste0("WBs for extrap: ",wblisttype,"\n"))
+    #cat(paste0("WBs for extrap: ",wblisttype,"\n"))
     db <- dbConnect(SQLite(), dbname=dbpath())
     sql<-paste0("SELECT * FROM resAvg WHERE period IN (",periodlist,") AND WB_ID IN (",wblisttype,
                 ") AND Indicator IN (",IndList,")")
@@ -1029,21 +1059,18 @@ observeEvent(input$goButton, {
                 ") AND Indicator IN (",IndList,")")
     resYrtype <- dbGetQuery(db, sql)
     incProgress(0.1)
-    sql<-paste0("SELECT * FROM resMC WHERE period IN (",periodlist,") AND WB_ID IN (",wblisttype,
+
+    #sql<-paste0("SELECT * FROM resMC WHERE period IN (",periodlist,") AND WB_ID IN (",wblisttype,
+    #            ") AND Indicator IN (",IndList,") AND sim <= ",nSimMC)
+    #resMCtype <- dbGetQuery(db, sql) 
+
+    sql<-paste0("SELECT WB_ID,Period,Indicator,IndSubtype,sim,Value,ClassID FROM resMC WHERE period IN (",periodlist,") AND WB_ID IN (",wblisttype,
                 ") AND Indicator IN (",IndList,") AND sim <= ",nSimMC)
-    resMCtype <- dbGetQuery(db, sql)
-    incProgress(0.1)
+    resMCtype <- dbGetQuery(db, sql) 
+    # XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    incProgress(0.1) 
     dbDisconnect(db)
 
-  
-    save(dfextrap,file="test1.Rda")
-    save(df_bound,file="test2.Rda")
-    save(resYrtype,file="test3.Rda")
-    save(resAvgtype,file="test4.Rda")
-    save(resMCtype,file="test5.Rda")
-    
-    
-    #function(dfextrap,dfbnds,nsim,resYr,resAvg,resMC){
     resExtrap<-extrapolation(dfextrap,df_bound,input$n,resYrtype,resAvgtype,resMCtype)
     resAvgExtrap<-resExtrap$dfAvg
     
@@ -1085,7 +1112,7 @@ observeEvent(input$goButton, {
       resAvgExtrap<-GetClass(resAvgExtrap)
       resMCExtrap<-GetClass(resMCExtrap)
       
-      save(resMCExtrap,file="test.Rda")
+      #save(resMCExtrap,file="test.Rda")
       freq<-Frequency(resMCExtrap,Groups=c("Period","Indicator","IndSubtype"),varname="ClassID") %>%
         rename(fBad=C1,fPoor=C2,fMod=C3,fGood=C4,fHigh=C5)
       
@@ -1132,7 +1159,7 @@ observeEvent(input$goButton, {
   
   end.time <- Sys.time()
   time.taken <- end.time - start.time
-  cat(paste0(wblist[1]," time:",time.taken,"\n"))
+  #cat(paste0(wblist[1]," time:",time.taken,"\n"))
   
   
 }, ignoreInit = T)
@@ -1221,14 +1248,14 @@ observeEvent(input$goButton, {
           EQR = EQRavg
         )
      
-      output$resTableMC <- ClassOutputTableDT(
-        df,
-        Groups = grplist,
-        ClassVar = "ClassMC",
-        roundlist = c("Mean", "StdErr", "EQR"),
-        colOK = 11,
-        sDOM = "pl"
-      )
+      # output$resTableMC <- ClassOutputTableDT(
+      #   df,
+      #   Groups = grplist,
+      #   ClassVar = "ClassMC",
+      #   roundlist = c("Mean", "StdErr", "EQR"),
+      #   colOK = 11,
+      #   sDOM = "pl"
+      # )
       
       resMC <- values$resMC
       resAvg <- values$resAvg
@@ -1655,9 +1682,6 @@ observeEvent(input$goButton, {
   
   downloadResults2<-function(){
     
-    #input$buttonWB
-    
-    cat("downloadResults2\n")
     resMC <- values$resMC
     grplist <- c(  "WB_ID","Type","Period","QEtype","QualityElement","QualitySubelement","Indicator","IndSubtype",
                    "Note","Unit","Months","Worst","PB","MP","GM","HG","Ref","Mean","StdErr","EQR","Class")
@@ -1670,8 +1694,8 @@ observeEvent(input$goButton, {
   
   
   downloadResults<-function(){
-    cat("downloadResults\n")
-    withProgress(message = 'Preparing download...', value = 0, {
+
+        withProgress(message = 'Preparing download...', value = 0, {
     resMC <- values$resMC
     resAvg <- values$resAvg
     

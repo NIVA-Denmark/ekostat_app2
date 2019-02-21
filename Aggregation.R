@@ -45,12 +45,8 @@ Aggregate<-function(df,level=1,Groups="",QE_use_mean=c("Supporting")){
     if(level==3){
       df_res <- EQRclass(df_res)
     }else{
-      #browser()
+
       df_res$EQR<-ifelse(is.nan(df_res$EQR),NA,df_res$EQR)
-      #df_min <- df_res %>%
-      #  group_by_(.dots=GroupsType) %>%
-      #  summarise(nInd=sum(nInd,na.rm=TRUE),nSubE=sum(nSubE,na.rm=TRUE),EQRmean=mean(EQR,na.rm=TRUE),EQR=min(EQR,na.rm=TRUE)) %>%
-      #  ungroup()
 
       df_min <- df_res %>%
         group_by_(.dots=GroupsType) 
@@ -104,7 +100,6 @@ Aggregate<-function(df,level=1,Groups="",QE_use_mean=c("Supporting")){
           spread(key=QEtype,value=nInd) %>%
           rename(nIndBio=Biological,nIndSup=Supporting)
         
-        #cat(paste0("left_join df_res  ",unlist(Groups),"\n"))
         df_res <- left_join(df_res1,df_res2,by=Groups)
         
         Categories<-c("Bad","Poor","Mod","Good","High","Ref")
@@ -169,8 +164,6 @@ Frequency<-function(df,Groups="",varname="Class"){
     summarise(n=n()) %>%
     ungroup()
   
-  #cat(paste0("left_join df_res  ",unlist(Groups),"\n"))
-  cat("left_join dft\n")
   dft <- df %>% 
     group_by_(.dots=Groups) %>% 
     summarise(t=n()) %>%
@@ -180,7 +173,7 @@ Frequency<-function(df,Groups="",varname="Class"){
     select(-X)
   
   dfn <- dfn %>% mutate(ClassID=ifelse(is.na(ClassID),0,ClassID))
-  cat("left_join dfn\n")
+
   dfn<-dft %>% 
     left_join(dfn) 
   dfn<-dfn %>%
