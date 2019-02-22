@@ -22,35 +22,6 @@ shinyUI(
       tags$head(tags$style(HTML("td.small{width:10px;}"))),
  
       
-      tags$script(HTML("Shiny.addCustomMessageHandler('unbind-DT', function(id) {
-                       Shiny.unbindAll($('#'+id).find('table').DataTable().table().node());
-                       })")),
-      
-      tags$script(HTML('$(document).on("click", "input", function () {
-  var checkboxes = document.getElementsByName("ind_select");
-                       var checkboxesChecked = [];
-                       for (var i=0; i<checkboxes.length; i++) {
-                       
-                       if (checkboxes[i].checked) {
-                       checkboxesChecked.push(checkboxes[i].value);
-                       }
-                       }
-                       Shiny.onInputChange("checked_rows",checkboxesChecked);
-                       
-  var checkboxes2 = document.getElementsByName("ind_select");
-                       var checkboxesChecked2 = [];
-                       for (var i=0; i<checkboxes2.length; i++) {
-                       
-                       if (checkboxes2[i].checked) {
-                       checkboxesChecked2.push(checkboxes2[i].value);
-                       }
-                       }
-                       Shiny.onInputChange("extrap_rows",checkboxesChecked2);
-  
-
-                       })')),
- 
-      
       tabItems(
   # tab content
         tabItem(tabName = "waterbody",
