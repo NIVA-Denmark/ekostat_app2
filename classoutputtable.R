@@ -132,8 +132,8 @@ SelectObs<-function(df,indicator,sWB,sPeriod,df_indicators,df_var){
   varlist<-GetVarNames(indicator,df_indicators,df_var)
   obsvar<-varlist[length(varlist)]
 
-  varlist<-c("station","obspoint","date","year","month",varlist)
-
+  #varlist<-c("station","obspoint","date","year","month",varlist)
+  varlist<-c("station","date","year","month",varlist)
   df <- df %>% filter(WB_ID==sWB,Period==sPeriod)
   df <- df[!is.na(df[,obsvar]),]
   df <- df[,varlist]
