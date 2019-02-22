@@ -1114,7 +1114,7 @@ GoCalculation=function(){
       dftemp <- df_bound
       names(dftemp)[names(dftemp)=="Depth_stratum"]<-"IndSubtype"
       resAvgExtrap<-resAvgExtrap %>% left_join(dftemp,by=c("Type","Indicator","IndSubtype"))
-      resAvgExtrap<-resAvgExtrap %>%rename(Ref="RefCond",HG="H.G",GM="G.M",MP="M.P",PB="P.B") 
+      resAvgExtrap<-resAvgExtrap %>%rename(Ref=`RefCond`,HG=`H.G`,GM=`G.M`,MP=`M.P`,PB=`P.B`) 
       resAvgExtrap<-resAvgExtrap %>%select(Water_type,WB_ID,Region,Type,Typename,Period,QEtype,QualityElement,QualitySubelement,Indicator,IndSubtype,
              Months,Unit,Worst,PB,MP,GM,HG,Ref,Mean,StdErr,Code,Note) %>%
         mutate(Worst=as.numeric(Worst),
@@ -1132,7 +1132,7 @@ GoCalculation=function(){
            left_join(select(df_indicators,Indicator,QEtype,QualityElement,QualitySubelement),by=c("Indicator"))
         resMCExtrap<-resMCExtrap %>% 
           left_join(dftemp,by=c("Type","Indicator","IndSubtype")) %>%
-          rename(Ref="RefCond",HG="H.G",GM="G.M",MP="M.P",PB="P.B") %>%
+          rename(Ref=`RefCond`,HG=`H.G`,GM=`G.M`,MP=`M.P`,PB=`P.B`)  %>%
           select(Water_type,WB_ID,Region,Type,Typename,Period,QEtype,QualityElement,QualitySubelement,Indicator,IndSubtype,
              Months,Unit,Worst,PB,MP,GM,HG,Ref,sim,Value,Code,Note) %>%
           mutate(Worst=as.numeric(Worst),
