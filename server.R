@@ -1114,7 +1114,7 @@ GoCalculation=function(){
       dftemp <- df_bound
       names(dftemp)[names(dftemp)=="Depth_stratum"]<-"IndSubtype"
       resAvgExtrap<-resAvgExtrap %>% left_join(dftemp,by=c("Type","Indicator","IndSubtype"))
-      resAvgExtrap<-resAvgExtrap %>%rename(Ref=RefCond,HG="H.G",GM="G.M",MP="M.P",PB="P.B") 
+      resAvgExtrap<-resAvgExtrap %>%rename(Ref="RefCond",HG="H.G",GM="G.M",MP="M.P",PB="P.B") 
       resAvgExtrap<-resAvgExtrap %>%select(Water_type,WB_ID,Region,Type,Typename,Period,QEtype,QualityElement,QualitySubelement,Indicator,IndSubtype,
              Months,Unit,Worst,PB,MP,GM,HG,Ref,Mean,StdErr,Code,Note) %>%
         mutate(Worst=as.numeric(Worst),
@@ -1132,7 +1132,7 @@ GoCalculation=function(){
            left_join(select(df_indicators,Indicator,QEtype,QualityElement,QualitySubelement),by=c("Indicator"))
         resMCExtrap<-resMCExtrap %>% 
           left_join(dftemp,by=c("Type","Indicator","IndSubtype")) %>%
-          rename(Ref=RefCond,HG="H.G",GM="G.M",MP="M.P",PB="P.B") %>%
+          rename(Ref="RefCond",HG="H.G",GM="G.M",MP="M.P",PB="P.B") %>%
           select(Water_type,WB_ID,Region,Type,Typename,Period,QEtype,QualityElement,QualitySubelement,Indicator,IndSubtype,
              Months,Unit,Worst,PB,MP,GM,HG,Ref,sim,Value,Code,Note) %>%
           mutate(Worst=as.numeric(Worst),
@@ -1148,7 +1148,7 @@ GoCalculation=function(){
       
       
       freq<-Frequency(resMCExtrap,Groups=c("Period","Indicator","IndSubtype"),varname="ClassID") %>%
-        rename(fBad=C1,fPoor=C2,fMod=C3,fGood=C4,fHigh=C5)
+        rename(fBad="C1",fPoor="C2",fMod="C3",fGood="C4",fHigh="C5")
       
       resAvgExtrap<-resAvgExtrap %>% left_join(freq,by=c("Period","Indicator","IndSubtype"))
           
@@ -1245,10 +1245,10 @@ GoCalculation=function(){
       
       df <-
         values$resMC %>% rename(
-          EQRMC = EQR,
-          ClassMC = Class,
-          Class = ClassAvg,
-          EQR = EQRavg
+          EQRMC = "EQR",
+          ClassMC = "Class",
+          Class = "ClassAvg",
+          EQR = "EQRavg"
         )
       
       output$resTableMC <- ClassOutputTableDT(
@@ -1281,10 +1281,10 @@ GoCalculation=function(){
       
       df <-
         values$resMC %>% rename(
-          EQRMC = EQR,
-          ClassMC = Class,
-          Class = ClassAvg,
-          EQR = EQRavg
+          EQRMC = "EQR",
+          ClassMC = "Class",
+          Class = "ClassAvg",
+          EQR = "EQRavg"
         )
      
       # output$resTableMC <- ClassOutputTableDT(
@@ -1304,7 +1304,7 @@ GoCalculation=function(){
           resMC,
           Groups = c("Region", "WB_ID", "Type", "Typename", "Period", "sim"),
           level = 1
-        ) %>% rename(ClassMC = Class)
+        ) %>% rename(ClassMC = "Class")
       res1Avg <-
         Aggregate(
           resAvg,
@@ -1322,10 +1322,10 @@ GoCalculation=function(){
     if (nrow(values$resMC) > 0) {
       df <-
         values$resMC %>% rename(
-          EQRMC = EQR,
-          ClassMC = Class,
-          Class = ClassAvg,
-          EQR = EQRavg
+          EQRMC = "EQR",
+          ClassMC = "Class",
+          Class = "ClassAvg",
+          EQR = "EQRavg"
         )
 
       
@@ -1351,7 +1351,7 @@ GoCalculation=function(){
           resMC,
           Groups = c("Region", "WB_ID", "Type", "Typename", "Period", "sim"),
           level = 1
-        ) %>% rename(ClassMC = Class)
+        ) %>% rename(ClassMC = "Class")
       res1Avg <-
         Aggregate(
           resAvg,
@@ -1382,7 +1382,7 @@ GoCalculation=function(){
       Aggregate(df,
                 Groups = c("WB_ID", "Period", "Type", "sim"),
                 level = 2) %>%
-      rename(ClassMC = Class, EQRMC = EQR)
+      rename(ClassMC = "Class", EQRMC = "EQR")
     df <- filter(values$resAvg, WB_ID == values$sWB, Period == values$sPeriod)
 
     res2Avg <-
@@ -1412,7 +1412,7 @@ GoCalculation=function(){
       Aggregate(df,
                 Groups = c("WB_ID", "Period", "Type", "sim"),
                 level = 3) %>%
-      rename(ClassMC = Class, EQRMC = EQR)
+      rename(ClassMC = "Class", EQRMC = "EQR")
     
     df <-
       filter(values$resAvg,
@@ -1449,7 +1449,7 @@ GoCalculation=function(){
       Aggregate(df,
                 Groups = c("WB_ID", "Period", "Type", "sim"),
                 level = 4) %>%
-      rename(ClassMC = Class, EQRMC = EQR)
+      rename(ClassMC = "Class", EQRMC = "EQR")
     
     df <- filter(
       values$resAvg,
@@ -1489,10 +1489,10 @@ GoCalculation=function(){
       QualitySubelement == values$sQualitySubelement
     ) %>%
       rename(
-        EQRMC = EQR,
-        ClassMC = Class,
-        Class = ClassAvg,
-        EQR = EQRavg
+        EQRMC = "EQR",
+        ClassMC = "Class",
+        Class = "ClassAvg",
+        EQR = "EQRavg"
       )
   }, ignoreInit = T)
   
@@ -1747,7 +1747,7 @@ GoCalculation=function(){
     resMC <- values$resMC
     grplist <- c(  "WB_ID","Type","Period","QEtype","QualityElement","QualitySubelement","Indicator","IndSubtype",
                    "Note","Unit","Months","Worst","PB","MP","GM","HG","Ref","Mean","StdErr","EQR","Class")
-    resMC <-resMC %>% rename(EQRMC = EQR,ClassMC = Class,Class = ClassAvg,EQR = EQRavg)
+    resMC <-resMC %>% rename(EQRMC = "EQR",ClassMC = "Class",Class = "ClassAvg",EQR = "EQRavg")
     resMC <- 
       SummarizeSims(resMC,Groups=grplist,ClassVar="ClassMC")
     
@@ -1763,27 +1763,27 @@ GoCalculation=function(){
     
     
     res1MC <-Aggregate(resMC,Groups=c("WB_ID", "Type", "Period", "sim"),level=1) %>%
-      rename(ClassMC = Class)
+      rename(ClassMC = "Class")
     res1Avg <-Aggregate(resAvg,Groups = c("WB_ID", "Type", "Period"),level = 1) %>%
       select(WB_ID, Type, Period, Class)
     res1MC <- res1MC %>% left_join(res1Avg,by=c("WB_ID", "Type", "Period"))
     incProgress(0.1)
    
     res2MC <- Aggregate(resMC,Groups = c("WB_ID", "Period", "Type", "sim"),level = 2) %>%
-      rename(ClassMC = Class, EQRMC = EQR)
+      rename(ClassMC = "Class", EQRMC = "EQR")
     res2Avg <- Aggregate(resAvg,Groups = c("WB_ID", "Period", "Type"),level = 2) %>% select(WB_ID, Type, Period, QEtype, EQR, Class)
     res2MC <- res2MC %>% left_join(res2Avg,by = c("WB_ID", "Period", "Type", "QEtype"))
     incProgress(0.1)
     
     res3MC <-Aggregate(resMC,Groups = c("WB_ID", "Period", "Type", "sim"),level = 3) %>%
-      rename(ClassMC = Class, EQRMC = EQR)
+      rename(ClassMC = "Class", EQRMC = "EQR")
     res3Avg <-Aggregate(resAvg,Groups = c("WB_ID", "Period", "Type"),level=3) %>%
       select(WB_ID, Type, Period, QEtype, QualityElement, EQR, Class)
     res3MC <- res3MC %>% left_join(res3Avg,by = c("WB_ID", "Period", "Type", "QualityElement", "QEtype"))
     incProgress(0.1)
 
     res4MC <-Aggregate(resMC,Groups = c("WB_ID", "Period", "Type", "sim"),level = 4) %>%
-      rename(ClassMC = Class, EQRMC = EQR)
+      rename(ClassMC = "Class", EQRMC = "EQR")
     res4Avg <-Aggregate(resAvg,Groups = c("WB_ID", "Period", "Type"),level = 4) %>%
       select(WB_ID,Type,Period,QEtype,QualityElement,QualitySubelement,EQR,Class)
     res4MC <- res4MC %>% left_join(res4Avg,by = c("WB_ID", "Period", "Type", "QualityElement", "QEtype", "QualitySubelement"))
@@ -1792,7 +1792,7 @@ GoCalculation=function(){
     
     grplist <- c(  "WB_ID","Type","Period","QEtype","QualityElement","QualitySubelement","Indicator","IndSubtype",
                    "Note","Unit","Months","Worst","PB","MP","GM","HG","Ref","Mean","StdErr","EQR","Class")
-    resMC <-resMC %>% rename(EQRMC = EQR,ClassMC = Class,Class = ClassAvg,EQR = EQRavg)
+    resMC <-resMC %>% rename(EQRMC = "EQR",ClassMC = "Class",Class = "ClassAvg",EQR = "EQRavg")
     
     resMC <- 
       SummarizeSims(resMC,Groups=grplist,ClassVar="ClassMC")
@@ -1851,9 +1851,9 @@ GoCalculation=function(){
     res4MC <- res4MC %>% left_join(select(res3MC,Period,QEtype,QualityElement,id1,id2,id3))
     resMC <- resMC %>% left_join(select(res4MC,Period,QEtype,QualityElement,QualitySubelement,id1,id2,id3,id4))
     
-    resMC <- resMC %>% rename(EQR_ind=EQR)
-    res3MC <- res3MC %>% rename(EQR_QE=EQR)
-    res4MC <- res4MC %>% rename(EQR_subQE=EQR)
+    resMC <- resMC %>% rename(EQR_ind="EQR")
+    res3MC <- res3MC %>% rename(EQR_QE="EQR")
+    res4MC <- res4MC %>% rename(EQR_subQE="EQR")
 
     
     resMC <- bind_rows(resMC,res1MC,res2MC,res3MC,res4MC)
