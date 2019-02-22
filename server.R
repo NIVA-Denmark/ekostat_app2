@@ -42,7 +42,9 @@ shinyServer(function(input, output, session) {
 
   dbselect<-function(wtype){
     dbpath_C<-"../efs/ekostat/ekostat_C.db"
+    dbpath_C<-"../ekostat/output/ekostat_C.db"
     dbpath_L<-"../efs/ekostat/ekostat_L.db"
+    dbpath_L<-"../ekostat/output/ekostat_L.db"
     dbpath_R<-"../efs/ekostat/ekostat_R.db"
     if(wtype=="Coast") dbpath_C
     else if(wtype=="Lake")dbpath_L
@@ -738,7 +740,7 @@ shinyServer(function(input, output, session) {
         
         df <- df2 %>% left_join(df,by=c("Indicator","Period")) %>%
           mutate(Code=ifelse(is.na(Code),-99,Code)) %>%
-          mutate(Data=ifelse(Code=='0',"OK",ifelse(Code=='-1',"(OK)","-")),
+          mutate(Data=ifelse(Code=='0',"OK",ifelse(Code %in% c('-1','-2'),"(OK)","-")),
                  Code=ifelse(Data=="OK",0,1))
           #mutate(Data=ifelse(Code=='0',"OK",
           #                   ifelse(Code %in% c('-1','-2'),"few data","-"))) %>%
@@ -826,6 +828,11 @@ shinyServer(function(input, output, session) {
     #    #rename(IndicatorDescription=Indicator) %>%
    
     updateTabItems(session, "tabs", "extrapolation")
+    
+    if(!length(input$dtindextrap_rows_selected)>0){
+      cat("Go directly to calculation\n")
+    }
+    
     
   }) 
   
@@ -1076,12 +1083,6 @@ observeEvent(input$goButton, {
     dbDisconnect(db)
     
     
-    save(dfextrap,file="test1.Rda")
-    save(df_bound,file="test2.Rda")
-    save(resYrtype,file="test3.Rda")
-    save(resAvgtype,file="test4.Rda")
-    save(resMCtype,file="test5.Rda")
-    
     resExtrap<-extrapolation(dfextrap,df_bound,input$n,resYrtype,resAvgtype,resMCtype)
     resAvgExtrap<-resExtrap$dfAvg
     
@@ -1123,7 +1124,7 @@ observeEvent(input$goButton, {
       resAvgExtrap<-GetClass(resAvgExtrap)
       resMCExtrap<-GetClass(resMCExtrap)
       
-      #save(resMCExtrap,file="test.Rda")
+      
       freq<-Frequency(resMCExtrap,Groups=c("Period","Indicator","IndSubtype"),varname="ClassID") %>%
         rename(fBad=C1,fPoor=C2,fMod=C3,fGood=C4,fHigh=C5)
       
@@ -1150,7 +1151,7 @@ observeEvent(input$goButton, {
     
       resAvg<-resAvg %>% bind_rows(resAvgExtrap)
       resMC<-resMC %>% bind_rows(resMCExtrap)
-      save(resMC,file="resMC.Rda")
+      
     }#if(nrow(resAvgExtrap)>0)
   } #if no extraploation data
     
@@ -1174,7 +1175,11 @@ observeEvent(input$goButton, {
   
   
 }, ignoreInit = T)
-  
+
+   
+GoCalculation=function(){
+  return(0)
+}
 
 # --------------------------------------------------------------------
 # ------------- RESULTS ----------------------------------------------

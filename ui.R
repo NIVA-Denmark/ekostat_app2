@@ -99,8 +99,13 @@ shinyUI(
                         column(3,h1(" ")),
                         column(2,h1(" "),uiOutput("buttonExtrap")
                         )),
-               fluidRow(column(5,h4("Indicator Availability & Selection")),
-                        column(4,h4("Extrapolation Available"))
+               fluidRow(column(5,h4("Indicator Availability & Selection"),
+                               p("OK = indicator based on sufficient data."),
+                               p("(OK) = indicator was calculated but strict data requirements not met.")
+               ),
+                        column(4,h4("Extrapolation Available"),
+                               p("List of indicators for which extrapolation can be done."))
+                               
                ),
                fluidRow(
                  column(5,uiOutput("toggleIndicators")),
