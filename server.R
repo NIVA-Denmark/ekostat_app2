@@ -474,7 +474,12 @@ shinyServer(function(input, output, session) {
       if(countIndicators()<0){
         ""
       }else{
-        tagList(actionButton("extrapButton", "Extrapolation"))
+        if(length(input$dtindextrap_rows_selected)>0 | countIndicators()<1){
+          tagList(actionButton("extrapButton", "Extrapolation"))
+         #cat("Go directly to calculation\n")
+        }else{
+          tagList(actionButton("goButtonDirect", "Calculate Status"))
+        }
       }
     }
   })
@@ -789,7 +794,12 @@ shinyServer(function(input, output, session) {
   # ------------------------------------------------------------------- 
   # -------------  extrapolate button  action -----------------------------
   # ------------------------------------------------------------------- 
-  observeEvent(input$extrapButton, {
+  observeEvent(input$extrapButton, {  
+      GoExtrap()
+    }) 
+   
+   GoExtrap=function(){
+     
  
      output$dtextrap=DT::renderDataTable({
        input$buttonWB
@@ -833,8 +843,9 @@ shinyServer(function(input, output, session) {
       cat("Go directly to calculation\n")
     }
     
+    return(0)
     
-  }) 
+   } 
   
   # ---------- DataTable with stations for extrapolation ---------------------
   
@@ -937,11 +948,7 @@ shinyServer(function(input, output, session) {
      return(df)   
    }
    
-   #checked_rows
-   #extrap_rows
-   
-
-   
+  
    countIndicators<-function(){
      n<-length(input$dtind_rows_selected)
      return(n)
@@ -958,6 +965,17 @@ shinyServer(function(input, output, session) {
 # ------------------------------------------------------------------- 
    
 observeEvent(input$goButton, {
+  GoCalculation()
+}, ignoreInit = T)
+   
+observeEvent(input$goButtonDirect, {
+     GoExtrap()
+     GoCalculation()
+   }, ignoreInit = T)
+   
+   
+GoCalculation=function(){
+     
   start.time <- Sys.time()
   #df<-listIndicators()
   #browser()
@@ -1174,10 +1192,6 @@ observeEvent(input$goButton, {
   #cat(paste0(wblist[1]," time:",time.taken,"\n"))
   
   
-}, ignoreInit = T)
-
-   
-GoCalculation=function(){
   return(0)
 }
 
