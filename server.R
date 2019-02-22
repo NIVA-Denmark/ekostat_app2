@@ -575,7 +575,8 @@ shinyServer(function(input, output, session) {
       df$row<-NULL
             # reorder_columns
       df<-df[c(num_col-1,seq(2,num_col-2,1))]
-      df<-df %>% rename(Indicator=IndicatorDescription)
+      #df<-df %>% rename(Indicator=IndicatorDescription)
+      names(df)[names(df)=="IndicatorDescription"]<-"Indicator"
       values$df_ind_select<-df
       df
     }
@@ -620,8 +621,9 @@ shinyServer(function(input, output, session) {
     }
     df <- df %>% 
       arrange(id) %>% 
-      select(-c(id,Status,Indicator)) %>% 
-      rename(Indicator=IndicatorDescription) 
+      select(-c(id,Status,Indicator)) #%>% 
+      #rename(Indicator=IndicatorDescription)
+    names(df)[names(df)=="IndicatorDescription"]<-"Indicator"
     }}
     values$df_extrap<-df
     df
