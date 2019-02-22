@@ -1530,7 +1530,7 @@ GoCalculation=function(){
         values$res1MC,
         Groups = c("Region", "WB_ID", "Type", "Typename", "Period", "Class"),
         roundlist = c("pGES"),
-        remove = rmlist,
+        remove = "",#rmlist,
         ClassVar = "ClassMC"
       )
     
