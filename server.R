@@ -240,7 +240,7 @@ shinyServer(function(input, output, session) {
     df <- wb_list() %>% select(WB_ID,WB_Name,District,Lan,Municipality,Type)
     names(df)<-c("WB ID","WB Name","District","Län","Municipality","Type" )
     df
-  }, selection = 'single', rownames= F,options = list(lengthMenu = c(5, 10, 20, 50), pageLength = 5))
+  }, selection = 'single', rownames= F,options = list(lengthMenu = c(5, 10, 20, 50), pageLength = 10))
   
   # ----- reactive data for the waterbody selection
   
