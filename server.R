@@ -159,7 +159,7 @@ shinyServer(function(input, output, session) {
   output$selectLan <- renderUI({
     tagList(selectInput(
       "lan",
-      "L?n:",
+      "Län:",
       choices = lan_list(),
       multiple = FALSE,
       width="180px"
@@ -239,7 +239,7 @@ shinyServer(function(input, output, session) {
   # ----------- output DataTable of waterbodies ----------------------------------
   output$dtwb = DT::renderDataTable({
     df <- wb_list() %>% select(WB_ID,WB_Name,District,Lan,Municipality,Type)
-    names(df)<-c("WB ID","WB Name","District","L?n","Municipality","Type" )
+    names(df)<-c("WB ID","WB Name","District","Län","Municipality","Type" )
     df
   }, selection = 'single', rownames= F,options = list(lengthMenu = c(5, 10, 20, 50), pageLength = 10))
   

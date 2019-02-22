@@ -4,7 +4,6 @@ library(shinydashboard)
 library(DT)
 library(shinyjs)
 
-
 ui <- 
 shinyUI(
   
@@ -19,7 +18,11 @@ shinyUI(
     dashboardBody(
     
       
-      tags$head(tags$style(HTML("td.small{width:10px;}"))),
+      tags$head(tags$style(HTML("td.small{width:10px;}")),
+                tags$script(HTML("
+      $('html > head').append('<meta charset='UTF-8'/>');
+                                 "))
+                ),
  
       
       tabItems(
