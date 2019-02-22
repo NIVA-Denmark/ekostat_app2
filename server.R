@@ -42,9 +42,7 @@ shinyServer(function(input, output, session) {
 
   dbselect<-function(wtype){
     dbpath_C<-"../efs/ekostat/ekostat_C.db"
-    dbpath_C<-"../ekostat/output/ekostat_C.db"
     dbpath_L<-"../efs/ekostat/ekostat_L.db"
-    dbpath_L<-"../ekostat/output/ekostat_L.db"
     dbpath_R<-"../efs/ekostat/ekostat_R.db"
     if(wtype=="Coast") dbpath_C
     else if(wtype=="Lake")dbpath_L
@@ -148,7 +146,8 @@ shinyServer(function(input, output, session) {
     tagList(selectInput(
       "waterType",
       "Water type:",
-      choices = c("Coast","Lake","River"),
+      choices = c("Coast","Lake"),
+      #choices = c("Coast","Lake","River"),
       #choices = listWaterType,
       multiple = FALSE,
       width="180px"
@@ -476,7 +475,6 @@ shinyServer(function(input, output, session) {
       }else{
         if(length(input$dtindextrap_rows_selected)>0 | countIndicators()<1){
           tagList(actionButton("extrapButton", "Extrapolation"))
-         #cat("Go directly to calculation\n")
         }else{
           tagList(actionButton("goButtonDirect", "Calculate Status"))
         }
@@ -838,10 +836,6 @@ shinyServer(function(input, output, session) {
     #    #rename(IndicatorDescription=Indicator) %>%
    
     updateTabItems(session, "tabs", "extrapolation")
-    
-    if(!length(input$dtindextrap_rows_selected)>0){
-      cat("Go directly to calculation\n")
-    }
     
     return(0)
     
@@ -1503,7 +1497,7 @@ GoCalculation=function(){
       df_var
     )
     if(nrow(df)>0){
-      values$resObs <- df
+      values$resObs <- df %>% arrange(date,station)
     }else{
       values$resObs <- ""
     }
@@ -1631,6 +1625,9 @@ GoCalculation=function(){
     })
   }, ignoreInit = T)
   
+  
+  
+  
   observeEvent(values$resObs, {
     #if (typeof(values$sIndicator)=="list") {
     if (!is.null(values$sIndicator)) {
@@ -1638,13 +1635,14 @@ GoCalculation=function(){
     } else{
       vars <- ""
     }
-    
+    dfselect<-NULL
     if (typeof(values$resObs)!="list") {
       plotHeight<-5
       plotWidth<-5
     }else{
       plotHeight<-400
       plotWidth<-600
+
     }
     #cat(paste0("value$resObs [",typeof(values$resObs),"]\n"))
     
@@ -1666,9 +1664,12 @@ GoCalculation=function(){
         p <- 0
         #browser()
       } else{
+        
+        
         yvar <- vars[length(vars)]
         
-        df <- values$resObs
+        df <- values$resObs 
+
         df$station <- as.factor(df$station)
         indicator<-values$sIndicator
         if(indicator %in% listWBindicators){
@@ -1679,14 +1680,24 @@ GoCalculation=function(){
         
         df <- df %>% 
           mutate(IndMonth=ifelse(month %in% months,T,F))
-
+        dfselect<-df[input$resTableObs_rows_selected,]
         df1<- filter(df,IndMonth)
         df2<- filter(df,!IndMonth)
         
+        # try to catch an error with data not being updated and not having the required variable
+        if(yvar %in% names(df)){
+          
         p<- ggplot() + geom_point(data=df1, aes_string(x = "date", y = yvar, colour="station"), size=2) +
-          geom_point(data=df2, aes_string(x = "date", y = yvar, colour="station"), size=2,alpha=0.3)
-        p <- p + theme_minimal(base_size = 16) + scale_x_date(date_labels= "%d-%m-%Y") + xlab("Date") +
-         theme(legend.position="bottom")
+          geom_point(data=df2, aes_string(x = "date", y = yvar, colour="station"), size=2,alpha=0.3) +
+          geom_point(data=dfselect, aes_string(x = "date", y = yvar),size=4,alpha=1,shape=1) 
+          p <- p + theme_minimal(base_size = 16) + scale_x_date(date_labels= "%d-%m-%Y") + xlab("Date") +
+         theme(legend.position="bottom") + guides(col = guide_legend(ncol = 4,title=NULL))
+        }else{
+          #plotHeight<-5
+          #plotWidth<-5
+          p<-0
+        }
+        
         
       }
       return(p)

@@ -151,7 +151,7 @@ shinyUI(
                 h3("Monte Carlo"),
                 numericInput("n",
                              label = "Number of simulations", min=1,
-                             value = 100),
+                             value = 200),
                  p("Options for Monte Carlo simulations.")#,
                 #h3("Indicator List"),
                 #checkboxInput("chkClassBnds","Show Class Boundaries", value=FALSE, width=NULL)

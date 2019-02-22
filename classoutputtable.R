@@ -105,7 +105,7 @@ ClearExtrapValues <- function(df,checkvar="Note",matchvalue="Extrap",varList=c("
 ClassObsTableDT<-function(df,roundlist=NULL,sDOM="t"){
   if(is.data.frame(df)){
     return(DT::renderDataTable({
-      dt<-df %>% datatable(escape = F,rownames = F,selection = 'none',
+      dt<-df %>% datatable(escape = F,rownames = F,selection = list(mode = 'multiple', selected = NULL),
                            options = list(dom=sDOM))
       if(!is.null(roundlist)){
         dt<-dt %>% formatRound(columns=roundlist, digits=3)
@@ -122,6 +122,8 @@ ClassObsTableDT<-function(df,roundlist=NULL,sDOM="t"){
   
 }
 
+#selection = 'multiple'
+#selection = list(mode = 'multiple', selected = all_rows())
 
 # SelectObs
 #
