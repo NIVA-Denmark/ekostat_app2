@@ -1160,9 +1160,14 @@ GoCalculation=function(){
          left_join(dfmatch,by=c("Period","Indicator")) %>%
          filter(is.na(OK)) %>%
          select(-OK)
-    
-      resAvg<-resAvg %>% bind_rows(resAvgExtrap)
-      resMC<-resMC %>% bind_rows(resMCExtrap)
+      
+      if(nrow(resAvg)>0){
+        resAvg<-resAvg %>% bind_rows(resAvgExtrap)
+        resMC<-resMC %>% bind_rows(resMCExtrap)
+      }else{
+        resAvg<-resAvgExtrap
+        resMC<-resMCExtrap
+      }
       
     }#if(nrow(resAvgExtrap)>0)
   } #if no extraploation data
@@ -1690,7 +1695,7 @@ GoCalculation=function(){
         p<- ggplot() + geom_point(data=df1, aes_string(x = "date", y = yvar, colour="station"), size=2) +
           geom_point(data=df2, aes_string(x = "date", y = yvar, colour="station"), size=2,alpha=0.3) +
           geom_point(data=dfselect, aes_string(x = "date", y = yvar),size=4,alpha=1,shape=1) 
-          p <- p + theme_minimal(base_size = 16) + scale_x_date(date_labels= "%d-%m-%Y") + xlab("Date") +
+          p <- p + theme_minimal(base_size = 16) + scale_x_date(date_labels= "%d-%m-%Y") + labs(x = NULL) +
          theme(legend.position="bottom") + guides(col = guide_legend(ncol = 4,title=NULL))
         }else{
           #plotHeight<-5
