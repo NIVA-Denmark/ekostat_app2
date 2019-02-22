@@ -1523,12 +1523,15 @@ GoCalculation=function(){
   
   
   observeEvent(values$res1MC, {
-    rmlist = c("Region", "WB_ID", "Type", "Typename")
+    #grplist <- c("Region", "WB_ID", "Type", "Typename", "Period", "Class")
+    #rmlist = c("Region", "WB_ID", "Type", "Typename")
+    grplist <- c("WB_ID","Period","Class")
+    rmlist = c("WB_ID")
     df<-values$res1MC
     output$resTable1 <-
       ClassOutputTableDT(
         values$res1MC,
-        Groups = c("Region", "WB_ID", "Type", "Typename", "Period", "Class"),
+        Groups = grplist,
         roundlist = c("pGES"),
         remove = "",#rmlist,
         ClassVar = "ClassMC"
