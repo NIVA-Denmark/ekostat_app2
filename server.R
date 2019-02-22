@@ -824,7 +824,10 @@ shinyServer(function(input, output, session) {
        if(ncol(values$df_extrap)){
        
        df<-values$df_extrap[input$dtindextrap_rows_selected,] %>% 
-         select(IndicatorDescription=Indicator,Period)
+         select(Indicator,Period)
+       #select(IndicatorDescription=Indicator,Period)
+       names(df)[names(df=="Indicator")]<-"IndicatorDescription"
+       
        
        df <- df %>% left_join(dfextrap,by=c("IndicatorDescription","Period"))
        dfextrapWB <- df %>% 
@@ -983,8 +986,9 @@ GoCalculation=function(){
       filter(Water_type==values$watertypeselected) %>% 
       select(Indicator,IndicatorDescription) 
     
+    names(df)[names(df=="Indicator")]<-"IndicatorDescription"
     df<-df %>%
-      rename(IndicatorDescription=Indicator) %>%
+      #rename(IndicatorDescription=Indicator) %>%
       left_join(df2,by="IndicatorDescription")
     
     #df<- listIndicators()
