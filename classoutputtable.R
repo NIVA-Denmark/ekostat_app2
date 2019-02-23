@@ -129,19 +129,46 @@ ClassObsTableDT<-function(df,roundlist=NULL,sDOM="t"){
 #
 #
 #filter observation data based on the selected indicator, WB and period
-SelectObs<-function(df,indicator,sWB,sPeriod,df_indicators,df_var){
-
+SelectObs<-function(df,indicator,indSubType="",sWB,sPeriod,df_indicators,df_var){
+  #browser()
   varlist<-GetVarNames(indicator,df_indicators,df_var)
   obsvar<-varlist[length(varlist)]
-
+  
   #varlist<-c("station","obspoint","date","year","month",varlist)
   varlist<-c("station","date","year","month",varlist)
   df <- df %>% filter(WB_ID==sWB,Period==sPeriod)
   df <- df[!is.na(df[,obsvar]),]
   df <- df[,varlist]
+  if(!is.na(indSubType)){
+    depthlimits<-DepthLimits(indSubType)
+    df <- df %>% filter(depth>=depthlimits[1],depth<=depthlimits[2])
+  }
   
   return(df)
   
+}
+
+DepthLimits<-function(s){
+  m<-regexpr("m",s,fixed=T)[1] 
+  from<-NA
+  to<-NA
+  if(m>0){
+    s<-substr(s,1,m-1)
+  }
+  if(substr(s,1,1)=="<"){
+    from=0
+    to=as.numeric(substr(s,2,nchar(s)))
+  }else if(substr(s,1,1)==">"){
+    from=as.numeric(substr(s,2,nchar(s)))
+    to = 99999
+  }else{
+    n<-regexpr("-",s,fixed=T)[1]
+    if(n>0){
+      from=as.numeric(substr(s,1,n-1))
+      to=as.numeric(substr(s,n+1,nchar(s)))
+      }
+  }
+  return(c(from,to))
 }
 
 # GetIndicatorMonths
@@ -175,7 +202,7 @@ GetVarNames<-function(indicator,df_indicators,df_var){
     
     obsvar<-as.character(df_indicators[1,"Parameter"])
     if(substr(indicator,1,5)=="Coast"){
-      if(indicator %in% c("CoastOxygen")){
+      if(indicator %in% c("CoastOxygen","CoastBQI")){
         varlist<-c("depth","sali",obsvar)
       }else{
         varlist<-c("sali",obsvar)
