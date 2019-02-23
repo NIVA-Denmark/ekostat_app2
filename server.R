@@ -576,7 +576,7 @@ shinyServer(function(input, output, session) {
       df$row<-NULL
             # reorder_columns
       df<-df[c(num_col-1,seq(2,num_col-2,1))]
-      df<-df %>% rename(Indicator=IndicatorDescription)
+      df<-df %>% rename(Indicator=IndicatorDescription,DepthStratum=IndSubtype)
       values$df_ind_select<-df
       df
     }
@@ -669,7 +669,7 @@ shinyServer(function(input, output, session) {
 
   UpdateIndTable<-function(){
     #cat(paste0("UpdateIndTable\n"))
-      # Get the info on the status for the indicators
+      # Get the info on the status for the indicators in the selected WB
       bOK<-TRUE
   
       sql<-paste0("SELECT * FROM resAvg WHERE WB_ID ='",values$wbselected,"'")  
@@ -687,6 +687,7 @@ shinyServer(function(input, output, session) {
       if(is.null(values$periodselected)){bOK<-FALSE}
       
       if(bOK){
+        #get list of indicators for the selected pressures (and coastal/lake/river type)
         df3 <- NULL
         for(i in 1:length(pname)){
           
@@ -706,7 +707,8 @@ shinyServer(function(input, output, session) {
       }
       
       if(bOK){
-        df <- df %>% select(Indicator,Period,Code)
+        #df <- df %>% select(Indicator,Period,Code)
+        df <- df %>% select(Indicator,IndSubtype,Period,Code)
         indlist<-paste(paste0("'",df2$Indicator,"'"),collapse = ",")
 
         df2$X<-1
@@ -977,14 +979,32 @@ GoCalculation=function(){
   withProgress(message = 'Calculating...', value = 0, {
     df<-values$df_ind_select
     df<-df[input$dtind_rows_selected,]
+    dfOK <- df %>% gather(key="Period",value="OK",c(3,ncol(df)))
+    if(isolate(!input$IgnoreErr)){
+      dfOK <- dfOK %>% filter(OK=="OK")
+    }
+    dfOK <- dfOK %>% select(-OK)
+    # this is a list of periods and indicators which we will us to collect from resAvg
+    
+    df_depth_strata <- df_bound %>% 
+      distinct(Indicator,Depth_stratum) %>%
+      rename(IndSubtype=Depth_stratum)
     
     df2<-df_indicators %>% 
       filter(Water_type==values$watertypeselected) %>% 
-      select(Indicator,IndicatorDescription) 
+      select(Indicator,IndicatorDescription)
     
-    df<-df %>%
-      rename(IndicatorDescription=Indicator) %>%
-      left_join(df2,by="IndicatorDescription")
+    df2<-df2 %>% left_join(df_depth_strata,by="Indicator")
+
+    #df<-df %>%
+    #  rename(IndicatorDescription=Indicator) %>%
+    #  left_join(df2,by="IndicatorDescription")
+    
+    df<-dfOK %>%
+      rename(IndicatorDescription=Indicator,IndSubtype=DepthStratum) %>%
+      left_join(df2,by=c("IndicatorDescription","IndSubtype")) %>%
+      select(Indicator,IndSubtype,Period)
+    
     
     #df<- listIndicators()
     #df <- df %>% filter(Select==T)
@@ -1030,6 +1050,10 @@ GoCalculation=function(){
                 ") AND Indicator IN (",IndList,")")         
     resErr <- dbGetQuery(db, sql)
     dbDisconnect(db)
+    
+    resAvg <- df %>% left_join(resAvg,by=c("Indicator","IndSubtype","Period"))
+    resMC <- df %>% left_join(resMC,by=c("Indicator","IndSubtype","Period"))
+    resErr <- df %>% left_join(resErr,by=c("Indicator","IndSubtype","Period"))
     
     #region<-resAvg$Region[1]
     #typename<-resAvg$Typename[1]
@@ -1489,14 +1513,18 @@ GoCalculation=function(){
   
   observeEvent(input$resTableInd_rows_selected, {
     #browser()
+    
     df <-
       values$resInd %>% group_by(Indicator,IndSubtype) %>% summarise() %>% ungroup()
     values$sIndicator <-
       df$Indicator[input$resTableInd_rows_selected]
+    values$sIndSubtype <-
+      df$IndSubtype[input$resTableInd_rows_selected]
     #browser()
     df <- SelectObs(
       dfobs(values$sWB,paste(paste0("'",values$periodselected,"'"),collapse = ",")),
       indicator = values$sIndicator,
+      indSubType = values$sIndSubtype,
       sWB = values$sWB,
       sPeriod = values$sPeriod,
       df_indicators,
