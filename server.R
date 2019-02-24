@@ -155,8 +155,8 @@ shinyServer(function(input, output, session) {
     tagList(selectInput(
       "waterType",
       "Water type:",
-      choices = c("Coast","Lake"),
-      #choices = c("Coast","Lake","River"),
+      #choices = c("Coast","Lake"),
+      choices = c("Coast","Lake","River"),
       #choices = listWaterType,
       multiple = FALSE,
       width="180px"
