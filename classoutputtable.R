@@ -10,13 +10,6 @@ ClassOutputTableDT<-function(df,ClassVar="Class",Groups="",
                              barcolours=c('#FF0000','#FFC000','#FFFF00','#92D050','#00B0F0',"#FFFFFF"),
                              remove="",roundlist=NULL,colOK=0,
                              sDOM="t"){
-  
-  
-  
-  
-  
-  
-  
   if(is.data.frame(df)){
     return(DT::renderDataTable({
       

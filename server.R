@@ -27,13 +27,7 @@ sessionInfo()
 
 shinyServer(function(input, output, session) {
   
-  # obtain the values of inputs
-  
-  #shinyValue = function(id, len,chklist){
-  #  s<-paste0(id,seq_len(len)) %in% chklist[chklist %like% id]
-  #  cat(paste0(id," "),s,"\n")
-  #  s
-  #}
+ 
   listWBindicators <- c("CoastHypoxicArea")
   
   
@@ -50,10 +44,7 @@ shinyServer(function(input, output, session) {
     else if(wtype=="River")dbpath_R
     else ""
   }  
-  #dfind<-ReadIndicatorType()
-  #df_var<-ReadVariances()
-  #df_bound<-ReadBounds()
-  
+ 
   
   
   dbpath<-reactive({
@@ -94,9 +85,6 @@ shinyServer(function(input, output, session) {
   values$IndSelection<-""
   #values$ClickedWB <- FALSE
 
-  # dfwb_lan <- readdb(dbpath_info, "SELECT * FROM WB_Lan") %>% # matching L?n and WB_ID
-  #   filter(!is.na(Lan)) %>%
-  #   mutate(LanName=trimws(LanName,which="both"),Lan=trimws(Lan,which="both"))
   
   dfwb_info <- readdb(dbpath_info, "SELECT * FROM WB_info") # type info WB_ID
   
@@ -120,7 +108,9 @@ shinyServer(function(input, output, session) {
     return(list)
   }
   
-
+  regions<- function(){
+    c("Södra Sverige","Norra Sverige <200 m","Norra Sverige 200-800 m","Norra Sverige >800 m")
+  }
 
   period_list <- function(){
     c("2007-2012","2013-2018")
@@ -140,7 +130,28 @@ shinyServer(function(input, output, session) {
   # icon file-alt
   
 # ------ Output components for the Waterbody selection page -----------------------
-  output$selectWaterType <- renderUI({
+
+  output$selectRegion <- renderUI({
+    bShow<-T
+    if(!is.null(input$waterType)){
+      if(input$waterType=="Coast"){
+        bShow<-F
+      }
+    }
+    if(bShow){
+      tagList(selectInput(
+        "region",
+        "Region:",
+        choices = region_list(),
+        multiple = FALSE,
+        width="180px"
+      ))
+    }else{
+      ""
+    }
+  })
+  
+    output$selectWaterType <- renderUI({
     tagList(selectInput(
       "waterType",
       "Water type:",
@@ -174,16 +185,15 @@ shinyServer(function(input, output, session) {
   })
   
   output$selectType <- renderUI({
-    tagList(selectInput(
+      tagList(selectInput(
       "type",
       "WB Type:",
       choices = type_list(),
       multiple = FALSE,
-      width="180px"
-    ))
+      width="180px"))
   })
   
-
+  
   output$selectPeriod <- renderUI({
     tagList(selectInput(
       "period",
@@ -238,7 +248,7 @@ shinyServer(function(input, output, session) {
     df <- wb_list() %>% select(WB_ID,WB_Name,District,Lan,Municipality,Type)
     names(df)<-c("WB ID","WB Name","District","Län","Municipality","Type" )
     df
-  }, selection = 'single', rownames= F,options = list(lengthMenu = c(5, 10, 20, 50), pageLength = 10))
+  }, selection = 'single', rownames= F,options = list(lengthMenu = c(5, 10, 20, 50), pageLength = 5))
   
   # ----- reactive data for the waterbody selection
   
@@ -265,6 +275,47 @@ shinyServer(function(input, output, session) {
     df$Mun
   })
   
+  region_list <- reactive({
+    Region <- c("ALL")
+    all <- data.frame(Region,row.names=F,stringsAsFactors=F)
+    df<-dfwb_info
+    if(!is.null(input$waterType)){
+      df <- df %>% filter(CLR==input$waterType)
+    }
+    if (!is.null(input$lan)){
+      if(input$lan!="ALL"){
+        dfselect<-df_WB_lan %>% 
+          filter(Lan==input$lan) %>%
+          select(WB_ID)
+        df <- df %>% inner_join(dfselect,by="WB_ID")
+      }}
+    if (!is.null(input$mun)){
+      if(input$mun!="ALL"){
+        dfselect<-df_WB_mun %>% 
+          filter(Mun==input$mun) %>%
+          select(WB_ID)
+        df <- df %>% inner_join(dfselect,by="WB_ID")
+      }}
+    df <- df %>%
+      distinct(CLR,Type_region) 
+    
+    df <- df %>%
+      arrange(CLR,Type_region) %>%
+      select(Region=Type_region) %>% 
+      filter(!is.na(Region)) %>%
+      distinct(Region)
+    df$Region<-as.numeric(df$Region)
+    
+    df <- df %>% 
+      mutate(RegionName=regions()[Region]) %>%
+      mutate(Region=paste0(Region," ",RegionName))
+    df<-bind_rows(all,df) 
+    df$Region 
+    
+    
+  })
+  
+  
   # make list of WB types
   type_list <- reactive({
     #browser()
@@ -290,7 +341,14 @@ shinyServer(function(input, output, session) {
           select(WB_ID)
         df <- df %>% inner_join(dfselect,by="WB_ID")
       }}
-    
+    if (!is.null(input$region)){
+      if(input$region!="ALL"){
+        region<-substr(input$region,1,1)
+        dfselect<-df_WB %>% 
+          filter(Type_region==region) %>%
+          select(WB_ID)
+        df <- df %>% inner_join(dfselect,by="WB_ID")
+      }}    
     #browser()
     df <- df %>%
       distinct(CLR,Type) %>%
@@ -333,6 +391,13 @@ shinyServer(function(input, output, session) {
       if(input$type!="ALL"){
         df <- df %>% filter(Type==input$type)
         }
+    }
+    
+    if (!is.null(input$region)){
+      if(input$region!="ALL"){
+        region <- substr(input$region,1,1)
+        df <- df %>% filter(Type_region==region)
+      }
     }
 
     return(df)

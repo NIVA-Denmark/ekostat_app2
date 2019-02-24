@@ -39,7 +39,13 @@ shinyUI(
                   column(2,
                          uiOutput("selectType")),
                   column(3,
-                         uiOutput("selectPeriod"))
+                         uiOutput("selectRegion"))
+                ),
+                fluidRow(
+                  column(8,
+                         uiOutput("selectPeriod")),
+                  column(3,
+                         "")
                 ),
                 fluidRow(
                   column(6,
