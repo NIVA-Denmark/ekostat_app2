@@ -1,22 +1,28 @@
 
 extrapolation_single<-function(dfavg,dfyr,dfMC,dfbnds,nsim){
   require(dplyr)
-  #browser()
-  
+
   resMC<-data.frame(Indicator=c(NA),IndSubtype=c(NA),Period=c(NA),sim=c(NA),Value=c(NA),stringsAsFactors=F)
   resAvg<-data.frame(Indicator=c(NA),IndSubtype=c(NA),Period=c(NA),Mean=c(NA),stringsAsFactors=F)
   
   # we can't combine indicator subtypes
   # check if there are more than 1
   subtypes <- dfavg %>% 
-    group_by(IndSubtype) %>% 
+    group_by(IndSubtype,Code) %>% 
     summarise(n=n()) %>%
-    arrange(desc(n))
+    arrange(desc(Code),desc(n))
   
   nsubtype<-nrow(subtypes)
   subtype<-subtypes$IndSubtype[1]
   
   if(is.list(dfavg)){
+    
+    dfavg <- dfavg %>% filter(Code>-3,IndSubtype==subtype)
+    dfMC <- dfavg %>% 
+      select(WB_ID,Indicator,Period,IndSubtype) %>%
+      left_join(dfMC,by=c("WB_ID","Indicator","Period","IndSubtype"))
+    dfyr <- dfyr %>% filter(Code>-3,IndSubtype==subtype)
+    
     if(nrow(dfavg)>0){
       indicator<-dfavg$Indicator[1]
       period<-dfavg$Period[1]
