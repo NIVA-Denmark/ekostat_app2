@@ -1,4 +1,4 @@
-CleanSubTypes <- function(df){
+CleanSubTypes <- function(df,dfobs=data.frame()){
   if(sum(names(df)=="Year")>0) {
     oksubtypes <- df %>% distinct(WB_ID,Indicator,IndSubtype,Period,Code,Year) %>% 
       filter(Code>-10,IndSubtype!="")
@@ -31,9 +31,60 @@ CleanSubTypes <- function(df){
     df <- df %>% left_join(subtypes,by=c("WB_ID","Indicator","IndSubtype","Period")) %>%
       filter(is.na(drop)) %>%
       select(-drop)
-  }
+    
+    wbdistinct<-df %>% 
+      distinct(WB_ID)
+    if(nrow(wbdistinct)==1){
+    if("CoastBQI" %in% df$Indicator){
+      #browser()
+      df <- SelectBQISubType(df,dfobs)
+      }}
+    }
   return(df)
 }
+
+
+SelectBQISubType<-function(df,dfdata){
+  #browser()
+dfBQI<-df %>%
+  filter(Indicator=="CoastBQI")
+dfBQI$z0 <- lapply(dfBQI$IndSubtype,function(x) DepthLimits(x))[[1]]
+dfBQI$z1 <- lapply(dfBQI$IndSubtype,function(x) DepthLimits(x))[[2]]
+dfBQI <- dfBQI %>% 
+  select(WB_ID,Period,IndSubtype,z0,z1)
+
+dfBQIobs <- dfdata %>% 
+  filter(!is.na(BQI)) %>%
+  select(WB_ID,Period,station_depth,BQI)
+
+dfBQI <- dfBQI %>% 
+  left_join(dfBQIobs, by=c("WB_ID","Period")) 
+
+dfBQI<-dfBQI %>%
+  mutate(OK=ifelse(station_depth>=z0 & station_depth<=z1,1,NA)) %>%
+  filter(OK==1) %>%
+  group_by(WB_ID,Period,IndSubtype) %>%
+  summarise(n=n()) %>%
+  ungroup() %>%
+  arrange(desc(n))
+
+dfBQI <- dfBQI %>%
+  group_by(WB_ID,Period) %>%
+  slice(1) %>% 
+  ungroup() %>%
+  select(-n)
+
+dfBQI<-dfBQI %>% 
+  left_join(df,by=c("WB_ID","Period","IndSubtype"))
+
+dfNotBQI <- df %>%
+  filter(Indicator!="CoastBQI")
+
+df2 <- dfNotBQI %>% 
+  bind_rows(dfBQI)
+return(df2)
+}
+
 
 shinyInput = function(FUN, len, id, labels,...) {
   inputs = character(len)

@@ -133,10 +133,7 @@ shinyServer(function(input, output, session) {
                 menuItem("Waterbody", tabName = "waterbody", icon = icon("map-marker")),
                 menuItem("Indicators", tabName = "indicators", icon = icon("tasks")),
                 menuItem("Extrapolation", tabName = "extrapolation", icon = icon("chart-line")),
-                #menuItem("Data", tabName = "data", icon = icon("database"))
                 menuItem("Status", tabName = "status", icon = icon("bar-chart"))
-                #menuItem("Download", tabName = "download", icon = icon("file"))
-                #menuItem("Options", tabName = "options", icon = icon("cog"))#,
     )
   })
   
@@ -495,15 +492,6 @@ shinyServer(function(input, output, session) {
     }
   })
   
-  output$txtCheckedRows<-renderText({
-    paste(input$dtind_rows_selected,"\n")
-  })
-  
-  output$txtExtrapRows<-renderText({
-    paste(input$extrap_rows,"\n")
-  })
-  
-  
  
   output$toggleIndicators<- renderUI({
     if(values$wbselected==""){
@@ -552,15 +540,10 @@ shinyServer(function(input, output, session) {
       }
     }
   })
-  
-  
+
   
   
   # --------------- update indicator information / selection ----------------
-  
-  #tags$script(HTML("Shiny.addCustomMessageHandler('unbind-DT', function(id) {
-  #        Shiny.unbindAll($('#'+id).find('table').DataTable().table().node());
-  # })"))
   
   # --------------- output$dtind ----------------------------------
     output$dtind = DT::renderDataTable({
@@ -576,7 +559,7 @@ shinyServer(function(input, output, session) {
       df$row<-NULL
             # reorder_columns
       df<-df[c(num_col-1,seq(2,num_col-2,1))]
-      df<-df %>% rename(Indicator=IndicatorDescription,DepthStratum=IndSubtype)
+      df<-df %>% rename(Indicator=IndicatorDescription)
       values$df_ind_select<-df
       df
     }
@@ -671,11 +654,6 @@ shinyServer(function(input, output, session) {
     #cat(paste0("UpdateIndTable\n"))
       # Get the info on the status for the indicators in the selected WB
       bOK<-TRUE
-  
-      sql<-paste0("SELECT * FROM resAvg WHERE WB_ID ='",values$wbselected,"'")  
-      df <- readdb(dbpath(),sql)
-      df<-CleanSubTypes(df)
-      
       pname<-input$pressure
       
       if(is.null(pname)){
@@ -687,6 +665,19 @@ shinyServer(function(input, output, session) {
       if(is.null(values$periodselected)){bOK<-FALSE}
       
       if(bOK){
+        
+        
+        sql<-paste0("SELECT * FROM resAvg WHERE WB_ID ='",values$wbselected,"'")  
+        df <- readdb(dbpath(),sql)
+
+        sql<-paste0("SELECT * FROM data WHERE WB_ID ='",values$wbselected,"'")
+        dfobs <- readdb(dbpath(),sql)
+        df<-CleanSubTypes(df,dfobs)
+        
+        values$subtypes<- df %>% 
+          filter(!is.na(IndSubtype)) %>%
+          select(WB_ID,Period,Indicator,IndSubtype)
+        
         #get list of indicators for the selected pressures (and coastal/lake/river type)
         df3 <- NULL
         for(i in 1:length(pname)){
@@ -707,8 +698,8 @@ shinyServer(function(input, output, session) {
       }
       
       if(bOK){
-        #df <- df %>% select(Indicator,Period,Code)
-        df <- df %>% select(Indicator,IndSubtype,Period,Code)
+        #df <- df %>% select(Indicator,IndSubtype,Period,Code)
+        df <- df %>% select(Indicator,Period,Code)
         indlist<-paste(paste0("'",df2$Indicator,"'"),collapse = ",")
 
         df2$X<-1
@@ -974,51 +965,26 @@ observeEvent(input$goButtonDirect, {
 GoCalculation=function(){
      
   start.time <- Sys.time()
-  #df<-listIndicators()
-  #browser()
-  withProgress(message = 'Calculating...', value = 0, {
+
+    withProgress(message = 'Calculating...', value = 0, {
     df<-values$df_ind_select
     df<-df[input$dtind_rows_selected,]
-    dfOK <- df %>% gather(key="Period",value="OK",c(3,ncol(df)))
-    if(isolate(!input$IgnoreErr)){
-      dfOK <- dfOK %>% filter(OK=="OK")
-    }
-    dfOK <- dfOK %>% select(-OK)
-    # this is a list of periods and indicators which we will us to collect from resAvg
-    
-    df_depth_strata <- df_bound %>% 
-      distinct(Indicator,Depth_stratum) %>%
-      rename(IndSubtype=Depth_stratum)
-    
+
     df2<-df_indicators %>% 
       filter(Water_type==values$watertypeselected) %>% 
       select(Indicator,IndicatorDescription)
-    
-    df2<-df2 %>% left_join(df_depth_strata,by="Indicator")
 
-    #df<-df %>%
-    #  rename(IndicatorDescription=Indicator) %>%
-    #  left_join(df2,by="IndicatorDescription")
-    
-    df<-dfOK %>%
-      rename(IndicatorDescription=Indicator,IndSubtype=DepthStratum) %>%
-      left_join(df2,by=c("IndicatorDescription","IndSubtype")) %>%
-      select(Indicator,IndSubtype,Period)
-    
-    
-    #df<- listIndicators()
-    #df <- df %>% filter(Select==T)
+    df<-df %>%
+      rename(IndicatorDescription=Indicator) %>%
+      left_join(df2,by="IndicatorDescription")
+
     IndList <- df$Indicator
-    #cat(paste0("Indicator list:", paste(paste0("'",IndList,"'"),collapse = ","),"\n"))
-    
+
     nSimMC <- input$n
-    
     
     IndList<-paste(paste0("'",IndList,"'"),collapse = ",")
     periodlist<-paste(paste0("'",values$periodselected,"'"),collapse = ",")
     wblist<-paste(paste0("'",values$wbselected,"'"),collapse = ",")
-
-
  
   # Get results for the waterbody we are showing results for   
     db <- dbConnect(SQLite(), dbname=dbpath())
@@ -1031,10 +997,6 @@ GoCalculation=function(){
     resYr <- dbGetQuery(db, sql)
     incProgress(0.1)
 
-    #sql<-paste0("SELECT * FROM resMC WHERE period IN (",periodlist,") AND WB_ID IN (",wblist,
-    #             ") AND Indicator IN (",IndList,") AND sim <= ",nSimMC)      
-    #resMCX <- dbGetQuery(db, sql) 
-
     sql<-paste0("SELECT WB_ID,Period,Indicator,IndSubtype,sim,Value,ClassID,Class,EQR FROM resMC WHERE period IN (",periodlist,") AND WB_ID IN (",wblist,
                 ") AND Indicator IN (",IndList,") AND sim <= ",nSimMC)
     resMC <- dbGetQuery(db, sql) 
@@ -1043,20 +1005,48 @@ GoCalculation=function(){
                        Worst,PB,MP,GM,HG,Ref,Mean,StdErr,EQRavg=EQR,ClassAvg=Class),
                 by=c("WB_ID","Period","Indicator","IndSubtype"))
 
+    subtypes<-values$subtypes %>%
+      mutate(SubtypeOK=1)
+    
+    resMC <- resMC %>% 
+      left_join(subtypes,by=c("WB_ID","Period","Indicator","IndSubtype")) %>%
+      mutate(SubtypeOK=ifelse(is.na(IndSubtype),1,SubtypeOK)) %>%
+      filter(SubtypeOK==1) %>%
+      select(-SubtypeOK)
+    resAvg <- resAvg %>% 
+      left_join(subtypes,by=c("WB_ID","Period","Indicator","IndSubtype")) %>%
+      mutate(SubtypeOK=ifelse(is.na(IndSubtype),1,SubtypeOK)) %>%
+      filter(SubtypeOK==1) %>%
+      select(-SubtypeOK)
     
     
+    
+    
+    
+    if(isolate(!input$IgnoreErr)){
+      resMC <- resMC %>%
+        mutate(EQR=ifelse(Code==0,EQR,NA),
+               EQRavg=ifelse(Code==0,EQRavg,NA),
+               Value=ifelse(Code==0,Value,NA),
+               ClassID=ifelse(Code==0,ClassID,NA),
+               ClassAvg=ifelse(Code==0,ClassAvg,NA),
+               Class=ifelse(Code==0,Class,NA))
+      resAvg <- resAvg %>%
+        mutate(EQR=ifelse(Code==0,EQR,NA),
+               Mean=ifelse(Code==0,Mean,NA),
+               ClassID=ifelse(Code==0,ClassID,NA),
+               ClassAvg=ifelse(Code==0,ClassAvg,NA),
+               Class=ifelse(Code==0,Class,NA))
+    }
+    
+
     incProgress(0.1)
     sql<-paste0("SELECT * FROM resErr WHERE period IN (",periodlist,") AND WB_ID IN (",wblist,
                 ") AND Indicator IN (",IndList,")")         
     resErr <- dbGetQuery(db, sql)
     dbDisconnect(db)
     
-    resAvg <- df %>% left_join(resAvg,by=c("Indicator","IndSubtype","Period"))
-    resMC <- df %>% left_join(resMC,by=c("Indicator","IndSubtype","Period"))
-    resErr <- df %>% left_join(resErr,by=c("Indicator","IndSubtype","Period"))
     
-    #region<-resAvg$Region[1]
-    #typename<-resAvg$Typename[1]
      #-----------------------------------------------------------------------
     incProgress(0.1,message="getting data for extrapolation")
     #find which indicators need to be (and can be extrapolated)
@@ -1068,6 +1058,8 @@ GoCalculation=function(){
     }else{
       matchcode<-c(0)
     }
+    
+    
 
     df <- values$dfextrapWB
     df <- df %>% 
@@ -1107,10 +1099,6 @@ GoCalculation=function(){
                 ") AND Indicator IN (",IndList,")")
     resYrtype <- dbGetQuery(db, sql)
     incProgress(0.1)
-
-    #sql<-paste0("SELECT * FROM resMC WHERE period IN (",periodlist,") AND WB_ID IN (",wblisttype,
-    #            ") AND Indicator IN (",IndList,") AND sim <= ",nSimMC)
-    #resMCtype <- dbGetQuery(db, sql) 
 
     sql<-paste0("SELECT WB_ID,Period,Indicator,IndSubtype,sim,Value,ClassID FROM resMC WHERE period IN (",periodlist,") AND WB_ID IN (",wblisttype,
                 ") AND Indicator IN (",IndList,") AND sim <= ",nSimMC)
@@ -1156,7 +1144,7 @@ GoCalculation=function(){
              GM=as.numeric(GM),
              HG=as.numeric(HG),
              Ref=as.numeric(Ref))
-        #browser()
+
       resAvgExtrap<-resAvgExtrap %>% mutate(Value=Mean)
       resAvgExtrap<-GetClass(resAvgExtrap)
       resMCExtrap<-GetClass(resMCExtrap)
@@ -1213,8 +1201,6 @@ GoCalculation=function(){
   
   end.time <- Sys.time()
   time.taken <- end.time - start.time
-  #cat(paste0(wblist[1]," time:",time.taken,"\n"))
-  
   
   return(0)
 }
@@ -1301,15 +1287,6 @@ GoCalculation=function(){
           Class = ClassAvg,
           EQR = EQRavg
         )
-     
-      # output$resTableMC <- ClassOutputTableDT(
-      #   df,
-      #   Groups = grplist,
-      #   ClassVar = "ClassMC",
-      #   roundlist = c("Mean", "StdErr", "EQR"),
-      #   colOK = 11,
-      #   sDOM = "pl"
-      # )
       
       resMC <- values$resMC
       resAvg <- values$resAvg
@@ -1317,72 +1294,19 @@ GoCalculation=function(){
       res1MC <-
         Aggregate(
           resMC,
-          Groups = c("Region", "WB_ID", "Type", "Typename", "Period", "sim"),
+          Groups = c("Period", "sim"),
           level = 1
         ) %>% rename(ClassMC = Class)
       res1Avg <-
         Aggregate(
           resAvg,
-          Groups = c("Region", "WB_ID", "Type", "Typename", "Period"),
+          Groups = c("Period"),
           level = 1
         ) %>%
-        select(Region, WB_ID, Type, Typename, Period, Class)
-      values$res1MC <- res1MC %>% left_join(res1Avg,by=c("Region", "WB_ID", "Type", "Typename", "Period"))
+        select(Period, Class)
+      values$res1MC <- res1MC %>% left_join(res1Avg,by=c("Period"))
     }
   }, ignoreInit = T)
-  
-  
-  
-  ShowHideExtrapErrs<-function(){
-    if (nrow(values$resMC) > 0) {
-      df <-
-        values$resMC %>% rename(
-          EQRMC = EQR,
-          ClassMC = Class,
-          Class = ClassAvg,
-          EQR = EQRavg
-        )
-
-      
-      grplist <-
-        c(
-          "WB_ID","Type","Period","QEtype","QualityElement","QualitySubelement","Indicator","IndSubtype","Note","Unit","Months",
-          #"Worst","PB","MP","GM","HG","Ref",
-          "Mean","StdErr","EQR","Class"
-        )
-      output$resTableMC <- ClassOutputTableDT(
-        df,
-        Groups = grplist,
-        ClassVar = "ClassMC",
-        roundlist = c("Mean", "StdErr", "EQR"),
-        colOK = 9,
-        sDOM = "pl"
-      )
-      resMC <- values$resMC
-      resAvg <- values$resAvg
-      
-      res1MC <-
-        Aggregate(
-          resMC,
-          Groups = c("Region", "WB_ID", "Type", "Typename", "Period", "sim"),
-          level = 1
-        ) %>% rename(ClassMC = Class)
-      res1Avg <-
-        Aggregate(
-          resAvg,
-          Groups = c("Region", "WB_ID", "Type", "Typename", "Period"),
-          level = 1
-        ) %>%
-        select(Region, WB_ID, Type, Typename, Period, Class)
-      #cat("left join res1MC2")
-      values$res1MC <- res1MC %>% left_join(res1Avg,by=c("Region", "WB_ID", "Type", "Typename", "Period"))
-    }
-    values$res2MC <- ""
-    values$res3MC <- ""
-    values$res4MC <- ""
-    values$resInd <- ""
-    values$resObs <- ""
-  }
   
   
   observeEvent(input$resTable1_rows_selected, {
@@ -1395,17 +1319,17 @@ GoCalculation=function(){
     
     res2MC <-
       Aggregate(df,
-                Groups = c("WB_ID", "Period", "Type", "sim"),
+                Groups = c("Period", "sim"),
                 level = 2) %>%
       rename(ClassMC = Class, EQRMC = EQR)
     df <- filter(values$resAvg, WB_ID == values$sWB, Period == values$sPeriod)
 
     res2Avg <-
       Aggregate(df,
-                Groups = c("WB_ID", "Period", "Type"),
+                Groups = c("Period"),
                 level = 2) %>%
-      select(WB_ID, Type, Period, QEtype, EQR, Class)
-    values$res2MC <- res2MC %>% left_join(res2Avg,by = c("WB_ID", "Period", "Type", "QEtype"))
+      select(Period, QEtype, EQR, Class)
+    values$res2MC <- res2MC %>% left_join(res2Avg,by = c("Period", "QEtype"))
     values$res3MC <- ""
     values$res4MC <- ""
     values$resInd <- ""
@@ -1419,28 +1343,28 @@ GoCalculation=function(){
     values$sQEtype <- df$QEtype[input$resTable2_rows_selected]
     df <-
       filter(values$resMC,
-             WB_ID == values$sWB,
+             #WB_ID == values$sWB,
              Period == values$sPeriod,
              QEtype == values$sQEtype)
  
     res3MC <-
       Aggregate(df,
-                Groups = c("WB_ID", "Period", "Type", "sim"),
+                Groups = c("Period", "sim"),
                 level = 3) %>%
       rename(ClassMC = Class, EQRMC = EQR)
     
     df <-
       filter(values$resAvg,
-             WB_ID == values$sWB,
+             #WB_ID == values$sWB,
              Period == values$sPeriod,
              QEtype == values$sQEtype)
 
     res3Avg <-
       Aggregate(df,
-                Groups = c("WB_ID", "Period", "Type"),
+                Groups = c("Period"),
                 level = 3) %>%
-      select(WB_ID, Type, Period, QEtype, QualityElement, EQR, Class)
-    values$res3MC <- res3MC %>% left_join(res3Avg,by = c("WB_ID", "Period", "Type", "QualityElement", "QEtype"))
+      select(Period, QEtype, QualityElement, EQR, Class)
+    values$res3MC <- res3MC %>% left_join(res3Avg,by = c("Period","QualityElement", "QEtype"))
     
     values$res4MC <- ""
     values$resInd <- ""
@@ -1454,7 +1378,6 @@ GoCalculation=function(){
       df$QualityElement[input$resTable3_rows_selected]
     df <- filter(
       values$resMC,
-      WB_ID == values$sWB,
       Period == values$sPeriod,
       QEtype == values$sQEtype,
       QualityElement == values$sQualityElement
@@ -1462,13 +1385,12 @@ GoCalculation=function(){
 
     res4MC <-
       Aggregate(df,
-                Groups = c("WB_ID", "Period", "Type", "sim"),
+                Groups = c("Period","sim"),
                 level = 4) %>%
       rename(ClassMC = Class, EQRMC = EQR)
     
     df <- filter(
       values$resAvg,
-      WB_ID == values$sWB,
       Period == values$sPeriod,
       QEtype == values$sQEtype,
       QualityElement == values$sQualityElement
@@ -1476,17 +1398,16 @@ GoCalculation=function(){
 
     res4Avg <-
       Aggregate(df,
-                Groups = c("WB_ID", "Period", "Type"),
+                Groups = c("Period"),
                 level = 4) %>%
-      select(WB_ID,Type,Period,QEtype,QualityElement,QualitySubelement,EQR,Class)
-    values$res4MC <- res4MC %>% left_join(res4Avg,by = c("WB_ID", "Period", "Type", "QualityElement", "QEtype", "QualitySubelement"))
+      select(Period,QEtype,QualityElement,QualitySubelement,EQR,Class)
+    values$res4MC <- res4MC %>% left_join(res4Avg,by = c("Period", "QualityElement", "QEtype", "QualitySubelement"))
     
     values$resInd <- ""
     values$resObs <- ""
   }, ignoreInit = T)
   
   observeEvent(input$resTable4_rows_selected, {
-    #n<-input$resTable4_rows_selected
     df <-
       values$res4MC %>% group_by(QualitySubelement) %>% summarise() %>% ungroup()
     values$sQualitySubelement <-
@@ -1497,7 +1418,7 @@ GoCalculation=function(){
     
     values$resInd <- filter(
       df,
-      WB_ID == values$sWB,
+      #WB_ID == values$sWB,
       Period == values$sPeriod,
       QEtype == values$sQEtype,
       QualityElement == values$sQualityElement,
@@ -1551,10 +1472,8 @@ GoCalculation=function(){
   
   
   observeEvent(values$res1MC, {
-    #grplist <- c("Region", "WB_ID", "Type", "Typename", "Period", "Class")
-    #rmlist = c("Region", "WB_ID", "Type", "Typename")
-    grplist <- c("WB_ID","Period","Class")
-    rmlist = c("WB_ID")
+    grplist <- c("Period","Class")
+    rmlist = c("")
     df<-values$res1MC
     output$resTable1 <-
       ClassOutputTableDT(
@@ -1569,8 +1488,8 @@ GoCalculation=function(){
   
   
   observeEvent(values$res2MC, {
-    grplist <- c("WB_ID", "Period", "Type", "QEtype", "EQR", "Class")
-    rmlist = c("WB_ID", "Period", "Type")
+    grplist <- c("Period","QEtype", "EQR", "Class")
+    rmlist = c("Period")
     
     output$resTable2 <- ClassOutputTableDT(
       values$res2MC,
@@ -1593,8 +1512,8 @@ GoCalculation=function(){
   
   observeEvent(values$res3MC, {
     grplist <-
-      c("WB_ID","Period","Type","QEtype","QualityElement","EQR","Class")
-    rmlist = c("WB_ID", "Period", "Type", "QEtype")
+      c("Period","QEtype","QualityElement","EQR","Class")
+    rmlist = c("Period", "QEtype")
     output$resTable3 <-
       ClassOutputTableDT(
         values$res3MC,
@@ -1615,10 +1534,8 @@ GoCalculation=function(){
   
   observeEvent(values$res4MC, {
     grplist <-
-      c(
-        "WB_ID","Period","Type","QEtype","QualityElement","QualitySubelement","EQR","Class"
-      )
-    rmlist = c("WB_ID", "Period", "Type", "QEtype", "QualityElement")
+      c("Period","QEtype","QualityElement","QualitySubelement","EQR","Class")
+    rmlist = c("Period", "QEtype", "QualityElement")
     output$resTable4 <-
       ClassOutputTableDT(
         values$res4MC,
@@ -1638,11 +1555,10 @@ GoCalculation=function(){
   }, ignoreInit = T)
   
   observeEvent(values$resInd, {
-    grplist <- c(
-      "WB_ID","Type","Period","QEtype","QualityElement","QualitySubelement","Indicator",
+    grplist <- c("Period","QEtype","QualityElement","QualitySubelement","Indicator",
       "IndSubtype","Note","Unit","Months","Worst","PB","MP","GM","HG","Ref","Mean","StdErr","EQR","Class"
     )
-    rmlist <- c("WB_ID","Type","Period","QEtype","QualityElement","QualitySubelement")
+    rmlist <- c("Period","QEtype","QualityElement","QualitySubelement")
     
     output$resTableInd <- ClassOutputTableDT(
       values$resInd,
@@ -1666,7 +1582,6 @@ GoCalculation=function(){
   
   
   observeEvent(values$resObs, {
-    #if (typeof(values$sIndicator)=="list") {
     if (!is.null(values$sIndicator)) {
       vars = GetVarNames(values$sIndicator,df_indicators,df_var)
     } else{
@@ -1681,9 +1596,8 @@ GoCalculation=function(){
       plotWidth<-600
 
     }
-    #cat(paste0("value$resObs [",typeof(values$resObs),"]\n"))
-    
-    output$resTableObs <-
+
+      output$resTableObs <-
       ClassObsTableDT(values$resObs, sDOM = "pl", roundlist = vars)
     
     output$titleTableObs <- renderText({

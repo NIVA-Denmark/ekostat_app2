@@ -45,7 +45,7 @@ Lakes	Supporting	Oxygen	Oxygen	LakeOxygenSummer	Oxygen	Oxygen	NA	X	X	NA	NA	NA	NA
 Lakes	Supporting	Acidification	pH	LakepHchange	pH	pH	X	NA	NA	X	NA	NA	NA	NA
 Rivers	Biological	Macrophytes and phytobenthos	Phytobenthos composition	RiverIPS	BenthicDiatomsIPS	BenthicDiatomsIPS	X	X	X	NA	NA	NA	NA	NA
 Rivers	Biological	Macrophytes and phytobenthos	Phytobenthos composition	RiverIPSEQR	BenthicDiatomsIPS	BenthicDiatomsIPS (EQR)	X	X	X	NA	NA	NA	NA	NA
-Rivers	Biological	Macrophytes and phytobenthos	Phytobenthos composition	RiverACIDEQR	BenthicDiatomsACID	BenthicDiatomsACID	X	NA	NA	X	NA	NA	NA	NA
+Rivers	Biological	Macrophytes and phytobenthos	Phytobenthos composition	RiverACID	BenthicDiatomsACID	BenthicDiatomsACID	X	NA	NA	X	NA	NA	NA	NA
 Rivers	Supporting	Macrophytes and phytobenthos	Phytobenthos composition	RiverPctPT	BenthicDiatomsPctPT	BenthicDiatomsPctPT	X	X	X	NA	NA	NA	NA	NA
 Rivers	Supporting	Macrophytes and phytobenthos	Phytobenthos composition	RiverTDI	BenthicDiatomsTDI	BenthicDiatomsTDI	X	X	X	NA	NA	NA	NA	NA
 Rivers	Biological	Benthic invertebrates	Composition and abundance	RiverASPTEQR	BenthicInvertebratesASPT	BenthicInvertebratesASPT (EQR)	X	NA	NA	NA	NA	NA	NA	X
