@@ -141,7 +141,7 @@ SelectObs<-function(df,indicator,indSubType="",sWB,sPeriod,df_indicators,df_var)
   
 }
 
-DepthLimits<-function(s){
+DepthLimits<-function(s,n=NA){
   m<-regexpr("m",s,fixed=T)[1] 
   from<-NA
   to<-NA
@@ -161,7 +161,15 @@ DepthLimits<-function(s){
       to=as.numeric(substr(s,n+1,nchar(s)))
       }
   }
-  return(c(from,to))
+  if(is.na(n)){
+    return(c(from,to))
+  }else{
+    if(n==1){
+      return(from)
+    }else{
+      return(to)
+    }
+  }
 }
 
 # GetIndicatorMonths

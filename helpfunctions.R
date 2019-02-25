@@ -45,11 +45,10 @@ CleanSubTypes <- function(df,dfobs=data.frame()){
 
 
 SelectBQISubType<-function(df,dfdata){
-  #browser()
 dfBQI<-df %>%
   filter(Indicator=="CoastBQI")
-dfBQI$z0 <- lapply(dfBQI$IndSubtype,function(x) DepthLimits(x))[[1]]
-dfBQI$z1 <- lapply(dfBQI$IndSubtype,function(x) DepthLimits(x))[[2]]
+dfBQI$z0 <- lapply(dfBQI$IndSubtype,function(x) DepthLimits(x,1))
+dfBQI$z1 <- lapply(dfBQI$IndSubtype,function(x) DepthLimits(x,2))
 dfBQI <- dfBQI %>% 
   select(WB_ID,Period,IndSubtype,z0,z1)
 
