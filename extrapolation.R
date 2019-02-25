@@ -16,12 +16,19 @@ extrapolation_single<-function(dfavg,dfyr,dfMC,dfbnds,nsim){
   subtype<-subtypes$IndSubtype[1]
   
   if(is.list(dfavg)){
-    
-    dfavg <- dfavg %>% filter(Code>-3,IndSubtype==subtype)
-    dfMC <- dfavg %>% 
-      select(WB_ID,Indicator,Period,IndSubtype) %>%
-      left_join(dfMC,by=c("WB_ID","Indicator","Period","IndSubtype"))
-    dfyr <- dfyr %>% filter(Code>-3,IndSubtype==subtype)
+    if(is.na(subtype)){
+      dfavg <- dfavg %>% filter(Code>-3,is.na(IndSubtype))
+      dfMC <- dfavg %>% 
+        select(WB_ID,Indicator,Period,IndSubtype) %>%
+        left_join(dfMC,by=c("WB_ID","Indicator","Period","IndSubtype"))
+      dfyr <- dfyr %>% filter(Code>-3,is.na(IndSubtype))
+    }else{
+      dfavg <- dfavg %>% filter(Code>-3,is.na(IndSubtype))
+      dfMC <- dfavg %>% 
+        select(WB_ID,Indicator,Period,IndSubtype) %>%
+        left_join(dfMC,by=c("WB_ID","Indicator","Period","IndSubtype"))
+      dfyr <- dfyr %>% filter(Code>-3,is.na(IndSubtype))
+    }
     
     if(nrow(dfavg)>0){
       indicator<-dfavg$Indicator[1]

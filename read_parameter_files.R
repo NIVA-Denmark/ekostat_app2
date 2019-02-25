@@ -25,16 +25,6 @@ names(df_bound)[names(df_bound)=="Min.per.year"]<-"MinPerYear"
 names(df_bound_WB)[names(df_bound_WB)=="Min..year"]<-"MinYear"
 names(df_bound_WB)[names(df_bound_WB)=="Min.per.year"]<-"MinPerYear"
 
-df_bound <- df_bound %>% 
-  mutate(V_WBannual=ifelse(is.na(V_WBannual),0.1,V_WBannual),
-         V_WBperiod=ifelse(is.na(V_WBperiod),0.1,V_WBperiod))   
-
-df_bound_WB <- df_bound_WB %>% 
-  mutate(V_WBannual=ifelse(is.na(V_WBannual),0.1,V_WBannual),
-         V_WBperiod=ifelse(is.na(V_WBperiod),0.1,V_WBperiod))   
-
-
-
 dbpath<-"../efs/ekostat/ekostat_info.db"
 db <- dbConnect(SQLite(), dbname=dbpath)
 df_WB<-dbGetQuery(conn=db,"Select * from WB_info")
@@ -43,3 +33,5 @@ df_WB_lan<-dbGetQuery(conn=db,"Select * from WB_lan")
 df_WB_EU<-dbGetQuery(conn=db,"Select * from WB_EU")
 dbDisconnect(db)
 
+#Add boundaries for missing river types
+source("read_parameter_files_fix_river_types.R")

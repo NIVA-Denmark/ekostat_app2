@@ -473,7 +473,7 @@ shinyServer(function(input, output, session) {
     # ----------------------------------------
     # reset the extrapolation WB selection table
     output$dtextrapstn = renderDataTable(
-      datatable(data.frame(),options=list(dom = 't',pageLength = 99,autoWidth=TRUE),
+      datatable(data.frame(),options=list(dom = 'tp',pageLength=20,autoWidth=TRUE),
                 selection=list(mode='multiple')), 
       server=FALSE)
     #-----------------------------------------
@@ -928,7 +928,7 @@ shinyServer(function(input, output, session) {
         values$current_extrap_WBs <- df
       }
     output$dtextrapstn = renderDataTable(
-      datatable(df,options=list(dom = 't',pageLength = 99,autoWidth=TRUE),
+      datatable(df,options=list(dom = 'tp',pageLength = 20,autoWidth=TRUE),
                  selection=list(mode='multiple',selected=selected)), 
       server=FALSE)
   })
