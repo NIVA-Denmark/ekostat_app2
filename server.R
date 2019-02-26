@@ -83,12 +83,8 @@ shinyServer(function(input, output, session) {
   values$resAvgType <- ""
   values$resMCType <-""
   values$IndSelection<-""
-  #values$ClickedWB <- FALSE
+  
 
-  
-  #dfwb_info <- readdb(dbpath_info, "SELECT * FROM WB_info") # type info WB_ID
-  
-  #wb <- readdb(dbpath()), "SELECT * FROM WB")             # available assessments
   
   pressure_list<-function(){
     if(!is.null(values$watertypeselected)){
@@ -643,7 +639,10 @@ shinyServer(function(input, output, session) {
       df<-data.frame(Indicator=character())
     }else{
     dftype<-dftype %>%
-      distinct(Period,Indicator,WB_ID)    
+      group_by(Period,Indicator,WB_ID)  %>%
+      summarise(Code=max(Code,na.rm=T)) %>%
+      ungroup() #%>%
+      #filter(Code>-3)
     dftype<-dftype %>%
       left_join(select(df_indicators,Indicator,WB_extrapolation),by="Indicator") %>%
       filter(!is.na(WB_extrapolation))
@@ -718,7 +717,7 @@ shinyServer(function(input, output, session) {
    # ---------------- Function updateind() --------------------------------
 
   UpdateIndTable<-function(){
-    #cat(paste0("UpdateIndTable\n"))
+    
       # Get the info on the status for the indicators in the selected WB
       bOK<-TRUE
       pname<-input$pressure
@@ -806,9 +805,7 @@ shinyServer(function(input, output, session) {
           mutate(Code=ifelse(is.na(Code),-99,Code)) %>%
           mutate(Data=ifelse(Code=='0',"OK",ifelse(Code %in% c('-1','-2'),"(OK)","-")),
                  Code=ifelse(Data=="OK",0,1))
-          #mutate(Data=ifelse(Code=='0',"OK",
-          #                   ifelse(Code %in% c('-1','-2'),"few data","-"))) %>%
-          #mutate(Code=ifelse(Data %in% matchcodename,0,1))
+          
         
           dfext <- df %>% 
             group_by(Indicator) %>% 
@@ -839,13 +836,7 @@ shinyServer(function(input, output, session) {
           values$resAvgType <-""
          }
         #----------------------------------
-      #}else{
-       # values$df_ind_status <-""
-      #  values$resAvgType <-""
-      #}
-
-      #updatedtind()
-      #browser()
+  
 }
 
 
@@ -874,7 +865,7 @@ shinyServer(function(input, output, session) {
       options=list(dom = 't',pageLength = 99,autoWidth=TRUE  ))
     
      dfextrap <- values$resAvgType
-     dfextrapWB <-data.frame(WB_ID=character(),Indicator=character())
+     dfextrapWB <-data.frame(WB_ID=character(),Period=character(),Indicator=character())
      if(typeof(dfextrap)=="list"){
        
        dfextrap <- dfextrap %>%
@@ -887,15 +878,13 @@ shinyServer(function(input, output, session) {
        
        df <- df %>% left_join(dfextrap,by=c("IndicatorDescription","Period"))
        dfextrapWB <- df %>% 
-         distinct(Indicator,IndicatorDescription,WB_ID) %>%   
+         distinct(Indicator,IndicatorDescription,Period,WB_ID) %>%   
          filter(!is.na(WB_ID)) %>%                            
          mutate(Select=T)
      }}
      
      values$dfextrapWB<-dfextrapWB
      
-    #    #rename(IndicatorDescription=Indicator) %>%
-   
     updateTabItems(session, "tabs", "extrapolation")
     
     return(0)
@@ -915,9 +904,10 @@ shinyServer(function(input, output, session) {
 
         df<-values$dtextrap
         indmatch<-df[input$dtextrap_rows_selected,"Indicator"]
+        periodmatch<-df[input$dtextrap_rows_selected,"Period"]
         df<-isolate(values$dfextrapWB) 
           df <- df%>% 
-            filter(IndicatorDescription==indmatch)
+            filter(IndicatorDescription==indmatch,Period==periodmatch)
           if(nrow(df)>0){
             df$id<-1:nrow(df)
            selected <- df[df$Select==T,"id"]
@@ -928,7 +918,7 @@ shinyServer(function(input, output, session) {
         df <- df %>% left_join(select(df_WB,WB_ID=WB_ID,Name=WB_Name,Municipality),by="WB_ID")    
         
         values$current_extrap_WBs <- df %>% select(-Municipality)
-        #df <- df %>% left_join(select(df_WB_mun,WB_ID,MunID,Municipality=MunName),by="WB_ID") 
+        
         
       }
     output$dtextrapstn = renderDataTable(
@@ -956,12 +946,13 @@ shinyServer(function(input, output, session) {
 
     df<-values$dtextrap
     indmatch<-df[input$dtextrap_rows_selected,"Indicator"]
-    dfapply <- dfapply %>% mutate(IndicatorDescription=indmatch)
+    periodmatch<-df[input$dtextrap_rows_selected,"Period"]
+    dfapply <- dfapply %>% mutate(IndicatorDescription=indmatch,Period=periodmatch)
     
     dfwb<-isolate(values$dfextrapWB)
     
     dfwb <- dfwb %>% 
-      left_join(dfapply,by=c("IndicatorDescription","WB_ID"))        
+      left_join(dfapply,by=c("IndicatorDescription","WB_ID","Period"))        
     
     dfwb <- dfwb %>% 
       mutate(Select=ifelse(is.na(SelectNew),Select,SelectNew)) %>%
@@ -1158,7 +1149,7 @@ GoCalculation=function(){
 
     # Get results for the waterbodies used for extrapolation we are showing results for   
     wblisttype<-paste(paste0("'",dfextrap$WB_ID,"'"),collapse = ",")
-    #cat(paste0("WBs for extrap: ",wblisttype,"\n"))
+    
     db <- dbConnect(SQLite(), dbname=dbpath())
     sql<-paste0("SELECT * FROM resAvg WHERE period IN (",periodlist,") AND WB_ID IN (",wblisttype,
                 ") AND Indicator IN (",IndList,")")
