@@ -155,10 +155,10 @@ DepthLimits<-function(s,n=NA){
     from=as.numeric(substr(s,2,nchar(s)))
     to = 99999
   }else{
-    n<-regexpr("-",s,fixed=T)[1]
-    if(n>0){
-      from=as.numeric(substr(s,1,n-1))
-      to=as.numeric(substr(s,n+1,nchar(s)))
+    nchar<-regexpr("-",s,fixed=T)[1]
+    if(nchar>0){
+      from=as.numeric(substr(s,1,nchar-1))
+      to=as.numeric(substr(s,nchar+1,nchar(s)))
       }
   }
   if(is.na(n)){
