@@ -926,7 +926,7 @@ shinyServer(function(input, output, session) {
           }
         df <- df %>% select(WB_ID)                                                    
         df <- df %>% left_join(select(dfwb_info,WB_ID=WB_ID,Name=WB_Name),by="WB_ID")    
-        df <- df %>% left_join(select(df_WB_mun,WB_ID,MunID,Municipality=MunName),by="WB_ID") 
+        #df <- df %>% left_join(select(df_WB_mun,WB_ID,MunID,Municipality=MunName),by="WB_ID") 
         
         values$current_extrap_WBs <- df
       }
