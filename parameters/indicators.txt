@@ -22,7 +22,7 @@ Coastal	Supporting	Nutrients	Phosphorus	CoastTPwinterEQR	Total Phosphorus	Winter
 Coastal	Supporting	Oxygen	Oxygen	CoastBottomOxygen	Oxygen Bottom Water	Oxygen Concentration	NA	X	X	NA	NA	NA	NA	X
 Coastal	Supporting	Oxygen	Oxygen	CoastHypoxicArea	Area affected by hypoxia (%)	Area affected by hypoxia (%)	NA	X	X	NA	NA	NA	NA	X
 Lakes	Biological	Phytoplankton	Phytoplankton biomass	LakeBiovol	Phytoplankton biovolume	Phytoplankton biovolume	X	X	NA	NA	NA	NA	NA	NA
-Lakes	Biological	Phytoplankton	Phytoplankton biomass	LakeBiovolEQR	Phytoplankton biovolume	Phytoplankton biovolume	X	X	NA	NA	NA	NA	NA	NA
+Lakes	Biological	Phytoplankton	Phytoplankton biomass	LakeBiovolEQR	Phytoplankton biovolume	Phytoplankton biovolume (EQR)	X	X	NA	NA	NA	NA	NA	NA
 Lakes	Biological	Phytoplankton	Phytoplankton biomass	LakeChla	Chlorophyll a	Chlorophyll a	X	X	NA	NA	NA	NA	NA	NA
 Lakes	Biological	Phytoplankton	Phytoplankton biomass	LakeChlaEQR	Chlorophyll a	Chlorophyll a (EQR)	X	X	NA	NA	NA	NA	NA	NA
 Lakes	Biological	Phytoplankton	Phytoplankton composition	LakePTI	PhytoplanktonTrophicIndex	Phytoplankton Trophic Index	X	X	NA	NA	NA	NA	NA	NA
@@ -31,7 +31,7 @@ Lakes	Biological	Phytoplankton	Phytoplankton composition	LakeNphytspec	Phytoplan
 Lakes	Biological	Phytoplankton	Phytoplankton composition	LakeNphytspecEQR	Phytoplankton species richness	Phytoplankton species richness (EQR)	X	NA	NA	X	NA	NA	NA	NA
 Lakes	Biological	Macrophytes and phytobenthos	Macrophytes composition	LakeTMIEQR	TrophicMacrophyteIndex	TrophicMacrophyteIndex (EQR)	X	X	NA	NA	NA	NA	NA	NA
 Lakes	Biological	Macrophytes and phytobenthos	Phytobenthos composition	LakeIPS	BenthicDiatomsIPS	BenthicDiatomsIPS	X	X	X	NA	NA	NA	NA	NA
-Lakes	Biological	Macrophytes and phytobenthos	Phytobenthos composition	LakeIPSEQR	BenthicDiatomsIPS	BenthicDiatomsIPS	X	X	X	NA	NA	NA	NA	NA
+Lakes	Biological	Macrophytes and phytobenthos	Phytobenthos composition	LakeIPSEQR	BenthicDiatomsIPS	BenthicDiatomsIPS (EQR)	X	X	X	NA	NA	NA	NA	NA
 Lakes	Biological	Macrophytes and phytobenthos	Phytobenthos composition	LakeACIDEQR	BenthicDiatomsACID	BenthicDiatomsACID	X	NA	NA	X	NA	NA	NA	NA
 Lakes	Biological	Benthic invertebrates	Composition and abundance	LakeASPTEQR	BenthicInvertebratesASPT	BenthicInvertebratesASPT	X	NA	NA	NA	NA	NA	NA	X
 Lakes	Biological	Benthic invertebrates	Composition and abundance	LakeMILAEQR	BenthicInvertebratesMILA	BenthicInvertebratesMILA	X	NA	NA	X	NA	NA	NA	NA
