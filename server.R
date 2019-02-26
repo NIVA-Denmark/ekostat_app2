@@ -938,7 +938,7 @@ shinyServer(function(input, output, session) {
   
   observeEvent(input$applyExtrapWBs,{
     df<-values$current_extrap_WBs
-    if(nrow(df)>1){
+    if(nrow(df)>0){
     df$SelectNew<-NA
     df1 <- df[input$dtextrapstn_rows_selected,]
     df<-df %>% 
