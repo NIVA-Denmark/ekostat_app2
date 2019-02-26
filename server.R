@@ -218,9 +218,11 @@ shinyServer(function(input, output, session) {
       
       db <- dbConnect(SQLite(), dbname=dbpath())
       sql<-paste0("SELECT COUNT(*) FROM data WHERE period IN (",periodlist,") AND  WB_ID IN ('",wbidselect,"')")
+      sql<-paste0("SELECT COUNT(*) FROM resAvg WHERE period IN (",periodlist,") AND  WB_ID IN ('",wbidselect,"') AND Code>-3")
+
       nrows <- dbGetQuery(db, sql)
       dbDisconnect(db)
-      values$WBinfo <- paste0(wbidselect," ",wbnameselect," (data count = ",nrows,")")
+      values$WBinfo <- paste0(wbidselect," ",wbnameselect," (indicator count = ",nrows,")")
     }else{
       values$WBinfo<-""
     }
