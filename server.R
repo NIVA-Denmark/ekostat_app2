@@ -1240,8 +1240,8 @@ GoCalculation=function(){
          select(-OK)
       
       if(nrow(resAvg)>0){
-        resAvg<-resAvg %>% bind_rows(resAvgExtrap)
-        resMC<-resMC %>% bind_rows(resMCExtrap)
+        resAvg<-resAvgExtrap %>% bind_rows(resAvg)
+        resMC<-resMCExtrap %>% bind_rows(resMC)
       }else{
         resAvg<-resAvgExtrap
         resMC<-resMCExtrap
