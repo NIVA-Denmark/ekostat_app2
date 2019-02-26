@@ -23,11 +23,11 @@ extrapolation_single<-function(dfavg,dfyr,dfMC,dfbnds,nsim){
         left_join(dfMC,by=c("WB_ID","Indicator","Period","IndSubtype"))
       dfyr <- dfyr %>% filter(Code>-3,is.na(IndSubtype))
     }else{
-      dfavg <- dfavg %>% filter(Code>-3,is.na(IndSubtype))
+      dfavg <- dfavg %>% filter(Code>-3,IndSubtype==subtype)
       dfMC <- dfavg %>% 
         select(WB_ID,Indicator,Period,IndSubtype) %>%
         left_join(dfMC,by=c("WB_ID","Indicator","Period","IndSubtype"))
-      dfyr <- dfyr %>% filter(Code>-3,is.na(IndSubtype))
+      dfyr <- dfyr %>% filter(Code>-3,IndSubtype==subtype)
     }
     
     if(nrow(dfavg)>0){
