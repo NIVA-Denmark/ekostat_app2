@@ -86,7 +86,7 @@ shinyServer(function(input, output, session) {
   #values$ClickedWB <- FALSE
 
   
-  dfwb_info <- readdb(dbpath_info, "SELECT * FROM WB_info") # type info WB_ID
+  #dfwb_info <- readdb(dbpath_info, "SELECT * FROM WB_info") # type info WB_ID
   
   #wb <- readdb(dbpath()), "SELECT * FROM WB")             # available assessments
   
@@ -280,7 +280,7 @@ shinyServer(function(input, output, session) {
   region_list <- reactive({
     Region <- c("ALL")
     all <- data.frame(Region,row.names=F,stringsAsFactors=F)
-    df<-dfwb_info
+    df<-df_WB
     if(!is.null(input$waterType)){
       df <- df %>% filter(CLR==input$waterType)
     }
@@ -323,7 +323,7 @@ shinyServer(function(input, output, session) {
     #browser()
     Type <- c("ALL")
     all <- data.frame(Type,row.names=F,stringsAsFactors=F)
-    df<-dfwb_info
+    df<-df_WB
     
     if(!is.null(input$waterType)){
       df <- df %>% filter(CLR==input$waterType)
@@ -367,7 +367,7 @@ shinyServer(function(input, output, session) {
   # ---------------- wb_list: table of WBs matching search criteria  ----------------------
   wb_list<-reactive({
     
-    df <- dfwb_info 
+    df <- df_WB 
     
     values$WBinfo <- ""
     if (!is.null(input$waterType)){
@@ -444,7 +444,7 @@ shinyServer(function(input, output, session) {
   observeEvent(input$buttonWB, {
     values$wbselected<-wb_list()[input$dtwb_rows_selected,"WB_ID"]
     values$wbselectedname<-wb_list()[input$dtwb_rows_selected,"WB_Name"]
-    typeselected<-dfwb_info[dfwb_info$WB_ID==values$wbselected,"Type"]
+    typeselected<-df_WB[df_WB$WB_ID==values$wbselected,"Type"]
     values$periodselected<-input$period
     if(input$waterType=="Coast"){
       values$watertypeselected<-"Coastal"
@@ -792,7 +792,7 @@ shinyServer(function(input, output, session) {
           #------------------------------------
        dftypeperiod<-CleanSubTypes(dftypeperiod)
         
-        dfwb_type <- dfwb_info %>% distinct(WB_ID,WB_Name)
+        dfwb_type <- df_WB %>% distinct(WB_ID,WB_Name)
         #browser()
         dftypeperiod <- dftypeperiod %>% 
           left_join(dfwb_type,by=c("WB_ID"="WB_ID"))   
@@ -925,10 +925,11 @@ shinyServer(function(input, output, session) {
             selected<-NULL
           }
         df <- df %>% select(WB_ID)                                                    
-        df <- df %>% left_join(select(dfwb_info,WB_ID=WB_ID,Name=WB_Name),by="WB_ID")    
+        df <- df %>% left_join(select(df_WB,WB_ID=WB_ID,Name=WB_Name,Municipality),by="WB_ID")    
+        
+        values$current_extrap_WBs <- df %>% select(-Municipality)
         #df <- df %>% left_join(select(df_WB_mun,WB_ID,MunID,Municipality=MunName),by="WB_ID") 
         
-        values$current_extrap_WBs <- df
       }
     output$dtextrapstn = renderDataTable(
       datatable(df,options=list(dom = 'tp',pageLength = 20,autoWidth=TRUE),
