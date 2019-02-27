@@ -1095,7 +1095,6 @@ GoCalculation=function(){
         mutate(EQR=ifelse(Code==0,EQR,NA),
                Mean=ifelse(Code==0,Mean,NA),
                ClassID=ifelse(Code==0,ClassID,NA),
-               ClassAvg=ifelse(Code==0,ClassAvg,NA),
                Class=ifelse(Code==0,Class,NA))
     }
     
