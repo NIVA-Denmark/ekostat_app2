@@ -29,7 +29,7 @@ df_bound$GM<-df_bound[,"G.M"]
 
 df_bound <- df_bound %>% 
   mutate(GM=as.numeric(GM)) %>%
-  mutate(V_WBannual=ifelse(is.na(V_WBannual),0.1*GM,V_WBannual)) %>%
-  mutate(V_WBperiod=ifelse(is.na(V_WBperiod),0.1*GM,V_WBperiod)) %>%
+  mutate(V_WBannual=ifelse(is.na(V_WBannual),(0.1*GM)^2,V_WBannual)) %>%
+  mutate(V_WBperiod=ifelse(is.na(V_WBperiod),(0.1*GM)^2,V_WBperiod)) %>%
   select(-GM)
 
