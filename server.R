@@ -1367,7 +1367,7 @@ GoCalculation=function(){
     }
   }, ignoreInit = T)
   
-  
+  # User selected Period from Table 1 (Overall Results) - Now show Biological/Supporting (Table 2)
   observeEvent(input$resTable1_rows_selected, {
     df <-
       values$resMC %>% group_by(WB_ID, Period) %>% summarise() %>% ungroup()
@@ -1395,6 +1395,7 @@ GoCalculation=function(){
     values$resObs <- ""
   }, ignoreInit = T)
   
+  # User selected Biological or Supporting from Table 2 - Now show Quality Elements
   observeEvent(input$resTable2_rows_selected, {
     n <- input$resTable2_rows_selected
     df <-
@@ -1430,6 +1431,7 @@ GoCalculation=function(){
     values$resObs <- ""
   }, ignoreInit = T)
   
+  # User selected Quality Element from Table 3 - now show subelements
   observeEvent(input$resTable3_rows_selected, {
     df <-
       values$res3MC %>% group_by(QualityElement) %>% summarise() %>% ungroup()
@@ -1466,6 +1468,7 @@ GoCalculation=function(){
     values$resObs <- ""
   }, ignoreInit = T)
   
+  # User selected Quality Subelement from Table 4 - now show indicators
   observeEvent(input$resTable4_rows_selected, {
     df <-
       values$res4MC %>% group_by(QualitySubelement) %>% summarise() %>% ungroup()
@@ -1491,6 +1494,7 @@ GoCalculation=function(){
       )
   }, ignoreInit = T)
   
+  # User selected Indicator from Indicator Table - now show observations
   observeEvent(input$resTableInd_rows_selected, {
     #browser()
     
