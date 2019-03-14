@@ -1369,6 +1369,7 @@ GoCalculation=function(){
   
   # User selected Period from Table 1 (Overall Results) - Now show Biological/Supporting (Table 2)
   observeEvent(input$resTable1_rows_selected, {
+    #browser()
     df <-
       values$resMC %>% group_by(WB_ID, Period) %>% summarise() %>% ungroup()
     values$sWB <- df$WB_ID[input$resTable1_rows_selected]
@@ -1376,19 +1377,45 @@ GoCalculation=function(){
     df <- filter(values$resMC, WB_ID == values$sWB, Period == values$sPeriod)
     
     
-    res2MC <-
-      Aggregate(df,
+    dfbioMC<- df %>% filter(QEtype=="Biological")
+    dfsupMC <- df %>% filter(QEtype=="Supporting")
+    
+    res2MCsup <-
+      Aggregate(dfsupMC,
                 Groups = c("Period", "sim"),
                 level = 2) %>%
       rename(ClassMC = Class, EQRMC = EQR)
+    
     df <- filter(values$resAvg, WB_ID == values$sWB, Period == values$sPeriod)
-
+    dfbioAvg<- df %>% filter(QEtype=="Biological")
+    dfsupAvg <- df %>% filter(QEtype=="Supporting")
+    
     res2Avg <-
       Aggregate(df,
                 Groups = c("Period"),
                 level = 2) %>%
       select(Period, QEtype, EQR, Class)
+    
+    
+    res3MC <-  Aggregate(dfbioMC,Groups = c("Period", "sim"),level = 3) %>%
+      rename(ClassMC = Class, EQRMC = EQR)
+    res3Avg <- Aggregate(dfbioAvg,Groups = c("Period"),level = 3) %>%
+      select(Period, QEtype, QualityElement, EQR, Class) %>%
+      arrange(EQR)
+    
+    WorstQE<-res3Avg$QualityElement[1]
+    res2MCbio<- res3MC %>% 
+      filter(QualityElement==WorstQE) %>%
+      select(-QualityElement)
+    
+    res2MC <- res2MCbio %>%
+      bind_rows(res2MCsup)
+    
     values$res2MC <- res2MC %>% left_join(res2Avg,by = c("Period", "QEtype"))
+    
+    
+    
+    
     values$res3MC <- ""
     values$res4MC <- ""
     values$resInd <- ""
