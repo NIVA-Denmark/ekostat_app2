@@ -47,10 +47,14 @@ extrapolation_single<-function(dfavg,dfyr,dfMC,dfbnds,nsim){
       varper<-dfvar$V_WBperiod[1]
       varyr<-dfvar$V_WBannual[1]
       var_list<-list(V_WBperiod=varper,V_WBannual=varyr)
+      ntype<-dfvar$ntype_WB
+      if(is.na(ntype)){
+        ntype<-10 # this is to stop errors if no number of WBs of same type is specified
+       }
       
       ix<-0
       wbs<-dfavg %>% distinct(WB_ID)
-      ntype<-nrow(wbs)
+      #ntype<-nrow(wbs)
       un<-NULL
       for(wb in wbs$WB_ID){
         ix<-ix+1
