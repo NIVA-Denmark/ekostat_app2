@@ -63,7 +63,7 @@ shinyServer(function(input, output, session) {
   
   
   dfobs <- function(wblist,periodlist){
-    #browser()
+
     sql<-paste0("SELECT * FROM data WHERE period IN (",periodlist,") AND WB_ID = '",wblist,"'")
     df<-readdb(dbpath(), sql)
     df$date<-as.Date(df$date,origin="1970-01-01")
@@ -84,7 +84,8 @@ shinyServer(function(input, output, session) {
   values$resMCType <-""
   values$IndSelection<-""
   
-
+  listdefault<-c("Area affected by hypoxia (%)","Benthic Quality Index (BQI)","BenthicDiatomsIPS (EQR)","BenthicDiatomsPctPT","BenthicDiatomsTDI","BenthicInvertebratesBQI","BenthicInvertebratesDJ (EQR)","Chlorophyll a (EQR)","EindexW3","EQR8","FishVIX","FishVIXh","FishVIXsm","Multi-Species Maximum Depth Index (MSMDI)","Oxygen","Oxygen Concentration","Phytoplankton biovolume (EQR)","Phytoplankton Trophic Index (EQR)","Secchi depth","Secchi Depth (EQR)","Summer TP conc. (EQR)","Total Nitrogen","Total Phosphorus (EQR)","TrophicMacrophyteIndex (EQR)","Winter DIN conc. (EQR)","Winter DIP conc. (EQR)","Summer TN conc. (EQR)","Winter TN conc. (EQR)","Winter TP conc. (EQR)")
+  
   
   pressure_list<-function(){
     if(!is.null(values$watertypeselected)){
@@ -123,7 +124,7 @@ shinyServer(function(input, output, session) {
     )
   })
   
-  # icon file-alt
+
   
 # ------ Output components for the Waterbody selection page -----------------------
 
@@ -251,7 +252,7 @@ shinyServer(function(input, output, session) {
   # ----- reactive data for the waterbody selection
   
   lan_list <- reactive({
-    #browser()
+
     Lan <- c("ALL")
     all <- data.frame(Lan,row.names=F,stringsAsFactors=F)
     df<-df_WB_lan  %>%
@@ -316,7 +317,7 @@ shinyServer(function(input, output, session) {
   
   # make list of WB types
   type_list <- reactive({
-    #browser()
+
     Type <- c("ALL")
     all <- data.frame(Type,row.names=F,stringsAsFactors=F)
     df<-df_WB
@@ -347,7 +348,7 @@ shinyServer(function(input, output, session) {
           select(WB_ID)
         df <- df %>% inner_join(dfselect,by="WB_ID")
       }}    
-    #browser()
+
     df <- df %>%
       distinct(CLR,Type) %>%
       mutate(typesort=as.numeric(ifelse(CLR=="Coast",gsub("n","",gsub("s","",Type)),Type)))
@@ -478,9 +479,8 @@ shinyServer(function(input, output, session) {
     
     updateTabItems(session, "tabs", "indicators")
     
-      
     UpdateIndTable()
- 
+     
     }, ignoreInit = T)
 
   # ------ Output components for the indicator selection / modification page -----------------------
@@ -568,6 +568,19 @@ shinyServer(function(input, output, session) {
     }
   })
   
+  
+  output$selectDefault<- renderUI({
+    if(values$wbselected==""){
+      ""
+    }else{
+      if(countExtrapIndicators()<0){
+        ""
+      }else{
+        tagList(actionButton("selectDefault", "Select default"))
+      }
+    }
+  })
+
   output$toggleExtrapolate<- renderUI({
     if(values$wbselected==""){
       ""
@@ -683,6 +696,7 @@ shinyServer(function(input, output, session) {
   dt_proxy3 <- DT::dataTableProxy("dtextrapstn")
   
    observeEvent(input$allIndicators,{
+   
      val=values$toggleIndAll
      values$toggleIndAll<-!val
       if(val){
@@ -692,7 +706,23 @@ shinyServer(function(input, output, session) {
        }
    })
    
+   #------------------------------------------------------------
+   #------------------------------------------------------------
+   #------------------------------------------------------------
+   
+   observeEvent(input$selectDefault,{
+     df<-values$df_ind_select
+     rownos<-which(df$Indicator %in% listdefault)
+     DT::selectRows(dt_proxy, rownos)
+
+   })
+   
+   #------------------------------------------------------------
+   #------------------------------------------------------------
+   #------------------------------------------------------------
+   
    observeEvent(input$allExtrapolate,{
+     
      val=values$toggleExtrapAll
      values$toggleExtrapAll<-!val
      if(val){
@@ -792,7 +822,7 @@ shinyServer(function(input, output, session) {
        dftypeperiod<-CleanSubTypes(dftypeperiod)
         
         dfwb_type <- df_WB %>% distinct(WB_ID,WB_Name)
-        #browser()
+    
         dftypeperiod <- dftypeperiod %>% 
           left_join(dfwb_type,by=c("WB_ID"="WB_ID"))   
         dftypeperiod <- dftypeperiod %>%
@@ -1330,7 +1360,7 @@ GoCalculation=function(){
           "WB_ID","Type","Period","QEtype","QualityElement","QualitySubelement","Indicator","IndSubtype",
           "Note","Unit","Months","Worst","PB","MP","GM","HG","Ref","Mean","StdErr","EQR","Class"
         )
-      #browser()
+       
       df <-
         values$resMC %>% rename(
           EQRMC = EQR,
@@ -1367,7 +1397,7 @@ GoCalculation=function(){
   
   # ------------- User selected Period from Table 1 (Overall Results) - Now show Biological/Supporting (Table 2) ----------------
   observeEvent(input$resTable1_rows_selected, {
-    #browser()
+    
     df <-values$resMC %>% 
       group_by(WB_ID, Period) %>% 
       summarise() %>% 
@@ -1496,7 +1526,6 @@ GoCalculation=function(){
   
   # ------------- User selected Indicator from Indicator Table - now show observations ------------- 
   observeEvent(input$resTableInd_rows_selected, {
-    #browser()
     
     df <-
       values$resInd %>% group_by(Indicator,IndSubtype) %>% summarise() %>% ungroup()
@@ -1504,7 +1533,7 @@ GoCalculation=function(){
       df$Indicator[input$resTableInd_rows_selected]
     values$sIndSubtype <-
       df$IndSubtype[input$resTableInd_rows_selected]
-    #browser()
+   
     df <- SelectObs(
       dfobs(values$sWB,paste(paste0("'",values$periodselected,"'"),collapse = ",")),
       indicator = values$sIndicator,
@@ -1676,7 +1705,6 @@ GoCalculation=function(){
       
       if (typeof(values$resObs)!="list") {
         p <- 0
-        #browser()
       } else{
         
         

@@ -88,7 +88,8 @@ shinyUI(
                                
                ),
                fluidRow(
-                 column(5,uiOutput("toggleIndicators")),
+                 column(2,uiOutput("toggleIndicators")),
+                 column(3,uiOutput("selectDefault")),
                  column(4,uiOutput("toggleExtrapolate"))
                ),
               
