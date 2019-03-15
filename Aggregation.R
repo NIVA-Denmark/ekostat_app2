@@ -111,6 +111,47 @@ Aggregate<-function(df,level=1,Groups="",QE_use_mean=c("Supporting")){
   return(df_res)
 }
 
+
+
+
+AggregateMC<-function(dfMC,dfAvg){
+  dfbioMC<- dfMC %>% filter(QEtype=="Biological")
+  dfsupMC <- dfMC %>% filter(QEtype=="Supporting")
+  
+  res2MCsup <-
+    Aggregate(dfsupMC,
+              Groups = c("Period", "sim"),
+              level = 2) %>%
+    rename(ClassMC = Class, EQRMC = EQR)
+  
+  dfbioAvg<- dfAvg %>% filter(QEtype=="Biological")
+  dfsupAvg <- dfAvg %>% filter(QEtype=="Supporting")
+  
+  res2Avg <-
+    Aggregate(dfAvg,
+              Groups = c("Period"),
+              level = 2) %>%
+    select(Period, QEtype, EQR, Class)
+  
+  
+  res3MC <-  Aggregate(dfbioMC,Groups = c("Period", "sim"),level = 3) %>%
+    rename(ClassMC = Class, EQRMC = EQR)
+  res3Avg <- Aggregate(dfbioAvg,Groups = c("Period"),level = 3) %>%
+    select(Period, QEtype, QualityElement, EQR, Class) %>%
+    arrange(EQR)
+  
+  WorstQE<-res3Avg$QualityElement[1]
+  res2MCbio<- res3MC %>% 
+    filter(QualityElement==WorstQE) %>%
+    select(-QualityElement)
+  
+  res2MC <- res2MCbio %>%
+    bind_rows(res2MCsup)  
+  
+  return(res2MC)
+}
+
+
 #' EQRclass
 #' 
 #'  df must contain a column EQR
