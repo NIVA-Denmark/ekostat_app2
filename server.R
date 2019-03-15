@@ -1322,23 +1322,15 @@ GoCalculation=function(){
     }
   }, ignoreInit = T)
   
-  
+  # ------------- show overall results -----------------------------------------------------------------
   observeEvent(values$resMC, {
     #ShowHideDownload()
     if (nrow(values$resMC) > 0) {
-      #str(paste0("dfMC updated n=", nrow(values$resMC)))
-      #if (input$chkClassBnds == TRUE) {
         grplist <- c(
           "WB_ID","Type","Period","QEtype","QualityElement","QualitySubelement","Indicator","IndSubtype",
           "Note","Unit","Months","Worst","PB","MP","GM","HG","Ref","Mean","StdErr","EQR","Class"
         )
-      #} else{
-      #  grplist <- c(
-      #    "WB_ID","Type","Period","QEtype","QualityElement","QualitySubelement",
-      #    "Indicator","IndSubtype","Note","Unit","Months","Mean","StdErr","EQR","Class"
-      #  )
-      #}
-      
+      #browser()
       df <-
         values$resMC %>% rename(
           EQRMC = EQR,
@@ -1349,13 +1341,7 @@ GoCalculation=function(){
       
       resMC <- values$resMC
       resAvg <- values$resAvg
-      
-      res1MC <-
-        Aggregate(
-          resMC,
-          Groups = c("Period", "sim"),
-          level = 1
-        ) %>% rename(ClassMC = Class)
+
       res1Avg <-
         Aggregate(
           resAvg,
@@ -1363,15 +1349,31 @@ GoCalculation=function(){
           level = 1
         ) %>%
         select(Period, Class)
+      
+       res1MC <-
+         Aggregate(
+           resMC,
+           Groups = c("Period", "sim"),
+          level = 1
+         ) %>% rename(ClassMC = Class)
+      
+      # TO DO 
+      # for each WB/period combination, we need to calculate the worst QE for biological
+      # then we need to find which is worst Biological or Supporting and use that for  
+      
       values$res1MC <- res1MC %>% left_join(res1Avg,by=c("Period"))
     }
   }, ignoreInit = T)
   
-  # User selected Period from Table 1 (Overall Results) - Now show Biological/Supporting (Table 2)
+  
+  # ------------- User selected Period from Table 1 (Overall Results) - Now show Biological/Supporting (Table 2) ----------------
   observeEvent(input$resTable1_rows_selected, {
     #browser()
-    df <-
-      values$resMC %>% group_by(WB_ID, Period) %>% summarise() %>% ungroup()
+    df <-values$resMC %>% 
+      group_by(WB_ID, Period) %>% 
+      summarise() %>% 
+      ungroup()
+    
     values$sWB <- df$WB_ID[input$resTable1_rows_selected]
     values$sPeriod <- df$Period[input$resTable1_rows_selected]
     df <- filter(values$resMC, WB_ID == values$sWB, Period == values$sPeriod)
@@ -1415,14 +1417,13 @@ GoCalculation=function(){
     
     
     
-    
     values$res3MC <- ""
     values$res4MC <- ""
     values$resInd <- ""
     values$resObs <- ""
   }, ignoreInit = T)
   
-  # User selected Biological or Supporting from Table 2 - Now show Quality Elements
+  # ------------- User selected Biological or Supporting from Table 2 - Now show Quality Elements ------------- 
   observeEvent(input$resTable2_rows_selected, {
     n <- input$resTable2_rows_selected
     df <-
@@ -1458,7 +1459,7 @@ GoCalculation=function(){
     values$resObs <- ""
   }, ignoreInit = T)
   
-  # User selected Quality Element from Table 3 - now show subelements
+  # ------------- User selected Quality Element from Table 3 - now show subelements ------------- 
   observeEvent(input$resTable3_rows_selected, {
     df <-
       values$res3MC %>% group_by(QualityElement) %>% summarise() %>% ungroup()
@@ -1495,7 +1496,7 @@ GoCalculation=function(){
     values$resObs <- ""
   }, ignoreInit = T)
   
-  # User selected Quality Subelement from Table 4 - now show indicators
+  # ------------- User selected Quality Subelement from Table 4 - now show indicators ------------- 
   observeEvent(input$resTable4_rows_selected, {
     df <-
       values$res4MC %>% group_by(QualitySubelement) %>% summarise() %>% ungroup()
@@ -1521,7 +1522,7 @@ GoCalculation=function(){
       )
   }, ignoreInit = T)
   
-  # User selected Indicator from Indicator Table - now show observations
+  # ------------- User selected Indicator from Indicator Table - now show observations ------------- 
   observeEvent(input$resTableInd_rows_selected, {
     #browser()
     
