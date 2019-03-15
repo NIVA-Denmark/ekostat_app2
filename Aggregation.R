@@ -113,6 +113,37 @@ Aggregate<-function(df,level=1,Groups="",QE_use_mean=c("Supporting")){
 
 
 
+AggregateMCovr<-function(resMC,resAvg,res1Avg){
+  plist <- resAvg %>% distinct(Period)
+  MCout<-NULL
+  for(iP in plist$Period){
+    df1 <- res1Avg %>%
+      filter(Period==iP)
+    dfAvg <- resAvg %>%
+      filter(Period==iP)
+    dfMC<-resMC %>%
+      filter(Period==iP)
+    dfMC<-AggregateMC(dfMC,dfAvg)
+    ClassIDBio<-df1$ClassIDBio[1]
+    ClassIDSup<-df1$ClassIDSup[1]
+    if(ClassIDSup<3){
+      ClassIDSup<-3
+    }
+    if(ClassIDSup<ClassIDBio){
+      s<-"Supporting"
+    }else{
+      s<-"Biological"
+    }
+    dfMC<-dfMC %>% filter(QEtype==s)
+    if(is.null(MCout)){
+      MCout<-dfMC
+    }else{
+      MCout<-MCout %>%
+        bind_rows(dfMC)
+    }
+  }
+  return(MCout)
+}
 
 AggregateMC<-function(dfMC,dfAvg){
   dfbioMC<- dfMC %>% filter(QEtype=="Biological")

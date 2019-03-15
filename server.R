@@ -1347,16 +1347,15 @@ GoCalculation=function(){
           resAvg,
           Groups = c("Period"),
           level = 1
-        ) %>%
-        select(Period, Class)
+        ) 
       
-       res1MC <-
-         Aggregate(
-           resMC,
-           Groups = c("Period", "sim"),
-          level = 1
-         ) %>% rename(ClassMC = Class)
-      
+       res1MC <- AggregateMCovr(resMC,resAvg,res1Avg)
+       res1MC <- res1MC %>%
+         select(Period,sim,ClassID,ClassMC)
+       
+       res1Avg <- res1Avg %>%
+         select(Period, Class)
+       
       # TO DO 
       # for each WB/period combination, we need to calculate the worst QE for biological
       # then we need to find which is worst Biological or Supporting and use that for  
