@@ -1354,7 +1354,8 @@ GoCalculation=function(){
         Aggregate(
           resMC,
           Groups = c("Period", "sim"),
-          level = 1
+          level = 1,
+          QE_use_mean=c("Supporting","Biological")
         ) %>% rename(ClassMC = Class)
       res1Avg <-
         Aggregate(
@@ -1379,7 +1380,8 @@ GoCalculation=function(){
     res2MC <-
       Aggregate(df,
                 Groups = c("Period", "sim"),
-                level = 2) %>%
+                level = 2,
+                QE_use_mean=c("Supporting","Biological")) %>%
       rename(ClassMC = Class, EQRMC = EQR)
     df <- filter(values$resAvg, WB_ID == values$sWB, Period == values$sPeriod)
 
