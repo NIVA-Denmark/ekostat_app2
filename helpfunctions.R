@@ -123,3 +123,30 @@ IndicatorMonths <- function(df.months,typology,indicator){
   months<-lapply(strsplit(months, ","),function(x) as.numeric(x))[[1]]
   return(months)
 }
+
+
+
+# function to add (or remove) leading zero for coastal types 
+TypeLeadingZero<-function(type,addzero=T){
+  if(is.numeric(type)){
+    type<-as.character(type)
+  }
+  if(typeof(type)=="character"){
+    n = nchar(type)
+    ns = substr(type,n,n)
+    if(ns %in% c("s","n")){
+      value=as.numeric(substr(type,1,n-1))
+    }else{
+      value=as.numeric(type)
+      ns=""
+    }
+    if(value<10){
+      if(addzero){
+        type=paste0("0",as.character(value),ns)
+      }else{
+        type=paste0(as.character(value),ns)
+      }
+    }
+  }
+  return(type)
+}

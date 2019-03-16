@@ -417,26 +417,6 @@ shinyServer(function(input, output, session) {
       } }
   })
   
- # function to add leading zero to coastal types 
-  TypeLeadingZero<-function(type){
-    if(is.numeric(type)){
-      type<-as.character(type)
-    }
-    if(typeof(type)=="character"){
-      n = nchar(type)
-      ns = substr(type,n,n)
-      if(ns %in% c("s","n")){
-        value=as.numeric(substr(type,1,n-1))
-      }else{
-        value=as.numeric(type)
-        ns=""
-      }
-      if(value<10){
-        type=paste0("0",as.character(value),ns)
-      }
-    }
-    return(type)
-  }
 
   observeEvent(input$buttonWB, {
     values$wbselected<-wb_list()[input$dtwb_rows_selected,"WB_ID"]
@@ -1397,7 +1377,7 @@ GoCalculation=function(){
   
   # ------------- User selected Period from Table 1 (Overall Results) - Now show Biological/Supporting (Table 2) ----------------
   observeEvent(input$resTable1_rows_selected, {
-    
+
     df <-values$resMC %>% 
       group_by(WB_ID, Period) %>% 
       summarise() %>% 

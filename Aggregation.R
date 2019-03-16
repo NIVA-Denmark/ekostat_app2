@@ -126,6 +126,13 @@ AggregateMCovr<-function(resMC,resAvg,res1Avg){
     dfMC<-AggregateMC(dfMC,dfAvg)
     ClassIDBio<-df1$ClassIDBio[1]
     ClassIDSup<-df1$ClassIDSup[1]
+    
+    if(is.na(ClassIDSup)){
+      ClassIDSup<-5
+    }
+    if(is.na(ClassIDBio)){
+      ClassIDBio<-5
+    }
     if(ClassIDSup<3){
       ClassIDSup<-3
     }
@@ -196,7 +203,7 @@ EQRclass<-function(df,varname="EQR"){
                             ifelse(df[,varname]<0.6,3,
                                    ifelse(df[,varname]<0.8,4,5)))))
     Categories<-c("Bad","Poor","Mod","Good","High","Ref")
-    #browser()
+
     df$Class<-ifelse(is.na(df$ClassID),NA,Categories[df$ClassID])
     
   }
@@ -223,7 +230,7 @@ EQRclass<-function(df,varname="EQR"){
 #' 
 
 Frequency<-function(df,Groups="",varname="Class"){
-  #browser()
+
   names(df)[names(df)==varname]<-"ClassID"
   GroupsSum <- c(Groups,"ClassID")
   
@@ -263,7 +270,6 @@ Frequency<-function(df,Groups="",varname="Class"){
   dfn<-dfn %>%
     select(-prefix)
   
-  #browser()
   df<-dfn %>% spread(key=ClassID,value=f)
   
   return(df)
