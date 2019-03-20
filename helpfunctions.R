@@ -253,3 +253,17 @@ GetVarNames<-function(indicator,df_indicators,df_var){
   }
   return(varlist)
 }
+
+# function to add observation countr to list of WBs, Periods and indicators
+GetObsCount<-function(df,dfobsdata,df_indicators){
+  #browser()
+  df$nobs<-NA
+  return(df)
+}
+
+GetObsCountExtrap<-function(df,dfextrap,dfobsdata,df_indicators){
+  #browser()
+  df$nobs<-NA
+  return(df)
+}
+

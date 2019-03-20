@@ -64,8 +64,14 @@ shinyServer(function(input, output, session) {
   
   
   dfobs <- function(wblist,periodlist){
-
     sql<-paste0("SELECT * FROM data WHERE period IN (",periodlist,") AND WB_ID = '",wblist,"'")
+    df<-readdb(dbpath(), sql)
+    df$date<-as.Date(df$date,origin="1970-01-01")
+    return(df)
+  } 
+  
+  dfobs2 <- function(wblist,periodlist){
+    sql<-paste0("SELECT * FROM data WHERE period IN (",periodlist,") AND WB_ID IN (",wblist,")")
     df<-readdb(dbpath(), sql)
     df$date<-as.Date(df$date,origin="1970-01-01")
     return(df)
@@ -1109,6 +1115,11 @@ GoCalculation=function(){
                Class=ifelse(Code==0,Class,NA))
     }
     
+    
+    if(nrow(resAvg)>0){
+      dfobsdata<-dfobs(values$wbselected,paste(paste0("'",values$periodselected,"'"),collapse = ","))
+      resAvg<-GetObsCount(resAvg,dfobsdata,df_indicators)
+    }
 
     incProgress(0.1)
     sql<-paste0("SELECT * FROM resErr WHERE period IN (",periodlist,") AND WB_ID IN (",wblist,
@@ -1177,10 +1188,9 @@ GoCalculation=function(){
     incProgress(0.1) 
     dbDisconnect(db)
     
-    
     resExtrap<-extrapolation(dfextrap,df_bound,input$n,resYrtype,resAvgtype,resMCtype)
     resAvgExtrap<-resExtrap$dfAvg
-    
+
     if(nrow(resAvgExtrap)>0){
       resAvgExtrap<-resAvgExtrap %>% mutate(WB_ID=values$wbselected,Type=values$typeselected,Note="Extrap",Code=0)
       namelist<-paste(paste0("'",names(resAvgExtrap),"'"),collapse = ",")
@@ -1243,7 +1253,12 @@ GoCalculation=function(){
          left_join(dfmatch,by=c("Period","Indicator")) %>%
          filter(is.na(OK)) %>%
          select(-OK)
+    
       
+      dfobsdata<-dfobs2(paste(paste0("'",values$dfextrapWB$WB_ID,"'"),collapse = ","),
+                       paste(paste0("'",values$periodselected,"'"),collapse = ","))
+      resAvgExtrap<-GetObsCountExtrap(resAvgExtrap,dfextrap,dfobsdata,df_indicators)
+       
       if(nrow(resAvg)>0){
         resAvg<-resAvgExtrap %>% bind_rows(resAvg)
         resMC<-resMCExtrap %>% bind_rows(resMC)
@@ -1254,7 +1269,7 @@ GoCalculation=function(){
       
     }#if(nrow(resAvgExtrap)>0)
   } #if no extraploation data
-    
+    #browser()
     incProgress(0.1,message="aggregating results")
     #-----------------------------------------------------------------------
     values$resAvg <- resAvg
@@ -1743,6 +1758,9 @@ GoCalculation=function(){
       paste(values$wbselected, ".csv", sep = "")
     },
     content = function(file) {
+      browser()
+      values$wbselected
+      #obsdata<-
       write.table(downloadResults(values$resMC,values$resAvg),file,row.names=F,sep=";", na="")
     }
   )
