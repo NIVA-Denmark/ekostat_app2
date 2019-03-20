@@ -1,7 +1,9 @@
 
 extrapolation_single<-function(dfavg,dfyr,dfMC,dfbnds,nsim){
   require(dplyr)
-
+  
+  incProgress(0.02,message="extrapolating")
+  
   resMC<-data.frame(Indicator=c(NA),IndSubtype=c(NA),Period=c(NA),sim=c(NA),Value=c(NA),stringsAsFactors=F)
   resAvg<-data.frame(Indicator=c(NA),IndSubtype=c(NA),Period=c(NA),Mean=c(NA),stringsAsFactors=F)
   
