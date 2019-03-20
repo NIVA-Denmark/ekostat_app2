@@ -274,3 +274,42 @@ Frequency<-function(df,Groups="",varname="Class"){
   
   return(df)
 }
+
+
+
+# SummarizeSims
+#
+#
+SummarizeSims<-function(df,ClassVar="Class",Groups="",remove="",roundlist=NULL){
+  df[,"X"] <- df[,ClassVar]
+  df$X <- factor(df$X,levels=c("Bad","Poor","Mod","Good","High"))
+  
+  GroupsClass<-c(Groups,"X")
+  df.count<- df %>% 
+    group_by_(.dots=GroupsClass) %>% 
+    summarize(n=n()) %>% mutate(f = n / sum(n)) %>% 
+    complete(X, fill = list(f = 0))
+  df.count$f[is.na(df.count$X)]<-0
+  
+  ########
+  df.count.GH <- df.count %>% ungroup() %>%
+    mutate(ok=ifelse(is.na(f),0,1)) %>%
+    filter(X %in% c("Good","High")) %>%
+    group_by_(.dots=Groups) %>% 
+    summarize(pGES=sum(f,na.rm=T),ok=sum(ok,na.rm=T)) %>%
+    mutate(pGES=ifelse(ok>0,pGES,NA)) %>%
+    select(-ok)
+  df.count <- df.count %>% left_join(df.count.GH,by=Groups) %>%  
+    ungroup() %>%
+    select(-n) %>%
+    spread(X,f,drop=T,sep="f")
+  names(df.count)[substr(names(df.count),1,2)=="Xf"]<-substr(names(df.count)[substr(names(df.count),1,2)=="Xf"],2,99)
+  
+  if(length(names(df.count)[names(df.count)=="fNA"])){
+    df.count <- df.count %>% filter(is.na(fNA))
+    df.count$fNA<-NULL
+  }
+  
+  return(df.count)
+  
+}

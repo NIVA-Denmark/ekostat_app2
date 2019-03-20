@@ -150,3 +150,106 @@ TypeLeadingZero<-function(type,addzero=T){
   }
   return(type)
 }
+
+
+# SelectObs
+#
+#
+#filter observation data based on the selected indicator, WB and period
+SelectObs<-function(df,indicator,indSubType="",sWB,sPeriod,df_indicators,df_var){
+  #browser()
+  varlist<-GetVarNames(indicator,df_indicators,df_var)
+  obsvar<-varlist[length(varlist)]
+  
+  #varlist<-c("station","obspoint","date","year","month",varlist)
+  varlist<-c("station","date","year","month",varlist)
+  df <- df %>% filter(WB_ID==sWB,Period==sPeriod)
+  df <- df[!is.na(df[,obsvar]),]
+  df <- df[,varlist]
+  if(!is.na(indSubType)){
+    depthlimits<-DepthLimits(indSubType)
+    df <- df %>% filter(depth>=depthlimits[1],depth<=depthlimits[2])
+  }
+  
+  return(df)
+  
+}
+
+
+
+
+DepthLimits<-function(s,n=NA){
+  m<-regexpr("m",s,fixed=T)[1] 
+  from<-NA
+  to<-NA
+  if(m>0){
+    s<-substr(s,1,m-1)
+  }
+  if(substr(s,1,1)=="<"){
+    from=0
+    to=as.numeric(substr(s,2,nchar(s)))
+  }else if(substr(s,1,1)==">"){
+    from=as.numeric(substr(s,2,nchar(s)))
+    to = 99999
+  }else{
+    nchar<-regexpr("-",s,fixed=T)[1]
+    if(nchar>0){
+      from=as.numeric(substr(s,1,nchar-1))
+      to=as.numeric(substr(s,nchar+1,nchar(s)))
+    }
+  }
+  if(is.na(n)){
+    return(c(from,to))
+  }else{
+    if(n==1){
+      return(from)
+    }else{
+      return(to)
+    }
+  }
+}
+
+# GetIndicatorMonths
+GetIndicatorMonths<-function(indicator,type,df_bound){
+  df_bound <- df_bound %>% 
+    filter(Indicator==indicator,Type==type) %>%
+    distinct(Months)
+  if(nrow(df_bound)>1){
+    cat(paste0("Indicator ",indicator," has more than one combination of months!\n"))
+  }
+  Months<-df_bound[1,"Months"]
+  if(Months %in% c("1,2,..,12","1,2,...,12")){
+    Months<-1:12
+  }else{
+    Months<-unlist(strsplit(Months,","))
+    Months<-as.numeric(Months)
+  }
+  return(Months)
+}
+
+# GetVarNames
+#
+#
+
+GetVarNames<-function(indicator,df_indicators,df_var){
+  if(indicator!=""){
+    
+    df_indicators<-df_indicators %>% 
+      filter(Indicator==indicator) %>%
+      left_join(select(df_var,Indicator,Parameter=var),by="Indicator")
+    
+    obsvar<-as.character(df_indicators[1,"Parameter"])
+    if(substr(indicator,1,5)=="Coast"){
+      if(indicator %in% c("CoastOxygen","CoastBQI")){
+        varlist<-c("depth","sali",obsvar)
+      }else{
+        varlist<-c("sali",obsvar)
+      } 
+    }else{
+      varlist<-c(obsvar)
+    }
+  }else{
+    varlist<-""
+  }
+  return(varlist)
+}
