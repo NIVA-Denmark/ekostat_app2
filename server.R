@@ -1752,7 +1752,7 @@ GoCalculation=function(){
     },
     content = function(file) {
       values$wbselected
-      write.table(downloadResults(values$resMC,values$resAvg),file,row.names=F,sep=";", na="")
+      write.table(downloadResults(values$resMC,values$resAvg),file,row.names=F,sep=";", na="",fileEncoding="UTF-8")
     }
   )
  
