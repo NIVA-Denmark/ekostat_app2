@@ -1079,7 +1079,7 @@ GoCalculation=function(){
     resMC <- dbGetQuery(db, sql) 
     resMC <- resMC %>% 
       left_join(select(resAvg,Type,Typename,WB_ID,Period,Region,Indicator,IndSubtype,Code,QEtype,QualityElement,QualitySubelement,Note,Unit,Months,
-                       Worst,PB,MP,GM,HG,Ref,Mean,StdErr,EQRavg=EQR,ClassAvg=Class),
+                       Worst,PB,MP,GM,HG,Ref,Mean,StdErr,EQRavg=EQR,ClassAvg=Class,nobs,stns),
                 by=c("WB_ID","Period","Indicator","IndSubtype"))
 
     subtypes<-values$subtypes %>%
@@ -1115,11 +1115,6 @@ GoCalculation=function(){
                Class=ifelse(Code==0,Class,NA))
     }
     
-    
-    if(nrow(resAvg)>0){
-      dfobsdata<-dfobs(values$wbselected,paste(paste0("'",values$periodselected,"'"),collapse = ","))
-      resAvg<-GetObsCount(resAvg,dfobsdata,df_indicators)
-    }
 
     incProgress(0.1)
     sql<-paste0("SELECT * FROM resErr WHERE period IN (",periodlist,") AND WB_ID IN (",wblist,
@@ -1234,8 +1229,10 @@ GoCalculation=function(){
         rename(fBad=C1,fPoor=C2,fMod=C3,fGood=C4,fHigh=C5)
       
       resAvgExtrap<-resAvgExtrap %>% left_join(freq,by=c("Period","Indicator","IndSubtype"))
-          
-      resMCExtrap<-resMCExtrap %>% left_join(select(resAvgExtrap,WB_ID,Period,Indicator,IndSubtype,Mean,StdErr,EQRavg=EQR,ClassAvg=Class),
+      
+      resAvgExtrap<-GetObsCountExtrap(resAvgExtrap,resAvgtype) 
+      
+      resMCExtrap<-resMCExtrap %>% left_join(select(resAvgExtrap,WB_ID,Period,Indicator,IndSubtype,Mean,StdErr,EQRavg=EQR,ClassAvg=Class,nobs,WBlist),
                                              by=c("WB_ID","Period","Indicator","IndSubtype"))
       
     #filter out the results which will be replaced by extrapolated results
@@ -1253,12 +1250,8 @@ GoCalculation=function(){
          left_join(dfmatch,by=c("Period","Indicator")) %>%
          filter(is.na(OK)) %>%
          select(-OK)
-    
       
-      dfobsdata<-dfobs2(paste(paste0("'",values$dfextrapWB$WB_ID,"'"),collapse = ","),
-                       paste(paste0("'",values$periodselected,"'"),collapse = ","))
-      resAvgExtrap<-GetObsCountExtrap(resAvgExtrap,dfextrap,dfobsdata,df_indicators)
-       
+      
       if(nrow(resAvg)>0){
         resAvg<-resAvgExtrap %>% bind_rows(resAvg)
         resMC<-resMCExtrap %>% bind_rows(resMC)
@@ -1269,7 +1262,7 @@ GoCalculation=function(){
       
     }#if(nrow(resAvgExtrap)>0)
   } #if no extraploation data
-    #browser()
+    
     incProgress(0.1,message="aggregating results")
     #-----------------------------------------------------------------------
     values$resAvg <- resAvg
@@ -1758,9 +1751,7 @@ GoCalculation=function(){
       paste(values$wbselected, ".csv", sep = "")
     },
     content = function(file) {
-      browser()
       values$wbselected
-      #obsdata<-
       write.table(downloadResults(values$resMC,values$resAvg),file,row.names=F,sep=";", na="")
     }
   )

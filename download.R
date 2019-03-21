@@ -1,7 +1,7 @@
 
 downloadResults<-function(resMC,resAvg){
-  
-  withProgress(message = 'Preparing download...', value = 0, {
+
+    withProgress(message = 'Preparing download...', value = 0, {
     
     res1Avg <-
       Aggregate(
@@ -61,10 +61,18 @@ downloadResults<-function(resMC,resAvg){
     
     grplist <- c("Period","QEtype","QualityElement","QualitySubelement","Indicator","IndSubtype",
                  "Note","Unit","Months","Worst","PB","MP","GM","HG","Ref","Mean","StdErr","EQR","Class")
+    
+    if("WBlist" %in% names(resMC)){
+      infolist<- c("nobs","stns","WBlist")
+    }else{
+      infolist<- c("nobs","stns")
+    }
+      
+    
     resMC <-resMC %>% rename(EQRMC = EQR,ClassMC = Class,Class = ClassAvg,EQR = EQRavg)
     
     resMC <- 
-      SummarizeSims(resMC,Groups=grplist,ClassVar="ClassMC")
+      SummarizeSims(resMC,Groups=c(grplist,infolist),ClassVar="ClassMC")
     resMC <- resMC %>% mutate(id=as.numeric(rownames(resMC)))
     incProgress(0.1)
     

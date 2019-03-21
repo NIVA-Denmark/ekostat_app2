@@ -254,16 +254,25 @@ GetVarNames<-function(indicator,df_indicators,df_var){
   return(varlist)
 }
 
-# function to add observation countr to list of WBs, Periods and indicators
-GetObsCount<-function(df,dfobsdata,df_indicators){
-  #browser()
-  df$nobs<-NA
-  return(df)
-}
 
-GetObsCountExtrap<-function(df,dfextrap,dfobsdata,df_indicators){
-  #browser()
-  df$nobs<-NA
-  return(df)
+GetObsCountExtrap<-function(resAvgExtrap,resAvgtype){
+  
+  df <- resAvgtype %>%
+    group_by(Period,Indicator,IndSubtype) %>%
+    summarise(nobs=sum(nobs,na.rm=T)) 
+  
+  df2 <- resAvgtype %>%
+    distinct(Period,Indicator,IndSubtype,WB_ID) %>%
+    group_by(Period,Indicator,IndSubtype) %>%
+    mutate(WBlist = paste0(WB_ID, collapse = ","))
+  
+  df2 <- distinct(df2,Period,Indicator,IndSubtype,WBlist)
+  
+  df <- df %>%
+    left_join(df2,by=c("Period","Indicator","IndSubtype"))
+  
+  resAvgExtrap<-resAvgExtrap %>% 
+    left_join(df,by=c("Period","Indicator","IndSubtype"))
+  
+  return(resAvgExtrap)
 }
-
