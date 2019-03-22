@@ -167,8 +167,10 @@ SelectObs<-function(df,indicator,indSubType="",sWB,sPeriod,df_indicators,df_var)
   df <- df[!is.na(df[,obsvar]),]
   df <- df[,varlist]
   if(!is.na(indSubType)){
-    depthlimits<-DepthLimits(indSubType)
-    df <- df %>% filter(depth>=depthlimits[1],depth<=depthlimits[2])
+    if(indSubType!=""){
+      depthlimits<-DepthLimits(indSubType)
+      df <- df %>% filter(depth>=depthlimits[1],depth<=depthlimits[2])
+    }
   }
   
   return(df)
