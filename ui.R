@@ -134,7 +134,8 @@ shinyUI(
                                 h3(textOutput("SelectedWBStatus")),
                                 textOutput("SelectedTypeStatus")
                 ),
-                column(width=4,h1(" "),uiOutput("download"))
+                column(width=4,h1(" "),uiOutput("download"),uiOutput("decimalsymbol"))
+                
                 #column(width=4,h1(" "),downloadButton("downloadButton"))
                 ),
 

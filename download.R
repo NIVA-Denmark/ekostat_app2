@@ -1,7 +1,8 @@
 
-downloadResults<-function(resMC,resAvg){
+downloadResults<-function(resMC,resAvg,nsigdig=3){
 
     withProgress(message = 'Preparing download...', value = 0, {
+    wb <- resAvg$WB_ID[1]
     
     res1Avg <-
       Aggregate(
@@ -118,34 +119,54 @@ downloadResults<-function(resMC,resAvg){
       SummarizeSims(res4MC,roundlist = c("EQR","pGES"),Groups = grplist,remove = rmlist,ClassVar = "ClassMC")  
     res4MC <- res4MC %>% mutate(id4=as.numeric(rownames(res4MC)))
     nr4<-nrow(res4MC)
-    
+  
     res4MC$id4<-res4MC$id4*nr
     res3MC$id3<-res3MC$id3*nr*nr4
     res2MC$id2<-res2MC$id2*nr*nr4*nr3
     res1MC$id1<-res1MC$id1*nr*nr4*nr3*nr2
     
-    res2MC <- res2MC %>% 
+    res2MC <- res2MC %>%
       left_join(select(res1MC,Period,id1),
                 by="Period")
-    res3MC <- res3MC %>% 
+    res3MC <- res3MC %>%
       left_join(select(res2MC,Period,QEtype,id1,id2),
                 by=c("Period","QEtype"))
-    res4MC <- res4MC %>% 
+    res4MC <- res4MC %>%
       left_join(select(res3MC,Period,QEtype,QualityElement,id1,id2,id3),
                 by=c("Period","QEtype","QualityElement"))
-    resMC <- resMC %>% 
+    resMC <- resMC %>%
       left_join(select(res4MC,Period,QEtype,QualityElement,QualitySubelement,id1,id2,id3,id4),
                 by=c("Period","QEtype","QualityElement","QualitySubelement"))
     
-    resMC <- resMC %>% rename(EQR_ind=EQR)
-    res3MC <- res3MC %>% rename(EQR_QE=EQR)
-    res4MC <- res4MC %>% rename(EQR_subQE=EQR)
+    #resMC <- resMC %>% rename(EQR_ind=EQR)
+    #res3MC <- res3MC %>% rename(EQR_QE=EQR)
+    #res4MC <- res4MC %>% rename(EQR_subQE=EQR)
     
-    
+    res1MC <- res1MC %>% mutate(Level="1. Overall",Name="")
+    res2MC <- res2MC %>% mutate(Level="2. Biological/Supporting",Name=QEtype)
+    res3MC <- res3MC %>% mutate(Level="3. Quality Element",Name=QualityElement)
+    res4MC <- res4MC %>% mutate(Level="4. Quality Subelement",Name=QualitySubelement)
+    resMC <- resMC %>% mutate(Level="5. Indicator",
+                              Name=ifelse(is.na(IndSubtype),Indicator,paste0(Indicator," [",IndSubtype,"]")))
+    #browser()
+    #options(OutDec= ",")
     resMC <- bind_rows(resMC,res1MC,res2MC,res3MC,res4MC)
     resMC$sortorder<-rowSums(resMC[,c("id1","id2","id3","id4","id")],na.rm=T)
+    if(!"WBlist" %in% names(resMC)){
+      resMC$WBlist<-""
+    }
+    if(!"stns" %in% names(resMC)){
+      resMC$stns<-""
+    }
+
     resMC <- resMC %>% arrange(sortorder) %>%
-      select(-c(id,id1,id2,id3,id4,sortorder))
+      left_join(df_viss,by="Indicator") %>%
+      separate(Period,into=c("YearFrom","YearTo"),sep="-") %>%
+      mutate(WB_ID = wb,Mean=round(Mean,nsigdig),StdErr=round(StdErr,nsigdig),EQR=round(EQR,nsigdig)) %>%
+      #select(-c(id,id1,id2,id3,id4,sortorder))
+      select(WB_ID,YearFrom,YearTo,VISS_parameter,Level,Name,Note,Unit,Months,Worst,PB,MP,GM,HG,Ref,Mean,StdErr,EQR,Class,nobs,stns,WBlist,pGES,fBad,fPoor,fMod,fGood,fHigh)
+    
+    
     
     incProgress(0.1,message="done")
   })

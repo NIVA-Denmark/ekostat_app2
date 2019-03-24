@@ -12,7 +12,8 @@ df_varcomp<-read.table("parameters/varcomp.txt", sep="\t", fileEncoding="UTF-8",
                        stringsAsFactors=F,header=T,comment.char="") 
 df_var<-read.table("parameters/variables.txt", sep="\t", fileEncoding="UTF-8",
                    stringsAsFactors=F,header=T,comment.char="") 
-
+df_viss<-read.table("parameters/VISS_parameters.txt", sep="\t", fileEncoding="UTF-8",
+                    stringsAsFactors=F,header=T,comment.char="") 
 
 df_indicators<- df_indicators %>% filter(Indicator!="LakepHchange")
 

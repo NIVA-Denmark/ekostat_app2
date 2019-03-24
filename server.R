@@ -1755,6 +1755,14 @@ GoCalculation=function(){
     }
     })
   
+  output$decimalsymbol<- renderUI({
+    if (nrow(values$resMC) > 0) {
+      tagList(checkboxInput("decimalcomma", "Use comma decimal",value = FALSE))
+    }else{
+      ""
+    }
+  })
+  
   # Downloadable csv of selected dataset ----
   output$downloadButton <- downloadHandler(
     filename = function() {
@@ -1762,7 +1770,12 @@ GoCalculation=function(){
     },
     content = function(file) {
       values$wbselected
-      write.table(downloadResults(values$resMC,values$resAvg),file,row.names=F,sep=";", na="",fileEncoding="Windows-1252")
+      if(isolate(input$decimalcomma)==T){
+        decsymbol<-","
+      }else{
+        decsymbol<-"."
+      }
+      write.table(downloadResults(values$resMC,values$resAvg),file,row.names=F,sep=";", na="",fileEncoding="Windows-1252",dec=decsymbol)
     }
   )
  
