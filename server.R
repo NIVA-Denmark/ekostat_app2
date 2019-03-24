@@ -46,7 +46,9 @@ shinyServer(function(input, output, session) {
     else ""
   }  
  
-  
+  dbinfo<-function(){
+    return(dbpath_info)
+  }
   
   dbpath<-reactive({
     wtype<-input$waterType
@@ -796,10 +798,18 @@ shinyServer(function(input, output, session) {
         names(df2) = c("Indicator","Period")
         
         
-        #db <- dbConnect(SQLite(), dbname=dbpath())
-        sql<-paste0("SELECT * FROM resAvg WHERE Type ='",values$typeselected,
-                    "' and Indicator in (",indlist,") AND WB_ID <>'", values$wbselected,"'")  
-        dbname<-dbpath()
+        #get list of WBs with same type
+        dbpath_info
+        sql<-paste0("SELECT WB_ID FROM WB_info WHERE Type ='",values$typeselected,
+                    "' AND WB_ID <>'", values$wbselected,"'")  
+        dfwblist <- readdb(dbinfo(), sql)
+        wblist <-paste(paste0("'",dfwblist$WB_ID,"'"),collapse = ",")
+        
+        # get results from the WBs with the same type
+        sql<-paste0("SELECT * FROM resAvg WHERE Indicator in (",indlist,
+                    ") AND WB_ID in (", wblist,")")  
+                
+         dbname<-dbpath()
         dftypeperiod <- readdb(dbname, sql)
         #dbDisconnect(db)
         
