@@ -7,18 +7,18 @@ Coastal	Biological	Benthic fauna	Composition and diversity	CoastBQI	BQI	Benthic 
 Coastal	Biological	Benthic vegetation	Composition and abundance	CoastMSMDI	MSMDI	Multi-Species Maximum Depth Index (MSMDI)	X	X	NA	NA	NA	NA	NA	NA
 Coastal	Supporting	Water transparency	Secchi depth	CoastSecchi	Secchi depth	Secchi Depth	X	X	X	NA	NA	NA	NA	NA
 Coastal	Supporting	Water transparency	Secchi depth	CoastSecchiEQR	Secchi depth	Secchi Depth (EQR)	X	X	X	NA	NA	NA	NA	NA
-Coastal	Supporting	Nutrients	Winter Nutrients	CoastDINwinter	Dissolved Inorganic Nitrogen	Winter DIN conc.	X	X	NA	NA	NA	NA	NA	NA
-Coastal	Supporting	Nutrients	Winter Nutrients	CoastDINwinterEQR	Dissolved Inorganic Nitrogen	Winter DIN conc. (EQR)	X	X	NA	NA	NA	NA	NA	NA
-Coastal	Supporting	Nutrients	Summer Nutrients	CoastTNsummer	Total Nitrogen	Summer TN conc.	X	X	NA	NA	NA	NA	NA	NA
-Coastal	Supporting	Nutrients	Summer Nutrients	CoastTNsummerEQR	Total Nitrogen	Summer TN conc. (EQR)	X	X	NA	NA	NA	NA	NA	NA
-Coastal	Supporting	Nutrients	Winter Nutrients	CoastTNwinter	Total Nitrogen	Winter TN conc.	X	X	NA	NA	NA	NA	NA	NA
-Coastal	Supporting	Nutrients	Winter Nutrients	CoastTNwinterEQR	Total Nitrogen	Winter TN conc. (EQR)	X	X	NA	NA	NA	NA	NA	NA
-Coastal	Supporting	Nutrients	Winter Nutrients	CoastDIPwinter	Dissolved Inorganic Phosphorus	Winter DIP conc.	X	X	NA	NA	NA	NA	NA	NA
-Coastal	Supporting	Nutrients	Winter Nutrients	CoastDIPwinterEQR	Dissolved Inorganic Phosphorus	Winter DIP conc. (EQR)	X	X	NA	NA	NA	NA	NA	NA
-Coastal	Supporting	Nutrients	Summer Nutrients	CoastTPsummer	Total Phosphorus	Summer TP conc.	X	X	NA	NA	NA	NA	NA	NA
-Coastal	Supporting	Nutrients	Summer Nutrients	CoastTPsummerEQR	Total Phosphorus	Summer TP conc. (EQR)	X	X	NA	NA	NA	NA	NA	NA
-Coastal	Supporting	Nutrients	Winter Nutrients	CoastTPwinter	Total Phosphorus	Winter TP conc.	X	X	NA	NA	NA	NA	NA	NA
-Coastal	Supporting	Nutrients	Winter Nutrients	CoastTPwinterEQR	Total Phosphorus	Winter TP conc. (EQR)	X	X	NA	NA	NA	NA	NA	NA
+Coastal	Supporting	Nutrients	Winter nutrients	CoastDINwinter	Dissolved Inorganic Nitrogen	Winter DIN conc.	X	X	NA	NA	NA	NA	NA	NA
+Coastal	Supporting	Nutrients	Winter nutrients	CoastDINwinterEQR	Dissolved Inorganic Nitrogen	Winter DIN conc. (EQR)	X	X	NA	NA	NA	NA	NA	NA
+Coastal	Supporting	Nutrients	Summer nutrients	CoastTNsummer	Total Nitrogen	Summer TN conc.	X	X	NA	NA	NA	NA	NA	NA
+Coastal	Supporting	Nutrients	Summer nutrients	CoastTNsummerEQR	Total Nitrogen	Summer TN conc. (EQR)	X	X	NA	NA	NA	NA	NA	NA
+Coastal	Supporting	Nutrients	Winter nutrients	CoastTNwinter	Total Nitrogen	Winter TN conc.	X	X	NA	NA	NA	NA	NA	NA
+Coastal	Supporting	Nutrients	Winter nutrients	CoastTNwinterEQR	Total Nitrogen	Winter TN conc. (EQR)	X	X	NA	NA	NA	NA	NA	NA
+Coastal	Supporting	Nutrients	Winter nutrients	CoastDIPwinter	Dissolved Inorganic Phosphorus	Winter DIP conc.	X	X	NA	NA	NA	NA	NA	NA
+Coastal	Supporting	Nutrients	Winter nutrients	CoastDIPwinterEQR	Dissolved Inorganic Phosphorus	Winter DIP conc. (EQR)	X	X	NA	NA	NA	NA	NA	NA
+Coastal	Supporting	Nutrients	Summer nutrients	CoastTPsummer	Total Phosphorus	Summer TP conc.	X	X	NA	NA	NA	NA	NA	NA
+Coastal	Supporting	Nutrients	Summer nutrients	CoastTPsummerEQR	Total Phosphorus	Summer TP conc. (EQR)	X	X	NA	NA	NA	NA	NA	NA
+Coastal	Supporting	Nutrients	Winter nutrients	CoastTPwinter	Total Phosphorus	Winter TP conc.	X	X	NA	NA	NA	NA	NA	NA
+Coastal	Supporting	Nutrients	Winter nutrients	CoastTPwinterEQR	Total Phosphorus	Winter TP conc. (EQR)	X	X	NA	NA	NA	NA	NA	NA
 Coastal	Supporting	Oxygen	Oxygen	CoastBottomOxygen	Oxygen Bottom Water	Oxygen Concentration	NA	X	X	NA	NA	NA	NA	X
 Coastal	Supporting	Oxygen	Oxygen	CoastHypoxicArea	Area affected by hypoxia (%)	Area affected by hypoxia (%)	NA	X	X	NA	NA	NA	NA	X
 Lakes	Biological	Phytoplankton	Phytoplankton biomass	LakeBiovol	Phytoplankton biovolume	Phytoplankton biovolume	X	X	NA	NA	NA	NA	NA	NA
