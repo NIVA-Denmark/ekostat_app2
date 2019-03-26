@@ -1754,7 +1754,13 @@ GoCalculation=function(){
       ""
     }
     })
-  
+  output$viss<- renderUI({
+    if (nrow(values$resMC) > 0) {
+      tagList(checkboxInput("visscolumns", "Include VISS columns",value = T))
+    }else{
+      ""
+    }
+  })
   output$decimalsymbol<- renderUI({
     if (nrow(values$resMC) > 0) {
       tagList(checkboxInput("decimalcomma", "Use comma decimal",value = FALSE))
@@ -1775,7 +1781,7 @@ GoCalculation=function(){
       }else{
         decsymbol<-"."
       }
-      write.table(downloadResults(values$resMC,values$resAvg),file,row.names=F,sep=";", na="",fileEncoding="Windows-1252",dec=decsymbol)
+      write.table(downloadResults(values$resMC,values$resAvg,VISScolumns=input$visscolumns),file,row.names=F,sep=";", na="",fileEncoding="Windows-1252",dec=decsymbol)
     }
   )
  

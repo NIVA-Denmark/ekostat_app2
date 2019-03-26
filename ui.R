@@ -134,9 +134,9 @@ shinyUI(
                                 h3(textOutput("SelectedWBStatus")),
                                 textOutput("SelectedTypeStatus")
                 ),
-                column(width=4,h1(" "),uiOutput("download"),uiOutput("decimalsymbol"))
-                
-                #column(width=4,h1(" "),downloadButton("downloadButton"))
+                column(width=1,h1(" "),uiOutput("download")),
+                column(width=4,h1(" "),uiOutput("viss"),uiOutput("decimalsymbol")),
+                column(width=2,h1(" "),"")
                 ),
 
                 fluidRow(column(width=3,htmlOutput("titleTable1"),DT::dataTableOutput("resTable1")),
