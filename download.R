@@ -1,5 +1,5 @@
 
-downloadResults<-function(resMC,resAvg,nsigdig=3){
+downloadResults<-function(resMC,resAvg,nsigdig=3,VISScolumns=T){
 
     withProgress(message = 'Preparing download...', value = 0, {
     wb <- resAvg$WB_ID[1]
@@ -166,7 +166,48 @@ downloadResults<-function(resMC,resAvg,nsigdig=3){
       #select(-c(id,id1,id2,id3,id4,sortorder))
       select(WB_ID,YearFrom,YearTo,VISS_parameter,Level,Name,Note,Unit,Months,Worst,PB,MP,GM,HG,Ref,Mean,StdErr,EQR,Class,nobs,stns,WBlist,pGES,fBad,fPoor,fMod,fGood,fHigh)
     
+    # Vatten-ID
+    # Parameternamn
+    # Klassificeringsnamn
+    # Versionsnamn
+    # Motiveringstext
+    # Referenser
+    # Tillförlitlighetsklassning
+    # Typ av bedömning
+    # År från
+    # År till
+    # Ekologisk kvot
+    # Jämförvärde ?
+    # Enhet för jämförvärde ?
+    # Antal mätningar
+    # Använda stationer
+    # Observerad halt
     
+    if(VISScolumns){
+      resMC <- resMC %>% 
+        rename("Vatten-ID"=WB_ID,
+               "År från"=YearFrom,
+               "År till"=YearTo,
+               Parameternamn=VISS_parameter,
+               "Antal mätningar"=nobs,
+               "Använda stationer"=stns) %>%
+        mutate("Ekologisk kvot"=ifelse(grepl("EQR",Name),Mean,EQR),
+               "Tillförlitlighetsklassning"=NA,
+               Versionsnamn=NA,
+               Motiveringstext=NA,
+               Referenser=NA,
+               "Typ av bedömning"=ifelse(grepl("Extrap",Note),"WATERS tool (Extrapolated)","WATERS tool"),
+               Klassificeringsnamn=substr(Class,1,1)) %>%
+        select("Vatten-ID",Parameternamn,Klassificeringsnamn,Versionsnamn,
+               Motiveringstext,Referenser,"Typ av bedömning",
+               "År från","År till",
+               "Ekologisk kvot",
+               "Antal mätningar",
+               "Använda stationer",
+               Level,Name,pGES,Note,Unit,Months,Worst,PB,MP,GM,HG,Ref,Mean,StdErr,EQR,fBad,fPoor,fMod,fGood,fHigh)
+                 
+    }
+
     
     incProgress(0.1,message="done")
   })
