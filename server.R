@@ -1756,7 +1756,7 @@ GoCalculation=function(){
     })
   output$viss<- renderUI({
     if (nrow(values$resMC) > 0) {
-      tagList(checkboxInput("visscolumns", "Include VISS columns",value = T))
+      tagList(checkboxInput("visscolumns", "Use VISS column names",value = T))
     }else{
       ""
     }
