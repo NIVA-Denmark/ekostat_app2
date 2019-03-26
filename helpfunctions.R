@@ -278,3 +278,13 @@ GetObsCountExtrap<-function(resAvgExtrap,resAvgtype){
   
   return(resAvgExtrap)
 }
+
+
+# function to replace station names with the EU_CD, where this is available
+# df - dataframe with a column 'stns' containing comma-separated list of stations
+# dfstns - dataframe with 2 columns: 'stn' and 'EU_CD'
+GetStationIDs<-function(df,dfstns){
+  return(df)
+}
+
+

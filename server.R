@@ -1263,6 +1263,7 @@ GoCalculation=function(){
       
       
       if(nrow(resAvg)>0){
+        resAvg <- GetStationIDs(resAvg)
         resAvg<-resAvgExtrap %>% bind_rows(resAvg)
         resMC<-resMCExtrap %>% bind_rows(resMC)
       }else{
