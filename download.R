@@ -190,7 +190,8 @@ downloadResults<-function(resMC,resAvg,nsigdig=3,VISScolumns=T){
                "År till"=YearTo,
                Parameternamn=VISS_parameter,
                "Antal mätningar"=nobs,
-               "Använda stationer"=stns) %>%
+               "Använda stationer"=stns,
+               Waterbodies=WBlist) %>%
         mutate("Ekologisk kvot"=ifelse(grepl("EQR",Name),Mean,EQR),
                "Tillförlitlighetsklassning"=NA,
                Versionsnamn=NA,
@@ -204,7 +205,7 @@ downloadResults<-function(resMC,resAvg,nsigdig=3,VISScolumns=T){
                "Ekologisk kvot",
                "Antal mätningar",
                "Använda stationer",
-               Level,Name,pGES,Note,Unit,Months,Worst,PB,MP,GM,HG,Ref,Mean,StdErr,EQR,fBad,fPoor,fMod,fGood,fHigh)
+               Level,Name,pGES,Note,Waterbodies,Unit,Months,Worst,PB,MP,GM,HG,Ref,Mean,StdErr,EQR,fBad,fPoor,fMod,fGood,fHigh)
                  
     }
 
