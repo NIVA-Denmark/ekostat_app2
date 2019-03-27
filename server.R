@@ -1526,20 +1526,21 @@ GoCalculation=function(){
   
   # ------------- User selected Indicator from Indicator Table - now show observations ------------- 
   observeEvent(input$resTableInd_rows_selected, {
-    
     df <-
-      values$resInd %>% group_by(Indicator,IndSubtype) %>% summarise() %>% ungroup()
+      values$resInd %>% group_by(Indicator,Months,IndSubtype) %>% summarise() %>% ungroup()
     values$sIndicator <-
       df$Indicator[input$resTableInd_rows_selected]
     values$sIndSubtype <-
       df$IndSubtype[input$resTableInd_rows_selected]
-   
+    values$sMonths<-
+      df$Months[input$resTableInd_rows_selected]
     df <- SelectObs(
       dfobs(values$sWB,paste(paste0("'",values$periodselected,"'"),collapse = ",")),
       indicator = values$sIndicator,
       indSubType = values$sIndSubtype,
       sWB = values$sWB,
       sPeriod = values$sPeriod,
+      sMonths=values$sMonths,
       df_indicators,
       df_var
     )

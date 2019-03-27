@@ -156,15 +156,18 @@ TypeLeadingZero<-function(type,addzero=T){
 #
 #
 #filter observation data based on the selected indicator, WB and period
-SelectObs<-function(df,indicator,indSubType="",sWB,sPeriod,df_indicators,df_var){
+SelectObs<-function(df,indicator,indSubType="",sWB,sPeriod,sMonths,df_indicators,df_var){
   #browser()
   varlist<-GetVarNames(indicator,df_indicators,df_var)
   obsvar<-varlist[length(varlist)]
-  
+  sMonths <- ifelse(sMonths=="1,2,..,12","1,2,3,4,5,6,7,8,9,10,11,12",sMonths)
+  sMonths <- unlist(strsplit(sMonths,","))
   #varlist<-c("station","obspoint","date","year","month",varlist)
-  varlist<-c("station","date","year","month",varlist)
+  varlist<-c("station","date","year","month","used",varlist)
   df <- df %>% filter(WB_ID==sWB,Period==sPeriod)
   df <- df[!is.na(df[,obsvar]),]
+  df <- df %>% 
+    mutate(used=ifelse(month %in% sMonths,T,F))
   df <- df[,varlist]
   if(!is.na(indSubType)){
     if(indSubType!=""){
