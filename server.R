@@ -800,7 +800,7 @@ shinyServer(function(input, output, session) {
         
         #get list of WBs with same type
         dbpath_info
-        sql<-paste0("SELECT WB_ID FROM WB_info WHERE Type ='",values$typeselected,
+        sql<-paste0("SELECT WB_ID FROM WB_info WHERE Type ='",TypeLeadingZero(values$typeselected,addzero=F),
                     "' AND WB_ID <>'", values$wbselected,"'")  
         dfwblist <- readdb(dbinfo(), sql)
         wblist <-paste(paste0("'",dfwblist$WB_ID,"'"),collapse = ",")
