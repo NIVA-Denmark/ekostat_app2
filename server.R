@@ -797,11 +797,15 @@ shinyServer(function(input, output, session) {
         df2<-df2 %>% left_join(dfperiod,by="X") %>% select(-c(X,num))
         names(df2) = c("Indicator","Period")
         
-        
         #get list of WBs with same type
         dbpath_info
-        sql<-paste0("SELECT WB_ID FROM WB_info WHERE Type ='",TypeLeadingZero(values$typeselected,addzero=F),
-                    "' AND WB_ID <>'", values$wbselected,"'")  
+        if(values$watertypeselected=="Coastal"){
+          sql<-paste0("SELECT WB_ID FROM WB_info WHERE Type ='",TypeLeadingZero(values$typeselected,addzero=F),
+                      "' AND WB_ID <>'", values$wbselected,"'")  
+        }else{
+          sql<-paste0("SELECT WB_ID FROM WB_info WHERE Type ='",values$typeselected,
+                      "' AND WB_ID <>'", values$wbselected,"'")  
+        }
         dfwblist <- readdb(dbinfo(), sql)
         wblist <-paste(paste0("'",dfwblist$WB_ID,"'"),collapse = ",")
         
