@@ -126,10 +126,11 @@ shinyServer(function(input, output, session) {
 # ------------ sidebar menu --------------------------------------------------  
   output$dy_menu <- renderMenu({ 
     sidebarMenu(id="tabs",
-                menuItem("Waterbody", tabName = "waterbody", icon = icon("map-marker")),
+                menuItem("Waterbody", tabName = "waterbody", icon = icon("water")), #map-marker
                 menuItem("Indicators", tabName = "indicators", icon = icon("tasks")),
                 menuItem("Extrapolation", tabName = "extrapolation", icon = icon("chart-line")),
-                menuItem("Status", tabName = "status", icon = icon("bar-chart"))
+                menuItem("Status", tabName = "status", icon = icon("bar-chart")),
+                menuItem("Instructions", tabName = "instructions", icon = icon("book-open"))
     )
   })
   
