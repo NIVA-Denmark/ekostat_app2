@@ -1,7 +1,18 @@
 
 downloadResults<-function(resMC,resAvg,nsigdig=3,VISScolumns=T){
 
-    withProgress(message = 'Preparing download...', value = 0, {
+      withProgress(message = 'Preparing download...', value = 0, {
+    
+      # if only extrapolation indicators are used, the columns 'stns' will be missing
+      if(!"stns" %in% names(resMC)){
+        resMC$stns<-""
+      }
+      # if no extrapolation indicators are used, the columns 'WBlist' will be missing
+      if(!"WBlist" %in% names(resMC)){
+        resMC$WBlist<-""
+      }
+      
+      
     wb <- resAvg$WB_ID[1]
     
     res1Avg <-
@@ -63,12 +74,8 @@ downloadResults<-function(resMC,resAvg,nsigdig=3,VISScolumns=T){
     grplist <- c("Period","QEtype","QualityElement","QualitySubelement","Indicator","IndSubtype",
                  "Note","Unit","Months","Worst","PB","MP","GM","HG","Ref","Mean","StdErr","EQR","Class")
     
-    if("WBlist" %in% names(resMC)){
       infolist<- c("nobs","stns","WBlist")
-    }else{
-      infolist<- c("nobs","stns")
-    }
-      
+
     
     resMC <-resMC %>% rename(EQRMC = EQR,ClassMC = Class,Class = ClassAvg,EQR = EQRavg)
     
@@ -152,12 +159,6 @@ downloadResults<-function(resMC,resAvg,nsigdig=3,VISScolumns=T){
     #options(OutDec= ",")
     resMC <- bind_rows(resMC,res1MC,res2MC,res3MC,res4MC)
     resMC$sortorder<-rowSums(resMC[,c("id1","id2","id3","id4","id")],na.rm=T)
-    if(!"WBlist" %in% names(resMC)){
-      resMC$WBlist<-""
-    }
-    if(!"stns" %in% names(resMC)){
-      resMC$stns<-""
-    }
 
     resMC <- resMC %>% arrange(sortorder) %>%
       left_join(df_viss,by="Indicator") %>%
