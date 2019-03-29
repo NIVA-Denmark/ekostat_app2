@@ -31,8 +31,9 @@ shinyUI(
           tabItem(tabName = "instructions", 
                   fluidRow(
                    tags$iframe(style="height:800px; width:100%; scrolling=yes", 
-                               src="instruktion_verktyg_v.5_190326.pdf"))),
-        
+                               src="https://www.dropbox.com/s/so9gi1g4s5pxkv2/instruktion_verktyg.pdf?raw=1"))), #instruktion_verktyg_v.5_190326.pdf
+          
+          
   # tab content
         tabItem(tabName = "waterbody",
                 h3("Select Waterbody"),
