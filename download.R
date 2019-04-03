@@ -91,7 +91,11 @@ downloadResults<-function(resMC,resAvg,nsigdig=3,VISScolumns=T){
     
     res1MC <-
       SummarizeSims(res1MC,Groups=grplist , roundlist = c("pGES"),remove = rmlist,ClassVar = "ClassMC") 
-    res1MC <- res1MC %>% mutate(id1=as.numeric(rownames(res1MC)))
+    res1MC <- res1Avg %>% 
+      left_join(res1MC,by="Period") %>% 
+      arrange(Period) 
+    res1MC <-res1MC %>%
+      mutate(id1=as.numeric(rownames(res1MC)))
     nr1<-nrow(res1MC)
     incProgress(0.1)
     
@@ -101,7 +105,8 @@ downloadResults<-function(resMC,resAvg,nsigdig=3,VISScolumns=T){
     res2MC <- 
       SummarizeSims(res2MC,Groups = grplist,remove = rmlist, ClassVar = "ClassMC")  
     
-    res2MC <- res2MC %>% mutate(id2=as.numeric(rownames(res2MC)))
+    res2MC <- res2MC %>% arrange(Period,QEtype) %>% 
+      mutate(id2=as.numeric(rownames(res2MC)))
     nr2<-nrow(res2MC)
     
     incProgress(0.1)
