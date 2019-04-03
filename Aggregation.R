@@ -142,6 +142,10 @@ AggregateMCovr<-function(resMC,resAvg,res1Avg){
       s<-"Biological"
     }
     dfMC<-dfMC %>% filter(QEtype==s)
+
+    if(nrow(dfMC)==0){
+      dfMC[1,"Period"]<-iP
+    }
     if(is.null(MCout)){
       MCout<-dfMC
     }else{
