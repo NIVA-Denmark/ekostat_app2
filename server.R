@@ -1532,13 +1532,17 @@ GoCalculation=function(){
   # ------------- User selected Indicator from Indicator Table - now show observations ------------- 
   observeEvent(input$resTableInd_rows_selected, {
     df <-
-      values$resInd %>% group_by(Indicator,Months,IndSubtype) %>% summarise() %>% ungroup()
+      values$resInd %>% group_by(Indicator,Months,IndSubtype,Note) %>% summarise() %>% ungroup()
     values$sIndicator <-
       df$Indicator[input$resTableInd_rows_selected]
     values$sIndSubtype <-
       df$IndSubtype[input$resTableInd_rows_selected]
     values$sMonths<-
       df$Months[input$resTableInd_rows_selected]
+    
+    if(df$Note[input$resTableInd_rows_selected]=="Extrap"){
+      df<-data.frame()
+    }else{
     df <- SelectObs(
       dfobs(values$sWB,paste(paste0("'",values$periodselected,"'"),collapse = ",")),
       indicator = values$sIndicator,
@@ -1549,6 +1553,8 @@ GoCalculation=function(){
       df_indicators,
       df_var
     )
+    }
+    
     if(nrow(df)>0){
       values$resObs <- df %>% arrange(date,station)
     }else{
