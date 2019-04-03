@@ -821,7 +821,8 @@ shinyServer(function(input, output, session) {
         
         if(nrow(dftypeperiod)>0){
           #------------------------------------
-       dftypeperiod<-CleanSubTypes(dftypeperiod)
+        
+       #dftypeperiod<-CleanSubTypes(dftypeperiod)
         
         dfwb_type <- df_WB %>% distinct(WB_ID,WB_Name)
     
