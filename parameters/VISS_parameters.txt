@@ -1,6 +1,6 @@
 Indicator	VISS_parameter
 CoastChla	CHLOROPH
-CoastBiovol	PHYTO
+CoastBiovol	PHYTO_BIOVOLYM
 CoastBQI	BEN_INV_BQI
 CoastSecchi	SECCHI
 CoastDINwinter	DIN
@@ -11,14 +11,17 @@ CoastTPsummer	TOT_P_SUMMER
 CoastTPwinter	TOT_P_WINTER
 CoastChlaEQR	CHLOROPH
 CoastBiovolEQR	PHYTO
-CoastSecchiEQR	SECCHI
+CoastSecchiEQR	TRANSP
 CoastDINwinterEQR	DIN
 CoastTNsummerEQR	TOT_N_SUMMER
 CoastTNwinterEQR	TOT_N_WINTER
 CoastDIPwinterEQR	DIP
 CoastTPsummerEQR	TOT_P_SUMMER
 CoastTPwinterEQR	TOT_P_WINTER
-CoastBottomOxygen	OXYGEN
+CoastBottomOxygen	OXYGEN_COND
+Benthic fauna	BEN_INV 
+Phytoplankton	PHYTO
+Nutrients	NUTRIENTS
 LakeBiovol	PHYTO_BIOVOLYM
 LakeChla	CHLOROPH
 LakePTI	PHYTO_TROPH_PTI

@@ -161,18 +161,23 @@ downloadResults<-function(resMC,resAvg,nsigdig=3,VISScolumns=T){
     res4MC <- res4MC %>% mutate(Level="4. Quality Subelement",Name=QualitySubelement)
     resMC <- resMC %>% mutate(Level="5. Indicator",
                               Name=ifelse(is.na(IndSubtype),Indicator,paste0(Indicator," [",IndSubtype,"]")))
-    #browser()
-    #options(OutDec= ",")
+
     resMC <- bind_rows(resMC,res1MC,res2MC,res3MC,res4MC)
     resMC$sortorder<-rowSums(resMC[,c("id1","id2","id3","id4","id")],na.rm=T)
     
     resMC <- resMC %>% arrange(sortorder) %>%
-      left_join(df_viss,by="Indicator") %>%
+      left_join(df_viss,by=c("Indicator")) %>%
       separate(Period,into=c("YearFrom","YearTo"),sep="-") %>%
       mutate(WB_ID = wb,Mean=round(Mean,nsigdig),StdErr=round(StdErr,nsigdig),EQR=round(EQR,nsigdig)) %>%
       #select(-c(id,id1,id2,id3,id4,sortorder))
       select(WB_ID,YearFrom,YearTo,VISS_parameter,Level,Name,Note,Unit,Months,Worst,PB,MP,GM,HG,Ref,Mean,StdErr,EQR,Class,nobs,stns,WBlist,pGES,fBad,fPoor,fMod,fGood,fHigh)
       
+    # add VISS parameters for QEs etc.
+    resMC <- resMC %>%
+      left_join(select(df_viss,Indicator,VISS_parameter2=VISS_parameter),by=c("Name"="Indicator")) %>%
+      mutate(VISS_parameter=ifelse(is.na(VISS_parameter),VISS_parameter2,VISS_parameter)) %>%
+      select(-VISS_parameter2)
+
     # Vatten-ID
     # Parameternamn
     # Klassificeringsnamn
