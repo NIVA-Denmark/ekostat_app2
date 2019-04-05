@@ -24,7 +24,7 @@ downloadResults<-function(resMC,resAvg,nsigdig=3,VISScolumns=T){
     
     res1MC <- AggregateMCovr(resMC,resAvg,res1Avg)
     res1MC <- res1MC %>%
-      select(Period,sim,ClassID,ClassMC)
+      select(Period,sim,ClassIDMC=ClassID,ClassMC)
     
     res1MC <- res1MC %>% left_join(res1Avg,by = c("Period"))
     
@@ -88,9 +88,10 @@ downloadResults<-function(resMC,resAvg,nsigdig=3,VISScolumns=T){
     
     rmlist <- ""
     grplist <-c("Period", "Class")
-    
+
     res1MC <-
-      SummarizeSims(res1MC,Groups=grplist , roundlist = c("pGES"),remove = rmlist,ClassVar = "ClassMC") 
+      SummarizeSims(res1MC,Groups=grplist , roundlist = c("pGES"),remove = rmlist,ClassVar = "ClassMC") %>%
+      select(-Class)
     res1MC <- res1Avg %>% 
       left_join(res1MC,by="Period") %>% 
       arrange(Period) 
@@ -164,14 +165,14 @@ downloadResults<-function(resMC,resAvg,nsigdig=3,VISScolumns=T){
     #options(OutDec= ",")
     resMC <- bind_rows(resMC,res1MC,res2MC,res3MC,res4MC)
     resMC$sortorder<-rowSums(resMC[,c("id1","id2","id3","id4","id")],na.rm=T)
-
+    
     resMC <- resMC %>% arrange(sortorder) %>%
       left_join(df_viss,by="Indicator") %>%
       separate(Period,into=c("YearFrom","YearTo"),sep="-") %>%
       mutate(WB_ID = wb,Mean=round(Mean,nsigdig),StdErr=round(StdErr,nsigdig),EQR=round(EQR,nsigdig)) %>%
       #select(-c(id,id1,id2,id3,id4,sortorder))
       select(WB_ID,YearFrom,YearTo,VISS_parameter,Level,Name,Note,Unit,Months,Worst,PB,MP,GM,HG,Ref,Mean,StdErr,EQR,Class,nobs,stns,WBlist,pGES,fBad,fPoor,fMod,fGood,fHigh)
-    
+      
     # Vatten-ID
     # Parameternamn
     # Klassificeringsnamn
