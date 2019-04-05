@@ -2,7 +2,7 @@ Indicator	VISS_parameter
 CoastChla	CHLOROPH
 CoastBiovol	PHYTO_BIOVOLYM
 CoastBQI	BEN_INV_BQI
-CoastSecchi	SECCHI
+CoastSecchi	TRANSP
 CoastDINwinter	DIN
 CoastTNsummer	TOT_N_SUMMER
 CoastTNwinter	TOT_N_WINTER
@@ -10,7 +10,7 @@ CoastDIPwinter	DIP
 CoastTPsummer	TOT_P_SUMMER
 CoastTPwinter	TOT_P_WINTER
 CoastChlaEQR	CHLOROPH
-CoastBiovolEQR	PHYTO
+CoastBiovolEQR	PHYTO_BIOVOLYM
 CoastSecchiEQR	TRANSP
 CoastDINwinterEQR	DIN
 CoastTNsummerEQR	TOT_N_SUMMER
