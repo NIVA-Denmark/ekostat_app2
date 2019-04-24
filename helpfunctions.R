@@ -156,8 +156,7 @@ TypeLeadingZero<-function(type,addzero=T){
 #
 #
 #filter observation data based on the selected indicator, WB and period
-SelectObs<-function(df,indicator,indSubType="",sWB,sPeriod,sMonths,df_indicators,df_var){
-  #browser()
+SelectObs<-function(df,indicator,indSubType="",sWB,sPeriod,sMonths,df_indicators,df_var,wbtype){
   varlist<-GetVarNames(indicator,df_indicators,df_var)
   obsvar<-varlist[length(varlist)]
   sMonths <- ifelse(sMonths=="1,2,..,12","1,2,3,4,5,6,7,8,9,10,11,12",sMonths)
@@ -168,6 +167,21 @@ SelectObs<-function(df,indicator,indSubType="",sWB,sPeriod,sMonths,df_indicators
   df <- df[!is.na(df[,obsvar]),]
   df <- df %>% 
     mutate(used=ifelse(month %in% sMonths,T,F))
+  
+  # for coastal nutrient EQR indicators calculations cannot use values without salinity
+  indlistEQR<-c("CoastDINwinterEQR","CoastDIPwinterEQR","CoastTNsummerEQR","CoastTPsummerEQR","CoastTNwinterEQR","CoastTPwinterEQR")
+  if(indicator %in% indlistEQR){
+    df <- df %>% 
+      mutate(used=ifelse(is.na(sali),F,used))
+  }
+  # for coastal chl, biovol and secchi EQR salinity correction is not required for bottenhavet
+  indlistEQR<-c("CoastChlaEQR","CoastBiovolEQR","CoastSecchiEQR")
+  typelist<-c("01n","01s","02","03","25","04","05","06","07","08","09","10","11","12n","12s","13","14","15","24")
+  if(indicator %in% indlistEQR && wbtype %in% typelist){
+    df <- df %>% 
+      mutate(used=ifelse(is.na(sali),F,used))
+  }
+  
   df <- df[,varlist]
   if(!is.na(indSubType)){
     if(indSubType!=""){

@@ -1552,7 +1552,8 @@ GoCalculation=function(){
       sPeriod = values$sPeriod,
       sMonths=values$sMonths,
       df_indicators,
-      df_var
+      df_var,
+      values$typeselected
     )
     }
     
@@ -1720,24 +1721,15 @@ GoCalculation=function(){
         p <- 0
       } else{
         
-        
         yvar <- vars[length(vars)]
         
         df <- values$resObs 
 
         df$station <- as.factor(df$station)
-        indicator<-values$sIndicator
-        if(indicator %in% listWBindicators){
-          months<-GetIndicatorMonths(indicator,values$typeselected,df_bound_WB)
-        }else{
-          months<-GetIndicatorMonths(indicator,values$typeselected,df_bound)
-        }
-        
-        df <- df %>% 
-          mutate(IndMonth=ifelse(month %in% months,T,F))
+
         dfselect<-df[input$resTableObs_rows_selected,]
-        df1<- filter(df,IndMonth)
-        df2<- filter(df,!IndMonth)
+        df1<- filter(df,used)
+        df2<- filter(df,!used)
         
         # try to catch an error with data not being updated and not having the required variable
         if(yvar %in% names(df)){
