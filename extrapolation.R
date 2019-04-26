@@ -77,8 +77,10 @@ extrapolation_single<-function(dfavg,dfyr,dfMC,dfbnds,nsim){
       
       df<-CalculateIndicatorType(indicator,un,var_list,ntype,yrfrom,yrto,n_iter=nsim)
 
+      RefCondAvg <- mean(dfavg$RefCondAvg,na.rm=T)
+      
       resMC<-data.frame(Indicator=indicator,IndSubtype=subtype,Period=period,sim=seq(1,nsim),Value=df$indicator_sim,stringsAsFactors=F)
-      resAvg<-data.frame(Indicator=indicator,IndSubtype=subtype,Period=period,Mean=df$period$mean,StdErr=df$period$stderr,stringsAsFactors=F)
+      resAvg<-data.frame(Indicator=indicator,IndSubtype=subtype,Period=period,Mean=df$period$mean,StdErr=df$period$stderr,RefCondAvg=RefCondAvg,stringsAsFactors=F)
       df<-list(resAvg=resAvg,resMC=resMC)
     }else{
       df<-list(resAvg=resAvg,resMC=resMC)

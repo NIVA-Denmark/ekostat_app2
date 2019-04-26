@@ -74,7 +74,7 @@ downloadResults<-function(resMC,resAvg,nsigdig=3,VISScolumns=T){
     grplist <- c("Period","QEtype","QualityElement","QualitySubelement","Indicator","IndSubtype",
                  "Note","Unit","Months","Worst","PB","MP","GM","HG","Ref","Mean","StdErr","EQR","Class")
     
-      infolist<- c("nobs","stns","WBlist")
+      infolist<- c("nobs","stns","WBlist","RefCondAvg")
 
     
     resMC <-resMC %>% rename(EQRMC = EQR,ClassMC = Class,Class = ClassAvg,EQR = EQRavg)
@@ -168,9 +168,10 @@ downloadResults<-function(resMC,resAvg,nsigdig=3,VISScolumns=T){
     resMC <- resMC %>% arrange(sortorder) %>%
       left_join(df_viss,by=c("Indicator")) %>%
       separate(Period,into=c("YearFrom","YearTo"),sep="-") %>%
-      mutate(WB_ID = wb,Mean=round(Mean,nsigdig),StdErr=round(StdErr,nsigdig),EQR=round(EQR,nsigdig)) %>%
+      mutate(WB_ID = wb,Mean=round(Mean,nsigdig),StdErr=round(StdErr,nsigdig),
+             EQR=round(EQR,nsigdig),RefCondAvg=round(RefCondAvg,nsigdig)) %>%
       #select(-c(id,id1,id2,id3,id4,sortorder))
-      select(WB_ID,YearFrom,YearTo,VISS_parameter,Level,Name,Note,Unit,Months,Worst,PB,MP,GM,HG,Ref,Mean,StdErr,EQR,Class,nobs,stns,WBlist,pGES,fBad,fPoor,fMod,fGood,fHigh)
+      select(WB_ID,YearFrom,YearTo,VISS_parameter,Level,Name,Note,Unit,Months,Worst,PB,MP,GM,HG,Ref,Mean,StdErr,EQR,Class,nobs,stns,WBlist,RefCondAvg,pGES,fBad,fPoor,fMod,fGood,fHigh)
       
     # add VISS parameters for QEs etc.
     resMC <- resMC %>%
@@ -201,6 +202,7 @@ downloadResults<-function(resMC,resAvg,nsigdig=3,VISScolumns=T){
                "År från"=YearFrom,
                "År till"=YearTo,
                Parameternamn=VISS_parameter,
+               "Referensvärde/Bakgrundshalt"=RefCondAvg,
                "Antal mätningar"=nobs,
                "Använda stationer"=stns,
                Waterbodies=WBlist) %>%
@@ -212,6 +214,7 @@ downloadResults<-function(resMC,resAvg,nsigdig=3,VISScolumns=T){
                "Typ av bedömning"=ifelse(grepl("Extrap",Note),"WATERS tool (Extrapolated)","WATERS tool"),
                Klassificeringsnamn=substr(Class,1,1)) %>%
         select("Vatten-ID",Parameternamn,Klassificeringsnamn,Versionsnamn,
+               "Referensvärde/Bakgrundshalt",
                Motiveringstext,Referenser,"Typ av bedömning",
                "År från","År till",
                "Ekologisk kvot",

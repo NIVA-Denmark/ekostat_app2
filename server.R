@@ -1095,7 +1095,7 @@ GoCalculation=function(){
     resMC <- dbGetQuery(db, sql) 
     resMC <- resMC %>% 
       left_join(select(resAvg,Type,Typename,WB_ID,Period,Region,Indicator,IndSubtype,Code,QEtype,QualityElement,QualitySubelement,Note,Unit,Months,
-                       Worst,PB,MP,GM,HG,Ref,Mean,StdErr,EQRavg=EQR,ClassAvg=Class,nobs,stns),
+                       Worst,PB,MP,GM,HG,Ref,Mean,StdErr,EQRavg=EQR,ClassAvg=Class,nobs,stns,RefCondAvg),
                 by=c("WB_ID","Period","Indicator","IndSubtype"))
 
     subtypes<-values$subtypes %>%
@@ -1210,7 +1210,7 @@ GoCalculation=function(){
       resAvgExtrap<-resAvgExtrap %>% left_join(rename(df_bound,IndSubtype=Depth_stratum),by=c("Type","Indicator","IndSubtype"))
       resAvgExtrap<-resAvgExtrap %>%rename(Ref=RefCond,HG="H.G",GM="G.M",MP="M.P",PB="P.B") 
       resAvgExtrap<-resAvgExtrap %>%select(Water_type,WB_ID,Region,Type,Typename,Period,QEtype,QualityElement,QualitySubelement,Indicator,IndSubtype,
-             Months,Unit,Worst,PB,MP,GM,HG,Ref,Mean,StdErr,Code,Note) %>%
+             Months,Unit,Worst,PB,MP,GM,HG,Ref,Mean,StdErr,Code,Note,RefCondAvg) %>%
         mutate(Worst=as.numeric(Worst),
              PB=as.numeric(PB),
              MP=as.numeric(MP),
@@ -1248,7 +1248,7 @@ GoCalculation=function(){
       
       resAvgExtrap<-GetObsCountExtrap(resAvgExtrap,resAvgtype) 
       
-      resMCExtrap<-resMCExtrap %>% left_join(select(resAvgExtrap,WB_ID,Period,Indicator,IndSubtype,Mean,StdErr,EQRavg=EQR,ClassAvg=Class,nobs,WBlist),
+      resMCExtrap<-resMCExtrap %>% left_join(select(resAvgExtrap,WB_ID,Period,Indicator,IndSubtype,Mean,StdErr,EQRavg=EQR,ClassAvg=Class,nobs,WBlist,RefCondAvg),
                                              by=c("WB_ID","Period","Indicator","IndSubtype"))
       
     #filter out the results which will be replaced by extrapolated results
