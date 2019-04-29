@@ -186,7 +186,7 @@ SelectObs<-function(df,indicator,indSubType="",sWB,sPeriod,sMonths,df_indicators
   if(!is.na(indSubType)){
     if(indSubType!=""){
       depthlimits<-DepthLimits(indSubType)
-      df <- df %>% filter(depth>=depthlimits[1],depth<=depthlimits[2])
+      df <- df %>% filter(station_depth>=depthlimits[1],station_depth<=depthlimits[2])
     }
   }
   
@@ -259,8 +259,10 @@ GetVarNames<-function(indicator,df_indicators,df_var){
     
     obsvar<-as.character(df_indicators[1,"Parameter"])
     if(substr(indicator,1,5)=="Coast"){
-      if(indicator %in% c("CoastOxygen","CoastBQI")){
+      if(indicator %in% c("CoastOxygen")){
         varlist<-c("depth","sali",obsvar)
+      }else if(indicator %in% c("CoastBQI")){
+        varlist<-c("station_depth","sali",obsvar)
       }else{
         varlist<-c("sali",obsvar)
       } 
