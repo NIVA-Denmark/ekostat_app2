@@ -1361,6 +1361,7 @@ GoCalculation=function(){
   # ------------- show overall results -----------------------------------------------------------------
   observeEvent(values$resMC, {
     #ShowHideDownload()
+    
     if (nrow(values$resMC) > 0) {
         grplist <- c(
           "WB_ID","Type","Period","QEtype","QualityElement","QualitySubelement","Indicator","IndSubtype",
@@ -1404,7 +1405,7 @@ GoCalculation=function(){
   # ------------- User selected Period from Table 1 (Overall Results) - Now show Biological/Supporting (Table 2) ----------------
   observeEvent(input$resTable1_rows_selected, {
 
-    df <-values$resMC %>% 
+    df <-values$resAvg %>% 
       group_by(WB_ID, Period) %>% 
       summarise() %>% 
       ungroup()
@@ -1422,7 +1423,11 @@ GoCalculation=function(){
                 level = 2) %>%
       select(Period, QEtype, EQR, Class)
     
-    values$res2MC <- res2MC %>% left_join(res2Avg,by = c("Period", "QEtype"))
+    if(nrow(res2MC)>0){
+      values$res2MC <- res2MC %>% left_join(res2Avg,by = c("Period", "QEtype"))
+    }else{
+      values$res2MC <- ""
+    }
  
     
     values$res3MC <- ""
