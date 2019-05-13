@@ -1248,7 +1248,7 @@ GoCalculation=function(){
       
       resAvgExtrap<-GetObsCountExtrap(resAvgExtrap,resAvgtype) 
       
-      resMCExtrap<-resMCExtrap %>% left_join(select(resAvgExtrap,WB_ID,Period,Indicator,IndSubtype,Mean,StdErr,EQRavg=EQR,ClassAvg=Class,nobs,WBlist,RefCondAvg),
+      resMCExtrap<-resMCExtrap %>% left_join(select(resAvgExtrap,WB_ID,Period,Indicator,IndSubtype,Mean,StdErr,EQRavg=EQR,ClassAvg=Class,nobs,stns,WBlist,RefCondAvg),
                                              by=c("WB_ID","Period","Indicator","IndSubtype"))
       
     #filter out the results which will be replaced by extrapolated results

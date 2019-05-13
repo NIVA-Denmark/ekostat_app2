@@ -277,7 +277,7 @@ GetVarNames<-function(indicator,df_indicators,df_var){
 
 
 GetObsCountExtrap<-function(resAvgExtrap,resAvgtype,CodeMin=0){
-  #browser()
+
   df <- resAvgtype %>%
     filter(Code>=CodeMin) %>%
     group_by(Period,Indicator,IndSubtype) %>%
@@ -285,11 +285,12 @@ GetObsCountExtrap<-function(resAvgExtrap,resAvgtype,CodeMin=0){
   
   df2 <- resAvgtype %>%
     filter(Code>=CodeMin) %>%
-    distinct(Period,Indicator,IndSubtype,WB_ID) %>%
+    distinct(Period,Indicator,IndSubtype,WB_ID,stns) %>%
     group_by(Period,Indicator,IndSubtype) %>%
-    mutate(WBlist = paste0(WB_ID, collapse = ","))
+    mutate(WBlist = paste0(WB_ID, collapse = ",")) %>%
+    mutate(stns= paste0(stns, collapse = ","))
   
-  df2 <- distinct(df2,Period,Indicator,IndSubtype,WBlist)
+  df2 <- distinct(df2,Period,Indicator,IndSubtype,WBlist,stns)
   
   df <- df %>%
     left_join(df2,by=c("Period","Indicator","IndSubtype"))
