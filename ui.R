@@ -163,6 +163,33 @@ shinyUI(
                          
 
         ),
+  
+  tabItem(tabName = "disclaimer",
+          fluidRow(column(width=4,
+          h3("Disclaimer"),
+          p("Detta verktyg är ett besluts- och beräkningsstöd framtagen för använding inom Vattenmyndigheternas statusklassning 2019 i enlighet med Havs- och Vattenmyndighetens föreskrift (HVMFS 2013:19) och den vägledning som tagits fram under 2018, samt med hjälp av de övergripande metoder som utvecklades inom forskningsprogrammet WATERS. Verktyget är fortfarande under utveckling och data som hämtats från de nationella datavärdskapen kan uppdateras vid behov."),
+          
+          p("Verktyget tillhandahåller statusklassningar med klassningsosäkerheter för enskilda indikatorer såväl som för sammanvägda kvalitetsfaktorer, men de automatiskt beräknade klassningarna som presenteras i verktyget måste alltid genomgå en manuell prövning och kan modifieras av speciellt avsedd personal vid vattenmyndigheterna."),
+          
+          p("Utveckling av verktyget har finansierats via anslag från Havs- och Vattenmyndigheten till Havsmiljöinstitutet, SMHI, SLU, Århus Universitet och NIVA Danmark. Verktyget har utformats i dialog med användare på Vattenmyndigheterna / Länsstyrelserna och support till andra användare ges endast i ringa omfattning. Dessa hänvisas främst till den instruktion som följer med verktyget eller till rapporterna på waters.gu.se."),
+          
+            p("Mats Lindegarth, projektledare"),
+          p(a("mats.lindegarth@havsmiljoinstitutet.se",href="mailto:mats.lindegarth@havsmiljoinstitutet.se"))
+          ),
+          column(width=4,
+                 h3("Disclaimer"),
+          p("This is a decision-making and calculation support tool designed for use in the Water Authorities' status classification 2019, in accordance with the Swedish Agency for Marine and Water Management's regulations (HVMFS 2013: 19) and the guidance that was produced in 2018, and with the help of the overall methods developed in the research program WATERS. The tool is still under development and data retrieved from the national data hosts can be updated as needed."),
+          p("The tool provides status assessments with classification uncertainties for individual indicators as well as for weighted Quality Elements. The automatically calculated classifications presented in the tool must always undergo a manual test and can be modified by specially designated personnel at the water authorities."),
+          p("The development of the tool has been financed via grants from the Swedish Agency for Marine and Water Management to the Marine Environment Institute, SMHI, SLU, Aarhus University and NIVA Denmark. The tool has been designed in dialogue with users at the Water Authorities / County Administrative Boards. Support to other users is limited and they are referred to the instructions that come with the tool or to the reports at waters.gu.se.")
+                 
+                 )          
+          )
+
+          
+                    
+  ),
+  
+  
 
         # tab content
         tabItem(tabName = "options",

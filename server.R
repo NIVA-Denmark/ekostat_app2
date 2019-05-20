@@ -130,7 +130,8 @@ shinyServer(function(input, output, session) {
                 menuItem("Indicators", tabName = "indicators", icon = icon("tasks")),
                 menuItem("Extrapolation", tabName = "extrapolation", icon = icon("chart-line")),
                 menuItem("Status", tabName = "status", icon = icon("bar-chart")),
-                menuItem("Instructions", tabName = "instructions", icon = icon("book-open"))
+                menuItem("Instructions", tabName = "instructions", icon = icon("book-open")),
+                menuItem("Disclaimer", tabName = "disclaimer", icon = icon("exclamation-triangle"))
     )
   })
   
